@@ -1,0 +1,108 @@
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 0;
+    top: 10px;
+    left: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 0;
+    padding: 0;
+    border: none;
+    color:#fff;
+    display: flex;
+}
+
+.sidebarMenu {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    left: 0;
+    /* top: 60px; */
+    height: calc(100vh - 60px);
+    background-color: #eee;
+    color: #000;
+    transition: width 0.3s ease-in-out;
+    overflow-y: auto;
+}
+.sidebarMenu.expanded {
+    width: 25dvw;
+}
+.sidebarMenu.collapsed {
+    width: 0dvw;
+}
+
+/* アニメーション用のラッパー */
+.content-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out; /* 高さをアニメーション */
+    height: 0;  /* 初期状態は閉じた状態 */
+}
+
+/* 開いたとき */
+.content-wrapper.open {
+    height: auto; /* 適切な高さを設定 */
+    width:100%;
+}
+
+.arrow {
+    display: inline-block;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease-in-out;
+}
+.arrow.open {
+    display: inline-block;
+    transform: rotate(0deg);
+}
+
+fieldset{
+    border:1px solid #000;
+    padding:3px;
+    width:fit-content;
+}
+
+legend{
+    font-size:1em;
+    margin-left: 12px;
+    margin-top: 3px;
+    padding:3px 2px;
+    width:initial;
+    margin-bottom: 0;
+}
+
+.form-control {
+    width:95%;
+    box-sizing: border-box;
+}
+
+/* テーブルのスタイル */
+#lawTable {
+    width: 95%;
+    border-collapse: collapse;
+}
+
+#lawTable thead th {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #ccf;
+}
+
+#lawTable td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    user-select: none;
+}
+
+/* マウスオーバー時のハイライト */
+#lawTable tbody tr:hover {
+    background-color: #eef;
+}
+
+label {
+    margin-left: 3px;
+    margin-right: 3px;
+}

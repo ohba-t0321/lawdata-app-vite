@@ -1,0 +1,48 @@
+[
+    {
+        "ref": {
+            "lawNum": "昭和二十六年厚生省令第二十八号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "40",
+                "paragraph": "7",
+                "item": "3"
+            },
+            "text": "前二号に掲げる事項のほか、財産目録（社会福祉連携推進法人会計基準（令和三年厚生労働省令第百七十七号）第十条第一号に規定する貸借対照表に対応する項目に限る。）を監査し、会計監査報告に当該監査の結果を併せて記載し、又は記録しなければならないこと。"
+        },
+        "referred": {
+            "lawNum": "令和三年厚生労働省令第百七十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "貸借対照表"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十六年厚生省令第二十八号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "40_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第三十三条第一号に規定する収益の額として厚生労働省令で定めるところにより計算した額は、社会福祉連携推進法人会計基準第十九条の第二号第一様式中当年度決算（Ａ）のサービス活動収益計（１）欄に計上した額とする。"
+        },
+        "referred": {
+            "lawNum": "令和三年厚生労働省令第百七十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "19",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "損益計算書の様式は、第二号第一様式及び第二様式のとおりとする。"
+        },
+        "match": "★引用個所不明★"
+    }
+]

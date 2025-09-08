@@ -1,0 +1,141 @@
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.headline {
+    padding-top: 5px;
+    background-color: #fff;
+    z-index: 999;
+    transition: margin-left 0.3s;
+}
+
+.headline p {
+    margin-bottom: 5px;
+}
+
+.law-data-output {
+    display: flex;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.pane {
+  overflow: auto;
+  padding: 0 10px;
+  z-index: 98;
+  height: 100%;
+  background-color: #fff;
+}
+
+.divider {
+  width: 5px;
+  background-color: #888;
+  cursor: col-resize;
+}
+
+.divider::after {
+  width: 20px;
+  height: 200%;
+}
+
+
+.law-title {
+    margin-bottom: 0px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+}
+.law-num{
+    padding-left: 10px;
+}
+.law-content{
+    padding: 0px; 
+}
+.xml-EnactStatement{
+    display: block;
+}
+.xml-PartTitle, .xml-ChapterTitle, .xml-SectionTitle, .xml-SubsectionTitle, .xml-DivisionTitle, .xml-SupplProvisionLabel {
+    display: block;
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.xml-Paragraph{
+    display: block;
+    margin-left: 1em;
+    text-indent: -1em;
+    margin-bottom: 0.25em;
+}
+.xml-Item{
+    display:block;
+    margin-left: 1em;
+    text-indent: -1em;
+}
+[class^="xml-Subitem"]:not([class*="Title"]):not([class*="Sentence"]){
+    display:block;
+    margin-left: 1em;
+    text-indent: -1em;
+}
+.xml-ArticleCaption, .xml-ParagraphCaption, .xml-ArticleTitle, .xml-ParagraphNum, .xml-ItemTitle{
+    font-weight: bold;
+}
+[class^="xml-Subitem"][class*="Title"]{
+    font-weight: bold;
+}
+.xml-ListSentence{
+    display: block;
+}
+
+.xml-Sentence .popup-text {
+    visibility: hidden;
+    text-indent: 0;
+    background-color: #eee;
+    border: 1px solid #333;
+    color: #006;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 999;
+    margin-top: 5px; /* Small margin to avoid overlap */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+item{
+    display: block;
+    margin-left: 1em;
+    text-indent: -1em;
+}
+itemtitle{
+    font-weight: bold;
+}
+.lawDataTable{
+    border-collapse: collapse;
+}
+.lawDataTable td{
+    border: 1px solid #000;
+}
+.theme-colorful .xml-Sentence .annotation.lv1 {
+    color:#1f77b4;
+}
+.theme-colorful .xml-Sentence .annotation.lv2 {
+    color:#ff7f0e;
+}
+.theme-colorful .xml-Sentence .annotation.lv3 {
+    color:#2ca02c;
+}
+.theme-colorful .xml-Sentence .annotation.lv4 {
+    color:#d62728;
+}
+.theme-colorful .xml-Sentence .annotation.lv5 {
+    color:#9467bd;
+}
+.theme-none .xml-Sentence .annotation {
+    color:#eeeeee;
+}

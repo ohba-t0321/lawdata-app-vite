@@ -1,0 +1,784 @@
+[
+    {
+        "ref": {
+            "lawNum": "昭和二十五年総理府令第十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "17_2",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第二条（第一号、第四号、第八号、第十号、第十一号及び第十四号から第十六号までを除く。）に規定する漁業に従事する船舶。"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "漁業法（以下「法」という。）第三十六条第一項の農林水産省令で定める漁業は、次に掲げるものとする。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "6",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "沖合底びき網漁業（漁業許可省令第二条第一号に掲げる漁業をいう。）のうち、北緯四十三度の線以北、東経百三十九度の線以東の太平洋の海域を操業区域とするもの"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "沖合底びき網漁業別表第一の当該漁業の項の中欄に掲げる海域において総トン数十五トン（別表第二の当該漁業の項の下欄に掲げる海域においてほたてがいをとることを目的とする場合にあっては、総トン数二十トン）以上の動力漁船（法第六十条第六項に規定する動力漁船をいう。以下同じ。）により底びき網を使用して行う漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "6",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "以西底びき網漁業（漁業許可省令第二条第二号に掲げる漁業をいう。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "以西底びき網漁業別表第一の当該漁業の項の中欄に掲げる海域において総トン数十五トン以上の動力漁船により底びき網を使用して行う漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和四十九年大蔵省・農林省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "以西底びき網漁業（漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号。以下「漁業許可省令」という。）第二条第二号に掲げる漁業をいう。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "以西底びき網漁業別表第一の当該漁業の項の中欄に掲げる海域において総トン数十五トン以上の動力漁船により底びき網を使用して行う漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "遠洋底びき網漁業（漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号。以下「漁業許可省令」という。）第二条第三号に掲げる漁業をいう。以下同じ。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "遠洋底びき網漁業別表第一の当該漁業の項の中欄に掲げる海域において総トン数十五トン以上の動力漁船により底びき網を使用して行う漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "6",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "大中型まき網漁業（漁業許可省令第二条第七号に掲げる漁業をいう。）のうち、北緯二十一度の線以北、東経百四十度の線以東、東経百七十九度の線以西の太平洋の海域（オホーツク海及び日本海の海域を除く。）を操業区域とするもの、北緯二十一度の線以北、東経百三十二度の線以東、東経百三十五度の線以西の太平洋の海域（日本海の海域を除く。）を操業区域とするもの並びに島根県と山口県の最大高潮時海岸線における境界点北西の線以南の日本海、黄海、東シナ海及び南シナ海の海域を操業区域とするもの"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "7"
+            },
+            "text": "大中型まき網漁業総トン数四十トン（別表第二の当該漁業の項の下欄に掲げる海域にあっては、総トン数十五トン）以上の動力漁船によりまき網を使用して行う漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和四十九年大蔵省・農林省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "大中型まき網漁業（漁業許可省令第二条第七号に掲げる漁業をいう。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "7"
+            },
+            "text": "大中型まき網漁業総トン数四十トン（別表第二の当該漁業の項の下欄に掲げる海域にあっては、総トン数十五トン）以上の動力漁船によりまき網を使用して行う漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和三十九年農林省令第三十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "43_2",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第二条第八号に掲げる基地式捕鯨業"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "8"
+            },
+            "text": "基地式捕鯨業動力漁船によりもりづつを使用して鯨をとる漁業（次号に掲げるものを除く。）"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和三十九年農林省令第三十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "43_2",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "漁業の許可及び取締り等に関する省令第二条第九号に掲げる母船式捕鯨業"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "9"
+            },
+            "text": "母船式捕鯨業製造設備、冷蔵設備その他の処理設備を有する母船及び独航船が一体となって行う漁業であって、もりづつを使用して鯨をとるもの"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和三十二年大蔵省令第十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "32",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "施行令第四十五条第二項に規定する財務省令で定める船舶は、東経百十八度及び東経百五十九度の線並びに北緯二十度及び北緯四十五度の線で囲まれた海域を除く海域において行う漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第二条第九号に規定する母船式捕鯨業に従事する母船、独航船、運搬船及び補給船とする。"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "9"
+            },
+            "text": "母船式捕鯨業製造設備、冷蔵設備その他の処理設備を有する母船及び独航船が一体となって行う漁業であって、もりづつを使用して鯨をとるもの"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十九年総理府令第二十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "8_3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "政令第三十九条の十に規定する総務省令で定める船舶は、東経百十八度及び東経百五十九度の線並びに北緯二十度及び北緯四十五度の線で囲まれた海域を除く海域において行う漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第二条第九号に規定する母船式捕鯨業に従事する母船、独航船、運搬船及び補給船とする。"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "9"
+            },
+            "text": "母船式捕鯨業製造設備、冷蔵設備その他の処理設備を有する母船及び独航船が一体となって行う漁業であって、もりづつを使用して鯨をとるもの"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和四十一年大蔵省令第五十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第二十一条（船用品を外国貨物のまま積み込むことができる遠洋漁業船等の指定）に規定する財務省令で定める船舶は、東経百十八度及び東経百五十九度の線並びに北緯二十度及び北緯四十五度の線で囲まれた海域を除く海域において行う漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第二条第九号（大臣許可漁業の種類）に規定する母船式捕鯨業に従事する母船、独航船、運搬船及び補給船とする。"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "9"
+            },
+            "text": "母船式捕鯨業製造設備、冷蔵設備その他の処理設備を有する母船及び独航船が一体となって行う漁業であって、もりづつを使用して鯨をとるもの"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "かつお・まぐろ漁業（漁業許可省令第二条第十二号に掲げる漁業をいう。以下同じ。）のうち総トン数百二十トン以上の動力漁船によるもの"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "12"
+            },
+            "text": "かつお・まぐろ漁業総トン数十トン（別表第二の当該漁業の項の下欄に掲げる海域にあっては、総トン数二十トン）以上の動力漁船により、浮きはえ縄を使用して又は釣りによってかつお、まぐろ、かじき又はさめをとることを目的とする漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和四十九年大蔵省・農林省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "かつお・まぐろ漁業（漁業許可省令第二条第十二号に掲げる漁業（総トン数十トン以上二十トン未満の動力漁船によるものを除く。）をいう。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "12"
+            },
+            "text": "かつお・まぐろ漁業総トン数十トン（別表第二の当該漁業の項の下欄に掲げる海域にあっては、総トン数二十トン）以上の動力漁船により、浮きはえ縄を使用して又は釣りによってかつお、まぐろ、かじき又はさめをとることを目的とする漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "6",
+                "paragraph": "1",
+                "item": "6"
+            },
+            "text": "中型さけ・ます流し網漁業（漁業許可省令第二条第十三号に掲げる漁業をいう。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "13"
+            },
+            "text": "中型さけ・ます流し網漁業総トン数三十トン以上の動力漁船により流し網を使用してさけ又はますをとることを目的とする漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和四十九年大蔵省・農林省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "北太平洋さんま漁業（漁業許可省令第二条第十四号に掲げる漁業をいう。）"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "14"
+            },
+            "text": "北太平洋さんま漁業別表第一の当該漁業の項の中欄に掲げる海域において総トン数十トン以上の動力漁船により棒受網を使用してさんまをとることを目的とする漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号。以下「省令」という。）第十一条の規定による起業の認可の変更の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "11",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "起業の認可を受けた者が、その起業の認可を受けた船舶の総トン数、操業区域、漁業時期又は漁具の種類その他の漁業の方法を変更しようとするときは、農林水産大臣の許可を受けなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第十七条第一項の許可証の書換え交付の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "17",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "許可を受けた者は、許可証の記載事項に変更が生じたとき（第十九条第二号から第六号までに掲げる場合を除く。）は、速やかに、農林水産大臣に許可証の書換え交付を申請しなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第十八条の許可証の再交付の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "18",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "許可を受けた者は、許可証を亡失し、又は毀損したときは、速やかに、理由を付して農林水産大臣に許可証の再交付を申請しなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第二十七条第四号（省令第二十八条において準用する場合及び省令第五十九条において適用する場合を含む。）の規定による漁獲物又はその製品の転載の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "27",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "農林水産大臣が当該漁獲物又はその製品の鮮度の保持のため必要があると認めてあらかじめ許可した場合"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第二十七条第四号（省令第二十八条において準用する場合及び省令第五十九条において適用する場合を含む。）の規定による漁獲物又はその製品の転載の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "28",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "前条（第二号括弧書を除く。）の規定は、以西底びき網漁業について準用する。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十九年総理府令第二十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "11_2",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "漁業法（昭和二十四年法律第二百六十七号）第三十六条第一項の規定による許可に係る船舶（次項において「許可に係る船舶」という。）又は漁業の許可及び取締り等に関する省令第四十条の規定による届出をして漁獲物を輸送する船舶（第四号及び次項において「運搬船」という。）であつて総トン数九十トン以上五百トン未満のもの"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "40",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "大中型まき網漁業者は、当該漁業の漁獲物を、当該漁獲物を採捕した船舶以外の船舶（以下この項において「運搬船」という。）により輸送する場合には、あらかじめ、当該許可に係る船舶ごとに、別記様式第四号の運搬船届出書に次に掲げる書類を添え、農林水産大臣に届け出なければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十九年総理府令第二十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "11_2",
+                "paragraph": "2",
+                "item": "0"
+            },
+            "text": "法第三百四十九条の三第四項に規定する外航船舶に準ずるものとして総務省令で定める船舶は、許可に係る船舶、運搬船並びに漁業の許可及び取締り等に関する省令第四十一条の規定による届出をして使用する火船及び魚探船で、総トン数四十五トン以上九十トン未満のものとする。"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "41",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "大中型まき網漁業者は、当該漁業に火船又は魚探船を使用する場合には、当該許可に係る船舶ごとに、あらかじめ、別記様式第五号の火船等届出書に次に掲げる書類を添え、農林水産大臣に届け出なければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第四十五条第一項の規定による鯨体処理場の使用又はその変更の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "45",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "基地式捕鯨業者は、当該基地式捕鯨業の許可に係る船舶ごとに、その使用する鯨体処理場について農林水産大臣の許可を受けなければならない。これを変更する場合も、同様とする。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第四十七条の規定による漁獲物又はその製品の輸送の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "47",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "母船式捕鯨業の許可を受けた者（以下「母船式捕鯨業者」という。）は、当該母船式捕鯨業の許可に係る母船及び独航船以外の船舶によって当該母船式捕鯨業の漁獲物又はその製品を輸送する場合には、農林水産大臣の許可を受けなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "省令第二十七条第四号（省令第二十八条において準用する場合及び省令第五十九条において適用する場合を含む。）の規定による漁獲物又はその製品の転載の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "59",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "かつお・まぐろ漁業者は、第二十七条各号（総トン数百二十トン未満の動力漁船を使用する者にあっては、第二号を除く。）のいずれかに該当する場合を除き、当該漁業の漁獲物又はその製品を、当該漁獲物を採捕し、又は当該製品を製造した船舶から他の船舶に転載してはならない。ただし、別表第八の上欄に掲げる港内又は海域において転載する場合であって、それぞれ同表の下欄に定めるところにより転載するときは、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十一年農林省令第二十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "6",
+                "paragraph": "1",
+                "item": "7"
+            },
+            "text": "小型さけ・ます流し網漁業（漁業許可省令第七十条第四号に掲げる漁業をいう。以下同じ。）のうち、日本海の海域のみを操業区域とするもの"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "70",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "小型さけ・ます流し網漁業総トン数三十トン未満の動力漁船により流し網を使用してさけ又はますをとることを目的とする漁業"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成九年総理府令第五十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第九十条"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "90",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "南緯六十度の線以南の海域においては、農林水産大臣が別に定めて告示するあざらし及びおつとせいを猟獲してはならない。ただし、農林水産大臣が南極のあざらしの保存に関する条約の実施上支障がないと認めて許可をした場合は、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "省令第九十条の規定によるあざらし及びおつとせいの猟獲に係る許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "90",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "南緯六十度の線以南の海域においては、農林水産大臣が別に定めて告示するあざらし及びおつとせいを猟獲してはならない。ただし、農林水産大臣が南極のあざらしの保存に関する条約の実施上支障がないと認めて許可をした場合は、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成九年総理府令第五十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "漁業の許可及び取締り等に関する省令第九十一条"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "91",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "基地式捕鯨業者及び母船式捕鯨業者以外の者は、ひげ鯨及びまっこう鯨（この条及び次条において「ひげ鯨等」という。）を捕獲してはならない。ただし、基地式捕鯨業及び母船式捕鯨業以外の漁業であって農林水産大臣が別に定めて告示するものの操業中に混獲した場合並びに座礁し、又は漂着したひげ鯨等であって農林水産大臣が別に定めて告示するものを捕獲した場合は、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成九年総理府令第五十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "漁業の許可及び取締り等に関する省令第九十三条"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "93",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "基地式捕鯨業者以外の者は、歯鯨（まっこう鯨を除く。以下この条において同じ。）を捕獲してはならない。ただし、歯鯨（いしいるか（りくぜんいるか型いしいるかを含む。）、かまいるか、すじいるか、はんどういるか（ばんどういるか）、まだらいるか（あらりいるか）、はなごんどう、こびれごんどう（まごんどう）、おきごんどう、しわはいるか又はかずはごんどうに限る。）をとることを目的とする漁業についての法第五十七条第一項又は第百十九条第一項の規定による都道府県知事の許可を受けて捕獲する場合は、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十九年農林省令第七十二号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "鯨油又は国内真珠の製造の用に供する事業場が鯨体処理場（漁業の許可及び取締り等に関する省令（昭和三十八年農林省令第五号）第百九条の鯨体処理場をいう。）又は国内真珠の穴明け作業のみを行なう事業場である場合"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "109",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "鯨体処理場を設置し、又はその設備を変更しようとする者は、鯨体処理場ごとに、農林水産大臣の許可を受けなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "省令第百九条第一項の規定による鯨体処理場の設置の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "109",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "鯨体処理場を設置し、又はその設備を変更しようとする者は、鯨体処理場ごとに、農林水産大臣の許可を受けなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十五年農林省令第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "省令第百九条第一項の規定による鯨体処理場の設備の変更の許可の申請"
+        },
+        "referred": {
+            "lawNum": "昭和三十八年農林省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "109",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "鯨体処理場を設置し、又はその設備を変更しようとする者は、鯨体処理場ごとに、農林水産大臣の許可を受けなければならない。"
+        },
+        "match": "★引用個所不明★"
+    }
+]
