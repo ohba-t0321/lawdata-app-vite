@@ -444,7 +444,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   };
 
   async function fetchRefData(pane:'left'|'right',lawId:string) {
-    fetch(`/public/ref_json/${lawId}.json`)
+    fetch(`/ref_json/${lawId}.json`)
     .then(res => res.json())
     .then(data => {
         setRefData({...refData, [pane]:data})
