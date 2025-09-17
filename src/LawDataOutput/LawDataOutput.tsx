@@ -1,4 +1,4 @@
-import React,{ useContext } from 'react';
+import React,{ useContext,useMemo } from 'react';
 import './LawDataOutput.css';
 import { DividerContext } from '../DiviserContext';
 import { LawArticleContext, ReferenceContext } from '../LawDataContext';
@@ -44,6 +44,8 @@ export const LawDataOutput = () => {
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
     }
+    const leftArticle = useMemo(()=>isArticleLoaded.left&&lawArticle.left.law_full_text&&getChildren('left',lawArticle.left.law_full_text as LawNode,null,null,null,null,null),[isArticleLoaded.left,lawArticle.left.law_full_text]);
+    const rightArticle = useMemo(()=>isArticleLoaded.right&&lawArticle.right.law_full_text&&getChildren('right',lawArticle.right.law_full_text as LawNode,null,null,null,null,null),[isArticleLoaded.right,lawArticle.right.law_full_text])
   return (
     <div className="main-content">
       {/* Main content goes here */}
@@ -63,7 +65,7 @@ export const LawDataOutput = () => {
               {isArticleLoaded.left&&lawArticle.left.law_info?"）":""}
             </div>
             <div className="law-content left">
-              {isArticleLoaded.left&&lawArticle.left.law_full_text&&getChildren('left',lawArticle.left.law_full_text as LawNode,null,null,null,null,null)}
+              {leftArticle}
             </div>
         </div>
         <div className="divider" onMouseDown={handleMouseDown} />
@@ -77,7 +79,7 @@ export const LawDataOutput = () => {
               {isArticleLoaded.right&&lawArticle.right.law_info?"）":""}
             </div>
             <div className="law-content right">
-              {isArticleLoaded.right&&lawArticle.right.law_full_text && getChildren('right',lawArticle.right.law_full_text as LawNode,null,null,null,null,null)}
+              {rightArticle}
             </div>
         </div>
       </div>

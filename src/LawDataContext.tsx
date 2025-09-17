@@ -444,10 +444,11 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   };
 
   async function fetchRefData(pane:'left'|'right',lawId:string) {
-    fetch(`/ref_json/${lawId}.json`)
+    const BASE = import.meta.env.BASE_URL;
+    fetch(`${BASE}ref_json/${lawId}.json`)
     .then(res => res.json())
     .then(data => {
-        setRefData({...refData, [pane]:data})
+        setRefData({...refData, [pane]:data});
   })
     .catch(err => console.error("参照データ取得エラー:", err));
   };
@@ -570,8 +571,28 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
                     refTextData = refData[pane] && refData[pane].filter((data:RefData) => {
                       return data.match&& 
                       data.referred?.lawArticle && (data.referred?.lawArticle.provision === 'MainProvision'|| data.referred?.lawArticle.provision === 'SupplProvision') &&
-                      data.referred?.lawArticle.article == articleNo?.toString() &&
-                      data.referred?.lawArticle.paragraph == paragraphNo?.toString()
+                      data.referred?.lawArticle.article === articleNo?.toString() &&
+                      data.referred?.lawArticle.paragraph === paragraphNo?.toString() &&
+                      data.referred?.lawArticle.item === itemNo?.toString() &&
+                      itemNo?.toString() === "0"
+                    });
+                  }
+                  return(
+                      <span className={`xml-${json.tag}`} data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`}>
+                          {returnNode}
+                          {(json.tag.indexOf('Num')>0 || json.tag.indexOf('Title')>0 )?'　':''}
+                          {refTextData&&<LinkifyNoMatch refTextData={refTextData}/>}
+                      </span>);
+              } else if (json.tag === 'Item') {
+                  let refTextData: RefData[]|undefined;
+                  if (pane === 'left'||pane === 'right') {
+                    refTextData = refData[pane] && refData[pane].filter((data:RefData) => {
+                      return data.match&& 
+                      data.referred?.lawArticle && (data.referred?.lawArticle.provision === 'MainProvision'|| data.referred?.lawArticle.provision === 'SupplProvision') &&
+                      data.referred?.lawArticle.article === articleNo?.toString() &&
+                      data.referred?.lawArticle.paragraph === paragraphNo?.toString() &&
+                      data.referred?.lawArticle.item === itemNo?.toString() &&
+                      itemNo?.toString() !== "0"
                     });
                   }
                   return(
