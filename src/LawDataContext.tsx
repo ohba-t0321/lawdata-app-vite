@@ -262,13 +262,12 @@ const LinkifyWithLawText: React.FC<{children: React.ReactNode,refLawTitle:refLaw
   const synonym = refLawTitle.synonymList;
   let regex: RegExp
   refLawTitle.lawTitleList.forEach(lawNum=>{
-    const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0];
+    const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0]?.current_revision_info?.law_title;
     regex = new RegExp('(?:' + law + (synonym[lawNum]? '|' + synonym[lawNum] : '') + ')' + '(?:<span class=".*?">（(?:' + lawNum + ')?。?(?:以下<span class=".*?">「[^「]*?」</span>という。)?）</span>)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?' , 'g');
     let regexExec = [...fullText.matchAll(regex)];
     if (regexExec&&(regexExec?.length>0)){
       regexExec.forEach((e,i)=>{
         const { before: beforeNodes, match: matchNodes, after: afterNodes } = splitNodes(loopingChildren, {pos:0}, e.index, e.index+e[0].length);
-        console.log(matchNodes);
         loopingChildren = (
           <React.Fragment key={i}>
             {beforeNodes}
@@ -457,12 +456,14 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       if (cached && isSameDateInJapan(now, (cached as LawDataCache).timestamp)) {
         setLawArticle({...lawArticle, [pane]:(cached as LawDataCache).lawArticle})
         setIsArticleLoaded({...isArticleLoaded, [pane]:true});
+        setRefLawTitle({...refLawTitle,[pane]:getRefLaw((cached as LawDataCache).lawArticle)})
       } else {
       fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`)
         .then(res => res.json())
         .then(data => {
             setLawArticle({...lawArticle, [pane]:data})
             saveLawToCache(lawId,data)
+            setRefLawTitle({...refLawTitle,[pane]:getRefLaw(data)})
           })
         .catch(err => console.error("APIからの法令データ取得エラー:", err))
         .finally(() => {
@@ -488,8 +489,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     .catch(err => console.error("参照データ取得エラー:", err));
   };
 
-  function getRefLaw(pane:'left'|'right') {
-    const article = lawArticle[pane];
+  function getRefLaw(article:LawArticle) {
     let lawList:any;
     if (article.law_full_text){
       lawList = searchLawData(article.law_full_text);
@@ -519,7 +519,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       なお、「第○条」のところは「第○条の○」となるケースもあるため、それに対応している
       法律によっては第○条の○条の○…と続くことがあるが、それは対応が難しいので非対応
       */
-      const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0];
+      const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0]?.current_revision_info?.law_title;
       const synonymRegex = new RegExp(law + '（以下「(.*?)」という。）' , 'g');
       lawList.forEach((text:any)=>{
         let match:RegExpExecArray|null;
@@ -532,7 +532,8 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
         }
       });
     });
-    setRefLawTitle({...refLawTitle,[pane]:{lawTitleList:refLaw,synonymList:synonym}});
+    console.log(refLaw,synonym);
+    return {lawTitleList:refLaw,synonymList:synonym};
   };
 
   function searchLawData(json : any): any[] {
@@ -573,18 +574,6 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
         setLawArticle({...lawArticle,right:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
       }
   }, [selectedLaws.right]);
-  useEffect(()=>{
-    if (lawArticle.left){
-      getRefLaw('left');
-      console.log(refLawTitle.left);
-    }
-  },[lawArticle.left])
-  useEffect(()=>{
-    if (lawArticle.right){
-      getRefLaw('right');
-      console.log(refLawTitle.right);
-    }
-  },[lawArticle.right])
 
   // LawFullTextのchildrenをHTMLに変換
   const getChildren = (
