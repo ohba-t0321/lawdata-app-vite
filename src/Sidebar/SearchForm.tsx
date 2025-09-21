@@ -141,7 +141,7 @@ const SearchForm: React.FC = () => {
                       });
                       setIsArticleLoaded({
                         ...isArticleLoaded,
-                        [outputFrame]:false,
+                        [outputFrame]:row.original.law_info.law_num===selectedLaws[outputFrame],
                       });
                       if ((outputFrame==='left'&&dividerPos<50)||(outputFrame==='right'&&dividerPos>50)) {
                         setDividerPos(50);

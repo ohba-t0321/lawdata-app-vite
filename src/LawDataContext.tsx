@@ -1,7 +1,8 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, Children } from "react";
 import type { ReactNode } from "react";
 import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from './indexedDB'
 import type { LawListCache,LawDataCache } from "./indexedDB";
+import kanjiToNumber from './assets/KanjiToNumber'
 export interface LawData {
   law_info: any;
   revision_info: any;
@@ -13,7 +14,10 @@ interface LawDataContextType {
   isDataLoaded: boolean;
   fetchLawData: () => Promise<void>;
 }
-
+export interface refLawTitleList {
+  lawTitleList: string[];
+  synonymList: { [key: string]: string };
+}
 export interface LawArticle {
   law_info:Object | null;
   revision_info:Object | null;
@@ -48,6 +52,7 @@ interface LawArticleContextType {
   setLawArticle: (lawArticle: {left:LawArticle, right:LawArticle})=> void;
   isArticleLoaded: {left:boolean, right:boolean};
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
+  refLawTitle:{left:refLawTitleList,right:refLawTitleList};
   fetchLawArticle: (pane:'left'|'right',lawId:string) => Promise<void>;
   getChildren: (pane:'left'|'right'|'ref',
                 json : LawNode|string, 
@@ -213,7 +218,6 @@ const LinkifyWithWrap: React.FC<{children: React.ReactNode, refTextData: RefData
   // ノードを文字列化（装飾付きspanでも中のテキストは拾える）
   const fullText = flattenText(loopingChildren);
   refTextData = Array.from(new Set(refTextData)); // 重複削除
-  // let refTextDataNomatch = refTextData.filter(data => data.match==="★引用個所不明★"); // マッチしないものを抽出
   refTextData = refTextData.filter(data => data.match&&data.match !== "★引用個所不明★"); // マッチするものだけ抽出
   // マッチするテキストがあるものを先に処理する
   refTextData.sort((a,b)=>{
@@ -247,19 +251,37 @@ const LinkifyWithWrap: React.FC<{children: React.ReactNode, refTextData: RefData
     }
   });
   return (<>{loopingChildren}</>)
-  // if (refTextDataNomatch.length === 0) return (<>{loopingChildren}</>);
-  // let noMatchLink:React.ReactNode = <>{'★引用条文★'}</>;
-  // refTextDataNomatch.forEach((data:RefData,i)=>{
-  //   if (data.match) {
-  //     noMatchLink = (
-  //       <span className="refLink" data-law-num={data.ref?.lawNum} data-provision={data.ref?.lawArticle.provision} data-article={data.ref?.lawArticle.article} data-paragraph={data.ref?.lawArticle.paragraph} key={i}>
-  //         {noMatchLink}
-  //       </span>
-  //     );
-  //   }
-  // });
-  // console.log('No match link added:', noMatchLink);
-  // return (<>{loopingChildren}{noMatchLink}</>);
+}
+
+const LinkifyWithLawText: React.FC<{children: React.ReactNode,refLawTitle:refLawTitleList|undefined}> = ({children, refLawTitle}) => {
+  const { lawData } = useContext(LawDataContext);
+  if (!refLawTitle) return (<>{children}</>);
+  if (refLawTitle.lawTitleList.length===0) return (<>{children}</>);
+  let loopingChildren: React.ReactNode = children;
+  const fullText = flattenText(loopingChildren);
+  const synonym = refLawTitle.synonymList;
+  let regex: RegExp
+  refLawTitle.lawTitleList.forEach(lawNum=>{
+    const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0];
+    regex = new RegExp('(?:' + law + (synonym[lawNum]? '|' + synonym[lawNum] : '') + ')' + '(?:<span class=".*?">（(?:' + lawNum + ')?。?(?:以下<span class=".*?">「[^「]*?」</span>という。)?）</span>)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?' , 'g');
+    let regexExec = [...fullText.matchAll(regex)];
+    if (regexExec&&(regexExec?.length>0)){
+      regexExec.forEach((e,i)=>{
+        const { before: beforeNodes, match: matchNodes, after: afterNodes } = splitNodes(loopingChildren, {pos:0}, e.index, e.index+e[0].length);
+        console.log(matchNodes);
+        loopingChildren = (
+          <React.Fragment key={i}>
+            {beforeNodes}
+            <span className="refLink" data-law-num={lawNum} data-provision={e[1]?'SupplProvision':'MainProvision'} data-article={(e[2]?kanjiToNumber(e[2]):0)+(e[3]?`_${kanjiToNumber(e[3])}`:'')} data-paragraph={kanjiToNumber(e[4])}>
+              {matchNodes}
+            </span>
+            {afterNodes}
+          </React.Fragment>
+        );
+      });
+    }
+  });
+  return (<>{loopingChildren}</>)
 }
 
 const LinkifyNoMatch: React.FC<{refTextData: RefData[]}> = ({refTextData}) => {
@@ -282,7 +304,7 @@ const LinkifyNoMatch: React.FC<{refTextData: RefData[]}> = ({refTextData}) => {
   return (<>{noMatchLink}</>);
 }
 
-const ProcessDelay: React.FC<{children: React.ReactNode, refTextData: RefData[]}> = ({children, refTextData}) => {
+const ProcessDelay: React.FC<{children: React.ReactNode, refTextData: RefData[],refLawTitle:refLawTitleList|undefined}> = ({children, refTextData,refLawTitle}) => {
   const [processed, setProcessed] = useState<React.ReactNode>(children);
   const ref = React.useRef(null);
   let loopingChildren: React.ReactNode = children;
@@ -291,11 +313,18 @@ const ProcessDelay: React.FC<{children: React.ReactNode, refTextData: RefData[]}
       if (entry.isIntersecting) {
         observer.disconnect();
         if (refTextData.length === 0) {
-          loopingChildren = <BracketHighlighter>{loopingChildren}</BracketHighlighter>;
+          loopingChildren = (
+            <BracketHighlighter>
+              <LinkifyWithLawText refLawTitle={refLawTitle}>
+                {loopingChildren}
+              </LinkifyWithLawText>
+            </BracketHighlighter>);
         } else {
         loopingChildren = (
           <BracketHighlighter>
-            <LinkifyWithWrap children={loopingChildren} refTextData={refTextData} />
+            <LinkifyWithLawText refLawTitle={refLawTitle}>
+              <LinkifyWithWrap children={loopingChildren} refTextData={refTextData} />
+            </LinkifyWithLawText>
           </BracketHighlighter>
         );}
         setProcessed(loopingChildren);
@@ -341,6 +370,7 @@ export const LawArticleContext = createContext<LawArticleContextType>({
   setLawArticle: () => {},
   isArticleLoaded: {left:false, right:false},
   setIsArticleLoaded: () => {},
+  refLawTitle: {left:{lawTitleList:[],synonymList:{}},right:{lawTitleList:[],synonymList:{}}},
   fetchLawArticle: async () => {},
   getChildren: () => { return (<></>); },
 });
@@ -399,6 +429,7 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
+  const { lawData } = useContext(LawDataContext);
   const [selectedLaws, setSelectedLaws] = useState<{left: string | null, right: string | null}>({
     left: null,
     right: null
@@ -414,6 +445,10 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   const [refData, setRefData] = useState<{left:RefData[],right:RefData[]}>({
    left: [],
    right: [], 
+  });
+  const [refLawTitle, setRefLawTitle] = useState<{left:refLawTitleList,right:refLawTitleList}>({
+    left:{lawTitleList:[],synonymList:{}},
+    right:{lawTitleList:[],synonymList:{}},
   });
   async function fetchLawArticle(pane:'left'|'right',lawId:string) {
     try {
@@ -453,27 +488,107 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     .catch(err => console.error("参照データ取得エラー:", err));
   };
 
+  function getRefLaw(pane:'left'|'right') {
+    const article = lawArticle[pane];
+    let lawList:any;
+    if (article.law_full_text){
+      lawList = searchLawData(article.law_full_text);
+    } else {
+      lawList = [];
+    }
+    const refLaw = new Set();
+    const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
+    const synonym: { [key: string]: string } = {};
+    lawList.forEach((text:any) => {
+      let match:RegExpExecArray|null;
+      while ((match = regex.exec(text)) !== null) {
+        if (match[1]){
+          refLaw.add(match[1]);
+          if (match[2]){
+            synonym[match[1]] = match[2];
+          }
+        }
+      };
+    });
+    refLaw.forEach(lawNum => {
+      /*
+      法令の参照では以下の記述となっていることが多いので、正規表現で該当するところを取得した。
+      [法令名が初めて現れる場合]：(法令名)（元号○○年法律/政令/...第○号）第○条第○項
+      [法令名が初めて現れる場合で、法令を省略する場合](法令名)（元号○○年法律/政令/...第○号。以下「○○法」という。）第○条第○項
+      [法令名が2回目以降の場合](法令名もしくは略称名)第○条第○項
+      なお、「第○条」のところは「第○条の○」となるケースもあるため、それに対応している
+      法律によっては第○条の○条の○…と続くことがあるが、それは対応が難しいので非対応
+      */
+      const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0];
+      const synonymRegex = new RegExp(law + '（以下「(.*?)」という。）' , 'g');
+      lawList.forEach((text:any)=>{
+        let match:RegExpExecArray|null;
+        while ((match = synonymRegex.exec(text)) !== null) {
+          if (match[1]){
+            if (typeof(lawNum)=='string'&&!(synonym[lawNum])){ //附則で改正法令によって上書きしていることがあるため、最初に出てきたものを優先する
+              synonym[lawNum] = match[1];
+            }
+          }
+        }
+      });
+    });
+    setRefLawTitle({...refLawTitle,[pane]:{lawTitleList:refLaw,synonymList:synonym}});
+  };
+
+  function searchLawData(json : any): any[] {
+    const lawList:any[] = [];
+    if(json.children){
+      json.children.forEach((item:any) => {
+        if (typeof(item) === 'string') {
+          lawList.push(item);
+        } else if (typeof(item) === 'object' && item.children) {
+          let subItem = searchLawData(item);
+          if (subItem) {
+            subItem.forEach(sub => {
+              lawList.push(sub);
+            });
+          }
+        }
+      });
+      return lawList;
+    } else {
+      return [];
+    }
+  };
+
   // ID が変わったら API 取得
   useEffect(() => {
       if (selectedLaws.left) {
-        fetchLawArticle('left',selectedLaws.left)
-        fetchRefData('left',selectedLaws.left)
+        fetchLawArticle('left',selectedLaws.left);
+        fetchRefData('left',selectedLaws.left);
       } else {
-        setLawArticle({...lawArticle,left:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}})
+        setLawArticle({...lawArticle,left:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
       }
   }, [selectedLaws.left]);
   useEffect(() => {
       if (selectedLaws.right) {
-        fetchLawArticle('right',selectedLaws.right)
-        fetchRefData('right',selectedLaws.right)
+        fetchLawArticle('right',selectedLaws.right);
+        fetchRefData('right',selectedLaws.right);
       } else {
-        setLawArticle({...lawArticle,right:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}})
+        setLawArticle({...lawArticle,right:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
       }
   }, [selectedLaws.right]);
+  useEffect(()=>{
+    if (lawArticle.left){
+      getRefLaw('left');
+      console.log(refLawTitle.left);
+    }
+  },[lawArticle.left])
+  useEffect(()=>{
+    if (lawArticle.right){
+      getRefLaw('right');
+      console.log(refLawTitle.right);
+    }
+  },[lawArticle.right])
 
   // LawFullTextのchildrenをHTMLに変換
   const getChildren = (
-    pane: 'left' | 'right'|'ref',
+    pane: 'left'|'right'|'ref',
     json : LawNode|string, 
     provision : string|number|null = 'MainProvision', 
     articleNo : number|string|null = 0, 
@@ -486,6 +601,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
           return (<>{json + "（" + provision + "）"}</>);
         } else if (json!='') {
           let refTextData: RefData[]|undefined;
+          let refLaw: refLawTitleList|undefined;
           if (pane === 'left'||pane === 'right') {
             refTextData = refData[pane] && refData[pane].filter((data:RefData) => {
               return data.match&& 
@@ -494,8 +610,9 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
               data.referred?.lawArticle.paragraph == paragraphNo?.toString() &&
               data.referred?.lawArticle.item == itemNo?.toString()
             });
+            refLaw = refLawTitle[pane];
           }
-          return(<ProcessDelay children={json} refTextData={refTextData || []}/>);
+          return(<ProcessDelay children={json} refTextData={refTextData || []} refLawTitle={refLaw || undefined}/>);
         }
       } else {
           // 属性が目次以前の場合は省略
@@ -613,7 +730,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, lawArticle, setLawArticle,isArticleLoaded, setIsArticleLoaded, fetchLawArticle, getChildren }}>
+    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded, refLawTitle, fetchLawArticle, getChildren }}>
       {children}
     </LawArticleContext.Provider>
   );
