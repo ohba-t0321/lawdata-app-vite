@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';  
+import React, { useState, useContext, useEffect } from 'react';
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import type { ColumnDef } from '@tanstack/react-table';
 import { DividerContext } from '../DiviserContext';

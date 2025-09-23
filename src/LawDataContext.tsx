@@ -1,8 +1,10 @@
-import React, { createContext, useContext, useState, useEffect, Children } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
+import { useSearchParams } from 'react-router-dom';
 import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from './indexedDB'
 import type { LawListCache,LawDataCache } from "./indexedDB";
 import kanjiToNumber from './assets/KanjiToNumber'
+import { DividerContext } from './DiviserContext';
 export interface LawData {
   law_info: any;
   revision_info: any;
@@ -263,7 +265,7 @@ const LinkifyWithLawText: React.FC<{children: React.ReactNode,refLawTitle:refLaw
   let regex: RegExp
   refLawTitle.lawTitleList.forEach(lawNum=>{
     const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0]?.current_revision_info?.law_title;
-    regex = new RegExp('(?:' + law + (synonym[lawNum]? '|' + synonym[lawNum] : '') + ')' + '(?:<span class=".*?">（(?:' + lawNum + ')?。?(?:以下<span class=".*?">「[^「]*?」</span>という。)?）</span>)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?' , 'g');
+    regex = new RegExp('(?:' + law + (synonym[lawNum]? '|' + synonym[lawNum] : '') + ')' + '(?:（(?:' + lawNum + ')?。?(?:以下「[^「]*?」という。)?）)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?' , 'g');
     let regexExec = [...fullText.matchAll(regex)];
     if (regexExec&&(regexExec?.length>0)){
       regexExec.forEach((e,i)=>{
@@ -313,18 +315,18 @@ const ProcessDelay: React.FC<{children: React.ReactNode, refTextData: RefData[],
         observer.disconnect();
         if (refTextData.length === 0) {
           loopingChildren = (
-            <BracketHighlighter>
-              <LinkifyWithLawText refLawTitle={refLawTitle}>
+            <LinkifyWithLawText refLawTitle={refLawTitle}>
+              <BracketHighlighter>
                 {loopingChildren}
-              </LinkifyWithLawText>
-            </BracketHighlighter>);
+              </BracketHighlighter>
+            </LinkifyWithLawText>);
         } else {
         loopingChildren = (
-          <BracketHighlighter>
-            <LinkifyWithLawText refLawTitle={refLawTitle}>
+          <LinkifyWithLawText refLawTitle={refLawTitle}>
+            <BracketHighlighter>
               <LinkifyWithWrap children={loopingChildren} refTextData={refTextData} />
-            </LinkifyWithLawText>
-          </BracketHighlighter>
+            </BracketHighlighter>
+          </LinkifyWithLawText>
         );}
         setProcessed(loopingChildren);
       }
@@ -428,18 +430,27 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const leftLawTitle = searchParams.get('left')||'';
+  const rightLawTitle = searchParams.get('right')||'';
+  const { dividerPos,setDividerPos } = useContext(DividerContext)
+  if (rightLawTitle!==''){
+    if (dividerPos>=95){
+      setDividerPos(50);
+    }
+  }
   const { lawData } = useContext(LawDataContext);
+  const [isArticleLoaded, setIsArticleLoaded] = useState<{left:boolean, right:boolean}>({
+    left: leftLawTitle !=='',
+    right: rightLawTitle !=='',
+  });
   const [selectedLaws, setSelectedLaws] = useState<{left: string | null, right: string | null}>({
-    left: null,
-    right: null
+    left: leftLawTitle,
+    right: rightLawTitle
   });
   const [lawArticle, setLawArticle] = useState<{left:LawArticle,right:LawArticle}>({
     left: {law_info:null,revision_info:null,law_full_text:null,attached_files_info:null},
     right: {law_info:null,revision_info:null,law_full_text:null,attached_files_info:null},  
-  });
-  const [isArticleLoaded, setIsArticleLoaded] = useState<{left:boolean, right:boolean}>({
-    left: false,
-    right: false,
   });
   const [refData, setRefData] = useState<{left:RefData[],right:RefData[]}>({
    left: [],
@@ -532,7 +543,6 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
         }
       });
     });
-    console.log(refLaw,synonym);
     return {lawTitleList:refLaw,synonymList:synonym};
   };
 
@@ -562,16 +572,36 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       if (selectedLaws.left) {
         fetchLawArticle('left',selectedLaws.left);
         fetchRefData('left',selectedLaws.left);
+        setSearchParams(prev => {
+          const newParams = new URLSearchParams(prev);
+          newParams.set('left', selectedLaws.left || '');
+          return newParams;
+        });
       } else {
         setLawArticle({...lawArticle,left:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
+        setSearchParams(prev => {
+          const newParams = new URLSearchParams(prev);
+          newParams.delete('left');
+          return newParams;
+        });
       }
   }, [selectedLaws.left]);
   useEffect(() => {
       if (selectedLaws.right) {
         fetchLawArticle('right',selectedLaws.right);
         fetchRefData('right',selectedLaws.right);
+        setSearchParams(prev => {
+          const newParams = new URLSearchParams(prev);
+          newParams.set('right', selectedLaws.right || '');
+          return newParams;
+        });
       } else {
         setLawArticle({...lawArticle,right:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
+        setSearchParams(prev => {
+          const newParams = new URLSearchParams(prev);
+          newParams.delete('right');
+          return newParams;
+        });
       }
   }, [selectedLaws.right]);
 
