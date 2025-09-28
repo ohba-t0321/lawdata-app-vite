@@ -465,20 +465,20 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       let cached = await getLawFromCache(lawId);
       const now = Date.now();
       if (cached && isSameDateInJapan(now, (cached as LawDataCache).timestamp)) {
-        setLawArticle({...lawArticle, [pane]:(cached as LawDataCache).lawArticle})
-        setIsArticleLoaded({...isArticleLoaded, [pane]:true});
-        setRefLawTitle({...refLawTitle,[pane]:getRefLaw((cached as LawDataCache).lawArticle)})
+        setLawArticle(prev=>({...prev, [pane]:(cached as LawDataCache).lawArticle}))
+        setRefLawTitle(prev=>({...prev,[pane]:getRefLaw((cached as LawDataCache).lawArticle)}))
+        setIsArticleLoaded(prev=>({...prev, [pane]:true}));
       } else {
       fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`)
         .then(res => res.json())
         .then(data => {
-            setLawArticle({...lawArticle, [pane]:data})
+            setLawArticle(prev=>({...prev, [pane]:data}))
             saveLawToCache(lawId,data)
-            setRefLawTitle({...refLawTitle,[pane]:getRefLaw(data)})
+            setRefLawTitle(prev=>({...prev,[pane]:getRefLaw(data)}))
           })
         .catch(err => console.error("APIからの法令データ取得エラー:", err))
         .finally(() => {
-          setIsArticleLoaded({...isArticleLoaded, [pane]:true});
+          setIsArticleLoaded(prev=>({...prev, [pane]:true}));
         });
       }
     } catch (err) {
@@ -495,7 +495,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     fetch(`${BASE}ref_json/${lawId}.json`)
     .then(res => res.json())
     .then(data => {
-        setRefData({...refData, [pane]:data});
+        setRefData(prev=>({...prev, [pane]:data}));
   })
     .catch(err => console.error("参照データ取得エラー:", err));
   };
@@ -567,43 +567,39 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  async function lawArticleInit(pane:'left'|'right') {
+    if (selectedLaws[pane]) {
+      fetchLawArticle(pane,selectedLaws[pane]);
+      fetchRefData(pane,selectedLaws[pane]);
+      setSearchParams(prev => {
+        const newParams = new URLSearchParams(prev);
+        newParams.set(pane, selectedLaws[pane] || '');
+        return newParams;
+      });
+    } else {
+      setLawArticle(prev=>({...prev,[pane]:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}}));
+      setSearchParams(prev => {
+        const newParams = new URLSearchParams(prev);
+        newParams.delete(pane);
+        return newParams;
+      });
+    }
+  }
+  
   // ID が変わったら API 取得
   useEffect(() => {
-      if (selectedLaws.left) {
-        fetchLawArticle('left',selectedLaws.left);
-        fetchRefData('left',selectedLaws.left);
-        setSearchParams(prev => {
-          const newParams = new URLSearchParams(prev);
-          newParams.set('left', selectedLaws.left || '');
-          return newParams;
-        });
-      } else {
-        setLawArticle({...lawArticle,left:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
-        setSearchParams(prev => {
-          const newParams = new URLSearchParams(prev);
-          newParams.delete('left');
-          return newParams;
-        });
+    async function updateLawArticle() {
+      if ((!lawArticle.left.law_info)||(lawArticle.left&&selectedLaws.left !==(lawArticle.left.law_info as any).law_num)) {
+        setIsArticleLoaded(prev=>({...prev, left:false}));
+        await lawArticleInit('left');
       }
-  }, [selectedLaws.left]);
-  useEffect(() => {
-      if (selectedLaws.right) {
-        fetchLawArticle('right',selectedLaws.right);
-        fetchRefData('right',selectedLaws.right);
-        setSearchParams(prev => {
-          const newParams = new URLSearchParams(prev);
-          newParams.set('right', selectedLaws.right || '');
-          return newParams;
-        });
-      } else {
-        setLawArticle({...lawArticle,right:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null}});
-        setSearchParams(prev => {
-          const newParams = new URLSearchParams(prev);
-          newParams.delete('right');
-          return newParams;
-        });
+      if ((!lawArticle.right.law_info)||(lawArticle.left&&selectedLaws.right !==(lawArticle.right.law_info as any).law_num)) {
+        setIsArticleLoaded(prev=>({...prev, right:false}));
+        await lawArticleInit('right');
       }
-  }, [selectedLaws.right]);
+    }
+    updateLawArticle();
+  }, [selectedLaws]);
 
   // LawFullTextのchildrenをHTMLに変換
   const getChildren = (

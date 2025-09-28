@@ -71,6 +71,7 @@ export const LawDataOutput = () => {
         <div className="divider" onMouseDown={handleMouseDown} />
         <div className="pane right" style={{ width: `${(100 - dividerPos)}%` }}>
             <h3 className="law-title right">
+              {!isArticleLoaded.right&&selectedLaws.right&&"データ取得中..."}
               {isArticleLoaded.right&&lawArticle.right.revision_info&&getLawTitle(lawArticle.right.revision_info)}
             </h3>
             <div className="law-num right">
