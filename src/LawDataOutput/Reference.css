@@ -40,8 +40,8 @@
     cursor: pointer;
     text-decoration: underline;
 }
-.refLink.sentenceLast{
-    /* font-size: 0.9em; */
+.refSentence{
+    font-size: 0.9em;
     color: #999;
 }
 #ref-article-num {

@@ -292,11 +292,11 @@ const LinkifyNoMatch: React.FC<{refTextData: RefData[]}> = ({refTextData}) => {
   // マッチするテキストがあるものを先に処理する
 
   if (refTextDataNomatch.length === 0) return (<></>);
-  let noMatchLink:React.ReactNode = <>{'★引用条文★'}</>;
+  let noMatchLink:React.ReactNode = <span className="refSentence">{'★引用条文★'}</span>;
   refTextDataNomatch.forEach((data:RefData,i)=>{
     if (data.match) {
       noMatchLink = (
-        <span className="refLink sentenceLast" data-law-num={data.ref?.lawNum} data-provision={data.ref?.lawArticle.provision} data-article={data.ref?.lawArticle.article} data-paragraph={data.ref?.lawArticle.paragraph} key={i}>
+        <span className="refLink" data-law-num={data.ref?.lawNum} data-provision={data.ref?.lawArticle.provision} data-article={data.ref?.lawArticle.article} data-paragraph={data.ref?.lawArticle.paragraph} key={i}>
           {noMatchLink}
         </span>
       );
@@ -571,7 +571,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     if (selectedLaws[pane]) {
       fetchLawArticle(pane,selectedLaws[pane]);
       fetchRefData(pane,selectedLaws[pane]);
-      setSearchParams(prev => {
+      setSearchParams((prev) => {
         const newParams = new URLSearchParams(prev);
         newParams.set(pane, selectedLaws[pane] || '');
         return newParams;
@@ -589,11 +589,13 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   // ID が変わったら API 取得
   useEffect(() => {
     async function updateLawArticle() {
-      if ((!lawArticle.left.law_info)||(lawArticle.left&&selectedLaws.left !==(lawArticle.left.law_info as any).law_num)) {
+      let lawNumLeft = (!lawArticle.left.law_info)? '' : (lawArticle.left.law_info as any).law_num;
+      let lawNumRight = (!lawArticle.right.law_info)? '' : (lawArticle.right.law_info as any).law_num;
+      if (selectedLaws.left !==lawNumLeft) {
         setIsArticleLoaded(prev=>({...prev, left:false}));
         await lawArticleInit('left');
       }
-      if ((!lawArticle.right.law_info)||(lawArticle.left&&selectedLaws.right !==(lawArticle.right.law_info as any).law_num)) {
+      if (selectedLaws.right !==lawNumRight) {
         setIsArticleLoaded(prev=>({...prev, right:false}));
         await lawArticleInit('right');
       }
