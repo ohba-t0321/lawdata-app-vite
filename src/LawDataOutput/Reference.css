@@ -40,9 +40,9 @@
     cursor: pointer;
     text-decoration: underline;
 }
-.refLink.small-text{
-    font-size: calc(1em - 1pt);
-    color: #666;
+.refLink.sentenceLast{
+    /* font-size: 0.9em; */
+    color: #999;
 }
 #ref-article-num {
     font-weight: bold;

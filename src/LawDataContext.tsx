@@ -296,7 +296,7 @@ const LinkifyNoMatch: React.FC<{refTextData: RefData[]}> = ({refTextData}) => {
   refTextDataNomatch.forEach((data:RefData,i)=>{
     if (data.match) {
       noMatchLink = (
-        <span className="refLink" data-law-num={data.ref?.lawNum} data-provision={data.ref?.lawArticle.provision} data-article={data.ref?.lawArticle.article} data-paragraph={data.ref?.lawArticle.paragraph} key={i}>
+        <span className="refLink sentenceLast" data-law-num={data.ref?.lawNum} data-provision={data.ref?.lawArticle.provision} data-article={data.ref?.lawArticle.article} data-paragraph={data.ref?.lawArticle.paragraph} key={i}>
           {noMatchLink}
         </span>
       );
@@ -601,6 +601,42 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     updateLawArticle();
   }, [selectedLaws]);
 
+  const ChunkedChildren: React.FC<{  
+    pane: 'left'|'right'|'ref',  
+    children: (LawNode | string)[],  
+    provision: string|number|null,  
+    articleNo: number|string|null,  
+    paragraphNo: number|string|null,  
+    itemNo: number|string|null,  
+    articleTitle: number|string|null,  
+    chunkSize?: number  
+  }> = ({ pane, children, provision, articleNo, paragraphNo, itemNo, articleTitle, chunkSize = 5 }) => {  
+    const [renderedCount, setRenderedCount] = useState(chunkSize);  
+    const { getChildren } = useContext(LawArticleContext);  
+    
+    useEffect(() => {  
+      if (renderedCount < children.length) {  
+        const timer = setTimeout(() => {  
+          setRenderedCount(prev => Math.min(prev + chunkSize, children.length));  
+        }, 16); // 次のフレームで実行  
+        return () => clearTimeout(timer);  
+      }  
+    }, [renderedCount, children.length, chunkSize]);  
+    
+    return (  
+      <>  
+        {children.slice(0, renderedCount).map((child, idx) => (  
+          <React.Fragment key={idx}>  
+            {getChildren(pane, child, provision, articleNo, paragraphNo, itemNo, articleTitle)}  
+          </React.Fragment>  
+        ))}  
+        {renderedCount < children.length && (  
+          <div style={{ opacity: 0.5 }}>読み込み中...</div>  
+        )}  
+      </>  
+    );  
+  };
+
   // LawFullTextのchildrenをHTMLに変換
   const getChildren = (
     pane: 'left'|'right'|'ref',
@@ -672,11 +708,28 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
               } else if (subitemNode.indexOf(json.tag) >= 0) {
                   itemNo += '-' + (json.attr && json.attr.Num ? json.attr.Num : 0);
               }
-              const returnNode = (
-                  <>
-                      {json.children?.map((j,idx)=>(<React.Fragment key={idx}>{getChildren(pane,j,provision,articleNo,paragraphNo,itemNo,articleTitle)}</React.Fragment>))}
-                  </>
-              )
+              const returnNode = (  
+                <>  
+                  {json.children && json.children.length > 10 ? (  
+                    <ChunkedChildren  
+                      pane={pane}  
+                      children={json.children}  
+                      provision={provision}  
+                      articleNo={articleNo}  
+                      paragraphNo={paragraphNo}  
+                      itemNo={itemNo}  
+                      articleTitle={articleTitle}  
+                      chunkSize={5}  
+                    />  
+                  ) : (  
+                    json.children?.map((j, idx) => (  
+                      <React.Fragment key={idx}>  
+                        {getChildren(pane, j, provision, articleNo, paragraphNo, itemNo, articleTitle)}  
+                      </React.Fragment>  
+                    ))  
+                  )}  
+                </>  
+              );
               //属性の情報を付加
               let tagAttr = '';
               Object.entries(json.attr || {}).forEach(([key, value]) => {
