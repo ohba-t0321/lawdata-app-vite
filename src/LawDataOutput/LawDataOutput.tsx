@@ -19,12 +19,62 @@ const getLawNum = (json:any):any => {
     }
 }
 
+// Propの型定義
+interface LawPaneProps {
+  pane: 'left' | 'right'; // 左右の識別子
+  width: number; // ペインの幅（パーセント）
+}
+
+export const LawPane: React.FC<LawPaneProps> = ({
+  pane,
+  width,
+}) => {
+  // 1. タイトル部分の条件を明確化
+  const { selectedLaws, lawArticle, isArticleLoaded, getChildren } = useContext(LawArticleContext);
+  const isLoaded = isArticleLoaded[pane];
+  const isSelected = !!selectedLaws[pane];
+  const lawData = lawArticle[pane];
+  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawArticle[pane].law_full_text&&getChildren(pane,lawArticle[pane].law_full_text as LawNode),[isArticleLoaded[pane],lawArticle.left.law_full_text]);
+  const title = isLoaded && lawData?.revision_info
+    ? getLawTitle(lawData.revision_info)
+    : (!isLoaded && isSelected ? "データ取得中..." : ""); // データ取得中
+
+  // 2. 法令番号部分の条件を明確化
+  const lawInfo = lawData?.law_info;
+  const lawNum = isLoaded && lawInfo ? getLawNum(lawInfo) : null;
+  
+  // 3. スタイルの設定
+  const paneStyle = { width: `${width}%` };
+
+
+  return (
+    <div className={`pane ${pane}`} style={paneStyle}>
+      {/* 共通ロジック：h3 */}
+      <h3 className={`law-title ${pane}`}>
+        {title}
+      </h3>
+      
+      {/* 共通ロジック：法令番号 */}
+      <div className={`law-num ${pane}`}>
+        {lawNum ? (
+          <>
+            <span>（{lawNum}）</span>
+          </>
+        ) : null}
+      </div>
+      
+      {/* 共通ロジック：本文 */}
+      <div className={`law-content ${pane}`}>
+        {articleContent}
+      </div>
+    </div>
+  );
+};
 
 
 export const LawDataOutput = () => {
     
     const { dividerPos, setDividerPos} = useContext(DividerContext);
-    const { selectedLaws, lawArticle, isArticleLoaded, getChildren } = useContext(LawArticleContext);
     const { refLinkClick } = useContext(ReferenceContext);
     function handleMouseDown(e: React.MouseEvent<HTMLDivElement>) {
       e.preventDefault();
@@ -44,8 +94,7 @@ export const LawDataOutput = () => {
       document.addEventListener("mousemove", onMouseMove);
       document.addEventListener("mouseup", onMouseUp);
     }
-    const leftArticle = useMemo(()=>isArticleLoaded.left&&lawArticle.left.law_full_text&&getChildren('left',lawArticle.left.law_full_text as LawNode,null,null,null,null,null),[isArticleLoaded.left,lawArticle.left.law_full_text]);
-    const rightArticle = useMemo(()=>isArticleLoaded.right&&lawArticle.right.law_full_text&&getChildren('right',lawArticle.right.law_full_text as LawNode,null,null,null,null,null),[isArticleLoaded.right,lawArticle.right.law_full_text])
+
   return (
     <div className="main-content">
       {/* Main content goes here */}
@@ -54,35 +103,21 @@ export const LawDataOutput = () => {
         法令を検索した後に該当する条文を右クリックすると、その条のテキストをクリップボードにコピーできます。</p>
       </div>
       <div className="law-data-output" id="main-container" onClick={refLinkClick}>
-        <div className="pane left" style={{ width: `${dividerPos}%` }}>
-            <h3 className="law-title left">
-              {!isArticleLoaded.left&&selectedLaws.left&&"データ取得中..."}
-              {isArticleLoaded.left&&lawArticle.left.revision_info&&getLawTitle(lawArticle.left.revision_info)}
-            </h3>
-            <div className="law-num left">
-              {isArticleLoaded.left&&lawArticle.left.law_info?"（":""}
-              <span>{isArticleLoaded.left&&lawArticle.left.law_info&&getLawNum(lawArticle.left.law_info)}</span>
-              {isArticleLoaded.left&&lawArticle.left.law_info?"）":""}
-            </div>
-            <div className="law-content left">
-              {leftArticle}
-            </div>
-        </div>
-        <div className="divider" onMouseDown={handleMouseDown} />
-        <div className="pane right" style={{ width: `${(100 - dividerPos)}%` }}>
-            <h3 className="law-title right">
-              {!isArticleLoaded.right&&selectedLaws.right&&"データ取得中..."}
-              {isArticleLoaded.right&&lawArticle.right.revision_info&&getLawTitle(lawArticle.right.revision_info)}
-            </h3>
-            <div className="law-num right">
-              {isArticleLoaded.right&&lawArticle.right.law_info?"（":""}
-              <span>{isArticleLoaded.right&&lawArticle.right.law_info&&getLawNum(lawArticle.right.law_info)}</span>
-              {isArticleLoaded.right&&lawArticle.right.law_info?"）":""}
-            </div>
-            <div className="law-content right">
-              {rightArticle}
-            </div>
-        </div>
+
+      {/* 左ペイン */}
+      <LawPane
+        pane="left"
+        width={dividerPos}
+      />
+      
+      {/* 仕切り（Divider） */}
+      <div className="divider" onMouseDown={handleMouseDown} />
+      
+      {/* 右ペイン */}
+      <LawPane
+        pane="right"
+        width={100 - dividerPos}
+      />
       </div>
       <Reference />
     </div>

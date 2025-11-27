@@ -134,7 +134,7 @@ const SearchForm: React.FC = () => {
                 </thead>
                 <tbody>
                   {table.getRowModel().rows.map(row => (
-                    <tr key={row.original.law_info.law_num} onDoubleClick={(e) => {
+                    <tr key={row.original.law_info.law_num+":"+row.original.current_revision_info.law_title} onDoubleClick={(e) => {
                       setSelectedLaws({
                         ...selectedLaws,
                         [outputFrame]:row.original.law_info.law_num,

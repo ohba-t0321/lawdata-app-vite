@@ -16,10 +16,10 @@ function App() {
                 {/* ヘッダー */}
                 <Header />
                 <div className="content">
-                  <Sidebar />
-                  <ReferenceProvider> 
-                    <LawDataOutput />
-                  </ReferenceProvider> 
+                    <Sidebar />
+                    <ReferenceProvider> 
+                      <LawDataOutput />
+                    </ReferenceProvider> 
                 </div>
               </LawArticleProvider>
             </LawDataProvider>

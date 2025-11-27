@@ -18,10 +18,6 @@ function FrameSettings() {
         { label: '薄くする', value: 'colorful' },
         { label: '消去する', value: 'none' }
     ];
-    // const [selectedRadio, setSelectedRadio] = useState(radioButtons[0].value);
-    // const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setSelectedRadio(e.target.value);
-    // }
     const { selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded } = useContext(LawArticleContext);
     const { setDividerPos } = useContext(DividerContext)
     const { theme,setTheme } = useContext(ThemeContext);
@@ -40,10 +36,9 @@ function FrameSettings() {
             ...isArticleLoaded,
             [pane]:false,
         })
-        // const frame = document.querySelector(`.pane.${pane}`);
-        // if (frame) {
-        //     frame.innerHTML = '';
-        // }
+        if (pane === 'right') {
+            setDividerPos(99)
+        }
     }
 
     return (
@@ -54,17 +49,17 @@ function FrameSettings() {
             <div className={`content-wrapper${isOpen ? ' open' : ''}`}>
                 <div id="clearwindow">
                     フレームのクリア：
-                    <button type="submit" 
+                    <button type="button" 
                             className="btn-outline-secondary btn-sm" 
                             id="left-clear" 
                             onClick={()=>clearFrame('left')}
                     >
                         左側
                     </button>
-                    <button type="submit" 
+                    <button type="button" 
                             className="btn-outline-secondary btn-sm" 
                             id="right-clear" 
-                            onClick={() => {clearFrame('right');setDividerPos && setDividerPos(99)}}
+                            onClick={() => {clearFrame('right')}}
                     >
                         右側
                     </button>

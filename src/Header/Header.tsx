@@ -2,9 +2,9 @@ import './Header.css'
 
 const Header = () => {  
   return (  
-    <header>  
+    <header>
       <h1>法令検索アプリ</h1>  
-    </header>  
+    </header>
   );  
 };  
   

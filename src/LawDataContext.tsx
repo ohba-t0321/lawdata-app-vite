@@ -1,10 +1,13 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useRef,useMemo } from "react";
 import type { ReactNode } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from './indexedDB'
 import type { LawListCache,LawDataCache } from "./indexedDB";
 import kanjiToNumber from './assets/KanjiToNumber'
 import { DividerContext } from './DiviserContext';
+
+type Pane = 'left' | 'right';
+
 export interface LawData {
   law_info: any;
   revision_info: any;
@@ -55,14 +58,8 @@ interface LawArticleContextType {
   isArticleLoaded: {left:boolean, right:boolean};
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
   refLawTitle:{left:refLawTitleList,right:refLawTitleList};
-  fetchLawArticle: (pane:'left'|'right',lawId:string) => Promise<void>;
-  getChildren: (pane:'left'|'right'|'ref',
-                json : LawNode|string, 
-                provision : string|number|null, 
-                articleNo : number|string|null, 
-                paragraphNo : number|string|null, 
-                itemNo : number|string|null, 
-                articleTitle : number|string|null) => React.ReactNode;
+  fetchLawArticle: (pane:Pane,lawId:string) => Promise<void>;
+  getChildren: (pane:Pane|'ref', json:LawNode|string) => React.ReactNode;
 }
 
 export interface RefArticle {
@@ -216,11 +213,15 @@ function BracketHighlighter( {children} : Props ) : React.ReactNode[] {
 };
 
 const LinkifyWithWrap: React.FC<{children: React.ReactNode, refTextData: RefData[]}> = ({children, refTextData}) => {
+  if (refTextData.length>0){
+    console.log(children, refTextData)
+  }
   let loopingChildren: React.ReactNode = children;
   // ノードを文字列化（装飾付きspanでも中のテキストは拾える）
   const fullText = flattenText(loopingChildren);
   refTextData = Array.from(new Set(refTextData)); // 重複削除
   refTextData = refTextData.filter(data => data.match&&data.match !== "★引用個所不明★"); // マッチするものだけ抽出
+
   // マッチするテキストがあるものを先に処理する
   refTextData.sort((a,b)=>{
     if (a.match && b.match) {
@@ -398,10 +399,11 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
           setLawData((cached as LawListCache).data);
       } else {
         try {
-          let res = await fetch("https://laws.e-gov.go.jp/api/2/laws?limit=1"); // 1件取得して件数を確認
+          // 勅令(ImperialOrder)は引用しないため除外
+          let res = await fetch("https://laws.e-gov.go.jp/api/2/laws?law_type=Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc&limit=1"); // 1件取得して件数を確認
           const total_count = await res.json().then(data => data.total_count);
             if (total_count > 0) {
-                res = await fetch(`https://laws.e-gov.go.jp/api/2/laws?limit=${total_count}`); // 全件取得
+                res = await fetch(`https://laws.e-gov.go.jp/api/2/laws?law_type=Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc&limit=${total_count}`); // 全件取得
             }
           const data: LawData[] = await res.json().then(data => data.laws);
           setLawData(data);
@@ -429,16 +431,65 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const leftLawTitle = searchParams.get('left')||'';
-  const rightLawTitle = searchParams.get('right')||'';
-  const { dividerPos,setDividerPos } = useContext(DividerContext)
-  if (rightLawTitle!==''){
-    if (dividerPos>=95){
-      setDividerPos(50);
+/** 仮想ノード型 */
+export type VNode = 
+  | VText  // 文字列ノード
+  | VElement; // タグ付きノード
+
+/** テキストノード */
+export interface VText {
+  type: "text";
+  value: string;
+}
+
+/** タグ付きノード */
+export interface VElement {
+  readonly type: "element";
+  readonly tag: string;
+  readonly attr?: Readonly<Record<string, any>>;
+  readonly children: readonly VNode[];
+}
+interface JsonNode {
+  tag: string;
+  attr?: Record<string, any>;
+  children: (JsonNode | string)[];
+}
+
+function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
+  const normalized: Record<string, any> = {};
+  // 特定のキーとその変換後の値を定義したマッピングオブジェクト
+  const specialKeyMap: { [key: string]: string } = {
+    rowspan: 'rowSpan',
+    colspan: 'colSpan',
+    WritingMode: 'writingMode', // 例: 'writingMode' のように完全一致でマッピング
+    // 'writingmode' がキーとして渡ってくる場合も考慮するなら以下を追加
+    // writingmode: 'writingMode',
+  };
+
+  for (const key in attr) {
+    let lowerKey: string;
+
+    if (Object.prototype.hasOwnProperty.call(attr, key)) {
+      // 1. マッピングオブジェクトにキーが存在するかチェックする
+      lowerKey = key in specialKeyMap ? specialKeyMap[key] : key.toLowerCase();
+      normalized[lowerKey] = attr[key];
     }
   }
+  return normalized;
+}
+
+export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
+const [searchParams, setSearchParams] = useSearchParams();
+  const { dividerPos,setDividerPos } = useContext(DividerContext)
+  let leftLawTitle = searchParams.get('left')||'';
+  let rightLawTitle = searchParams.get('right')||'';
+  useEffect(() => {
+    if (rightLawTitle!==''){
+      if (dividerPos>=95){
+        setDividerPos(50);
+      }
+    }
+  },[]);
   const { lawData } = useContext(LawDataContext);
   const [isArticleLoaded, setIsArticleLoaded] = useState<{left:boolean, right:boolean}>({
     left: leftLawTitle !=='',
@@ -460,11 +511,13 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     left:{lawTitleList:[],synonymList:{}},
     right:{lawTitleList:[],synonymList:{}},
   });
-  async function fetchLawArticle(pane:'left'|'right',lawId:string) {
+  async function fetchLawArticle(pane:Pane,lawId:string) {
     try {
       let cached = await getLawFromCache(lawId);
       const now = Date.now();
       if (cached && isSameDateInJapan(now, (cached as LawDataCache).timestamp)) {
+          // console.log(buildVirtualTree((cached as LawDataCache).lawArticle.law_full_text as JsonNode)); // デバッグ用
+          // console.log('法令データをAPIから取得しました:', lawId);
         setLawArticle(prev=>({...prev, [pane]:(cached as LawDataCache).lawArticle}))
         setRefLawTitle(prev=>({...prev,[pane]:getRefLaw((cached as LawDataCache).lawArticle)}))
         setIsArticleLoaded(prev=>({...prev, [pane]:true}));
@@ -472,6 +525,8 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`)
         .then(res => res.json())
         .then(data => {
+            // console.log(buildVirtualTree(data.law_full_text)); // デバッグ用
+            // console.log('法令データをAPIから取得しました:', lawId);
             setLawArticle(prev=>({...prev, [pane]:data}))
             saveLawToCache(lawId,data)
             setRefLawTitle(prev=>({...prev,[pane]:getRefLaw(data)}))
@@ -490,7 +545,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  async function fetchRefData(pane:'left'|'right',lawId:string) {
+  async function fetchRefData(pane:Pane,lawId:string) {
     const BASE = import.meta.env.BASE_URL;
     fetch(`${BASE}ref_json/${lawId}.json`)
     .then(res => res.json())
@@ -567,7 +622,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  async function lawArticleInit(pane:'left'|'right') {
+  async function lawArticleInit(pane:Pane) {
     if (selectedLaws[pane]) {
       fetchLawArticle(pane,selectedLaws[pane]);
       fetchRefData(pane,selectedLaws[pane]);
@@ -586,208 +641,217 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     }
   }
   
-  // ID が変わったら API 取得
+  // ID が変わったら API 取得、URL パラメータ更新
   useEffect(() => {
     async function updateLawArticle() {
-      let lawNumLeft = (!lawArticle.left.law_info)? '' : (lawArticle.left.law_info as any).law_num;
-      let lawNumRight = (!lawArticle.right.law_info)? '' : (lawArticle.right.law_info as any).law_num;
-      if (selectedLaws.left !==lawNumLeft) {
-        setIsArticleLoaded(prev=>({...prev, left:false}));
-        await lawArticleInit('left');
-      }
-      if (selectedLaws.right !==lawNumRight) {
-        setIsArticleLoaded(prev=>({...prev, right:false}));
-        await lawArticleInit('right');
-      }
+      (['left','right'] as Pane[]).forEach((pane)=>{
+        const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
+        if ((selectedLaws[pane] ?? '') !== lawNumPane) {
+          console.log(pane , 'が変わった')
+          setIsArticleLoaded(prev=>({...prev, [pane]:false}));
+          lawArticleInit(pane);
+        }
+        if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
+          console.log(`${pane}のURLパラメータを更新 変更前:${searchParams.get(pane)} 変更後:${lawNumPane}`);
+          setSearchParams((prev) => {
+            const newParams = new URLSearchParams(prev);
+            if (lawNumPane !== '' ) {
+              newParams.set(pane, lawNumPane || '');
+            } else {
+              newParams.delete(pane);
+            }
+            return newParams;
+          });
+        }
+      });
     }
     updateLawArticle();
   }, [selectedLaws]);
+  useEffect(() => {
+    (['left','right'] as Pane[]).forEach((pane)=>{
+      const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
+      if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
+        setSearchParams((prev) => {
+          const newParams = new URLSearchParams(prev);
+          if (lawNumPane !== '' ) {
+            newParams.set(pane, lawNumPane || '');
+          } else {
+            newParams.delete(pane);
+          }
+          return newParams;
+        });
+      } 
+    });
+  }, [lawArticle]);
 
-  // const ChunkedChildren: React.FC<{  
-  //   pane: 'left'|'right'|'ref',  
-  //   children: (LawNode | string)[],  
-  //   provision: string|number|null,  
-  //   articleNo: number|string|null,  
-  //   paragraphNo: number|string|null,  
-  //   itemNo: number|string|null,  
-  //   articleTitle: number|string|null,  
-  //   chunkSize?: number  
-  // }> = ({ pane, children, provision, articleNo, paragraphNo, itemNo, articleTitle, chunkSize = 5 }) => {  
-  //   const [renderedCount, setRenderedCount] = useState(chunkSize);  
-  //   const { getChildren } = useContext(LawArticleContext);  
-    
-  //   useEffect(() => {  
-  //     if (renderedCount < children.length) {  
-  //       const timer = setTimeout(() => {  
-  //         setRenderedCount(prev => Math.min(prev + chunkSize, children.length));  
-  //       }, 16); // 次のフレームで実行  
-  //       return () => clearTimeout(timer);  
-  //     }  
-  //   }, [renderedCount, children.length, chunkSize]);  
-    
-  //   return (  
-  //     <>  
-  //       {children.slice(0, renderedCount).map((child, idx) => (  
-  //         <React.Fragment key={idx}>  
-  //           {getChildren(pane, child, provision, articleNo, paragraphNo, itemNo, articleTitle)}  
-  //         </React.Fragment>  
-  //       ))}  
-  //       {renderedCount < children.length && (  
-  //         <div style={{ opacity: 0.5 }}>読み込み中...</div>  
-  //       )}  
-  //     </>  
-  //   );  
-  // };
+  function buildVirtualTree(json: JsonNode | string): VNode {
+    if (typeof json === "string") {
+      return { type: "text", value: json };
+    }
+
+    // const { tag, attr = {}, children = [] } = json;
+    const tag = json.tag;
+    const attr = normalizeAttrKeys(json.attr ?? {});
+    const children = json.children ?? [];
+    return {
+      type: "element",
+      tag,
+      attr,
+      children: children.map(buildVirtualTree),
+    };
+  }
+
 
   // LawFullTextのchildrenをHTMLに変換
   const getChildren = (
-    pane: 'left'|'right'|'ref',
-    json : LawNode|string, 
-    provision : string|number|null = 'MainProvision', 
-    articleNo : number|string|null = 0, 
-    paragraphNo : number|string|null = 0, 
-    itemNo : number|string|null = 0, 
-    articleTitle : number|string|null = '') : any => {
-      if (typeof(json)==='string'){
-        // テキストが「附則」の場合は、法令番号を付加
-        if (json.replace(/\s/g,'')==='附則' && provision != 'SupplProvision') {
-          return (<>{json + "（" + provision + "）"}</>);
-        } else if (json!='') {
-          let refTextData: RefData[]|undefined;
-          let refLaw: refLawTitleList|undefined;
-          if (pane === 'left'||pane === 'right') {
-            refTextData = refData[pane] && refData[pane].filter((data:RefData) => {
-              return data.match&& 
-              data.referred?.lawArticle && (data.referred?.lawArticle.provision === 'MainProvision'|| data.referred?.lawArticle.provision === 'SupplProvision') &&
-              data.referred?.lawArticle.article == articleNo?.toString() &&
-              data.referred?.lawArticle.paragraph == paragraphNo?.toString() &&
-              data.referred?.lawArticle.item == itemNo?.toString()
-            });
-            refLaw = refLawTitle[pane];
-          }
-          return(<ProcessDelay children={json} refTextData={refTextData || []} refLawTitle={refLaw || undefined}/>);
-        }
-      } else {
-          // 属性が目次以前の場合は省略
-          if (json.tag !='LawTitle' && json.tag !='LawNum' && json.tag !='TOC') {
-              // Articleタグの場合は、ArticleTitleを取得(第○条の記載が格納されている)
-              if (json.tag === 'Article'){
-                  json.children?.filter(c=>typeof(c) != "string" && (c.tag === 'ArticleTitle')).forEach(c=>{
-                      if (typeof(c) != "string" && c.children && c.children?.length > 0) {
-                          if (typeof(c.children[0]) === 'string'){articleTitle = c.children[0];}
-                      } else {
-                          articleTitle = '';
-                      }
-                  });
-              }
-              /*
-              各法令の条文に対して、「第〇条第〇項第〇号」という情報を付加していく
-              各ノードの子ノードに情報を継承させる
-              */
-              if (json.tag === 'MainProvision') {
-                  provision = 'MainProvision';
-                  articleNo = 0;
-                  paragraphNo = 0;
-                  itemNo = 0;
-              } else if (json.tag === 'SupplProvision') {
-                  if (json.attr && json.attr.AmendLawNum) {
-                      provision = json.attr.AmendLawNum;
-                  } else {
-                      provision = 'SupplProvision';
-                  }
-                  articleNo = 0;
-                  paragraphNo = 0;
-                  itemNo = 0;
-              } else if (json.tag === 'Article') {
-                  articleNo = json.attr && json.attr.Num ? json.attr.Num : 0;
-                  paragraphNo = 0;
-                  itemNo = 0;
-              } else if (json.tag === 'Paragraph') {
-                  paragraphNo = json.attr && json.attr.Num ? json.attr.Num : 0;
-                  itemNo = 0;
-              } else if (json.tag === 'Item') {
-                  itemNo = json.attr && json.attr.Num ? json.attr.Num : 0;
-              } else if (subitemNode.indexOf(json.tag) >= 0) {
-                  itemNo += '-' + (json.attr && json.attr.Num ? json.attr.Num : 0);
-              }
-              const returnNode = (  
-                <>  
-                  {   
-                    json.children?.map((j, idx) => (  
-                      <React.Fragment key={idx}>  
-                        {getChildren(pane, j, provision, articleNo, paragraphNo, itemNo, articleTitle)}  
-                      </React.Fragment>  
-                    ))  
-                  }  
-                </>  
-              );
-              //属性の情報を付加
-              let tagAttr = '';
-              Object.entries(json.attr || {}).forEach(([key, value]) => {
-                  tagAttr += ` ${key}="${value}"`;
-              });
-              tagAttr += ` data-article="${provision}-${articleNo}" data-item="${provision}-${articleNo}-${paragraphNo}-${itemNo}"`;
-              if (json.tag === 'Table') {
-                  return (<table className="lawDataTable"><tbody>{returnNode}</tbody></table>);
-              } else if (json.tag === 'TableRow') {
-                  return (<tr>{returnNode}</tr>);
-              } else if (json.tag === 'TableColumn') {
-                  return (<td data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`}>{returnNode}</td>);
-              } else if (json.tag === 'ParagraphNum' && json.children && json.children.length === 0) {
-                  return (<span className={`xml-${json.tag}`} data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`}>
-                      {articleTitle}{'　'}
-                      </span>);
-              } else if (json.tag === 'Article') {
-                  return (<span className={`xml-${json.tag}`} data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`} onContextMenu={handleRightClick}>
-                      {returnNode}
-                  </span>);
-              } else if (json.tag === 'Paragraph') {
-                  let refTextData: RefData[]|undefined;
-                  if (pane === 'left'||pane === 'right') {
-                    refTextData = refData[pane] && refData[pane].filter((data:RefData) => {
-                      return data.match&& 
-                      data.referred?.lawArticle && (data.referred?.lawArticle.provision === 'MainProvision'|| data.referred?.lawArticle.provision === 'SupplProvision') &&
-                      data.referred?.lawArticle.article === articleNo?.toString() &&
-                      data.referred?.lawArticle.paragraph === paragraphNo?.toString() &&
-                      data.referred?.lawArticle.item === itemNo?.toString() &&
-                      itemNo?.toString() === "0"
-                    });
-                  }
-                  return(
-                      <span className={`xml-${json.tag}`} data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`}>
-                          {returnNode}
-                          {(json.tag.indexOf('Num')>0 || json.tag.indexOf('Title')>0 )?'　':''}
-                          {refTextData&&<LinkifyNoMatch refTextData={refTextData}/>}
-                      </span>);
-              } else if (json.tag === 'Item') {
-                  let refTextData: RefData[]|undefined;
-                  if (pane === 'left'||pane === 'right') {
-                    refTextData = refData[pane] && refData[pane].filter((data:RefData) => {
-                      return data.match&& 
-                      data.referred?.lawArticle && (data.referred?.lawArticle.provision === 'MainProvision'|| data.referred?.lawArticle.provision === 'SupplProvision') &&
-                      data.referred?.lawArticle.article === articleNo?.toString() &&
-                      data.referred?.lawArticle.paragraph === paragraphNo?.toString() &&
-                      data.referred?.lawArticle.item === itemNo?.toString() &&
-                      itemNo?.toString() !== "0"
-                    });
-                  }
-                  return(
-                      <span className={`xml-${json.tag}`} data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`}>
-                          {returnNode}
-                          {(json.tag.indexOf('Num')>0 || json.tag.indexOf('Title')>0 )?'　':''}
-                          {refTextData&&<LinkifyNoMatch refTextData={refTextData}/>}
-                      </span>);
-              } else if (json.tag !== 'ArticleTitle') {
-                  return (
-                      <span className={`xml-${json.tag}`} data-article={`${provision}-${articleNo}`} data-item={`${provision}-${articleNo}-${paragraphNo}-${itemNo}`}>
-                          {returnNode}
-                          {(json.tag.indexOf('Num')>0 || json.tag.indexOf('Title')>0 )?'　':''}
-                      </span>);
-              }
-          }
-      }
-  }
+    pane: Pane|'ref',
+    json : LawNode|string,) : any => {
 
+    function renderVirtualTree(vnode: VNode, ancestors: VElement[] = []): ReactNode {
+      const hiddenTags = ["LawTitle", "LawNum", "TOC","ArticleTitle"]; // 非表示にするタグ名の配列
+      const unwrapTags = ["Law","LawBody","ParagraphSentence","ItemSentence"]; // 中身だけ表示するタグ名の配列
+      // console.log(ancestors[ancestors.length - 1]);
+
+      // 各タグを対応するReactコンポーネント or HTMLタグにマップ
+      const tagMap: Record<string, string> = {
+        Table: "table",
+        TableRow: "tr",
+        TableColumn: "td",
+      };
+      // 祖先の中から一番近い Article を探す
+      const provisionAncestor = [...ancestors]
+        .reverse()
+        .find(a => a.tag === "MainProvision" || a.tag === "SupplProvision");
+      // 祖先の中から一番近い Article を探す
+      const articleAncestor = [...ancestors]
+        .reverse()
+        .find(a => a.tag === "Article");
+      const paragraphAncestor = [...ancestors]
+        .reverse()
+        .find(a => a.tag === "Paragraph");
+      const itemAncestor = [...ancestors]
+        .reverse()
+        .find(a => subitemNode.includes(a.tag)||a.tag === "Item");
+      const articleNo = articleAncestor?.attr?.num;
+      const paragraphNo = paragraphAncestor?.attr?.num;
+      const itemNo = itemAncestor?.attr?.num;
+      // 直前の親タグを取得
+      const parentNode = ancestors[ancestors.length - 1];
+      if (vnode.type === "text") {
+        if (parentNode.tag.includes("Num")||parentNode.tag.includes("Title")) {
+          // Num、Titleを含む直下のテキストノードの場合、後続に全角スペースを追加
+          return `${vnode.value}　`;
+        };
+        if (vnode.value.replace(/\s/g,'') === "附則" && provisionAncestor?.attr?.amendlawnum) {
+            //
+            return vnode.value + "（" + provisionAncestor.attr.amendlawnum + "）" + (provisionAncestor.attr.extract === 'true' ? "　抄" : "");
+        }
+        let refTextData: RefData[]|undefined;
+        let refLaw: refLawTitleList|undefined
+        let refDataPane = refData[pane as Pane];
+        let refDataMatch = refDataPane && refDataPane.filter((data:RefData)=> data.match!=="★引用個所不明★");   
+        if (pane === 'left'||pane === 'right') {
+          refTextData = refDataMatch && refDataMatch.filter((data:RefData) => {
+            return data.match&& 
+              data.referred?.lawArticle.provision === (provisionAncestor&&!provisionAncestor?.attr?.amendlawnum&&provisionAncestor?.tag)&&
+              data.referred?.lawArticle.article === (articleNo||0).toString() &&
+              data.referred?.lawArticle.paragraph == (paragraphNo||0).toString() &&
+              data.referred?.lawArticle.item == (itemNo||0).toString()
+          });
+          refLaw = refLawTitle[pane];
+      }
+
+        return <ProcessDelay children={vnode.value} refTextData={refTextData || []} refLawTitle={refLaw || undefined}/>;
+      }
+      const { tag, attr = {}, children } = vnode;
+      if (hiddenTags.includes(tag)) {
+        return null; // 非表示タグはレンダリングしない
+      }
+
+      const mergedTag = tagMap[tag] ?? "span";
+      const provisionNode = tag === 'MainProvision' || tag === 'SupplProvision' ? vnode : provisionAncestor&&provisionAncestor;
+      const dataProvision = provisionNode?.tag === 'MainProvision' 
+                            ? 'MainProvision' 
+                            : (provisionNode?.tag === 'SupplProvision' 
+                              ? (provisionNode.attr?.amendlawnum ?? 'SupplProvision') 
+                              : undefined);
+      const dataArticle = dataProvision ? `${dataProvision}-${tag === 'Article' ? attr['num']: articleNo||0}` : undefined;
+      const dataItem = dataArticle ? `${dataArticle}-${tag === 'Paragrapch' ? attr['num']: paragraphNo||0}` : undefined;
+        // 既存のclassNameにtagを追加。data-article、data-paragraphなどの属性はそのまま維持
+      const mergedAttr = {
+        ...attr,
+        className: [`xml-${tag}`, attr.className].filter(Boolean).join(" "),
+        "data-provision": dataProvision,
+        "data-article": dataArticle,
+        "data-item": dataItem,
+        "onContextMenu": tag==="Article" ? handleRightClick : undefined,
+      };
+      const renderedChildren = children
+        .map(child => renderVirtualTree(child, [...ancestors, vnode]))
+        .filter(Boolean);
+      // --- unwrap対象タグなら、自身はスキップして中身だけ出す ---
+      if (unwrapTags.includes(tag)) {
+        return renderedChildren;
+      }
+      // Tableタグの直下にtbodyが含まれていないので手動で追加する
+      if (tag === "Table") {
+        return React.createElement("table", {}, React.createElement("tbody", mergedAttr, ...renderedChildren));
+      }
+      // ParagraphNumタグで子要素が空の場合、第1項とみなして祖先のArticleTitleのテキストを取得して表示する
+      if (tag === "ParagraphNum" && children.length === 0) {
+        let titleText = '';
+        const articleTitle = articleAncestor?.children
+        .filter(child => child.type === "element" && child.tag === "ArticleTitle")[0]
+        if (articleTitle?.type === "element") {
+          articleTitle.children.forEach(child => {
+            if (child.type === "text") {
+            titleText = `${child.value}　`;
+            }
+          });
+        return React.createElement(mergedTag, mergedAttr, [titleText]);  
+        }
+      }
+      if (tag === "Paragraph" || tag === "Item") {
+        // ParagraphまたはItemタグの場合、引用条文が存在する場合hrenderdChildrenの前にLinkifyNoMatchコンポーネントを追加する
+        let refTextData: RefData[]|undefined;
+        let refDataPane = refData[pane as Pane];
+        refTextData = refDataPane && refDataPane.filter((data:RefData) => {
+          return data.match==="★引用個所不明★"&&
+            data.referred?.lawArticle.provision === (provisionAncestor&&!provisionAncestor?.attr?.amendlawnum&&provisionAncestor?.tag)&&
+            data.referred?.lawArticle.article === (articleNo||0).toString() &&
+            data.referred?.lawArticle.paragraph == (paragraphNo||0).toString() &&
+            data.referred?.lawArticle.item == (itemNo||0).toString()
+        });
+        const noMatchLink = <LinkifyNoMatch refTextData={refTextData || []} />;
+        renderedChildren.push(noMatchLink);
+
+        return React.createElement(mergedTag, mergedAttr, ...renderedChildren);
+
+      }
+      return React.createElement(mergedTag, mergedAttr, ...renderedChildren);
+    }
+
+    interface JsonRendererProps {
+      data: JsonNode;
+    }
+
+    const JsonRenderer: React.FC<JsonRendererProps> = ({ data }) => {
+      const prevVNode = useRef<VNode | null>(null);
+
+      const vnode = useMemo(() => buildVirtualTree(data), [data]);
+
+      const changed = useMemo(() => {
+        prevVNode.current = vnode;
+        return prevVNode.current !== vnode;
+      }, [vnode]);
+
+      const element = useMemo(() => renderVirtualTree(vnode), [changed, vnode]);
+
+      return <>{element}</>;
+    };
+
+    return (<JsonRenderer data={json as JsonNode}/>);
+  }
   return (
     <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded, refLawTitle, fetchLawArticle, getChildren }}>
       {children}

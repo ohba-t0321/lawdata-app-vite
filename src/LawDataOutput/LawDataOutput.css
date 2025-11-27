@@ -82,6 +82,9 @@
     margin-left: 1em;
     text-indent: -1em;
 }
+.xml-ArticleCaption, .xml-ParagraphCaption{
+    display: block;
+}
 .xml-ArticleCaption, .xml-ParagraphCaption, .xml-ArticleTitle, .xml-ParagraphNum, .xml-ItemTitle{
     font-weight: bold;
 }
@@ -118,10 +121,10 @@ item{
 itemtitle{
     font-weight: bold;
 }
-.lawDataTable{
+.xml-Table{
     border-collapse: collapse;
 }
-.lawDataTable td{
+.xml-Table td{
     border: 1px solid #000;
 }
 .theme-colorful .xml-Sentence .annotation.lv1 {
