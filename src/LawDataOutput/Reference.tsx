@@ -2,7 +2,7 @@ import React,{useState, useContext, useEffect} from 'react';
 import './Reference.css';
 import { LawDataContext, LawArticleContext ,ReferenceContext } from '../LawDataContext';
 import type { LawArticle,LawNode } from '../LawDataContext';
-import { isSameDateInJapan } from '../LawDataContext';
+import { isSameDateInJapan } from '../workers/lawDataWorker';
 import { getLawFromCache, saveLawToCache } from '../indexedDB'
 import type { LawDataCache } from '../indexedDB';
 function convertToArticleFormat(input: string): string {
@@ -101,7 +101,7 @@ export const Reference:React.FC = () => {
                 if (refLawData){
                     let refArticleNode = searchArticle(refLawData).filter(e=>e.attr.Num===refItm?.article)[0];
                     if (refArticleNode){
-                        setRefArticleData(getChildren("ref",refArticleNode,refItm?.provision,refItm?.article,null,null,null));
+                        setRefArticleData(getChildren("ref",refArticleNode));
                     } else {
                         setRefArticleData(<span>該当する条文が見つかりません。</span>);
                     }

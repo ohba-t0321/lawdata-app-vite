@@ -8,4 +8,7 @@ export default defineConfig({
     outDir: "dist", // Viteデフォルト dist/
   },
   plugins: [react()],
+  worker: {
+    format: 'es'
+  }
 })

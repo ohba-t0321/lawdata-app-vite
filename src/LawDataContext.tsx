@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, useRef,useMemo } from "react";
 import type { ReactNode } from "react";
 import { useSearchParams } from 'react-router-dom';
-import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from './indexedDB'
-import type { LawListCache,LawDataCache } from "./indexedDB";
+// import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from './indexedDB'
+// import type { LawListCache,LawDataCache } from "./indexedDB";
 import kanjiToNumber from './assets/KanjiToNumber'
 import { DividerContext } from './DiviserContext';
+import { useLawDataWorker } from './hooks/useLawDataWorker';  
 
-type Pane = 'left' | 'right';
+export type Pane = 'left' | 'right';
 
 export interface LawData {
   law_info: any;
@@ -17,9 +18,8 @@ export interface LawData {
 interface LawDataContextType {
   lawData: LawData[] | null;
   isDataLoaded: boolean;
-  fetchLawData: () => Promise<void>;
 }
-export interface refLawTitleList {
+export interface RefLawTitleList {
   lawTitleList: string[];
   synonymList: { [key: string]: string };
 }
@@ -57,8 +57,7 @@ interface LawArticleContextType {
   setLawArticle: (lawArticle: {left:LawArticle, right:LawArticle})=> void;
   isArticleLoaded: {left:boolean, right:boolean};
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
-  refLawTitle:{left:refLawTitleList,right:refLawTitleList};
-  fetchLawArticle: (pane:Pane,lawId:string) => Promise<void>;
+  refLawTitle:{left:RefLawTitleList,right:RefLawTitleList};
   getChildren: (pane:Pane|'ref', json:LawNode|string) => React.ReactNode;
 }
 
@@ -83,18 +82,6 @@ const brackets: Record<string, string> = {
 }
 
 type Props = { children: React.ReactNode };
-
-export function isSameDateInJapan(ts1:number, ts2:number) {
-    // 日本時間で日付を比較するため、タイムゾーンを指定してフォーマット
-    // ts1とts2はミリ秒単位のタイムスタンプ
-    // indexedDBのタイムスタンプが同日だった場合、取得済としてindexedDBから取得する
-    const options: Intl.DateTimeFormatOptions = { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit' };
-
-    const date1 = new Date(ts1).toLocaleDateString('ja-JP', options);
-    const date2 = new Date(ts2).toLocaleDateString('ja-JP', options);
-
-    return date1 === date2;
-}
 
 const flattenText = (node: React.ReactNode): string => {
   if (typeof node === "string" || typeof node === "number") return String(node);
@@ -213,9 +200,6 @@ function BracketHighlighter( {children} : Props ) : React.ReactNode[] {
 };
 
 const LinkifyWithWrap: React.FC<{children: React.ReactNode, refTextData: RefData[]}> = ({children, refTextData}) => {
-  if (refTextData.length>0){
-    console.log(children, refTextData)
-  }
   let loopingChildren: React.ReactNode = children;
   // ノードを文字列化（装飾付きspanでも中のテキストは拾える）
   const fullText = flattenText(loopingChildren);
@@ -256,7 +240,7 @@ const LinkifyWithWrap: React.FC<{children: React.ReactNode, refTextData: RefData
   return (<>{loopingChildren}</>)
 }
 
-const LinkifyWithLawText: React.FC<{children: React.ReactNode,refLawTitle:refLawTitleList|undefined}> = ({children, refLawTitle}) => {
+const LinkifyWithLawText: React.FC<{children: React.ReactNode,refLawTitle:RefLawTitleList|undefined}> = ({children, refLawTitle}) => {
   const { lawData } = useContext(LawDataContext);
   if (!refLawTitle) return (<>{children}</>);
   if (refLawTitle.lawTitleList.length===0) return (<>{children}</>);
@@ -306,7 +290,7 @@ const LinkifyNoMatch: React.FC<{refTextData: RefData[]}> = ({refTextData}) => {
   return (<>{noMatchLink}</>);
 }
 
-const ProcessDelay: React.FC<{children: React.ReactNode, refTextData: RefData[],refLawTitle:refLawTitleList|undefined}> = ({children, refTextData,refLawTitle}) => {
+const ProcessDelay: React.FC<{children: React.ReactNode, refTextData: RefData[],refLawTitle:RefLawTitleList|undefined}> = ({children, refTextData,refLawTitle}) => {
   const [processed, setProcessed] = useState<React.ReactNode>(children);
   const ref = React.useRef(null);
   let loopingChildren: React.ReactNode = children;
@@ -361,7 +345,6 @@ const handleRightClick = (e: React.MouseEvent<HTMLElement>) => {
 export const LawDataContext = createContext<LawDataContextType>({
   lawData: null,
   isDataLoaded: false,
-  fetchLawData: async () => {},
 });
 
 export const LawArticleContext = createContext<LawArticleContextType>({
@@ -373,7 +356,6 @@ export const LawArticleContext = createContext<LawArticleContextType>({
   isArticleLoaded: {left:false, right:false},
   setIsArticleLoaded: () => {},
   refLawTitle: {left:{lawTitleList:[],synonymList:{}},right:{lawTitleList:[],synonymList:{}}},
-  fetchLawArticle: async () => {},
   getChildren: () => { return (<></>); },
 });
 
@@ -388,44 +370,26 @@ export const ReferenceContext = createContext<ReferenceContextType>({
 export const LawDataProvider = ({ children }: { children: ReactNode }) => {
   const [lawData, setLawData] = useState<LawData[] | null>(null);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const { fetchLawList } = useLawDataWorker();  
 
-  // APIからデータ取得
-  const fetchLawData = async () => {
+  useEffect(() => {
     if (isDataLoaded) return; // 既にデータがロードされている場合は何もしない
     try {
-      const cached = await getLawListFromCache();
-      const now = Date.now();
-      if (cached && isSameDateInJapan(now, (cached as LawListCache).timestamp)) {
-          setLawData((cached as LawListCache).data);
-      } else {
-        try {
-          // 勅令(ImperialOrder)は引用しないため除外
-          let res = await fetch("https://laws.e-gov.go.jp/api/2/laws?law_type=Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc&limit=1"); // 1件取得して件数を確認
-          const total_count = await res.json().then(data => data.total_count);
-            if (total_count > 0) {
-                res = await fetch(`https://laws.e-gov.go.jp/api/2/laws?law_type=Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc&limit=${total_count}`); // 全件取得
-            }
-          const data: LawData[] = await res.json().then(data => data.laws);
-          setLawData(data);
-          await saveLawListToCache(data)
-        } catch (error) {
-          console.error("APIからのデータ取得失敗:", error);
-        }
-      }
+        // Webサイトを開いたとき（初回レンダリング時）に裏で実行
+        // Web Workerを使用してデータ取得  
+        fetchLawList((data: LawData[]) => {
+          setLawData(data);  
+          setIsDataLoaded(true);  
+        });  
     } catch (error) {
-      console.error("キャッシュからのデータ取得失敗:", error);
+      console.error("データ取得失敗:", error);
     } finally {
         setIsDataLoaded(true); // エラーが発生してもロード完了とする
     }
-  };
-
-  // Webサイトを開いたとき（初回レンダリング時）に裏で実行
-  useEffect(() => {
-    fetchLawData();
   }, []);
 
   return (
-    <LawDataContext.Provider value={{ lawData, isDataLoaded, fetchLawData }}>
+    <LawDataContext.Provider value={{ lawData, isDataLoaded }}>
       {children}
     </LawDataContext.Provider>
   );
@@ -479,7 +443,8 @@ function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
 }
 
 export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
-const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { fetchLawArticle } = useLawDataWorker();  
   const { dividerPos,setDividerPos } = useContext(DividerContext)
   let leftLawTitle = searchParams.get('left')||'';
   let rightLawTitle = searchParams.get('right')||'';
@@ -490,7 +455,7 @@ const [searchParams, setSearchParams] = useSearchParams();
       }
     }
   },[]);
-  const { lawData } = useContext(LawDataContext);
+  // const { lawData } = useContext(LawDataContext);
   const [isArticleLoaded, setIsArticleLoaded] = useState<{left:boolean, right:boolean}>({
     left: leftLawTitle !=='',
     right: rightLawTitle !=='',
@@ -507,125 +472,101 @@ const [searchParams, setSearchParams] = useSearchParams();
    left: [],
    right: [], 
   });
-  const [refLawTitle, setRefLawTitle] = useState<{left:refLawTitleList,right:refLawTitleList}>({
+  const [refLawTitle, setRefLawTitle] = useState<{left:RefLawTitleList,right:RefLawTitleList}>({
     left:{lawTitleList:[],synonymList:{}},
     right:{lawTitleList:[],synonymList:{}},
   });
-  async function fetchLawArticle(pane:Pane,lawId:string) {
-    try {
-      let cached = await getLawFromCache(lawId);
-      const now = Date.now();
-      if (cached && isSameDateInJapan(now, (cached as LawDataCache).timestamp)) {
-          // console.log(buildVirtualTree((cached as LawDataCache).lawArticle.law_full_text as JsonNode)); // デバッグ用
-          // console.log('法令データをAPIから取得しました:', lawId);
-        setLawArticle(prev=>({...prev, [pane]:(cached as LawDataCache).lawArticle}))
-        setRefLawTitle(prev=>({...prev,[pane]:getRefLaw((cached as LawDataCache).lawArticle)}))
-        setIsArticleLoaded(prev=>({...prev, [pane]:true}));
-      } else {
-      fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`)
-        .then(res => res.json())
-        .then(data => {
-            // console.log(buildVirtualTree(data.law_full_text)); // デバッグ用
-            // console.log('法令データをAPIから取得しました:', lawId);
-            setLawArticle(prev=>({...prev, [pane]:data}))
-            saveLawToCache(lawId,data)
-            setRefLawTitle(prev=>({...prev,[pane]:getRefLaw(data)}))
-          })
-        .catch(err => console.error("APIからの法令データ取得エラー:", err))
-        .finally(() => {
-          setIsArticleLoaded(prev=>({...prev, [pane]:true}));
-        });
-      }
-    } catch (err) {
-       if (err instanceof Error) {
-         console.log(`キャッシュからの法令データ取得エラー：${err.message}`);
-       } else {
-         console.log('キャッシュからの法令データ取得エラー：', err);
-       }
-    }
-  };
 
-  async function fetchRefData(pane:Pane,lawId:string) {
-    const BASE = import.meta.env.BASE_URL;
-    fetch(`${BASE}ref_json/${lawId}.json`)
-    .then(res => res.json())
-    .then(data => {
-        setRefData(prev=>({...prev, [pane]:data}));
-  })
-    .catch(err => console.error("参照データ取得エラー:", err));
-  };
+  // async function fetchRefData(pane:Pane,lawId:string) {
+  //   const BASE = import.meta.env.BASE_URL;
+  //   fetch(`${BASE}ref_json/${lawId}.json`)
+  //   .then(res => res.json())
+  //   .then(data => {
+  //       setRefData(prev=>({...prev, [pane]:data}));
+  // })
+  //   .catch(err => console.error("参照データ取得エラー:", err));
+  // };
 
-  function getRefLaw(article:LawArticle) {
-    let lawList:any;
-    if (article.law_full_text){
-      lawList = searchLawData(article.law_full_text);
-    } else {
-      lawList = [];
-    }
-    const refLaw = new Set();
-    const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
-    const synonym: { [key: string]: string } = {};
-    lawList.forEach((text:any) => {
-      let match:RegExpExecArray|null;
-      while ((match = regex.exec(text)) !== null) {
-        if (match[1]){
-          refLaw.add(match[1]);
-          if (match[2]){
-            synonym[match[1]] = match[2];
-          }
-        }
-      };
-    });
-    refLaw.forEach(lawNum => {
-      /*
-      法令の参照では以下の記述となっていることが多いので、正規表現で該当するところを取得した。
-      [法令名が初めて現れる場合]：(法令名)（元号○○年法律/政令/...第○号）第○条第○項
-      [法令名が初めて現れる場合で、法令を省略する場合](法令名)（元号○○年法律/政令/...第○号。以下「○○法」という。）第○条第○項
-      [法令名が2回目以降の場合](法令名もしくは略称名)第○条第○項
-      なお、「第○条」のところは「第○条の○」となるケースもあるため、それに対応している
-      法律によっては第○条の○条の○…と続くことがあるが、それは対応が難しいので非対応
-      */
-      const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0]?.current_revision_info?.law_title;
-      const synonymRegex = new RegExp(law + '（以下「(.*?)」という。）' , 'g');
-      lawList.forEach((text:any)=>{
-        let match:RegExpExecArray|null;
-        while ((match = synonymRegex.exec(text)) !== null) {
-          if (match[1]){
-            if (typeof(lawNum)=='string'&&!(synonym[lawNum])){ //附則で改正法令によって上書きしていることがあるため、最初に出てきたものを優先する
-              synonym[lawNum] = match[1];
-            }
-          }
-        }
-      });
-    });
-    return {lawTitleList:refLaw,synonymList:synonym};
-  };
+  // function getRefLaw(article:LawArticle) {
+  //   let lawList:any;
+  //   if (article.law_full_text){
+  //     lawList = searchLawData(article.law_full_text);
+  //   } else {
+  //     lawList = [];
+  //   }
+  //   const refLaw = new Set();
+  //   const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
+  //   const synonym: { [key: string]: string } = {};
+  //   lawList.forEach((text:any) => {
+  //     let match:RegExpExecArray|null;
+  //     while ((match = regex.exec(text)) !== null) {
+  //       if (match[1]){
+  //         refLaw.add(match[1]);
+  //         if (match[2]){
+  //           synonym[match[1]] = match[2];
+  //         }
+  //       }
+  //     };
+  //   });
+  //   refLaw.forEach(lawNum => {
+  //     /*
+  //     法令の参照では以下の記述となっていることが多いので、正規表現で該当するところを取得した。
+  //     [法令名が初めて現れる場合]：(法令名)（元号○○年法律/政令/...第○号）第○条第○項
+  //     [法令名が初めて現れる場合で、法令を省略する場合](法令名)（元号○○年法律/政令/...第○号。以下「○○法」という。）第○条第○項
+  //     [法令名が2回目以降の場合](法令名もしくは略称名)第○条第○項
+  //     なお、「第○条」のところは「第○条の○」となるケースもあるため、それに対応している
+  //     法律によっては第○条の○条の○…と続くことがあるが、それは対応が難しいので非対応
+  //     */
+  //     const law = lawData?.filter(law=>law.law_info?.law_num===lawNum)[0]?.current_revision_info?.law_title;
+  //     const synonymRegex = new RegExp(law + '（以下「(.*?)」という。）' , 'g');
+  //     lawList.forEach((text:any)=>{
+  //       let match:RegExpExecArray|null;
+  //       while ((match = synonymRegex.exec(text)) !== null) {
+  //         if (match[1]){
+  //           if (typeof(lawNum)=='string'&&!(synonym[lawNum])){ //附則で改正法令によって上書きしていることがあるため、最初に出てきたものを優先する
+  //             synonym[lawNum] = match[1];
+  //           }
+  //         }
+  //       }
+  //     });
+  //   });
+  //   return {lawTitleList:refLaw,synonymList:synonym};
+  // };
 
-  function searchLawData(json : any): any[] {
-    const lawList:any[] = [];
-    if(json.children){
-      json.children.forEach((item:any) => {
-        if (typeof(item) === 'string') {
-          lawList.push(item);
-        } else if (typeof(item) === 'object' && item.children) {
-          let subItem = searchLawData(item);
-          if (subItem) {
-            subItem.forEach(sub => {
-              lawList.push(sub);
-            });
-          }
-        }
-      });
-      return lawList;
-    } else {
-      return [];
-    }
-  };
+  // function searchLawData(json : any): any[] {
+  //   const lawList:any[] = [];
+  //   if(json.children){
+  //     json.children.forEach((item:any) => {
+  //       if (typeof(item) === 'string') {
+  //         lawList.push(item);
+  //       } else if (typeof(item) === 'object' && item.children) {
+  //         let subItem = searchLawData(item);
+  //         if (subItem) {
+  //           subItem.forEach(sub => {
+  //             lawList.push(sub);
+  //           });
+  //         }
+  //       }
+  //     });
+  //     return lawList;
+  //   } else {
+  //     return [];
+  //   }
+  // };
 
   async function lawArticleInit(pane:Pane) {
     if (selectedLaws[pane]) {
-      fetchLawArticle(pane,selectedLaws[pane]);
-      fetchRefData(pane,selectedLaws[pane]);
+      try {
+        // Web Workerを使用してデータ取得  
+        fetchLawArticle(pane, selectedLaws[pane], (data: any) => {  
+          setLawArticle(prev => ({ ...prev, [pane]: data.lawArticle }));  
+          setRefLawTitle(prev => ({ ...prev, [pane]: data.refLawTitle }));  
+          setRefData(prev=>({...prev, [pane]:data.refData}));
+          setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
+        });  
+      } catch (error) {
+        console.error("法令データ取得失敗:", error);
+      }
       setSearchParams((prev) => {
         const newParams = new URLSearchParams(prev);
         newParams.set(pane, selectedLaws[pane] || '');
@@ -647,12 +588,10 @@ const [searchParams, setSearchParams] = useSearchParams();
       (['left','right'] as Pane[]).forEach((pane)=>{
         const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
         if ((selectedLaws[pane] ?? '') !== lawNumPane) {
-          console.log(pane , 'が変わった')
           setIsArticleLoaded(prev=>({...prev, [pane]:false}));
           lawArticleInit(pane);
         }
         if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
-          console.log(`${pane}のURLパラメータを更新 変更前:${searchParams.get(pane)} 変更後:${lawNumPane}`);
           setSearchParams((prev) => {
             const newParams = new URLSearchParams(prev);
             if (lawNumPane !== '' ) {
@@ -747,7 +686,7 @@ const [searchParams, setSearchParams] = useSearchParams();
             return vnode.value + "（" + provisionAncestor.attr.amendlawnum + "）" + (provisionAncestor.attr.extract === 'true' ? "　抄" : "");
         }
         let refTextData: RefData[]|undefined;
-        let refLaw: refLawTitleList|undefined
+        let refLaw: RefLawTitleList|undefined
         let refDataPane = refData[pane as Pane];
         let refDataMatch = refDataPane && refDataPane.filter((data:RefData)=> data.match!=="★引用個所不明★");   
         if (pane === 'left'||pane === 'right') {
@@ -853,7 +792,7 @@ const [searchParams, setSearchParams] = useSearchParams();
     return (<JsonRenderer data={json as JsonNode}/>);
   }
   return (
-    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded, refLawTitle, fetchLawArticle, getChildren }}>
+    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded, refLawTitle, getChildren }}>
       {children}
     </LawArticleContext.Provider>
   );
