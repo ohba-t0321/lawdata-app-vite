@@ -63,19 +63,8 @@ export function useLawDataWorker() {
     [postMessage]  
   );  
   
-  const buildVirtualTree = useCallback(  
-    (jsonData: any, callback: (data: any) => void) => {  
-      postMessage(  
-        { type: 'BUILD_VIRTUAL_TREE', payload: { jsonData } },  
-        callback  
-      );  
-    },  
-    [postMessage]  
-  );  
-  
   return {  
     fetchLawList,  
     fetchLawArticle,  
-    buildVirtualTree,  
   };  
 }

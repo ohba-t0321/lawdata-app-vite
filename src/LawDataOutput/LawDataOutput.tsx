@@ -1,7 +1,7 @@
 import React,{ useContext,useMemo } from 'react';
 import './LawDataOutput.css';
 import { DividerContext } from '../DiviserContext';
-import { LawArticleContext, ReferenceContext } from '../LawDataContext';
+import { LawDataContext, LawArticleContext, ReferenceContext } from '../LawDataContext';
 import type { LawNode } from '../LawDataContext';
 import  { Reference } from './Reference'
 
@@ -30,18 +30,23 @@ export const LawPane: React.FC<LawPaneProps> = ({
   width,
 }) => {
   // 1. タイトル部分の条件を明確化
-  const { selectedLaws, lawArticle, isArticleLoaded, getChildren } = useContext(LawArticleContext);
+  const { selectedLaws, vnode, isArticleLoaded, getChildren } = useContext(LawArticleContext);
+  const { lawData } = useContext(LawDataContext);
   const isLoaded = isArticleLoaded[pane];
   const isSelected = !!selectedLaws[pane];
-  const lawData = lawArticle[pane];
-  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawArticle[pane].law_full_text&&getChildren(pane,lawArticle[pane].law_full_text as LawNode),[isArticleLoaded[pane],lawArticle.left.law_full_text]);
-  const title = isLoaded && lawData?.revision_info
-    ? getLawTitle(lawData.revision_info)
-    : (!isLoaded && isSelected ? "データ取得中..." : ""); // データ取得中
+  const lawNode = vnode[pane];
+  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&getChildren(pane,lawNode),[isArticleLoaded[pane],vnode]);
+  // const title = isLoaded && lawData?.revision_info
+  //   ? getLawTitle(lawData.revision_info)
+  //   : (!isLoaded && isSelected ? "データ取得中..." : ""); // データ取得中
+    // ? getLawTitle(selectedLaws[pane])
 
   // 2. 法令番号部分の条件を明確化
-  const lawInfo = lawData?.law_info;
-  const lawNum = isLoaded && lawInfo ? getLawNum(lawInfo) : null;
+  // const lawInfo = lawData?.law_info;
+  const lawInfo = lawData?.filter((law) => law.law_info.law_num === selectedLaws[pane])[0]?.current_revision_info.law_title;
+  const title = isLoaded && lawInfo ? lawInfo : ( !isLoaded && isSelected ? "データ取得中..." : "" ); // データ取得中
+  // const lawNum = isLoaded && lawInfo ? getLawNum(lawInfo) : null;
+  const lawNum = isLoaded && selectedLaws[pane] ? selectedLaws[pane] : null;
   
   // 3. スタイルの設定
   const paneStyle = { width: `${width}%` };

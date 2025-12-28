@@ -1,3 +1,4 @@
+import { data } from "react-router-dom";
 import type { LawData, LawArticle, RefData, RefLawTitleList, VNode, VElement, Pane } from "../LawDataContext";
 import kanjiToNumber from '../assets/KanjiToNumber'
 import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from '../indexedDB'
@@ -17,7 +18,7 @@ for (let i=1; i<10 ;i++) {
 }
 
 export interface WorkerRequest {  
-  type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE' | 'BUILD_VIRTUAL_TREE';  
+  type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE';  
   payload?: any;  
 }  
   
@@ -72,7 +73,6 @@ function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
 // メインスレッドからのメッセージを受信  
 self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {  
   const { type, payload } = e.data;  
-  console.log('Worker received message:', type, payload);
   try {  
     switch (type) {  
       case 'FETCH_LAW_LIST': {  
@@ -105,36 +105,24 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
       case 'FETCH_LAW_ARTICLE': {  
         // 個別法令データの取得  
         const { pane, lawId } = payload;
-        const cached = await getLawFromCache(lawId);
+        const cachedArticle = await getLawFromCache(lawId);
         const now = Date.now();
         let lawArticle: any;
-        if (cached && isSameDateInJapan(now, (cached as LawDataCache).timestamp)) {  
-          lawArticle = (cached as LawDataCache).lawArticle;
+        if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {  
+          lawArticle = (cachedArticle as LawDataCache).lawArticle;
         } else {
           const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);  
           lawArticle = await res.json();  
           saveLawToCache(lawId, lawArticle);   
         }
+        const cachedLawList = await getLawListFromCache();
         const refRes = await fetch(`${BASE}ref_json/${lawId}.json`)
         let refData: RefData[] = await refRes.json();
         const refLawTitle = await getRefLaw(lawArticle);
-        const vnode = renderVirtualTree(lawArticle.law_full_text, [], null, refData, refLawTitle, pane);
-        console.log(vnode);
+        const vnode = renderVirtualTree(lawArticle.law_full_text, [], (cachedLawList as LawListCache)?.data, refData, refLawTitle, pane);
         self.postMessage({  
           type: 'FETCH_LAW_ARTICLE_SUCCESS',  
-          data: {lawArticle, refData, refLawTitle}
-        } as WorkerResponse);  
-        break;  
-      }  
-  
-      case 'BUILD_VIRTUAL_TREE': {  
-        // 仮想ツリーの構築（重い処理）  
-        const { jsonData } = payload;  
-        const vnode = renderVirtualTree(jsonData, [], null, [], { lawTitleList: [], synonymList: {} }, 'left');  // paneは仮で'left'を指定
-          
-        self.postMessage({  
-          type: 'BUILD_VIRTUAL_TREE_SUCCESS',  
-          data: vnode  
+          data: { lawArticle, refData, refLawTitle,vnode }
         } as WorkerResponse);  
         break;  
       }  
@@ -347,7 +335,7 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
                         lawParagraphNum = kanjiToNumber(lawParagraphNum);
                         const lawLink = `lawNum=${lawNum}${provision ? ' provision="MainProvision"' : ' provision="SupplProvision"'}${lawArticleNum ? ' article=' + lawArticleNum : ''}${lawArticleSubNum ? '_' + lawArticleSubNum : ''}${lawParagraphNum ? ' paragraph=' + lawParagraphNum : ''}`
                         // return `<span class="hovered" ${lawData}><span data-lawnum=${lawNum}>${lawName}</span>${match_rest}</span>`;
-                        return `<span class="hovered" ${lawLink}>${match}</span>`;
+                        return `<span class="refLink" ${lawLink}>${match}</span>`;
                     });
                 });
                 return text;
@@ -416,7 +404,12 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
                 data.referred?.lawArticle.item == (itemNo || 0).toString()
         });
         if (refTextData && refTextData.length > 0) {
-            renderedChildren.push({ type: "element", tag: "LinkifyNoMatch", attr: { refTextData: refTextData }, children: [{ type: "text", value: "★引用条文★" }] });
+            let children:VNode = { type: "text", value: "★引用条文★" };
+            refTextData.forEach((data: RefData) => {
+              const lawLink = { lawNum: data.ref?.lawNum, provision: data.ref?.lawArticle.provision, article: data.ref?.lawArticle.article, paragraph: data.ref?.lawArticle.paragraph, item: data.ref?.lawArticle.item };
+              children = { type: "element", tag: "span", attr: { className: "refLink", ...lawLink }, children: [children] };
+            });
+            renderedChildren.push({ type: "element", tag: "span", attr: { className:"refSentence", refTextData: refTextData }, children: [children] });
         }
 
         return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
