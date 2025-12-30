@@ -1,4 +1,3 @@
-import { data } from "react-router-dom";
 import type { LawData, LawArticle, RefData, RefLawTitleList, VNode, VElement, Pane } from "../LawDataContext";
 import kanjiToNumber from '../assets/KanjiToNumber'
 import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from '../indexedDB'
@@ -20,12 +19,14 @@ for (let i=1; i<10 ;i++) {
 export interface WorkerRequest {  
   type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE';  
   payload?: any;  
+  requestId?: string;  
 }  
   
 export interface WorkerResponse {  
   type: string;  
   data?: any;  
-  error?: string;  
+  error?: string;
+  requestId: string;  
 }  
   
 interface JsonNode {  
@@ -72,7 +73,7 @@ function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
   
 // メインスレッドからのメッセージを受信  
 self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {  
-  const { type, payload } = e.data;  
+  const { type, payload, requestId } = e.data;  
   try {  
     switch (type) {  
       case 'FETCH_LAW_LIST': {  
@@ -97,7 +98,8 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
         }  
         self.postMessage({  
           type: 'FETCH_LAW_LIST_SUCCESS',  
-          data: data  
+          data: data,
+          requestId  
         } as WorkerResponse);  
         break;  
       }  
@@ -105,9 +107,12 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
       case 'FETCH_LAW_ARTICLE': {  
         // 個別法令データの取得  
         const { pane, lawId } = payload;
+
+        // ステップ1: 基本情報の送信  
         const cachedArticle = await getLawFromCache(lawId);
         const now = Date.now();
         let lawArticle: any;
+
         if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {  
           lawArticle = (cachedArticle as LawDataCache).lawArticle;
         } else {
@@ -115,17 +120,42 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
           lawArticle = await res.json();  
           saveLawToCache(lawId, lawArticle);   
         }
-        const cachedLawList = await getLawListFromCache();
-        const refRes = await fetch(`${BASE}ref_json/${lawId}.json`)
-        let refData: RefData[] = await refRes.json();
-        const refLawTitle = await getRefLaw(lawArticle);
-        const vnode = renderVirtualTree(lawArticle.law_full_text, [], (cachedLawList as LawListCache)?.data, refData, refLawTitle, pane);
+        // 部分的な結果を送信  
         self.postMessage({  
-          type: 'FETCH_LAW_ARTICLE_SUCCESS',  
-          data: { lawArticle, refData, refLawTitle,vnode }
+          type: 'FETCH_LAW_ARTICLE_PROGRESS',  
+          data: { lawArticle, progress: 'basic_data_loaded' },  
+          requestId  
         } as WorkerResponse);  
-        break;  
-      }  
+    
+      // ステップ2: 参照データの取得  
+      const cachedLawList = await getLawListFromCache();  
+      const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);  
+      let refData: RefData[] = await refRes.json();  
+      const refLawTitle = await getRefLaw(lawArticle);  
+    
+      self.postMessage({  
+        type: 'FETCH_LAW_ARTICLE_PROGRESS',  
+        data: { refData, refLawTitle, progress: 'reference_data_loaded' },  
+        requestId  
+      } as WorkerResponse);  
+    
+      // ステップ3: 仮想ツリーの構築（分割可能であれば分割）  
+      const vnode = renderVirtualTree(  
+        lawArticle.law_full_text,  
+        [],  
+        (cachedLawList as LawListCache)?.data,  
+        refData,  
+        refLawTitle,  
+        pane  
+      );  
+
+      // 最終結果を送信  
+      self.postMessage({  
+        type: 'FETCH_LAW_ARTICLE_SUCCESS',  
+        data: { vnode, progress: 'complete' },  
+        requestId  
+      } as WorkerResponse);  
+      break;        }  
   
       default:  
         throw new Error(`Unknown message type: ${type}`);  
@@ -133,7 +163,8 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
   } catch (error) {  
     self.postMessage({  
       type: `${type}_ERROR`,  
-      error: error instanceof Error ? error.message : 'Unknown error'  
+      error: error instanceof Error ? error.message : 'Unknown error',
+      requestId  
     } as WorkerResponse);  
   }  
 });

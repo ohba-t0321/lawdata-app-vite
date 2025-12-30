@@ -380,14 +380,16 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
     if (isDataLoaded) return; // 既にデータがロードされている場合は何もしない
     try {
         // Webサイトを開いたとき（初回レンダリング時）に裏で実行
-        // Web Workerを使用してデータ取得  
+        // Web Workerを使用してデータ取得
         fetchLawList((data: LawData[]) => {
+          console.log("データ取得成功:", data);
           setLawData(data);  
           setIsDataLoaded(true);  
         });  
     } catch (error) {
       console.error("データ取得失敗:", error);
     } finally {
+        console.log('lawData:',lawData,'isDataLoaded:',isDataLoaded);
         setIsDataLoaded(true); // エラーが発生してもロード完了とする
     }
   }, []);
@@ -565,12 +567,15 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     if (selectedLaws[pane]) {
       try {
         // Web Workerを使用してデータ取得  
-        fetchLawArticle(pane, selectedLaws[pane], (data: any) => {  
-          setLawArticle(prev => ({ ...prev, [pane]: data.lawArticle }));  
-          // setRefLawTitle(prev => ({ ...prev, [pane]: data.refLawTitle }));  
-          // setRefData(prev=>({...prev, [pane]:data.refData}));
-          setVnode(prev => ({ ...prev, [pane]: data.vnode }));
-          setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
+        fetchLawArticle(pane, selectedLaws[pane], (data: any) => {
+          if (data.progress === 'basic_data_loaded') { 
+            setLawArticle(prev => ({ ...prev, [pane]: data.lawArticle }));
+          } else if (data.progress === 'complete') {
+            // setRefLawTitle(prev => ({ ...prev, [pane]: data.refLawTitle }));  
+            // setRefData(prev=>({...prev, [pane]:data.refData}));
+            setVnode(prev => ({ ...prev, [pane]: data.vnode }));
+            setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
+          }
         });  
       } catch (error) {
         console.error("法令データ取得失敗:", error);

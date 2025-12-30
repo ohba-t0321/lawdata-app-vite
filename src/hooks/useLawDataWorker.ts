@@ -5,32 +5,54 @@ import type { Pane } from '../LawDataContext';
 export function useLawDataWorker() {  
   const workerRef = useRef<Worker | null>(null);  
   const callbacksRef = useRef<Map<string, (data: any) => void>>(new Map());  
-  
+  const requestQueueRef = useRef<Array<{id: string, request: WorkerRequest, callback: (data: any) => void}>>([]);  
+  const processingRef = useRef<boolean>(false);  
+
+  // ユニークIDを生成  
+  const generateRequestId = () => `${Date.now()}-${Math.random()}`;  
+    
+  const processQueue = useCallback(() => {  
+    // if (processingRef.current || requestQueueRef.current.length === 0) return;  
+    if (requestQueueRef.current.length === 0) return;  
+    processingRef.current = true;  
+    const { id, request, callback } = requestQueueRef.current[0];  
+      
+    callbacksRef.current.set(id, callback);  
+    workerRef.current?.postMessage({ ...request, requestId: id });  
+  }, []);  
+        
   useEffect(() => {  
     // Viteのworker importを使用  
     workerRef.current = new Worker(  
       new URL('../workers/lawDataWorker.ts', import.meta.url),  
       { type: 'module' }  
     );  
-  
     workerRef.current.onmessage = (e: MessageEvent<WorkerResponse>) => {  
-      const { type, data, error } = e.data;  
-        
-      const callback = callbacksRef.current.get(type);  
+      const { type, data, error, requestId } = e.data;  
+      const callback = callbacksRef.current.get(requestId);  
       if (callback) {  
         if (error) {  
           console.error(`Worker error (${type}):`, error);  
-        } else {  
-          callback(data);  
+        } else {
+          if (data !== undefined && callback) {
+            callback(data);  
+          }  
         }  
-        callbacksRef.current.delete(type);  
-      }  
-    };  
+        if (type.endsWith('_ERROR')||type.endsWith('_SUCCESS')) {
+          // キューから処理済みのリクエストを削除  
+          callbacksRef.current.delete(requestId);  
+          requestQueueRef.current.shift();  
+          processingRef.current = false;  
+          // 次のリクエストを処理  
+          processQueue();  
+        }        
+      }
+    };    
   
     return () => {  
       workerRef.current?.terminate();  
     };  
-  }, []);  
+  }, [processQueue]);  
   
   const postMessage = useCallback(  
     <T>(request: WorkerRequest, callback: (data: T) => void) => {  
@@ -39,11 +61,11 @@ export function useLawDataWorker() {
         return;  
       }  
   
-      const responseType = `${request.type}_SUCCESS`;  
-      callbacksRef.current.set(responseType, callback);
-      workerRef.current.postMessage(request);  
+      const id = generateRequestId();  
+      requestQueueRef.current.push({ id, request, callback });  
+      processQueue();  
     },  
-    []  
+    [processQueue]  
   );  
   
   const fetchLawList = useCallback(  
