@@ -17,7 +17,7 @@ for (let i=1; i<10 ;i++) {
 }
 
 export interface WorkerRequest {  
-  type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE';  
+  type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE' | 'FETCH_REF_DATA';  
   payload?: any;  
   requestId?: string;  
 }  
@@ -42,7 +42,7 @@ interface JsonNode {
 //   attr?: Readonly<Record<string, any>>;  
 //   children?: readonly VNode[];  
 // }  
-export function isSameDateInJapan(ts1:number, ts2:number) {
+function isSameDateInJapan(ts1:number, ts2:number) {
     // 日本時間で日付を比較するため、タイムゾーンを指定してフォーマット
     // ts1とts2はミリ秒単位のタイムスタンプ
     // indexedDBのタイムスタンプが同日だった場合、取得済としてindexedDBから取得する
@@ -127,35 +127,86 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
           requestId  
         } as WorkerResponse);  
     
-      // ステップ2: 参照データの取得  
-      const cachedLawList = await getLawListFromCache();  
-      const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);  
-      let refData: RefData[] = await refRes.json();  
-      const refLawTitle = await getRefLaw(lawArticle);  
-    
-      self.postMessage({  
-        type: 'FETCH_LAW_ARTICLE_PROGRESS',  
-        data: { refData, refLawTitle, progress: 'reference_data_loaded' },  
-        requestId  
-      } as WorkerResponse);  
-    
-      // ステップ3: 仮想ツリーの構築（分割可能であれば分割）  
-      const vnode = renderVirtualTree(  
-        lawArticle.law_full_text,  
-        [],  
-        (cachedLawList as LawListCache)?.data,  
-        refData,  
-        refLawTitle,  
-        pane  
-      );  
+        // ステップ2: 参照データの取得  
+        const cachedLawList = await getLawListFromCache();  
+        const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);  
+        let refData: RefData[] = await refRes.json();  
+        const refLawTitle = await getRefLaw(lawArticle);  
+      
+        self.postMessage({  
+          type: 'FETCH_LAW_ARTICLE_PROGRESS',  
+          data: { refData, refLawTitle, progress: 'reference_data_loaded' },  
+          requestId  
+        } as WorkerResponse);  
+      
+        // ステップ3: 仮想ツリーの構築（分割可能であれば分割）  
+        console.log("law_full_text:", lawArticle.law_full_text);
+        const lawBody = lawArticle.law_full_text.children.filter((child:any) => child.tag === 'LawBody')[0].children;
+        let vnode:VNode[] = [];
+        lawBody.forEach((bodyPart:any)=>{
+          const vnodePart = renderVirtualTree(  
+            bodyPart,  
+            [],  
+            (cachedLawList as LawListCache)?.data,  
+            refData,  
+            refLawTitle,  
+            pane  
+          );  
+          vnode.push(...vnodePart);
+          // 途中結果を送信  
+          self.postMessage({  
+            type: 'FETCH_LAW_ARTICLE_PROGRESS',  
+            data: { vnode, progress: 'article_data_loading' },  
+            requestId  
+          } as WorkerResponse);  
+        });
+        // const vnode = renderVirtualTree(  
+        //   lawArticle.law_full_text,  
+        //   [],  
+        //   (cachedLawList as LawListCache)?.data,  
+        //   refData,  
+        //   refLawTitle,  
+        //   pane  
+        // );  
 
-      // 最終結果を送信  
-      self.postMessage({  
-        type: 'FETCH_LAW_ARTICLE_SUCCESS',  
-        data: { vnode, progress: 'complete' },  
-        requestId  
-      } as WorkerResponse);  
-      break;        }  
+        // 最終結果を送信  
+        self.postMessage({  
+          type: 'FETCH_LAW_ARTICLE_SUCCESS',  
+          data: { vnode, progress: 'complete' },  
+          requestId  
+        } as WorkerResponse);  
+        break;
+      }
+      
+      case 'FETCH_REF_DATA': {  
+        const { refItm } = payload;
+        const lawId = refItm.lawNum;
+        // ステップ1: 基本情報の送信  
+        const cachedArticle = await getLawFromCache(lawId);
+        const now = Date.now();
+        let lawArticle: any;
+
+        if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {  
+          lawArticle = (cachedArticle as LawDataCache).lawArticle;
+        } else {
+          const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);  
+          lawArticle = await res.json();  
+          saveLawToCache(lawId, lawArticle);   
+        }
+
+        let refArticle:VNode|null;
+        if (lawArticle.law_full_text){
+          refArticle = refArticleData(refItm, lawArticle.law_full_text);
+        } else {
+          refArticle = null;
+        }
+        self.postMessage({  
+          type: 'FETCH_REF_DATA_SUCCESS',  
+          data: refArticle,
+          requestId  
+        } as WorkerResponse);  
+        break;  
+      }
   
       default:  
         throw new Error(`Unknown message type: ${type}`);  
@@ -261,7 +312,6 @@ function buildVirtualTree(json: JsonNode | string): VNode {
 function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], lawData: LawData[] | null, refData: RefData[] = [], refLawTitle: RefLawTitleList, pane: Pane | 'ref'): VNode[] {
     const hiddenTags = ["LawTitle", "LawNum", "TOC", "ArticleTitle"]; // 非表示にするタグ名の配列
     const unwrapTags = ["Law", "LawBody", "ParagraphSentence", "ItemSentence"]; // 中身だけ表示するタグ名の配列
-    // console.log(ancestors[ancestors.length - 1]);
 
     // 各タグを対応するReactコンポーネント or HTMLタグにマップ
     const tagMap: Record<string, string> = {
@@ -364,7 +414,7 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
                         lawArticleNum = kanjiToNumber(lawArticleNum);
                         lawArticleSubNum = kanjiToNumber(lawArticleSubNum);
                         lawParagraphNum = kanjiToNumber(lawParagraphNum);
-                        const lawLink = `lawNum=${lawNum}${provision ? ' provision="MainProvision"' : ' provision="SupplProvision"'}${lawArticleNum ? ' article=' + lawArticleNum : ''}${lawArticleSubNum ? '_' + lawArticleSubNum : ''}${lawParagraphNum ? ' paragraph=' + lawParagraphNum : ''}`
+                        const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawArticleSubNum ? '_' + lawArticleSubNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
                         // return `<span class="hovered" ${lawData}><span data-lawnum=${lawNum}>${lawName}</span>${match_rest}</span>`;
                         return `<span class="refLink" ${lawLink}>${match}</span>`;
                     });
@@ -437,7 +487,7 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
         if (refTextData && refTextData.length > 0) {
             let children:VNode = { type: "text", value: "★引用条文★" };
             refTextData.forEach((data: RefData) => {
-              const lawLink = { lawNum: data.ref?.lawNum, provision: data.ref?.lawArticle.provision, article: data.ref?.lawArticle.article, paragraph: data.ref?.lawArticle.paragraph, item: data.ref?.lawArticle.item };
+              const lawLink = { "data-law-num": data.ref?.lawNum, "data-provision": data.ref?.lawArticle.provision, "data-article": data.ref?.lawArticle.article, "data-paragraph": data.ref?.lawArticle.paragraph, "data-item": data.ref?.lawArticle.item };
               children = { type: "element", tag: "span", attr: { className: "refLink", ...lawLink }, children: [children] };
             });
             renderedChildren.push({ type: "element", tag: "span", attr: { className:"refSentence", refTextData: refTextData }, children: [children] });
@@ -448,3 +498,36 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
     }
     return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
 }
+
+function searchArticle(json : any): any[] {
+    const articleList:any[] = [];
+    json.children.forEach((item:any) => {
+        if (item?.tag === 'Article') {
+            articleList.push(item);
+        } else if (typeof(item) === 'object' && item.children) {
+            let subItem = searchArticle(item);
+            if (subItem) {
+                subItem.forEach(sub => {
+                    articleList.push(sub);
+                });
+            }
+        }
+    });
+    return articleList;
+};
+
+function refArticleData(refItm:any, refArticle:JsonNode):any {
+  if (refArticle) {
+    // 法令データが取得できていれば、該当条文を表示
+    let lawBody = refArticle.children?.filter(child=>(typeof(child)==='object')&&(child?.tag==='LawBody'))[0]
+    if (typeof(lawBody)==='object' && lawBody?.children){
+        let refLawData = lawBody.children.filter(child=>typeof(child)==='object'&&child?.tag===refItm?.provision&&child?.attr?.AmendLawNum===undefined)[0]
+        if (refLawData) {
+          let refArticleNode = searchArticle(refLawData).filter(e=>e.attr.Num===refItm?.article)[0];
+          return renderVirtualTree(refArticleNode,[], [], [], { lawTitleList: [], synonymList: {} }, 'ref');
+        }
+    }
+  } else {
+    return null;
+  }
+};

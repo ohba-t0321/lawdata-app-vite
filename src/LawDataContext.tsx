@@ -382,7 +382,6 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
         // Webサイトを開いたとき（初回レンダリング時）に裏で実行
         // Web Workerを使用してデータ取得
         fetchLawList((data: LawData[]) => {
-          console.log("データ取得成功:", data);
           setLawData(data);  
           setIsDataLoaded(true);  
         });  
@@ -570,7 +569,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
         fetchLawArticle(pane, selectedLaws[pane], (data: any) => {
           if (data.progress === 'basic_data_loaded') { 
             setLawArticle(prev => ({ ...prev, [pane]: data.lawArticle }));
-          } else if (data.progress === 'complete') {
+          } else if (data.progress === 'article_data_loading' || data.progress === 'complete') {
             // setRefLawTitle(prev => ({ ...prev, [pane]: data.refLawTitle }));  
             // setRefData(prev=>({...prev, [pane]:data.refData}));
             setVnode(prev => ({ ...prev, [pane]: data.vnode }));
@@ -702,7 +701,6 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     // json : LawNode|string,
     vnode : VNode | null,
   ) : any => {
-    console.log('getChildren', pane, vnode);
     // function renderVirtualTree(vnode: VNode, ancestors: VElement[] = []): ReactNode {
     //   const hiddenTags = ["LawTitle", "LawNum", "TOC","ArticleTitle"]; // 非表示にするタグ名の配列
     //   const unwrapTags = ["Law","LawBody","ParagraphSentence","ItemSentence"]; // 中身だけ表示するタグ名の配列
@@ -852,7 +850,6 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
 
     // return (<JsonRenderer vnode={vnode[pane as Pane] as VNode}/>);
     if (!vnode) return <></>;
-    console.log('renderVNode', renderVNodes(vnode));
     return <>{renderVNodes(vnode)}</>;
   }
   return (
@@ -870,7 +867,6 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
   const refLinkClick = (e: React.MouseEvent<HTMLDivElement>) => {
     let el: HTMLElement | null = e.target as HTMLElement;
     const refItems: RefArticle[] = [];
-
     // クリックされた要素から親方向にさかのぼってすべて拾う
     while (el) {
       if (el.tagName === "SPAN" && el.classList.contains("refLink")) {

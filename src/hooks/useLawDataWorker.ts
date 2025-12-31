@@ -85,8 +85,19 @@ export function useLawDataWorker() {
     [postMessage]  
   );  
   
+  const fetchRefData = useCallback(  
+    ( refItm: any, callback: (data: any) => void) => {  
+      postMessage(  
+        { type: 'FETCH_REF_DATA', payload: { refItm } },  
+        callback  
+      );  
+    },  
+    [postMessage]  
+  );  
+
   return {  
     fetchLawList,  
-    fetchLawArticle,  
+    fetchLawArticle,
+    fetchRefData,  
   };  
 }
