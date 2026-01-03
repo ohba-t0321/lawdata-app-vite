@@ -12,14 +12,13 @@ export function useLawDataWorker() {
   const generateRequestId = () => `${Date.now()}-${Math.random()}`;  
     
   const processQueue = useCallback(() => {  
-    console.log('processingRef',processingRef,'Processing queue:', requestQueueRef);
-    if (processingRef.current || requestQueueRef.current.length === 0) return;  
-    // if (requestQueueRef.current.length === 0) return;  
-    processingRef.current = true;  
+    // if (processingRef.current || requestQueueRef.current.length === 0) return;  
+    if (requestQueueRef.current.length === 0) return;  
     const { id, request, callback } = requestQueueRef.current[0];  
       
     callbacksRef.current.set(id, callback);  
     workerRef.current?.postMessage({ ...request, requestId: id });  
+    processingRef.current = true;  
   }, []);  
         
   useEffect(() => {  

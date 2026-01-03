@@ -140,7 +140,6 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
         } as WorkerResponse);  
       
         // ステップ3: 仮想ツリーの構築（分割可能であれば分割）  
-        console.log("law_full_text:", lawArticle.law_full_text);
         const lawBody = lawArticle.law_full_text.children.filter((child:any) => child.tag === 'LawBody')[0].children;
         let vnode:VNode[] = [];
         lawBody.forEach((bodyPart:any, index:number)=>{
@@ -193,7 +192,6 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
           lawArticle = await res.json();  
           saveLawToCache(lawId, lawArticle);   
         }
-
         let refArticle:VNode|null;
         if (lawArticle.law_full_text){
           refArticle = refArticleData(refItm, lawArticle.law_full_text);
@@ -338,6 +336,8 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
     const itemNo = itemAncestor?.attr?.num;
     // 直前の親タグを取得
     const parentNode = ancestors[ancestors.length - 1];
+
+    const refDataMatch = refData && refData.filter((data: RefData) => data.match !== "★引用個所不明★");
     if (typeof json === "string") {
         if (parentNode.tag.includes("Num") || parentNode.tag.includes("Title")) {
             // Num、Titleを含む直下のテキストノードの場合、後続に全角スペースを追加
@@ -349,15 +349,14 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
         }
         // let refTextData: RefData[] | undefined;
         // let refLaw: RefLawTitleList | undefined = refLawTitle;
-        // let refDataMatch = refData && refData.filter((data: RefData) => data.match !== "★引用個所不明★");
         if (pane === 'left' || pane === 'right') {
-            // let refTextData: RefData[] | undefined = refDataMatch && refDataMatch.filter((data: RefData) => {
-            //     return data.match &&
-            //         data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
-            //         data.referred?.lawArticle.article === (articleNo || 0).toString() &&
-            //         data.referred?.lawArticle.paragraph == (paragraphNo || 0).toString() &&
-            //         data.referred?.lawArticle.item == (itemNo || 0).toString()
-            // });
+            let refTextData: RefData[] | undefined = refDataMatch && refDataMatch.filter((data: RefData) => {
+                return data.match &&
+                    data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
+                    data.referred?.lawArticle.article === (articleNo || 0).toString() &&
+                    data.referred?.lawArticle.paragraph == (paragraphNo || 0).toString() &&
+                    data.referred?.lawArticle.item == (itemNo || 0).toString()
+            });
             const brackets: Record<string, string> = {
                 "（": "）",
                 "「": "」",
@@ -421,7 +420,38 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
                 });
                 return text;
             }
-            return [{ type: "text", value: innerHTML(LinkifyWithLawText(json, refLawTitle, lawData ?? undefined)) }];
+            const LinkifyWithWrap = (text:string, refTextData:RefData[]) => {
+              // ノードを文字列化（装飾付きspanでも中のテキストは拾える）
+              refTextData = Array.from(new Set(refTextData)); // 重複削除
+              refTextData = refTextData.filter(data => data.match&&data.match !== "★引用個所不明★"); // マッチするものだけ抽出
+
+              // マッチするテキストがあるものを先に処理する
+              refTextData.sort((a,b)=>{
+                if (a.match && b.match) {
+                  return text.indexOf(a.match) - text.indexOf(b.match); // マッチ位置が早い順
+                } else if (a.match) {
+                  return -1;
+                } else if (b.match) {
+                  return 1;
+                } else {
+                  return 0;
+                }
+              });
+
+              refTextData.forEach((data:RefData,i)=>{
+                if (data.match) {
+                  const lawNum = data.ref?.lawNum;
+                  const provision = data.ref?.lawArticle.provision;
+                  const lawArticleNum = data.ref?.lawArticle.article || '';
+                  const lawParagraphNum = data.ref?.lawArticle.paragraph || '';
+                  const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
+
+                  text = text.replace(data.match, `<span class="refLink" ${lawLink}>${data.match}</span>`);
+                }
+              });
+              return (text);
+            }
+            return [{ type: "text", value: innerHTML(LinkifyWithWrap(LinkifyWithLawText(json, refLawTitle, lawData ?? undefined), refTextData)) }];
         }
         return [{ type: "text", value: json }];
     }
@@ -524,7 +554,11 @@ function refArticleData(refItm:any, refArticle:JsonNode):any {
         let refLawData = lawBody.children.filter(child=>typeof(child)==='object'&&child?.tag===refItm?.provision&&child?.attr?.AmendLawNum===undefined)[0]
         if (refLawData) {
           let refArticleNode = searchArticle(refLawData).filter(e=>e.attr.Num===refItm?.article)[0];
-          return renderVirtualTree(refArticleNode,[], [], [], { lawTitleList: [], synonymList: {} }, 'ref');
+          if (refArticleNode) {
+            return renderVirtualTree(refArticleNode,[], [], [], { lawTitleList: [], synonymList: {} }, 'ref');
+          } else {
+            return null;
+          }
         }
     }
   } else {
