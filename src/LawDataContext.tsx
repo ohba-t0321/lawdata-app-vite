@@ -61,6 +61,7 @@ interface LawArticleContextType {
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
   refLawTitle:{left:RefLawTitleList,right:RefLawTitleList};
   getChildren: (pane:Pane|'ref', vnode:VNode|null) => React.ReactNode;
+  dataLoading: {left:string,right:string};
 }
 
 export interface RefArticle {
@@ -361,6 +362,7 @@ export const LawArticleContext = createContext<LawArticleContextType>({
   setIsArticleLoaded: () => {},
   refLawTitle: {left:{lawTitleList:[],synonymList:{}},right:{lawTitleList:[],synonymList:{}}},
   getChildren: () => { return (<></>); },
+  dataLoading: {left:'', right:''},
 });
 
 export const ReferenceContext = createContext<ReferenceContextType>({
@@ -388,7 +390,6 @@ export const LawDataProvider = ({ children }: { children: ReactNode }) => {
     } catch (error) {
       console.error("データ取得失敗:", error);
     } finally {
-        console.log('lawData:',lawData,'isDataLoaded:',isDataLoaded);
         setIsDataLoaded(true); // エラーが発生してもロード完了とする
     }
   }, []);
@@ -422,29 +423,6 @@ interface JsonNode {
   tag: string;
   attr?: Record<string, any>;
   children: (JsonNode | string)[];
-}
-
-function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
-  const normalized: Record<string, any> = {};
-  // 特定のキーとその変換後の値を定義したマッピングオブジェクト
-  const specialKeyMap: { [key: string]: string } = {
-    rowspan: 'rowSpan',
-    colspan: 'colSpan',
-    WritingMode: 'writingMode', // 例: 'writingMode' のように完全一致でマッピング
-    // 'writingmode' がキーとして渡ってくる場合も考慮するなら以下を追加
-    // writingmode: 'writingMode',
-  };
-
-  for (const key in attr) {
-    let lowerKey: string;
-
-    if (Object.prototype.hasOwnProperty.call(attr, key)) {
-      // 1. マッピングオブジェクトにキーが存在するかチェックする
-      lowerKey = key in specialKeyMap ? specialKeyMap[key] : key.toLowerCase();
-      normalized[lowerKey] = attr[key];
-    }
-  }
-  return normalized;
 }
 
 export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
@@ -484,6 +462,10 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   const [vnode, setVnode] = useState<{left: VNode | null; right: VNode | null}>({
     left: null,
     right: null,
+  });
+  const [dataLoading, setDataLoading] = useState<{left:string,right:string}>({
+    left: '',
+    right: '',
   });
   // async function fetchRefData(pane:Pane,lawId:string) {
   //   const BASE = import.meta.env.BASE_URL;
@@ -572,6 +554,11 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
           } else if (data.progress === 'article_data_loading' || data.progress === 'complete') {
             // setRefLawTitle(prev => ({ ...prev, [pane]: data.refLawTitle }));  
             // setRefData(prev=>({...prev, [pane]:data.refData}));
+            if (data.progress === 'article_data_loading') {
+              setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
+            } else {
+              setDataLoading(prev => ({ ...prev, [pane]: '' }));
+            }
             setVnode(prev => ({ ...prev, [pane]: data.vnode }));
             setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
           }
@@ -854,7 +841,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   }
   return (
     // <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded, refLawTitle, getChildren }}>
-    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, /*lawArticle, setLawArticle,*/ isArticleLoaded, setIsArticleLoaded, vnode, setVnode, refLawTitle, getChildren }}>
+    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, /*lawArticle, setLawArticle,*/ isArticleLoaded, setIsArticleLoaded, vnode, setVnode, refLawTitle, getChildren, dataLoading }}>
       {children}
     </LawArticleContext.Provider>
   );

@@ -12,8 +12,9 @@ export function useLawDataWorker() {
   const generateRequestId = () => `${Date.now()}-${Math.random()}`;  
     
   const processQueue = useCallback(() => {  
-    // if (processingRef.current || requestQueueRef.current.length === 0) return;  
-    if (requestQueueRef.current.length === 0) return;  
+    console.log('processingRef',processingRef,'Processing queue:', requestQueueRef);
+    if (processingRef.current || requestQueueRef.current.length === 0) return;  
+    // if (requestQueueRef.current.length === 0) return;  
     processingRef.current = true;  
     const { id, request, callback } = requestQueueRef.current[0];  
       
@@ -61,6 +62,12 @@ export function useLawDataWorker() {
         return;  
       }  
   
+      const pane = request.payload?.pane;
+      // 古いリクエストをキャンセル
+      requestQueueRef.current = requestQueueRef.current.filter(
+        (req) => req.request.payload?.pane !== pane
+      );
+
       const id = generateRequestId();  
       requestQueueRef.current.push({ id, request, callback });  
       processQueue();  

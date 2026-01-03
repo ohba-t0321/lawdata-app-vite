@@ -30,7 +30,7 @@ export const LawPane: React.FC<LawPaneProps> = ({
   width,
 }) => {
   // 1. タイトル部分の条件を明確化
-  const { selectedLaws, vnode, isArticleLoaded, getChildren } = useContext(LawArticleContext);
+  const { selectedLaws, vnode, isArticleLoaded, getChildren, dataLoading } = useContext(LawArticleContext);
   const { lawData } = useContext(LawDataContext);
   const isLoaded = isArticleLoaded[pane];
   const isSelected = !!selectedLaws[pane];
@@ -54,20 +54,25 @@ export const LawPane: React.FC<LawPaneProps> = ({
 
   return (
     <div className={`pane ${pane}`} style={paneStyle}>
-      {/* 共通ロジック：h3 */}
-      <h3 className={`law-title ${pane}`}>
-        {title}
-      </h3>
-      
-      {/* 共通ロジック：法令番号 */}
-      <div className={`law-num ${pane}`}>
-        {lawNum ? (
-          <>
-            <span>（{lawNum}）</span>
-          </>
-        ) : null}
+      <div className={`law-header ${pane}`}>
+        {/* 共通ロジック：h3 */}
+        <h3 className={`law-title ${pane}`}>
+          {title}
+        </h3>
+        
+        {/* 共通ロジック：法令番号 */}
+        <div className={`law-num ${pane}`}>
+          {lawNum ? (
+            <>
+              <span>（{lawNum}）</span>
+            </>
+          ) : null}
+          {/* ローディング表示 */}
+          {(dataLoading[pane])?
+          <span className={`loading ${pane}`}>　　　{dataLoading[pane]} 読み込み中...</span>
+          :null}
+        </div>
       </div>
-      
       {/* 共通ロジック：本文 */}
       <div className={`law-content ${pane}`}>
         {articleContent}

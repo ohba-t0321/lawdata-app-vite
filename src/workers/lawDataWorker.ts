@@ -17,16 +17,16 @@ for (let i=1; i<10 ;i++) {
 }
 
 export interface WorkerRequest {  
+  requestId?: string;  
   type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE' | 'FETCH_REF_DATA';  
   payload?: any;  
-  requestId?: string;  
 }  
   
 export interface WorkerResponse {  
+  requestId: string;  
   type: string;  
   data?: any;  
   error?: string;
-  requestId: string;  
 }  
   
 interface JsonNode {  
@@ -143,7 +143,7 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
         console.log("law_full_text:", lawArticle.law_full_text);
         const lawBody = lawArticle.law_full_text.children.filter((child:any) => child.tag === 'LawBody')[0].children;
         let vnode:VNode[] = [];
-        lawBody.forEach((bodyPart:any)=>{
+        lawBody.forEach((bodyPart:any, index:number)=>{
           const vnodePart = renderVirtualTree(  
             bodyPart,  
             [],  
@@ -156,7 +156,7 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
           // 途中結果を送信  
           self.postMessage({  
             type: 'FETCH_LAW_ARTICLE_PROGRESS',  
-            data: { vnode, progress: 'article_data_loading' },  
+            data: { vnode, loading:`(${index + 1} / ${lawBody.length})`, progress: 'article_data_loading' },  
             requestId  
           } as WorkerResponse);  
         });
