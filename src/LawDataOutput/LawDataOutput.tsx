@@ -15,12 +15,11 @@ export const LawPane: React.FC<LawPaneProps> = ({
   width,
 }) => {
   // 1. タイトル部分の条件を明確化
-  const { selectedLaws, vnode, isArticleLoaded, getChildren, dataLoading } = useContext(LawArticleContext);
+  const { selectedLaws, domNodes, isArticleLoaded, dataLoading } = useContext(LawArticleContext);
   const { lawData } = useContext(LawDataContext);
   const isLoaded = isArticleLoaded[pane];
   const isSelected = !!selectedLaws[pane];
-  const lawNode = vnode[pane];
-  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&getChildren(lawNode),[isArticleLoaded[pane],vnode]);
+  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&domNodes[pane],[isArticleLoaded[pane],domNodes[pane],lawData]);
 
   // 2. 法令番号部分の条件を明確化
   const lawInfo = lawData?.filter((law) => law.law_info.law_num === selectedLaws[pane])[0]?.current_revision_info.law_title;

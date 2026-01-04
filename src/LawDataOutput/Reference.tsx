@@ -1,6 +1,6 @@
 import React,{useState, useContext, useEffect} from 'react';
 import './Reference.css';
-import { LawDataContext, LawArticleContext ,ReferenceContext } from '../LawDataContext';
+import { LawDataContext, LawArticleContext ,ReferenceContext, renderVNodes } from '../LawDataContext';
 import type { VNode } from '../LawDataContext';
 // import { isSameDateInJapan } from '../workers/lawDataWorker';
 // import { getLawFromCache, saveLawToCache } from '../indexedDB'
@@ -30,7 +30,6 @@ export const Reference:React.FC = () => {
     const [refLawNum,setRefLawNum] = useState<string>('');  
     const [refArticleData,setRefArticleData] = useState<any>(null);
     const { lawData } = useContext(LawDataContext);
-    const { getChildren } = useContext(LawArticleContext);
     const { clickedRefs,setClickedRefs,refArticleLoaded,setRefArticleLoaded } = useContext(ReferenceContext);
     const { fetchRefData } = useLawDataWorker();
     const lenRef:number = clickedRefs.length;
@@ -68,7 +67,7 @@ export const Reference:React.FC = () => {
 
     useEffect(()=>{
         if (refArticle) {
-            setRefArticleData(getChildren(refArticle));
+            setRefArticleData(renderVNodes(refArticle));
         }
         setRefLawNum(lawData? lawData.filter(law=>law.law_info.law_num===refItm?.lawNum)[0]?.current_revision_info.law_title : refItm?.lawNum)
         setRefArticleLoaded(true);

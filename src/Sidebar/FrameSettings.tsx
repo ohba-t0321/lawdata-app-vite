@@ -18,15 +18,15 @@ function FrameSettings() {
         { label: '薄くする', value: 'colorful' },
         { label: '消去する', value: 'none' }
     ];
-    const { selectedLaws, setSelectedLaws, lawArticle, setLawArticle, isArticleLoaded, setIsArticleLoaded } = useContext(LawArticleContext);
+    const { selectedLaws, setSelectedLaws, isArticleLoaded, vnode, setVnode, setIsArticleLoaded } = useContext(LawArticleContext);
     const { setDividerPos } = useContext(DividerContext)
     const { theme,setTheme } = useContext(ThemeContext);
 
     // フレームのクリアボタンの処理
     function clearFrame (pane:'left'|'right') {
-        setLawArticle({
-            ...lawArticle,
-            [pane]:{law_info:null,revision_info:null,law_full_text:null,attached_files_info:null},
+        setVnode({
+            ...vnode,
+            [pane]:null,
         })
         setSelectedLaws({
             ...selectedLaws,

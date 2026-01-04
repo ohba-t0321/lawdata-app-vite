@@ -54,7 +54,7 @@ interface LawArticleContextType {
   setVnode: (vnode: {left:VNode | null, right:VNode | null})=> void;
   isArticleLoaded: {left:boolean, right:boolean};
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
-  getChildren: (vnode:VNode|null) => React.ReactNode;
+  domNodes: {left:React.ReactNode, right:React.ReactNode};
   dataLoading: {left:string,right:string};
 }
 
@@ -145,6 +145,42 @@ const handleRightClick = (e: React.MouseEvent<HTMLElement>) => {
   });
 };
 
+export const renderVNodes = (input: VNode | readonly VNode[] | null | undefined): React.ReactNode => {
+  if (!input) return null;
+
+  if (Array.isArray(input)) {
+    // VNode配列の場合：再帰的に子要素を描画
+    return <>{input.map((node, index) => (
+      <React.Fragment key={index}>{renderVNode(node)}</React.Fragment>
+    ))}</>;
+  }
+
+  // 単一VNodeの場合
+  return renderVNode(input as VNode);
+}
+
+// 単一VNodeをReactNodeに変換
+const renderVNode = (node: VNode): React.ReactNode => {
+  if (node.type === "text") {
+    // HTML文字列を含むテキストノード
+    return <span dangerouslySetInnerHTML={{ __html: node.value }} />;
+  }
+
+  if (node.type === "element") {
+    const { tag, attr, children } = node;
+    const props: Record<string, any> = { ...attr };
+    if (props.onContextMenu === "handleRightClick") {
+      props.onContextMenu = handleRightClick;
+    }
+    const renderedChildren = renderVNodes(children);
+
+    return React.createElement(tag, props, renderedChildren);
+  }
+
+  // 型安全対策（到達しない想定）
+  const _exhaustiveCheck: never = node;
+  return _exhaustiveCheck;
+}
 
 export const LawDataContext = createContext<LawDataContextType>({
   lawData: null,
@@ -158,7 +194,7 @@ export const LawArticleContext = createContext<LawArticleContextType>({
   setVnode: () => {},
   isArticleLoaded: {left:false, right:false},
   setIsArticleLoaded: () => {},
-  getChildren: () => { return (<></>); },
+  domNodes: {left:<></>, right:<></>},
   dataLoading: {left:'', right:''},
 });
 
@@ -250,25 +286,28 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     left: '',
     right: '',
   });
+  const [domNodes, setDomNodes] = useState<{left: React.ReactNode; right: React.ReactNode}>({
+    left: <></>,
+    right: <></>,
+  });
 
   async function lawArticleInit(pane:Pane) {
+    let vnode: VNode[] = [];
     if (selectedLaws[pane]) {
       try {
         // Web Workerを使用してデータ取得  
         fetchLawArticle(pane, selectedLaws[pane], (data: any) => {
           if (data.progress === 'basic_data_loaded') { 
             setLawArticle(prev => ({ ...prev, [pane]: data.lawArticle }));
-          } else if (data.progress === 'article_data_loading' || data.progress === 'complete') {
-            // setRefLawTitle(prev => ({ ...prev, [pane]: data.refLawTitle }));  
-            // setRefData(prev=>({...prev, [pane]:data.refData}));
-            if (data.progress === 'article_data_loading') {
-              setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
-            } else {
-              setDataLoading(prev => ({ ...prev, [pane]: '' }));
-            }
+          } else if (data.progress === 'article_data_loading') {
+            vnode.push(...data.vnodePart);
+            setVnode(prev => ({ ...prev, [pane]: vnode }));
+            setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
+          } else if (data.progress === 'complete') {
             setVnode(prev => ({ ...prev, [pane]: data.vnode }));
-            setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
+            setDataLoading(prev => ({ ...prev, [pane]: '' }));
           }
+          setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
         });  
       } catch (error) {
         console.error("法令データ取得失敗:", error);
@@ -328,51 +367,15 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     });
   }, [lawArticle]);
 
-  function renderVNodes(input: VNode | readonly VNode[] | null | undefined): React.ReactNode {
-    if (!input) return null;
+  useEffect(() => {
+    (['left','right'] as Pane[]).forEach((pane)=>{
+      const domNode = vnode[pane]? renderVNodes(vnode[pane]) : null;
+      setDomNodes(prev=>({...prev, [pane]: domNode}));
+    });
+  }, [vnode]);
 
-    if (Array.isArray(input)) {
-      // VNode配列の場合：再帰的に子要素を描画
-      return <>{input.map((node, index) => (
-        <React.Fragment key={index}>{renderVNode(node)}</React.Fragment>
-      ))}</>;
-    }
-
-    // 単一VNodeの場合
-    return renderVNode(input as VNode);
-  }
-
-  // 単一VNodeをReactNodeに変換
-  function renderVNode(node: VNode): React.ReactNode {
-    if (node.type === "text") {
-      // HTML文字列を含むテキストノード
-      return <span dangerouslySetInnerHTML={{ __html: node.value }} />;
-    }
-
-    if (node.type === "element") {
-      const { tag, attr, children } = node;
-      const props: Record<string, any> = { ...attr };
-      if (props.onContextMenu === "handleRightClick") {
-        props.onContextMenu = handleRightClick;
-      }
-      const renderedChildren = renderVNodes(children);
-
-      return React.createElement(tag, props, renderedChildren);
-    }
-
-    // 型安全対策（到達しない想定）
-    const _exhaustiveCheck: never = node;
-    return _exhaustiveCheck;
-  }
-
-
-  // LawFullTextのchildrenをHTMLに変換
-  const getChildren = ( vnode : VNode | null ) : any => {
-    if (!vnode) return <></>;
-    return <>{renderVNodes(vnode)}</>;
-  }
   return (
-    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded, vnode, setVnode, getChildren, dataLoading }}>
+    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded, vnode, setVnode, domNodes, dataLoading }}>
       {children}
     </LawArticleContext.Provider>
   );
