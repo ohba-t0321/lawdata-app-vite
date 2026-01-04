@@ -143,7 +143,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "1"
             },
             "text": "母子保健法（昭和四十年法律第百四十一号）第九条の二第一項の相談又は同条第二項の支援の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -166,7 +166,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "1"
             },
             "text": "母子保健法第九条の二第一項の相談又は同条第二項の支援の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -304,7 +304,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "2"
             },
             "text": "母子保健法第十条の保健指導の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -327,7 +327,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "2"
             },
             "text": "母子保健法第十条の保健指導の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -488,7 +488,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "3"
             },
             "text": "母子保健法第十一条の新生児の訪問指導、同法第十七条第一項の妊産婦の訪問指導若しくは診療又は同法第十九条第一項の未熟児の訪問指導の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -511,7 +511,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "3"
             },
             "text": "母子保健法第十一条の新生児の訪問指導、同法第十七条第一項の妊産婦の訪問指導若しくは診療又は同法第十九条第一項の未熟児の訪問指導の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -599,6 +599,75 @@
     },
     {
         "ref": {
+            "lawNum": "平成二十六年厚生労働省令第六十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "17",
+                "paragraph": "2",
+                "item": "0"
+            },
+            "text": "家庭的保育事業者等は、前項の規定にかかわらず、次の表の上欄に掲げる健康診断又は健康診査（母子保健法（昭和四十年法律第百四十一号）第十二条又は第十三条に規定する健康診査をいう。同表において同じ。）（以下この項において「健康診断等」という。）が行われた場合であって、当該健康診断等がそれぞれ同表の下欄に掲げる健康診断の全部又は一部に相当すると認められるときは、同欄に掲げる健康診断の全部又は一部を行わないことができる。"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "12",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "市町村は、次に掲げる者に対し、内閣府令の定めるところにより、健康診査を行わなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十四年厚生労働省令第十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "33",
+                "paragraph": "2",
+                "item": "0"
+            },
+            "text": "前項の指定児童発達支援事業者は、同項の規定にかかわらず、次の表の上欄に掲げる健康診断又は健康診査（母子保健法（昭和四十年法律第百四十一号）第十二条又は第十三条に規定する健康診査をいう。同表において同じ。）（以下この項において「健康診断等」という。）が行われた場合であって、当該健康診断等がそれぞれ同表の下欄に掲げる健康診断の全部又は一部に相当すると認められるときは、同欄に掲げる健康診断の全部又は一部を行わないことができる。"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "12",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "市町村は、次に掲げる者に対し、内閣府令の定めるところにより、健康診査を行わなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十四年厚生労働省令第十六号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "28",
+                "paragraph": "2",
+                "item": "0"
+            },
+            "text": "指定福祉型障害児入所施設は、前項の規定にかかわらず、次の表の上欄に掲げる健康診断又は健康診査（母子保健法（昭和四十年法律第百四十一号）第十二条又は第十三条に規定する健康診査をいう。同表において同じ。）（以下この項において「健康診断等」という。）が行われた場合であって、当該健康診断等がそれぞれ同表の下欄に掲げる健康診断の全部又は一部に相当すると認められるときは、同欄に掲げる健康診断の全部又は一部を行わないことができる。"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "12",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "市町村は、次に掲げる者に対し、内閣府令の定めるところにより、健康診査を行わなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "平成元年厚生省令第三十四号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -649,7 +718,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "4"
             },
             "text": "母子保健法第十二条第一項の健康診査又は同法第十三条の健康診査の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -672,10 +741,33 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "4"
             },
             "text": "母子保健法第十二条第一項の健康診査又は同法第十三条の健康診査の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "12",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "市町村は、次に掲げる者に対し、内閣府令の定めるところにより、健康診査を行わなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和二十三年厚生省令第六十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "12",
+                "paragraph": "2",
+                "item": "0"
+            },
+            "text": "児童福祉施設の長は、前項の規定にかかわらず、次の表の上欄に掲げる健康診断又は健康診査（母子保健法（昭和四十年法律第百四十一号）第十二条又は第十三条に規定する健康診査をいう。同表において同じ。）（以下この項において「健康診断等」という。）が行われた場合であつて、当該健康診断等がそれぞれ同表の下欄に掲げる健康診断の全部又は一部に相当すると認められるときは、同欄に掲げる健康診断の全部又は一部を行わないことができる。"
         },
         "referred": {
             "lawNum": "昭和四十年法律第百四十一号",
@@ -926,9 +1018,101 @@
                 "provision": "MainProvision",
                 "article": "114",
                 "paragraph": "1",
-                "item": "1"
+                "item": "2"
             },
             "text": "当該申請を行う者の配偶者に係る母子保健法第十五条の妊娠の届出に関する情報"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "15",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "妊娠した者は、内閣府令で定める事項につき、速やかに、市町村長に妊娠の届出をするようにしなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "令和六年デジタル庁・総務省令第九号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "114",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "当該申請を行う者の配偶者に係る母子保健法第十五条の妊娠の届出に関する情報"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "15",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "妊娠した者は、内閣府令で定める事項につき、速やかに、市町村長に妊娠の届出をするようにしなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "令和六年デジタル庁・総務省令第九号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "114",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "当該申請を行う者又は当該者の配偶者に係る母子保健法第十五条の妊娠の届出に関する情報"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "15",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "妊娠した者は、内閣府令で定める事項につき、速やかに、市町村長に妊娠の届出をするようにしなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "令和六年デジタル庁・総務省令第九号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "114",
+                "paragraph": "1",
+                "item": "5"
+            },
+            "text": "当該申請を行う者の配偶者に係る母子保健法第十五条の妊娠の届出に関する情報"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "15",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "妊娠した者は、内閣府令で定める事項につき、速やかに、市町村長に妊娠の届出をするようにしなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "令和六年デジタル庁・総務省令第九号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "157",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "母子保健法第十五条の妊娠の届出に関する情報"
         },
         "referred": {
             "lawNum": "昭和四十年法律第百四十一号",
@@ -1017,7 +1201,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "5"
             },
             "text": "母子保健法第十五条の妊娠の届出の受理又はその届出に係る事実についての審査"
@@ -1040,7 +1224,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "5"
             },
             "text": "母子保健法第十五条の妊娠の届出の受理又はその届出に係る事実についての審査"
@@ -1109,7 +1293,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "6"
             },
             "text": "母子保健法第十六条第一項の母子健康手帳の交付を受けている者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -1132,7 +1316,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "6"
             },
             "text": "母子保健法第十六条第一項の母子健康手帳の交付を受けている者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -1431,7 +1615,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "7"
             },
             "text": "母子保健法第十七条の二の産後ケア事業の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -1454,7 +1638,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "7"
             },
             "text": "母子保健法第十七条の二の産後ケア事業の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
@@ -1753,7 +1937,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
+                "paragraph": "30",
                 "item": "8"
             },
             "text": "母子保健法第十八条の低体重児の届出の受理又はその届出に係る事実についての審査"
@@ -1776,7 +1960,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
+                "paragraph": "29",
                 "item": "8"
             },
             "text": "母子保健法第十八条の低体重児の届出の受理又はその届出に係る事実についての審査"
@@ -1959,6 +2143,29 @@
             "lawNum": "令和六年デジタル庁・総務省令第九号",
             "lawArticle": {
                 "provision": "MainProvision",
+                "article": "97_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "第二条の表九十五の二の項で定める事務は、母子保健法第二十条第一項の養育医療の給付の支給に関する事務とし、同表九十五の二の項で定める情報は、当該支給の申請に係る未熟児に係る医療保険各法による保険給付の資格者等に関する情報とする。"
+        },
+        "referred": {
+            "lawNum": "昭和四十年法律第百四十一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "20",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "市町村は、養育のため病院又は診療所に入院することを必要とする未熟児に対し、その養育に必要な医療（以下「養育医療」という。）の給付を行い、又はこれに代えて養育医療に要する費用を支給することができる。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "令和六年デジタル庁・総務省令第九号",
+            "lawArticle": {
+                "provision": "MainProvision",
                 "article": "98",
                 "paragraph": "1",
                 "item": "1"
@@ -2102,52 +2309,6 @@
                 "item": "11"
             },
             "text": "母子保健法第二十条第一項の養育医療の給付又は養育医療に要する費用の支給に関する事務"
-        },
-        "referred": {
-            "lawNum": "昭和四十年法律第百四十一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "20",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "市町村は、養育のため病院又は診療所に入院することを必要とする未熟児に対し、その養育に必要な医療（以下「養育医療」という。）の給付を行い、又はこれに代えて養育医療に要する費用を支給することができる。"
-        },
-        "match": "★引用個所不明★"
-    },
-    {
-        "ref": {
-            "lawNum": "平成十四年総務省令第十三号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "2",
-                "paragraph": "28",
-                "item": "9"
-            },
-            "text": "母子保健法第二十条第一項の養育医療の給付又は養育医療に要する費用の支給を受ける未熟児及びその保護者の生存の事実又は氏名若しくは住所の変更の事実の確認"
-        },
-        "referred": {
-            "lawNum": "昭和四十年法律第百四十一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "20",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "市町村は、養育のため病院又は診療所に入院することを必要とする未熟児に対し、その養育に必要な医療（以下「養育医療」という。）の給付を行い、又はこれに代えて養育医療に要する費用を支給することができる。"
-        },
-        "match": "★引用個所不明★"
-    },
-    {
-        "ref": {
-            "lawNum": "平成十四年総務省令第十三号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "4",
-                "paragraph": "27",
-                "item": "9"
-            },
-            "text": "母子保健法第二十条第一項の養育医療の給付又は養育医療に要する費用の支給を受ける未熟児及びその保護者の生存の事実又は氏名若しくは住所の変更の事実の確認"
         },
         "referred": {
             "lawNum": "昭和四十年法律第百四十一号",
@@ -2812,7 +2973,7 @@
                 "provision": "MainProvision",
                 "article": "40",
                 "paragraph": "1",
-                "item": "12"
+                "item": "13"
             },
             "text": "母子保健法第二十一条の四第一項の費用の徴収に関する事務"
         },
@@ -2834,8 +2995,8 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
-                "item": "10"
+                "paragraph": "30",
+                "item": "13"
             },
             "text": "母子保健法第二十一条の四第一項の費用の徴収に係る事実についての審査"
         },
@@ -2857,8 +3018,8 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
-                "item": "10"
+                "paragraph": "29",
+                "item": "13"
             },
             "text": "母子保健法第二十一条の四第一項の費用の徴収に係る事実についての審査"
         },
@@ -2927,7 +3088,7 @@
                 "provision": "MainProvision",
                 "article": "40",
                 "paragraph": "1",
-                "item": "13"
+                "item": "14"
             },
             "text": "母子保健法第二十二条第一項のこども家庭センターの事業の実施に関する事務"
         },
@@ -2949,8 +3110,8 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "28",
-                "item": "11"
+                "paragraph": "30",
+                "item": "14"
             },
             "text": "母子保健法第二十二条第一項のこども家庭センターの事業の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
         },
@@ -2972,8 +3133,8 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "27",
-                "item": "11"
+                "paragraph": "29",
+                "item": "14"
             },
             "text": "母子保健法第二十二条第一項のこども家庭センターの事業の対象となる者の生存の事実又は氏名若しくは住所の変更の事実の確認"
         },

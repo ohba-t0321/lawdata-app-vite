@@ -257,7 +257,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_5",
+                "article": "43_2_7",
                 "paragraph": "1",
                 "item": "1"
             },
@@ -281,7 +281,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "117",
+                "paragraph": "124",
                 "item": "1"
             },
             "text": "建築物における衛生的環境の確保に関する法律（昭和四十五年法律第二十号）第七条第一項の交付に関する申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -602,7 +602,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_5",
+                "article": "43_2_7",
                 "paragraph": "1",
                 "item": "2"
             },
@@ -617,6 +617,29 @@
                 "item": "0"
             },
             "text": "厚生労働大臣は、建築物環境衛生管理技術者免状の交付を受けている者が、この法律又はこの法律に基づく処分に違反したときは、その建築物環境衛生管理技術者免状の返納を命ずることができる。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "令和六年厚生労働省令第百六号",
+            "lawArticle": {
+                "provision": "SupplProvision",
+                "article": "0",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "建築物における衛生的環境の確保に関する法律（昭和四十五年法律第二十号）第七条第五項の規定による手数料"
+        },
+        "referred": {
+            "lawNum": "昭和四十五年法律第二十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "7",
+                "paragraph": "5",
+                "item": "0"
+            },
+            "text": "建築物環境衛生管理技術者免状の交付又は再交付の手数料は政令で、建築物環境衛生管理技術者免状の交付、再交付その他建築物環境衛生管理技術者免状に関する手続的事項は厚生労働省令で定める。"
         },
         "match": "★引用個所不明★"
     },
@@ -901,7 +924,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_5",
+                "article": "43_2_7",
                 "paragraph": "1",
                 "item": "3"
             },
@@ -925,7 +948,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "118",
+                "paragraph": "125",
                 "item": "0"
             },
             "text": "法別表第一の五十七の三十七の項の総務省令で定める事務は、建築物における衛生的環境の確保に関する法律第八条第一項の建築物環境衛生管理技術者試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答とする。"

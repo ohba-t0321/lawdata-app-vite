@@ -162,11 +162,80 @@
     },
     {
         "ref": {
+            "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "賃貸住宅の管理業務等の適正化に関する法律（令和二年法律第六十号）第三条第一項の登録を受けていること。"
+        },
+        "referred": {
+            "lawNum": "令和二年法律第六十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "賃貸住宅管理業を営もうとする者は、国土交通大臣の登録を受けなければならない。ただし、その事業の規模が、当該事業に係る賃貸住宅の戸数その他の事項を勘案して国土交通省令で定める規模未満であるときは、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "36",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "賃貸住宅の管理業務等の適正化に関する法律第三条第一項の登録を受けていること。"
+        },
+        "referred": {
+            "lawNum": "令和二年法律第六十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "賃貸住宅管理業を営もうとする者は、国土交通大臣の登録を受けなければならない。ただし、その事業の規模が、当該事業に係る賃貸住宅の戸数その他の事項を勘案して国土交通省令で定める規模未満であるときは、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十九年国土交通省令第六十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "34",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "賃貸住宅の管理業務等の適正化に関する法律（令和二年法律第六十号）第三条第一項の登録"
+        },
+        "referred": {
+            "lawNum": "令和二年法律第六十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "賃貸住宅管理業を営もうとする者は、国土交通大臣の登録を受けなければならない。ただし、その事業の規模が、当該事業に係る賃貸住宅の戸数その他の事項を勘案して国土交通省令で定める規模未満であるときは、この限りでない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "平成十四年総務省令第十三号",
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "227",
+                "paragraph": "243",
                 "item": "1"
             },
             "text": "賃貸住宅の管理業務等の適正化に関する法律（令和二年法律第六十号）第三条第一項の登録の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -603,7 +672,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "227",
+                "paragraph": "243",
                 "item": "2"
             },
             "text": "賃貸住宅の管理業務等の適正化に関する法律第七条第一項の届出の受理又はその届出に係る事実についての審査"

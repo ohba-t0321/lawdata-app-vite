@@ -31,7 +31,7 @@
                 "paragraph": "2",
                 "item": "3"
             },
-            "text": "電波法第四条の規定による無線局の免許を受けているときは、その免許状の写し"
+            "text": "電波法第四条の規定による無線局の免許を受けているときは、同法第十四条の二に規定する免許記録の写し又は同条の書面"
         },
         "referred": {
             "lawNum": "昭和二十七年法律第百六十五号",
@@ -1151,6 +1151,29 @@
     },
     {
         "ref": {
+            "lawNum": "昭和二十七年運輸省令第百一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "47",
+                "paragraph": "2",
+                "item": "3"
+            },
+            "text": "電波法第四条の規定による無線局の免許を受けているときは、同法第十四条の二に規定する免許記録の写し又は同条の書面"
+        },
+        "referred": {
+            "lawNum": "昭和二十七年法律第百六十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "14_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "気象庁は、政令の定めるところにより、気象、津波、高潮及び洪水についての水防活動の利用に適合する予報及び警報をしなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "昭和二十四年法律第百九十三号",
             "lawArticle": {
                 "provision": "令和五年五月三一日法律第三七号",
@@ -1316,7 +1339,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "248",
+                "paragraph": "268",
                 "item": "1"
             },
             "text": "気象業務法（昭和二十七年法律第百六十五号）第十七条第一項の許可の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -2765,7 +2788,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "248",
+                "paragraph": "268",
                 "item": "2"
             },
             "text": "気象業務法第二十四条の二十の登録の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"

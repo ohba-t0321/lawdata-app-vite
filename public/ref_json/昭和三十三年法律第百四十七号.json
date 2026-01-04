@@ -51,10 +51,10 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "3",
-                "paragraph": "24",
+                "paragraph": "25",
                 "item": "1"
             },
-            "text": "調理師法（昭和三十三年法律第百四十七号）第三条の免許の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
+            "text": "調理師法第三条の免許の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
         },
         "referred": {
             "lawNum": "昭和三十三年法律第百四十七号",
@@ -74,7 +74,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "5",
-                "paragraph": "22",
+                "paragraph": "23",
                 "item": "1"
             },
             "text": "調理師法第三条の免許の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -369,6 +369,98 @@
     },
     {
         "ref": {
+            "lawNum": "平成二十六年内閣府・総務省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "23_4",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "調理師法第三条の二第一項の調理師試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答に関する事務"
+        },
+        "referred": {
+            "lawNum": "昭和三十三年法律第百四十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "調理師試験は、厚生労働大臣の定める基準により、調理、栄養及び衛生に関して必要な知識及び技能について、都道府県知事が行う。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成十四年総務省令第十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "121",
+                "item": "0"
+            },
+            "text": "法別表第一の五十七の三十三の項の総務省令で定める事務は、調理師法（昭和三十三年法律第百四十七号）第三条の二第一項の調理師試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答とする。"
+        },
+        "referred": {
+            "lawNum": "昭和三十三年法律第百四十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "調理師試験は、厚生労働大臣の定める基準により、調理、栄養及び衛生に関して必要な知識及び技能について、都道府県知事が行う。"
+        },
+        "match": ""
+    },
+    {
+        "ref": {
+            "lawNum": "平成十四年総務省令第十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "25",
+                "item": "2"
+            },
+            "text": "調理師法第三条の二第一項の調理師試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答"
+        },
+        "referred": {
+            "lawNum": "昭和三十三年法律第百四十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "調理師試験は、厚生労働大臣の定める基準により、調理、栄養及び衛生に関して必要な知識及び技能について、都道府県知事が行う。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成十四年総務省令第十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "5",
+                "paragraph": "23",
+                "item": "2"
+            },
+            "text": "調理師法第三条の二第一項の調理師試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答"
+        },
+        "referred": {
+            "lawNum": "昭和三十三年法律第百四十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "調理師試験は、厚生労働大臣の定める基準により、調理、栄養及び衛生に関して必要な知識及び技能について、都道府県知事が行う。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "昭和三十三年厚生省令第四十六号",
             "lawArticle": {
                 "provision": "平成九年五月一二日厚生省令第四八号",
@@ -603,8 +695,8 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "3",
-                "paragraph": "24",
-                "item": "2"
+                "paragraph": "25",
+                "item": "3"
             },
             "text": "調理師法第五条第三項の交付に関する申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
         },
@@ -626,8 +718,8 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "5",
-                "paragraph": "22",
-                "item": "2"
+                "paragraph": "23",
+                "item": "3"
             },
             "text": "調理師法第五条第三項の交付に関する申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
         },
@@ -765,7 +857,7 @@
                 "provision": "MainProvision",
                 "article": "23_4",
                 "paragraph": "1",
-                "item": "3"
+                "item": "4"
             },
             "text": "調理師法第六条の調理師の免許の取消しに関する事務"
         },
@@ -824,6 +916,52 @@
                 "item": "0"
             },
             "text": "多数人に対して飲食物を調理して供与する施設又は営業で厚生労働省令の定めるものの設置者又は営業者は、当該施設又は営業における調理の業務を行わせるため、当該施設又は営業の施設ごとに、調理師を置くように努めなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十六年内閣府・総務省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "23_5",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "調理師法第八条の三第一項の調理技術に関する審査の受験の申請の受理、その申請に係る事実についての審査又はその申請に対する応答に関する事務"
+        },
+        "referred": {
+            "lawNum": "昭和三十三年法律第百四十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "8_3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "厚生労働大臣は、調理師の資質の向上に資するため、調理技術に関する審査を行うことができる。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成十四年総務省令第十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "1",
+                "paragraph": "122",
+                "item": "1"
+            },
+            "text": "調理師法第八条の三第一項の調理技術に関する審査の受験の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
+        },
+        "referred": {
+            "lawNum": "昭和三十三年法律第百四十七号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "8_3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "厚生労働大臣は、調理師の資質の向上に資するため、調理技術に関する審査を行うことができる。"
         },
         "match": "★引用個所不明★"
     },

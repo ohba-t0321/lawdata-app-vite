@@ -24,6 +24,29 @@
     },
     {
         "ref": {
+            "lawNum": "平成二十六年内閣府・総務省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10_8",
+                "paragraph": "1",
+                "item": "1"
+            },
+            "text": "司法試験法（昭和二十四年法律第百四十号）第二条第一項の司法試験若しくは同法第五条第一項の司法試験予備試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答に関する事務"
+        },
+        "referred": {
+            "lawNum": "昭和二十四年法律第百四十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "司法試験は、短答式（択一式を含む。以下同じ。）及び論文式による筆記の方法により行う。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "平成十七年法務省令第八十四号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -502,6 +525,75 @@
                 "item": "0"
             },
             "text": "司法試験の合格者は司法試験考査委員の合議による判定に基づき、予備試験の合格者は司法試験予備試験考査委員の合議による判定に基づき、それぞれ司法試験委員会が決定する。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十六年内閣府・総務省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10_8",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "司法試験法第九条の司法試験又は司法試験予備試験の合格証書の授与に関する事務"
+        },
+        "referred": {
+            "lawNum": "昭和二十四年法律第百四十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "9",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "司法試験又は予備試験に合格した者には、それぞれ当該試験に合格したことを証する証書を授与する。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十六年内閣府・総務省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10_8",
+                "paragraph": "1",
+                "item": "3"
+            },
+            "text": "司法試験法第十条の司法試験又は司法試験予備試験の合格の取消し等に関する事務"
+        },
+        "referred": {
+            "lawNum": "昭和二十四年法律第百四十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "司法試験委員会は、不正の手段によつて司法試験若しくは予備試験を受け、若しくは受けようとした者又はこの法律若しくはこの法律に基づく法務省令に違反した者に対しては、その試験を受けることを禁止し、合格の決定を取り消し、又は情状により五年以内の期間を定めて司法試験若しくは予備試験を受けることができないものとすることができる。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成二十六年内閣府・総務省令第五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10_8",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "司法試験法第十一条第一項の司法試験又は司法試験予備試験の受験手数料の納付に関する事務"
+        },
+        "referred": {
+            "lawNum": "昭和二十四年法律第百四十号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "11",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "司法試験又は予備試験を受けようとする者は、それぞれ実費を勘案して政令で定める額の受験手数料を納付しなければならない。"
         },
         "match": "★引用個所不明★"
     },

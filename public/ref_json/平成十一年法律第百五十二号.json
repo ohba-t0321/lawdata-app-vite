@@ -47,6 +47,29 @@
     },
     {
         "ref": {
+            "lawNum": "明治四十一年法律第五十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "51",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "公証人は、任意後見契約に関する法律（平成十一年法律第百五十号）第三条に規定する公正証書を作成したときは、後見登記等に関する法律（平成十一年法律第百五十二号）第二条第一項の登記所に任意後見契約の登記を嘱託しなければならない。"
+        },
+        "referred": {
+            "lawNum": "平成十一年法律第百五十二号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "後見登記等に関する事務は、法務大臣の指定する法務局若しくは地方法務局若しくはこれらの支局又はこれらの出張所（次条において「指定法務局等」という。）が、登記所としてつかさどる。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "平成十二年法務省令第二号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -258,7 +281,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "49",
+                "paragraph": "52",
                 "item": "0"
             },
             "text": "法別表第一の三十八の項の総務省令で定める事務は、後見登記等に関する法律（平成十一年法律第百五十二号）第七条又は第八条の登記の申請に係る事実についての審査又はその申請に対する応答とする。"

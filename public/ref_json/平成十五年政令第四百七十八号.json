@@ -1,29 +1,6 @@
 [
     {
         "ref": {
-            "lawNum": "昭和五十六年総理府令第三十三号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "4",
-                "paragraph": "1",
-                "item": "2"
-            },
-            "text": "国立大学法人法施行令（平成十五年政令第四百七十八号）第三条第一項第一号の事業"
-        },
-        "referred": {
-            "lawNum": "平成十五年政令第四百七十八号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "3",
-                "paragraph": "1",
-                "item": "1"
-            },
-            "text": "当該国立大学又は大学共同利用機関（以下この条において「国立大学等」という。）における研究の成果の提供を受けて、他の事業者の依頼に応じてその事業活動に関し必要な助言その他の援助を行う事業"
-        },
-        "match": "★引用個所不明★"
-    },
-    {
-        "ref": {
             "lawNum": "昭和三十二年大蔵省令第十五号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -55,6 +32,29 @@
                 "item": "1"
             },
             "text": "国立大学法人法施行令第三条第二項第一号に掲げる事業として行う研究開発"
+        },
+        "referred": {
+            "lawNum": "平成十五年政令第四百七十八号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "2",
+                "item": "1"
+            },
+            "text": "当該国立大学等における技術に関する研究の成果の提供を受けて当該成果を実用化するために必要な研究を行う事業であって、当該成果を実用化しようとする民間事業者その他の者と共同して又は当該者から委託を受けて行うもの"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和五十六年総理府令第三十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "4",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "国立大学法人法施行令（平成十五年政令第四百七十八号）第三条第二項第一号の事業"
         },
         "referred": {
             "lawNum": "平成十五年政令第四百七十八号",
