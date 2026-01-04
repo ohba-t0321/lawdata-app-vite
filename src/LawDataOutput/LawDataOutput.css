@@ -43,16 +43,24 @@
   height: 200%;
 }
 
-
-.law-title {
+.law-header{
     margin-bottom: 0px;
     position: sticky;
     top: 0;
     background-color: #fff;
     z-index: 999;
 }
+
+.law-title {
+    margin-bottom: 0px;
+    top: 0;
+}
 .law-num{
     padding-left: 10px;
+}
+.loading{
+    font-size: 0.9em;
+    color:#888;
 }
 .law-content{
     padding: 0px; 

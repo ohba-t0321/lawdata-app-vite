@@ -1,23 +1,8 @@
 import React,{ useContext,useMemo } from 'react';
 import './LawDataOutput.css';
 import { DividerContext } from '../DiviserContext';
-import { LawArticleContext, ReferenceContext } from '../LawDataContext';
-import type { LawNode } from '../LawDataContext';
+import { LawDataContext, LawArticleContext, ReferenceContext } from '../LawDataContext';
 import  { Reference } from './Reference'
-
-
-
-const getLawTitle = (json:any):any => {
-    if ("law_title" in json) {
-        return (<>{json.law_title}</>)
-    }
-}
-
-const getLawNum = (json:any):any => {
-    if ("law_num" in json) {
-        return (<>{json.law_num}</>)
-    }
-}
 
 // Propの型定義
 interface LawPaneProps {
@@ -30,39 +15,41 @@ export const LawPane: React.FC<LawPaneProps> = ({
   width,
 }) => {
   // 1. タイトル部分の条件を明確化
-  const { selectedLaws, lawArticle, isArticleLoaded, getChildren } = useContext(LawArticleContext);
+  const { selectedLaws, domNodes, isArticleLoaded, dataLoading } = useContext(LawArticleContext);
+  const { lawData } = useContext(LawDataContext);
   const isLoaded = isArticleLoaded[pane];
   const isSelected = !!selectedLaws[pane];
-  const lawData = lawArticle[pane];
-  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawArticle[pane].law_full_text&&getChildren(pane,lawArticle[pane].law_full_text as LawNode),[isArticleLoaded[pane],lawArticle.left.law_full_text]);
-  const title = isLoaded && lawData?.revision_info
-    ? getLawTitle(lawData.revision_info)
-    : (!isLoaded && isSelected ? "データ取得中..." : ""); // データ取得中
+  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&domNodes[pane],[isArticleLoaded[pane],domNodes[pane],lawData]);
 
   // 2. 法令番号部分の条件を明確化
-  const lawInfo = lawData?.law_info;
-  const lawNum = isLoaded && lawInfo ? getLawNum(lawInfo) : null;
+  const lawInfo = lawData?.filter((law) => law.law_info.law_num === selectedLaws[pane])[0]?.current_revision_info.law_title;
+  const title = isLoaded && lawInfo ? lawInfo : ( !isLoaded && isSelected ? "データ取得中..." : "" ); // データ取得中
+  const lawNum = isLoaded && selectedLaws[pane] ? selectedLaws[pane] : null;
   
   // 3. スタイルの設定
   const paneStyle = { width: `${width}%` };
 
-
   return (
     <div className={`pane ${pane}`} style={paneStyle}>
-      {/* 共通ロジック：h3 */}
-      <h3 className={`law-title ${pane}`}>
-        {title}
-      </h3>
-      
-      {/* 共通ロジック：法令番号 */}
-      <div className={`law-num ${pane}`}>
-        {lawNum ? (
-          <>
-            <span>（{lawNum}）</span>
-          </>
-        ) : null}
+      <div className={`law-header ${pane}`}>
+        {/* 共通ロジック：h3 */}
+        <h3 className={`law-title ${pane}`}>
+          {title}
+        </h3>
+        
+        {/* 共通ロジック：法令番号 */}
+        <div className={`law-num ${pane}`}>
+          {lawNum ? (
+            <>
+              <span>（{lawNum}）</span>
+            </>
+          ) : null}
+          {/* ローディング表示 */}
+          {(dataLoading[pane])?
+          <span className={`loading ${pane}`}>　　　{dataLoading[pane]} 読み込み中...</span>
+          :null}
+        </div>
       </div>
-      
       {/* 共通ロジック：本文 */}
       <div className={`law-content ${pane}`}>
         {articleContent}

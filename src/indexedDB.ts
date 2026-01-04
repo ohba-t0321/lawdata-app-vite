@@ -1,4 +1,4 @@
-import type { LawData, LawArticle } from './LawDataContext'
+import type { LawData, LawArticle, VNode } from './LawDataContext'
 export const CACHE_EXPIRE_MS:number = 1000 * 60 * 60 * 24; // 24時間
 
 export interface LawListCache {
@@ -10,12 +10,13 @@ export interface LawListCache {
 export interface LawDataCache {
   lawNo:string,
   lawArticle:LawArticle,
+  vnode:VNode[],
   timestamp:number,
 }
 
 function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open("LawCacheDB", 3);
+    const request = indexedDB.open("LawCacheDB", 4);
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
       // 既存の "laws" ストアがない場合のみ作成（既にあるときはスキップ）
@@ -34,12 +35,12 @@ function openDB(): Promise<IDBDatabase> {
   });
 }
 
-export async function saveLawToCache(lawNo:string, lawArticle:LawArticle) {
+export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:VNode[]) {
   const db = await openDB();
   const tx = db.transaction("laws", "readwrite");
   const store = tx.objectStore("laws");
   lawNo = decodeURIComponent(lawNo);
-  const record = {lawNo, lawArticle, timestamp: Date.now() };
+  const record = {lawNo, lawArticle, vnode, timestamp: Date.now() };
   store.put(record);
   return new Promise<void>((resolve, reject) => {
     tx.oncomplete = () => resolve();

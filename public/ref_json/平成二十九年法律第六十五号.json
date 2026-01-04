@@ -327,10 +327,10 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "2",
-                "paragraph": "60",
+                "paragraph": "63",
                 "item": "0"
             },
-            "text": "法別表第二の六の三の項の総務省令で定める事務は、住宅宿泊事業法第三条第一項又は第四項の届出の受理又はその届出に係る事実についての審査とする。"
+            "text": "法別表第二の六の四の項の総務省令で定める事務は、住宅宿泊事業法第三条第一項又は第四項の届出の受理又はその届出に係る事実についての審査とする。"
         },
         "referred": {
             "lawNum": "平成二十九年法律第六十五号",
@@ -350,7 +350,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "3",
-                "paragraph": "69",
+                "paragraph": "77",
                 "item": "0"
             },
             "text": "法別表第三の二十一の二の項の総務省令で定める事務は、住宅宿泊事業法第三条第一項又は第四項の届出の受理又はその届出に係る事実についての審査とする。"
@@ -373,10 +373,10 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "4",
-                "paragraph": "59",
+                "paragraph": "62",
                 "item": "0"
             },
-            "text": "法別表第四の五の三の項の総務省令で定める事務は、住宅宿泊事業法第三条第一項又は第四項の届出の受理又はその届出に係る事実についての審査とする。"
+            "text": "法別表第四の五の四の項の総務省令で定める事務は、住宅宿泊事業法第三条第一項又は第四項の届出の受理又はその届出に係る事実についての審査とする。"
         },
         "referred": {
             "lawNum": "平成二十九年法律第六十五号",
@@ -396,7 +396,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "5",
-                "paragraph": "68",
+                "paragraph": "76",
                 "item": "0"
             },
             "text": "法別表第五第二十五号の二の総務省令で定める事務は、住宅宿泊事業法第三条第一項又は第四項の届出の受理又はその届出に係る事実についての審査とする。"
@@ -1335,6 +1335,29 @@
     },
     {
         "ref": {
+            "lawNum": "平成二十九年国土交通省令第六十三号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "34",
+                "paragraph": "1",
+                "item": "4"
+            },
+            "text": "住宅宿泊事業法（平成二十九年法律第六十五号）第二十二条第一項の登録"
+        },
+        "referred": {
+            "lawNum": "平成二十九年法律第六十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "22",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "住宅宿泊管理業を営もうとする者は、国土交通大臣の登録を受けなければならない。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "平成二十九年国土交通省令第六十五号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -1385,7 +1408,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "226",
+                "paragraph": "242",
                 "item": "1"
             },
             "text": "住宅宿泊事業法（平成二十九年法律第六十五号）第二十二条第一項の登録の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -1845,7 +1868,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "226",
+                "paragraph": "242",
                 "item": "2"
             },
             "text": "住宅宿泊事業法第二十六条第一項の届出の受理又はその届出に係る事実についての審査"
@@ -2742,7 +2765,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "230",
+                "paragraph": "246",
                 "item": "1"
             },
             "text": "住宅宿泊事業法第四十六条第一項の登録の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -3110,7 +3133,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "230",
+                "paragraph": "246",
                 "item": "2"
             },
             "text": "住宅宿泊事業法第五十条第一項の届出の受理又はその届出に係る事実についての審査"

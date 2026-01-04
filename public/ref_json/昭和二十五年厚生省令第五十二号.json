@@ -98,7 +98,7 @@
                 "provision": "MainProvision",
                 "article": "21_9",
                 "paragraph": "2",
-                "item": "4"
+                "item": "6"
             },
             "text": "犬が死亡した場合にあっては、狂犬病予防法施行規則第八条第一項第二号及び第三号に規定する事項"
         },
@@ -144,9 +144,32 @@
                 "provision": "MainProvision",
                 "article": "21_9",
                 "paragraph": "2",
-                "item": "3"
+                "item": "5"
             },
             "text": "登録事項の変更の場合にあっては、狂犬病予防法施行規則第九条第二号に規定する事項"
+        },
+        "referred": {
+            "lawNum": "昭和二十五年厚生省令第五十二号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "9",
+                "paragraph": "1",
+                "item": "2"
+            },
+            "text": "登録年度及び登録番号"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "平成十八年環境省令第一号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "21_9",
+                "paragraph": "3",
+                "item": "5"
+            },
+            "text": "狂犬病予防法施行規則第九条第二号に規定する事項"
         },
         "referred": {
             "lawNum": "昭和二十五年厚生省令第五十二号",

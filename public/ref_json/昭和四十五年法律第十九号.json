@@ -142,11 +142,34 @@
             "lawNum": "昭和三十年労働省令第二十二号",
             "lawArticle": {
                 "provision": "MainProvision",
+                "article": "12_2",
+                "paragraph": "1",
+                "item": "7"
+            },
+            "text": "療養の給付を受けなかつた理由（当該者が、柔道整復師法第二条に規定する柔道整復師又はあん摩マツサージ指圧師、はり師、きゆう師等に関する法律に基づくあん摩マツサージ指圧師、はり師若しくはきゆう師の治療を受ける場合にあつては、この限りでない。）"
+        },
+        "referred": {
+            "lawNum": "昭和四十五年法律第十九号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "この法律において「柔道整復師」とは、厚生労働大臣の免許を受けて、柔道整復を業とする者をいう。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
+            "lawNum": "昭和三十年労働省令第二十二号",
+            "lawArticle": {
+                "provision": "MainProvision",
                 "article": "46_17",
                 "paragraph": "1",
                 "item": "8"
             },
-            "text": "柔道整復師法（昭和四十五年法律第十九号）第二条に規定する柔道整復師が行う事業"
+            "text": "柔道整復師法第二条に規定する柔道整復師が行う事業"
         },
         "referred": {
             "lawNum": "昭和四十五年法律第十九号",
@@ -254,6 +277,29 @@
     },
     {
         "ref": {
+            "lawNum": "昭和三十年労働省令第二十二号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "12_2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "ただし、当該者が施術所（あん摩マツサージ指圧師、はり師、きゆう師等に関する法律（昭和二十二年法律第二百十七号）第九条の二第一項の届出に係る同項の施術所及び柔道整復師法（昭和四十五年法律第十九号）第二条第二項に規定する施術所をいう。）のうち都道府県労働局長が定めるもの（以下「指名施術所」という。）において治療を受ける場合にあつては、当該請求書を、当該指名施術所を経由して所轄労働基準監督署長に提出することができる。"
+        },
+        "referred": {
+            "lawNum": "昭和四十五年法律第十九号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "2",
+                "item": "0"
+            },
+            "text": "この法律において「施術所」とは、柔道整復師が柔道整復の業務を行なう場所をいう。"
+        },
+        "match": "★引用個所不明★"
+    },
+    {
+        "ref": {
             "lawNum": "令和六年デジタル庁・総務省令第九号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -280,7 +326,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_4",
+                "article": "43_2_6",
                 "paragraph": "1",
                 "item": "1"
             },
@@ -304,7 +350,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "110",
+                "paragraph": "115",
                 "item": "1"
             },
             "text": "柔道整復師法（昭和四十五年法律第十九号）第三条の免許の申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -396,7 +442,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "110",
+                "paragraph": "115",
                 "item": "2"
             },
             "text": "柔道整復師法第六条第二項（同法第八条の六第一項の規定により読み替えて適用する場合を含む。）の交付に関する申請の受理、その申請に係る事実についての審査又はその申請に対する応答"
@@ -418,7 +464,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_4",
+                "article": "43_2_6",
                 "paragraph": "1",
                 "item": "3"
             },
@@ -1223,7 +1269,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_4",
+                "article": "43_2_6",
                 "paragraph": "1",
                 "item": "4"
             },
@@ -1247,7 +1293,7 @@
             "lawArticle": {
                 "provision": "MainProvision",
                 "article": "1",
-                "paragraph": "111",
+                "paragraph": "116",
                 "item": "1"
             },
             "text": "柔道整復師法第十条の柔道整復師国家試験の受験願書の受理、その受験願書に係る事実についての審査又はその受験願書に対する応答"
@@ -1637,7 +1683,7 @@
             "lawNum": "平成二十六年内閣府・総務省令第五号",
             "lawArticle": {
                 "provision": "MainProvision",
-                "article": "43_2_4",
+                "article": "43_2_6",
                 "paragraph": "1",
                 "item": "5"
             },

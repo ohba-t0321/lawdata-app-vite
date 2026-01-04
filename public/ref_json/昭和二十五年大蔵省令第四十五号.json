@@ -24,6 +24,75 @@
     },
     {
         "ref": {
+            "lawNum": "令和七年法務省令第五十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "2",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第一条第二項の規定により読み替えて準用する国家公務員等の旅費に関する法律施行令（以下「旅費法施行令」という。）第五条第一項に規定する法務省令で定めるものは、国家公務員等の旅費支給規程（昭和二十五年大蔵省令第四十五号。以下「旅費支給規程」という。）第九条各号に掲げるものとする。"
+        },
+        "referred": {
+            "lawNum": "昭和二十五年大蔵省令第四十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "9",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第五条第一項に規定する財務省令で定めるものは、次に掲げるものとする。"
+        },
+        "match": "務省令で定めるものは、"
+    },
+    {
+        "ref": {
+            "lawNum": "令和七年法務省令第五十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "3",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第一条第二項の規定により読み替えて準用する旅費法施行令第六条第一項に規定する法務省令で定めるものは、旅費支給規程第十条各号に掲げるものとする。"
+        },
+        "referred": {
+            "lawNum": "昭和二十五年大蔵省令第四十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "10",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第六条第一項に規定する財務省令で定めるものは、次に掲げるものとする。"
+        },
+        "match": "務省令で定めるものは、"
+    },
+    {
+        "ref": {
+            "lawNum": "令和七年法務省令第五十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "4",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第一条第二項の規定により読み替えて準用する旅費法施行令第七条第一項に規定する法務省令で定めるものは、旅費支給規程第十一条各号に掲げるものとする。"
+        },
+        "referred": {
+            "lawNum": "昭和二十五年大蔵省令第四十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "11",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第七条第一項に規定する財務省令で定めるものは、次に掲げるものとする。"
+        },
+        "match": "務省令で定めるものは、"
+    },
+    {
+        "ref": {
             "lawNum": "令和七年公正取引委員会規則第二号",
             "lawArticle": {
                 "provision": "MainProvision",
@@ -90,6 +159,29 @@
             "text": "令第九条に規定する財務省令で定める額は、別表第二のとおりとする。"
         },
         "match": "令で定める額は、"
+    },
+    {
+        "ref": {
+            "lawNum": "令和七年法務省令第五十四号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "6",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第三条第二項の規定により読み替えて準用する旅費法施行令第九条に規定する法務省令で定める額は、一日当たり、旅費支給規程第十三条第一項の規定により一般職の職員の給与に関する法律（昭和二十五年法律第九十五号）第六条第一項第一号イに規定する行政職俸給表（一）の二級の職員に適用される額に相当する額とする。"
+        },
+        "referred": {
+            "lawNum": "昭和二十五年大蔵省令第四十五号",
+            "lawArticle": {
+                "provision": "MainProvision",
+                "article": "13",
+                "paragraph": "1",
+                "item": "0"
+            },
+            "text": "令第九条に規定する財務省令で定める額は、別表第二のとおりとする。"
+        },
+        "match": "務省令で定める額は、"
     },
     {
         "ref": {
