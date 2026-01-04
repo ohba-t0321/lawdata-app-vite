@@ -1,10 +1,7 @@
 import React,{useState, useContext, useEffect} from 'react';
 import './Reference.css';
-import { LawDataContext, LawArticleContext ,ReferenceContext, renderVNodes } from '../LawDataContext';
+import { LawDataContext, ReferenceContext, renderVNodes } from '../LawDataContext';
 import type { VNode } from '../LawDataContext';
-// import { isSameDateInJapan } from '../workers/lawDataWorker';
-// import { getLawFromCache, saveLawToCache } from '../indexedDB'
-// import type { LawDataCache } from '../indexedDB';
 import { useLawDataWorker } from '../hooks/useLawDataWorker';
 function convertToArticleFormat(input: string): string {
     // アンダースコアで分割して配列にする
