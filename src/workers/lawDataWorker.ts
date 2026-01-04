@@ -159,14 +159,6 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
             requestId  
           } as WorkerResponse);  
         });
-        // const vnode = renderVirtualTree(  
-        //   lawArticle.law_full_text,  
-        //   [],  
-        //   (cachedLawList as LawListCache)?.data,  
-        //   refData,  
-        //   refLawTitle,  
-        //   pane  
-        // );  
 
         // 最終結果を送信  
         self.postMessage({  
@@ -438,7 +430,7 @@ function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], 
                 }
               });
 
-              refTextData.forEach((data:RefData,i)=>{
+              refTextData.forEach((data:RefData)=>{
                 if (data.match) {
                   const lawNum = data.ref?.lawNum;
                   const provision = data.ref?.lawArticle.provision;

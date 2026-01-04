@@ -2,22 +2,7 @@ import React,{ useContext,useMemo } from 'react';
 import './LawDataOutput.css';
 import { DividerContext } from '../DiviserContext';
 import { LawDataContext, LawArticleContext, ReferenceContext } from '../LawDataContext';
-import type { LawNode } from '../LawDataContext';
 import  { Reference } from './Reference'
-
-
-
-const getLawTitle = (json:any):any => {
-    if ("law_title" in json) {
-        return (<>{json.law_title}</>)
-    }
-}
-
-const getLawNum = (json:any):any => {
-    if ("law_num" in json) {
-        return (<>{json.law_num}</>)
-    }
-}
 
 // Propの型定義
 interface LawPaneProps {
@@ -35,22 +20,15 @@ export const LawPane: React.FC<LawPaneProps> = ({
   const isLoaded = isArticleLoaded[pane];
   const isSelected = !!selectedLaws[pane];
   const lawNode = vnode[pane];
-  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&getChildren(pane,lawNode),[isArticleLoaded[pane],vnode]);
-  // const title = isLoaded && lawData?.revision_info
-  //   ? getLawTitle(lawData.revision_info)
-  //   : (!isLoaded && isSelected ? "データ取得中..." : ""); // データ取得中
-    // ? getLawTitle(selectedLaws[pane])
+  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&getChildren(lawNode),[isArticleLoaded[pane],vnode]);
 
   // 2. 法令番号部分の条件を明確化
-  // const lawInfo = lawData?.law_info;
   const lawInfo = lawData?.filter((law) => law.law_info.law_num === selectedLaws[pane])[0]?.current_revision_info.law_title;
   const title = isLoaded && lawInfo ? lawInfo : ( !isLoaded && isSelected ? "データ取得中..." : "" ); // データ取得中
-  // const lawNum = isLoaded && lawInfo ? getLawNum(lawInfo) : null;
   const lawNum = isLoaded && selectedLaws[pane] ? selectedLaws[pane] : null;
   
   // 3. スタイルの設定
   const paneStyle = { width: `${width}%` };
-
 
   return (
     <div className={`pane ${pane}`} style={paneStyle}>
