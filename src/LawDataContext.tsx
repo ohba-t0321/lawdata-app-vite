@@ -51,7 +51,7 @@ interface LawArticleContextType {
   selectedLaws: {left: string | null, right: string | null};
   setSelectedLaws: (selectedLaws: {left: string | null, right: string | null}) => void;
   vnode: {left:VNode | null, right:VNode | null};
-  setVnode: (vnode: {left:VNode | null, right:VNode | null})=> void;
+  setVnode: (vnode: {left: VNode | null, right: VNode | null})=> void;
   isArticleLoaded: {left:boolean, right:boolean};
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
   domNodes: {left:React.ReactNode, right:React.ReactNode};
@@ -331,11 +331,19 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
     async function updateLawArticle() {
       (['left','right'] as Pane[]).forEach((pane)=>{
         const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
-        if ((selectedLaws[pane] ?? '') !== lawNumPane) {
+        const selected = selectedLaws[pane] ?? '';
+        if ((selected ?? '') !== lawNumPane) {
           setIsArticleLoaded(prev=>({...prev, [pane]:false}));
           lawArticleInit(pane);
         }
-        if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
+        // If user cleared selection, make sure URL param is removed immediately and skip re-adding it
+        if (!selected) {
+          setSearchParams(prev => {
+            const newParams = new URLSearchParams(prev);
+            newParams.delete(pane);
+            return newParams;
+          });
+        } else if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
           setSearchParams((prev) => {
             const newParams = new URLSearchParams(prev);
             if (lawNumPane !== '' ) {
@@ -352,6 +360,16 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   }, [selectedLaws]);
   useEffect(() => {
     (['left','right'] as Pane[]).forEach((pane)=>{
+      const selected = selectedLaws[pane] ?? '';
+      if (!selected) {
+        // If there's no selected law, ensure the URL param is removed
+        setSearchParams(prev => {
+          const newParams = new URLSearchParams(prev);
+          newParams.delete(pane);
+          return newParams;
+        });
+        return;
+      }
       const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
       if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
         setSearchParams((prev) => {
@@ -409,4 +427,3 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
     </ReferenceContext.Provider>
   )
 }
-
