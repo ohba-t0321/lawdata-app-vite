@@ -141,13 +141,18 @@ self.addEventListener('message', async (e: MessageEvent<WorkerRequest>) => {
           } as WorkerResponse);
           break;
         }
-
         // ステップ2: 参照データの取得  
         const cachedLawList = await getLawListFromCache();
-        const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);
-        let refData: RefData[] = await refRes.json();
+        let refData: RefData[] = [];
+        try {
+          const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);
+          if (refRes.ok) {
+            refData = await refRes.json();
+          }
+        } catch (error) {
+          console.error("法令参照JSONファイルを取得中にエラーが発生しました:", error);
+        }
         const refLawTitle = await getRefLaw(lawArticle);
-
         self.postMessage({
           type: 'FETCH_LAW_ARTICLE_PROGRESS',
           data: { refData, refLawTitle, progress: 'reference_data_loaded' },

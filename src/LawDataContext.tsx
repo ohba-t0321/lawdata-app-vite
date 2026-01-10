@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useRef, useCallback } from "react";
 import type { ReactNode } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { DividerContext } from './DiviserContext';
@@ -50,8 +50,8 @@ export interface LawNode {
 interface LawArticleContextType {
   selectedLaws: {left: string | null, right: string | null};
   setSelectedLaws: (selectedLaws: {left: string | null, right: string | null}) => void;
-  vnode: {left:VNode | null, right:VNode | null};
-  setVnode: (vnode: {left:VNode | null, right:VNode | null})=> void;
+  vnode: {left:VNode[] | null, right:VNode[] | null};
+  setVnode: (vnode: {left:VNode[] | null, right:VNode[] | null})=> void;
   isArticleLoaded: {left:boolean, right:boolean};
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
   domNodes: {left:React.ReactNode, right:React.ReactNode};
@@ -257,39 +257,15 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { fetchLawArticle } = useLawDataWorker();  
   const { dividerPos,setDividerPos } = useContext(DividerContext)
-  let leftLawTitle = searchParams.get('left')||'';
-  let rightLawTitle = searchParams.get('right')||'';
-  useEffect(() => {
-    if (rightLawTitle!==''){
-      if (dividerPos>=95){
-        setDividerPos(50);
-      }
-    }
-  },[]);
-  const [isArticleLoaded, setIsArticleLoaded] = useState<{left:boolean, right:boolean}>({
-    left: leftLawTitle !=='',
-    right: rightLawTitle !=='',
-  });
-  const [selectedLaws, setSelectedLaws] = useState<{left: string | null, right: string | null}>({
-    left: leftLawTitle,
-    right: rightLawTitle
-  });
-  const [lawArticle, setLawArticle] = useState<{left:LawArticle,right:LawArticle}>({
-    left: {law_info:null,revision_info:null,law_full_text:null,attached_files_info:null},
-    right: {law_info:null,revision_info:null,law_full_text:null,attached_files_info:null},  
-  });
-  const [vnode, setVnode] = useState<{left: VNode | null; right: VNode | null}>({
-    left: null,
-    right: null,
-  });
-  const [dataLoading, setDataLoading] = useState<{left:string,right:string}>({
-    left: '',
-    right: '',
-  });
-  const [domNodes, setDomNodes] = useState<{left: React.ReactNode; right: React.ReactNode}>({
-    left: <></>,
-    right: <></>,
-  });
+
+    // 処理した内容を保持するためのref
+  const prevSelectedLaws = useRef<{ [key: string]: string | null }>({ left: searchParams.get('left')||'', right: searchParams.get('right')||'' });
+
+  const [isArticleLoaded, setIsArticleLoaded] = useState<{left:boolean, right:boolean}>({left:true, right:true}); 
+  const [selectedLaws, setSelectedLaws] = useState<{left: string | null, right: string | null}>({left:null,right:null});
+  const [vnode, setVnode] = useState<{left: VNode[] | null; right: VNode[] | null}>({left: null,right: null});
+  const [dataLoading, setDataLoading] = useState<{left:string,right:string}>({left: '',right: ''});
+  const [domNodes, setDomNodes] = useState<{left: React.ReactNode; right: React.ReactNode}>({left: <></>,right: <></>});
 
   async function lawArticleInit(pane:Pane) {
     let vnode: VNode[] = [];
@@ -297,9 +273,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       try {
         // Web Workerを使用してデータ取得  
         fetchLawArticle(pane, selectedLaws[pane], (data: any) => {
-          if (data.progress === 'basic_data_loaded') { 
-            setLawArticle(prev => ({ ...prev, [pane]: data.lawArticle }));
-          } else if (data.progress === 'article_data_loading') {
+          if (data.progress === 'article_data_loading') {
             vnode.push(...data.vnodePart);
             setVnode(prev => ({ ...prev, [pane]: vnode }));
             setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
@@ -312,60 +286,60 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       } catch (error) {
         console.error("法令データ取得失敗:", error);
       }
-      setSearchParams((prev) => {
-        const newParams = new URLSearchParams(prev);
-        newParams.set(pane, selectedLaws[pane] || '');
-        return newParams;
-      });
     } else {
-      setSearchParams(prev => {
-        const newParams = new URLSearchParams(prev);
-        newParams.delete(pane);
-        return newParams;
-      });
+      setVnode(prev => ({ ...prev, [pane]: null }));
+      setIsArticleLoaded(prev => ({ ...prev, [pane]: false }));
+      setDataLoading(prev => ({ ...prev, [pane]: '' }));
     }
   }
-  
-  // ID が変わったら API 取得、URL パラメータ更新
-  useEffect(() => {
-    async function updateLawArticle() {
-      (['left','right'] as Pane[]).forEach((pane)=>{
-        const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
-        if ((selectedLaws[pane] ?? '') !== lawNumPane) {
-          setIsArticleLoaded(prev=>({...prev, [pane]:false}));
-          lawArticleInit(pane);
+
+  // 法令の変更に応じた処理関数
+  const processLaw = useCallback((key: "left" | "right", newValue: string | null) => {
+    // 前回との違いがある場合のみ処理を実行
+    if (prevSelectedLaws.current[key] !== newValue) {
+      prevSelectedLaws.current[key] = newValue; // 新しい値を追跡
+
+      // 表示を「データ取得中」にする処理
+      setIsArticleLoaded((prev) => ({ ...prev, [key]: false }));
+
+      // lawArticleInit関数の呼び出し
+      lawArticleInit(key);
+
+      // クエリを更新
+      setSearchParams((prevParams) => {
+        const updatedParams = new URLSearchParams(prevParams);
+        if (newValue) {
+          // 新しい値が存在する場合（クリアではない）
+          updatedParams.set(key, newValue);
+        } else {
+          // フレームをクリアした場合（値が空の場合、クエリパラメータを削除）
+          updatedParams.delete(key);
         }
-        if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
-          setSearchParams((prev) => {
-            const newParams = new URLSearchParams(prev);
-            if (lawNumPane !== '' ) {
-              newParams.set(pane, lawNumPane || '');
-            } else {
-              newParams.delete(pane);
-            }
-            return newParams;
-          });
-        }
+        return updatedParams;
       });
     }
-    updateLawArticle();
-  }, [selectedLaws]);
+  },[setSearchParams, lawArticleInit]);
+
+  // 初回レンダリング時の処理
   useEffect(() => {
-    (['left','right'] as Pane[]).forEach((pane)=>{
-      const lawNumPane = (!lawArticle[pane].law_info)? '' : (lawArticle[pane].law_info as any).law_num;
-      if ((lawNumPane ?? '') !== (searchParams.get(pane) ?? '')) {
-        setSearchParams((prev) => {
-          const newParams = new URLSearchParams(prev);
-          if (lawNumPane !== '' ) {
-            newParams.set(pane, lawNumPane || '');
-          } else {
-            newParams.delete(pane);
-          }
-          return newParams;
-        });
-      } 
+    ['left','right'].forEach((pane)=>{
+      let paneLawTitle = searchParams.get(pane)||'';
+      setSelectedLaws(prev=>({...prev, [pane]: paneLawTitle}));
+      setIsArticleLoaded(prev=>({...prev, [pane]: paneLawTitle===''}));
+      if (pane==='right'&&paneLawTitle!==''){
+        if (dividerPos>=95){
+          setDividerPos(50);
+        }
+      }
     });
-  }, [lawArticle]);
+  },[]);
+
+  useEffect(() => {
+
+    Object.entries(selectedLaws).forEach(([key, value]) => {
+      processLaw(key as Pane, value as string | null);
+    });  
+  },[selectedLaws]);
 
   useEffect(() => {
     (['left','right'] as Pane[]).forEach((pane)=>{
