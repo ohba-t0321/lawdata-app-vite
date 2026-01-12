@@ -273,7 +273,9 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       try {
         // Web Workerを使用してデータ取得  
         fetchLawArticle(pane, selectedLaws[pane], (data: any) => {
-          if (data.progress === 'article_data_loading') {
+          if (data.progress === 'basic_data_loaded') {
+            setDataLoading(prev => ({ ...prev, [pane]: 'データ取得開始...' }));
+          } else if (data.progress === 'article_data_loading') {
             vnode.push(...data.vnodePart);
             setVnode(prev => ({ ...prev, [pane]: vnode }));
             setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
@@ -301,6 +303,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
 
       // 表示を「データ取得中」にする処理
       setIsArticleLoaded((prev) => ({ ...prev, [key]: false }));
+      setVnode(prev=>({...prev, [key]: null}));
 
       // lawArticleInit関数の呼び出し
       lawArticleInit(key);
