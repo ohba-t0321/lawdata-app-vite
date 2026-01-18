@@ -12,7 +12,6 @@ const SearchForm: React.FC = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const initialKeyword = searchParams.get('keyword') || '';
-  const [keyword, setKeyword] = useState(initialKeyword);
   const [inputKeyword, setInputKeyword] = useState(initialKeyword);
   const [searchType, setSearchType] = useState('includes');  
   const [outputFrame, setOutputFrame] = useState<'left'|'right'>('left');  
@@ -25,7 +24,7 @@ const SearchForm: React.FC = () => {
   const { selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded }  = useContext(LawArticleContext)
   const { dividerPos,setDividerPos } = useContext(DividerContext)
   
-  function SearchLwaws(searchKeyword = keyword) {
+  function SearchLwaws(searchKeyword = inputKeyword) {
     if (lawData) {  
       let filteredData: LawData | any[] = [];  
         
@@ -52,7 +51,7 @@ const SearchForm: React.FC = () => {
   }
 
   const commitKeyword = (nextKeyword: string) => {
-    setKeyword(nextKeyword);
+    setInputKeyword(nextKeyword);
     setSearchParams((prevParams) => {
       const updatedParams = new URLSearchParams(prevParams);
       if (nextKeyword) {
@@ -72,28 +71,14 @@ const SearchForm: React.FC = () => {
     setIsSearching(false);
   };  
 
-  useEffect(() => {
-    SearchLwaws();
-  }, [lawData, keyword, searchType]);
+  // useEffect(() => {
+  //   SearchLwaws();
+  // }, [lawData, inputKeyword, searchType]);
 
   useEffect(() => {
     const paramsKeyword = searchParams.get('keyword') ?? '';
-    if (paramsKeyword !== keyword) {
-      setKeyword(paramsKeyword);
-    }
-  }, [keyword, searchParams]);
-
-  useEffect(() => {
-    setSearchParams((prevParams) => {
-      const updatedParams = new URLSearchParams(prevParams);
-      if (keyword) {
-        updatedParams.set('keyword', keyword);
-      } else {
-        updatedParams.delete('keyword');
-      }
-      return updatedParams;
-    });
-  }, [keyword, setSearchParams]);
+    setInputKeyword((prev) => (prev === paramsKeyword ? prev : paramsKeyword));
+  }, [searchParams]);
 
   const columns: ColumnDef<LawData>[] = [
     {
@@ -120,7 +105,8 @@ const SearchForm: React.FC = () => {
             value={inputKeyword}  
             onChange={(e) => setInputKeyword(e.target.value)}  
             onBlur={() => {
-              if (inputKeyword !== keyword) {
+              const paramsKeyword = searchParams.get('keyword') ?? '';
+              if (inputKeyword !== paramsKeyword) {
                 commitKeyword(inputKeyword);
               }
             }}
@@ -158,11 +144,11 @@ const SearchForm: React.FC = () => {
         </div>  
           {!(isDataLoaded) ? (
             <div>法令データ取得中...</div>
-          ) : !(keyword) ? (
+          ) : !(inputKeyword) ? (
             <div>検索ワードを入力してください</div>
           ) : isSearching ? (  
             <div>検索中...</div>
-          ) : searchResults.length === 0 && keyword ? (  
+          ) : searchResults.length === 0 && inputKeyword ? (  
             <div>該当する法令は見つかりませんでした。</div>
           ) : 
           (  

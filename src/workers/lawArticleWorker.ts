@@ -64,45 +64,47 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 
 		// ステップ3: 仮想ツリーの構築（分割可能であれば分割）  
 		const lawBody = lawArticle.law_full_text.children.filter((child: any) => child.tag === 'LawBody')[0].children;
-		lawBody.forEach((bodyPart: any, index: number) => {
-			if (typeof (bodyPart) !== 'object' || !bodyPart.children || bodyPart.tag === 'LawTitle' || bodyPart.tag === 'TOC') {
-				return;
-			} else if (typeof (bodyPart.children[0]) === 'string') {
-					const vnodePart = renderVirtualTree(
-					bodyPart,
-					[],
-					(cachedLawList as LawListCache)?.data,
-					refData,
-					refLawTitle,
-					pane
-				);           
-				vnode.push(...vnodePart);
-        console.log('vnodePart:', vnodePart);
-				// 途中結果を送信  
-				self.postMessage({
-					type: 'FETCH_LAW_ARTICLE_PROGRESS',
-					data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})`, progress: 'article_data_loading' },
-				} as WorkerResponse);
-			} else {
-				bodyPart.children.forEach((articlePart: any,articleIndex: number) => {
-					const vnodePart = renderVirtualTree(
-						articlePart,
-						[buildVirtualTree(bodyPart) as VElement],
+		try{
+			lawBody.forEach((bodyPart: any, index: number) => {
+				if (typeof (bodyPart) !== 'object' || !bodyPart.children || bodyPart.tag === 'LawTitle' || bodyPart.tag === 'TOC') {
+					return;
+				} else if (typeof (bodyPart.children[0]) === 'string') {
+						const vnodePart = renderVirtualTree(
+						bodyPart,
+						[],
 						(cachedLawList as LawListCache)?.data,
 						refData,
 						refLawTitle,
 						pane
-					);
+					);           
 					vnode.push(...vnodePart);
-          console.log('vnodePart:', vnodePart);
 					// 途中結果を送信  
 					self.postMessage({
 						type: 'FETCH_LAW_ARTICLE_PROGRESS',
-						data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})　章(${articleIndex + 1} / ${bodyPart.children.length})`, progress: 'article_data_loading' },
+						data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})`, progress: 'article_data_loading' },
 					} as WorkerResponse);
-				});
-			}
-		});
+				} else {
+					bodyPart.children.forEach((articlePart: any,articleIndex: number) => {
+						const vnodePart = renderVirtualTree(
+							articlePart,
+							[buildVirtualTree(bodyPart) as VElement],
+							(cachedLawList as LawListCache)?.data,
+							refData,
+							refLawTitle,
+							pane
+						);
+						vnode.push(...vnodePart);
+						// 途中結果を送信  
+						self.postMessage({
+							type: 'FETCH_LAW_ARTICLE_PROGRESS',
+							data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})　章(${articleIndex + 1} / ${bodyPart.children.length})`, progress: 'article_data_loading' },
+						} as WorkerResponse);
+					});
+				}
+			});
+		} catch (error) {
+			console.error("法令本文の仮想ツリー構築中にエラーが発生しました:", error, "vnode:", vnode);
+		}
 		saveLawToCache(lawId, lawArticle, vnode);
 
 		// 最終結果を送信  

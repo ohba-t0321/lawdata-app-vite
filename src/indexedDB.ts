@@ -41,7 +41,11 @@ export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:
   const store = tx.objectStore("laws");
   lawNo = decodeURIComponent(lawNo);
   const record = {lawNo, lawArticle, vnode, timestamp: Date.now() };
-  store.put(record);
+  try{
+    store.put(record);
+  } catch (error) {
+    console.error("IndexedDBへの法令データ保存中にエラーが発生しました:", error, "record:", record);
+  }
   return new Promise<void>((resolve, reject) => {
     tx.oncomplete = () => resolve();
     tx.onerror = () => reject(tx.error);
