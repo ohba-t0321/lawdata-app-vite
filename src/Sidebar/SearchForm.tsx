@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import type { ColumnDef } from '@tanstack/react-table';
 import { DividerContext } from '../DiviserContext';
@@ -9,7 +10,10 @@ import './Sidebar.css';
 
 const SearchForm: React.FC = () => {
 
-  const [keyword, setKeyword] = useState('');  
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialKeyword = searchParams.get('keyword') || '';
+  const [keyword, setKeyword] = useState(initialKeyword);
+  const [inputKeyword, setInputKeyword] = useState(initialKeyword);
   const [searchType, setSearchType] = useState('includes');  
   const [outputFrame, setOutputFrame] = useState<'left'|'right'>('left');  
   const [isOpen, setIsOpen] = useState(false);  
@@ -20,24 +24,24 @@ const SearchForm: React.FC = () => {
   const { selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded }  = useContext(LawArticleContext)
   const { dividerPos,setDividerPos } = useContext(DividerContext)
   
-  function SearchLwaws() {
+  function SearchLwaws(searchKeyword = keyword) {
     if (lawData) {  
       let filteredData: LawData | any[] = [];  
         
       switch (searchType) {  
         case 'includes':  
           filteredData = lawData.filter(data =>   
-            data.current_revision_info.law_title.includes(keyword)  
+            data.current_revision_info.law_title.includes(searchKeyword)  
           );  
           break;  
         case 'startsWith':  
           filteredData = lawData.filter(data =>   
-            data.current_revision_info.law_title.startsWith(keyword)  
+            data.current_revision_info.law_title.startsWith(searchKeyword)  
           );  
           break;  
         case 'equal':  
           filteredData = lawData.filter(data =>   
-            data.current_revision_info.law_title === keyword  
+            data.current_revision_info.law_title === searchKeyword  
           );  
           break;  
       }  
@@ -46,10 +50,24 @@ const SearchForm: React.FC = () => {
     }
   }
 
+  const commitKeyword = (nextKeyword: string) => {
+    setKeyword(nextKeyword);
+    setSearchParams((prevParams) => {
+      const updatedParams = new URLSearchParams(prevParams);
+      if (nextKeyword) {
+        updatedParams.set('keyword', nextKeyword);
+      } else {
+        updatedParams.delete('keyword');
+      }
+      return updatedParams;
+    });
+  };
+
   const handleSearch = async (e: React.FormEvent) => {  
     e.preventDefault();  
     setIsSearching(true);
-    SearchLwaws()
+    commitKeyword(inputKeyword);
+    SearchLwaws(inputKeyword)
     setIsSearching(false);
   };  
 
@@ -82,8 +100,13 @@ const SearchForm: React.FC = () => {
         <form onSubmit={handleSearch}>  
           <input  
             type="text"  
-            value={keyword}  
-            onChange={(e) => setKeyword(e.target.value)}  
+            value={inputKeyword}  
+            onChange={(e) => setInputKeyword(e.target.value)}  
+            onBlur={() => {
+              if (inputKeyword !== keyword) {
+                commitKeyword(inputKeyword);
+              }
+            }}
             placeholder="キーワードを入力"  
             className="form-control"  
           />  
