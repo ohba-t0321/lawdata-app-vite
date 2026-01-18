@@ -16,6 +16,7 @@ const SearchForm: React.FC = () => {
   const [inputKeyword, setInputKeyword] = useState(initialKeyword);
   const [searchType, setSearchType] = useState('includes');  
   const [outputFrame, setOutputFrame] = useState<'left'|'right'>('left');  
+  const [isFrameFixed, setIsFrameFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);  
   const [searchResults, setSearchResults] = useState<any[]>([]);  
   const [isSearching, setIsSearching] = useState(false);  
@@ -130,6 +131,14 @@ const SearchForm: React.FC = () => {
             <option value="left">左</option>  
             <option value="right">右</option>  
           </select>  
+          <label>
+            <input
+              type="checkbox"
+              checked={isFrameFixed}
+              onChange={(e) => setIsFrameFixed(e.target.checked)}
+            />
+            フレームを固定
+          </label>
         </div>  
           {!(isDataLoaded) ? (
             <div>法令データ取得中...</div>
@@ -168,6 +177,9 @@ const SearchForm: React.FC = () => {
                       });
                       if ((outputFrame==='left'&&dividerPos<50)||(outputFrame==='right'&&dividerPos>50)) {
                         setDividerPos(50);
+                      }
+                      if (!isFrameFixed) {
+                        setOutputFrame(outputFrame === 'left' ? 'right' : 'left');
                       }
                       e.preventDefault();
                       e.currentTarget.blur();
