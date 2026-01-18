@@ -76,9 +76,25 @@ const SearchForm: React.FC = () => {
     SearchLwaws();
   }, [lawData, keyword, searchType]);
 
-  // const handleLawSelect = async (law: any) => {  
-  //   await fetchLawDetails(law.law_info.law_num, outputFrame);  
-  // };  
+  useEffect(() => {
+    const paramsKeyword = searchParams.get('keyword') ?? '';
+    if (paramsKeyword !== keyword) {
+      setKeyword(paramsKeyword);
+    }
+  }, [keyword, searchParams]);
+
+  useEffect(() => {
+    setSearchParams((prevParams) => {
+      const updatedParams = new URLSearchParams(prevParams);
+      if (keyword) {
+        updatedParams.set('keyword', keyword);
+      } else {
+        updatedParams.delete('keyword');
+      }
+      return updatedParams;
+    });
+  }, [keyword, setSearchParams]);
+
   const columns: ColumnDef<LawData>[] = [
     {
       header: '法令名',
@@ -202,3 +218,4 @@ const SearchForm: React.FC = () => {
 };  
   
 export default SearchForm;
+

@@ -1,39 +1,10 @@
-import type { LawData, LawArticle, RefData, RefLawTitleList, VNode, VElement, Pane } from "../LawDataContext";
-import kanjiToNumber from '../assets/KanjiToNumber'
+import type { LawData, LawArticle, RefData, VNode, VElement } from "../LawDataContext";
 import { saveLawToCache, getLawFromCache, getLawListFromCache } from '../indexedDB'
 import type { LawListCache, LawDataCache } from "../indexedDB";
 import type { WorkerRequest, WorkerResponse } from './lawDataWorker';
-import { isSameDateInJapan } from './lawDataWorker';
+import { isSameDateInJapan,buildVirtualTree,renderVirtualTree } from './lawDataWorker';
 
 const BASE = import.meta.env.BASE_URL;
-
-interface JsonNode {
-  tag: string;
-  attr?: Record<string, any>;
-  children: (JsonNode | string)[];
-}
-
-const subitemNode: string[] = []
-for (let i = 1; i < 10; i++) {
-  subitemNode.push(`Subitem${i}`)
-}
-
-function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
-  const normalized: Record<string, any> = {};
-  const specialKeyMap: { [key: string]: string } = {
-    rowspan: 'rowSpan',
-    colspan: 'colSpan',
-    WritingMode: 'writingMode',
-  };
-
-  for (const key in attr) {
-    if (Object.prototype.hasOwnProperty.call(attr, key)) {
-      const lowerKey = key in specialKeyMap ? specialKeyMap[key] : key.toLowerCase();
-      normalized[lowerKey] = attr[key];
-    }
-  }
-  return normalized;
-}
 
 self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
   const { type, payload } = e.data;
@@ -106,6 +77,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 					pane
 				);           
 				vnode.push(...vnodePart);
+        console.log('vnodePart:', vnodePart);
 				// 途中結果を送信  
 				self.postMessage({
 					type: 'FETCH_LAW_ARTICLE_PROGRESS',
@@ -122,6 +94,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 						pane
 					);
 					vnode.push(...vnodePart);
+          console.log('vnodePart:', vnodePart);
 					// 途中結果を送信  
 					self.postMessage({
 						type: 'FETCH_LAW_ARTICLE_PROGRESS',
@@ -218,239 +191,239 @@ async function getRefLaw(article: LawArticle) {
 };
 
 
-function buildVirtualTree(json: JsonNode | string): VNode {
-  if (typeof json === "string") {
-    return { type: "text", value: json };
-  }
+// function buildVirtualTree(json: JsonNode | string): VNode {
+//   if (typeof json === "string") {
+//     return { type: "text", value: json };
+//   }
 
-  const tag = json.tag;
-  const attr = normalizeAttrKeys(json.attr ?? {});
-  const children = json.children ?? [];
+//   const tag = json.tag;
+//   const attr = normalizeAttrKeys(json.attr ?? {});
+//   const children = json.children ?? [];
 
-  return {
-    type: "element",
-    tag,
-    attr,
-    children: children.map(buildVirtualTree),
-  };
-}
+//   return {
+//     type: "element",
+//     tag,
+//     attr,
+//     children: children.map(buildVirtualTree),
+//   };
+// }
 
-function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], lawData: LawData[] | null, refData: RefData[] = [], refLawTitle: RefLawTitleList, pane: Pane | 'ref'): VNode[] {
-  const hiddenTags = ["LawTitle", "LawNum", "TOC", "ArticleTitle"]; // 非表示にするタグ名の配列
-  const unwrapTags = ["Law", "LawBody", "ParagraphSentence", "ItemSentence"]; // 中身だけ表示するタグ名の配列
+// function renderVirtualTree(json: JsonNode | string, ancestors: VElement[] = [], lawData: LawData[] | null, refData: RefData[] = [], refLawTitle: RefLawTitleList, pane: Pane | 'ref'): VNode[] {
+//   const hiddenTags = ["LawTitle", "LawNum", "TOC", "ArticleTitle"]; // 非表示にするタグ名の配列
+//   const unwrapTags = ["Law", "LawBody", "ParagraphSentence", "ItemSentence"]; // 中身だけ表示するタグ名の配列
 
-  // 各タグを対応するReactコンポーネント or HTMLタグにマップ
-  const tagMap: Record<string, string> = {
-    Table: "table",
-    TableRow: "tr",
-    TableColumn: "td",
-  };
-  // 祖先の中から一番近い Article を探す
-  const provisionAncestor = [...ancestors]
-    .reverse()
-    .find(a => a.tag === "MainProvision" || a.tag === "SupplProvision");
-  // 祖先の中から一番近い Article を探す
-  const articleAncestor = [...ancestors]
-    .reverse()
-    .find(a => a.tag === "Article");
-  const paragraphAncestor = [...ancestors]
-    .reverse()
-    .find(a => a.tag === "Paragraph");
-  const itemAncestor = [...ancestors]
-    .reverse()
-    .find(a => subitemNode.includes(a.tag) || a.tag === "Item");
-  const articleNo = articleAncestor?.attr?.num;
-  const paragraphNo = paragraphAncestor?.attr?.num;
-  const itemNo = itemAncestor?.attr?.num;
-  // 直前の親タグを取得
-  const parentNode = ancestors[ancestors.length - 1];
+//   // 各タグを対応するReactコンポーネント or HTMLタグにマップ
+//   const tagMap: Record<string, string> = {
+//     Table: "table",
+//     TableRow: "tr",
+//     TableColumn: "td",
+//   };
+//   // 祖先の中から一番近い Article を探す
+//   const provisionAncestor = [...ancestors]
+//     .reverse()
+//     .find(a => a.tag === "MainProvision" || a.tag === "SupplProvision");
+//   // 祖先の中から一番近い Article を探す
+//   const articleAncestor = [...ancestors]
+//     .reverse()
+//     .find(a => a.tag === "Article");
+//   const paragraphAncestor = [...ancestors]
+//     .reverse()
+//     .find(a => a.tag === "Paragraph");
+//   const itemAncestor = [...ancestors]
+//     .reverse()
+//     .find(a => subitemNode.includes(a.tag) || a.tag === "Item");
+//   const articleNo = articleAncestor?.attr?.num;
+//   const paragraphNo = paragraphAncestor?.attr?.num;
+//   const itemNo = itemAncestor?.attr?.num;
+//   // 直前の親タグを取得
+//   const parentNode = ancestors[ancestors.length - 1];
 
-  const refDataMatch = refData && refData.filter((data: RefData) => data.match !== "★引用個所不明★");
-  if (typeof json === "string") {
-    if (parentNode.tag.includes("Num") || parentNode.tag.includes("Title")) {
-      // Num、Titleを含む直下のテキストノードの場合、後続に全角スペースを追加
-      return [{ type: "text", value: `${json}　` }];
-    };
-    if (json.replace(/\s/g, '') === "附則" && provisionAncestor?.attr?.amendlawnum) {
-      //
-      return [{ type: "text", value: json + "（" + provisionAncestor.attr.amendlawnum + "）" + (provisionAncestor.attr.extract === 'true' ? "　抄" : "") }];
-    }
-    if (pane === 'left' || pane === 'right') {
-      let refTextData: RefData[] | undefined = refDataMatch && refDataMatch.filter((data: RefData) => {
-        return data.match &&
-          data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
-          data.referred?.lawArticle.article === (articleNo || 0).toString() &&
-          data.referred?.lawArticle.paragraph == (paragraphNo || 0).toString() &&
-          data.referred?.lawArticle.item == (itemNo || 0).toString()
-      });
-      const brackets: Record<string, string> = {
-        "（": "）",
-        "「": "」",
-      };
-      let innerHTML = (json: string): string => {
-        // カッコの一致を確認
-        function checkParenthesesBalance(text: string): boolean {
-          const stack = [];
-          for (let char of text) {
-            if (char in brackets) {
-              stack.push(char);
-            } else if ((stack.length > 0) && (char === brackets[stack[stack.length - 1]])) {
-              stack.pop();
-            } else if ((char === "）") || (char === "」")) {
-              return false; // 対応する開きがない場合
-            }
-          }
-          return stack.length === 0; // 最後にスタックが空なら一致している
-        }
-        // カッコの色分け
-        function colorizeParentheses(text: string): string {
-          let depth = 0;
-          return text.replace(/(（|）|「|」)/g, (match) => {
-            if (match === "（" || (match === "「")) {
-              depth++;
-              return `<span class='annotation lv${((depth - 1) % 5) + 1}'>${match}`;
-            } else if ((match === "）") || (match === "」")) {
-              depth--;
-              return `${match}</span>`;
-            }
-            return match;
-          });
-        }
-        if (checkParenthesesBalance(json)) {
-          return colorizeParentheses(json);
-        }
-        return json;
-      }
+//   const refDataMatch = refData && refData.filter((data: RefData) => data.match !== "★引用個所不明★");
+//   if (typeof json === "string") {
+//     if (parentNode.tag.includes("Num") || parentNode.tag.includes("Title")) {
+//       // Num、Titleを含む直下のテキストノードの場合、後続に全角スペースを追加
+//       return [{ type: "text", value: `${json}　` }];
+//     };
+//     if (json.replace(/\s/g, '') === "附則" && provisionAncestor?.attr?.amendlawnum) {
+//       //
+//       return [{ type: "text", value: json + "（" + provisionAncestor.attr.amendlawnum + "）" + (provisionAncestor.attr.extract === 'true' ? "　抄" : "") }];
+//     }
+//     if (pane === 'left' || pane === 'right') {
+//       let refTextData: RefData[] | undefined = refDataMatch && refDataMatch.filter((data: RefData) => {
+//         return data.match &&
+//           data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
+//           data.referred?.lawArticle.article === (articleNo || 0).toString() &&
+//           data.referred?.lawArticle.paragraph == (paragraphNo || 0).toString() &&
+//           data.referred?.lawArticle.item == (itemNo || 0).toString()
+//       });
+//       const brackets: Record<string, string> = {
+//         "（": "）",
+//         "「": "」",
+//       };
+//       let innerHTML = (json: string): string => {
+//         // カッコの一致を確認
+//         function checkParenthesesBalance(text: string): boolean {
+//           const stack = [];
+//           for (let char of text) {
+//             if (char in brackets) {
+//               stack.push(char);
+//             } else if ((stack.length > 0) && (char === brackets[stack[stack.length - 1]])) {
+//               stack.pop();
+//             } else if ((char === "）") || (char === "」")) {
+//               return false; // 対応する開きがない場合
+//             }
+//           }
+//           return stack.length === 0; // 最後にスタックが空なら一致している
+//         }
+//         // カッコの色分け
+//         function colorizeParentheses(text: string): string {
+//           let depth = 0;
+//           return text.replace(/(（|）|「|」)/g, (match) => {
+//             if (match === "（" || (match === "「")) {
+//               depth++;
+//               return `<span class='annotation lv${((depth - 1) % 5) + 1}'>${match}`;
+//             } else if ((match === "）") || (match === "」")) {
+//               depth--;
+//               return `${match}</span>`;
+//             }
+//             return match;
+//           });
+//         }
+//         if (checkParenthesesBalance(json)) {
+//           return colorizeParentheses(json);
+//         }
+//         return json;
+//       }
 
-      const LinkifyWithLawText = (text: string, refLawTitle: RefLawTitleList | undefined, lawData: LawData[] | undefined): string => {
-        const synonym = refLawTitle?.synonymList;
-        let regex: RegExp
+//       const LinkifyWithLawText = (text: string, refLawTitle: RefLawTitleList | undefined, lawData: LawData[] | undefined): string => {
+//         const synonym = refLawTitle?.synonymList;
+//         let regex: RegExp
 
-        refLawTitle?.lawTitleList.forEach(lawNum => {
-          const law = lawData?.filter(law => law.law_info?.law_num === lawNum)[0]?.current_revision_info?.law_title;
-          // 法令名を長い順にソートする
-          regex = new RegExp(
-            '(?:' + law + ((synonym && synonym[lawNum]) ? '|' + synonym[lawNum] : '') + ')'
-            + '(?:（(?:' + lawNum + ')?。?(?:以下「[^「]*?」という。)?）)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?',
-            'g'
-          );
-          text = text.replaceAll(regex, (match, suppl, lawArticleNum, lawArticleSubNum, lawParagraphNum) => {
-            const provision = !(suppl);
-            lawArticleNum = kanjiToNumber(lawArticleNum);
-            lawArticleSubNum = kanjiToNumber(lawArticleSubNum);
-            lawParagraphNum = kanjiToNumber(lawParagraphNum);
-            const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawArticleSubNum ? '_' + lawArticleSubNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
-            return `<span class="refLink" ${lawLink}>${match}</span>`;
-          });
-        });
-        return text;
-      }
-      const LinkifyWithWrap = (text: string, refTextData: RefData[]) => {
-        // ノードを文字列化（装飾付きspanでも中のテキストは拾える）
-        refTextData = Array.from(new Set(refTextData)); // 重複削除
-        refTextData = refTextData.filter(data => data.match && data.match !== "★引用個所不明★"); // マッチするものだけ抽出
+//         refLawTitle?.lawTitleList.forEach(lawNum => {
+//           const law = lawData?.filter(law => law.law_info?.law_num === lawNum)[0]?.current_revision_info?.law_title;
+//           // 法令名を長い順にソートする
+//           regex = new RegExp(
+//             '(?:' + law + ((synonym && synonym[lawNum]) ? '|' + synonym[lawNum] : '') + ')'
+//             + '(?:（(?:' + lawNum + ')?。?(?:以下「[^「]*?」という。)?）)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?',
+//             'g'
+//           );
+//           text = text.replaceAll(regex, (match, suppl, lawArticleNum, lawArticleSubNum, lawParagraphNum) => {
+//             const provision = !(suppl);
+//             lawArticleNum = kanjiToNumber(lawArticleNum);
+//             lawArticleSubNum = kanjiToNumber(lawArticleSubNum);
+//             lawParagraphNum = kanjiToNumber(lawParagraphNum);
+//             const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawArticleSubNum ? '_' + lawArticleSubNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
+//             return `<span class="refLink" ${lawLink}>${match}</span>`;
+//           });
+//         });
+//         return text;
+//       }
+//       const LinkifyWithWrap = (text: string, refTextData: RefData[]) => {
+//         // ノードを文字列化（装飾付きspanでも中のテキストは拾える）
+//         refTextData = Array.from(new Set(refTextData)); // 重複削除
+//         refTextData = refTextData.filter(data => data.match && data.match !== "★引用個所不明★"); // マッチするものだけ抽出
 
-        // マッチするテキストがあるものを先に処理する
-        refTextData.sort((a, b) => {
-          if (a.match && b.match) {
-            return text.indexOf(a.match) - text.indexOf(b.match); // マッチ位置が早い順
-          } else if (a.match) {
-            return -1;
-          } else if (b.match) {
-            return 1;
-          } else {
-            return 0;
-          }
-        });
+//         // マッチするテキストがあるものを先に処理する
+//         refTextData.sort((a, b) => {
+//           if (a.match && b.match) {
+//             return text.indexOf(a.match) - text.indexOf(b.match); // マッチ位置が早い順
+//           } else if (a.match) {
+//             return -1;
+//           } else if (b.match) {
+//             return 1;
+//           } else {
+//             return 0;
+//           }
+//         });
 
-        refTextData.forEach((data: RefData) => {
-          if (data.match) {
-            const lawNum = data.ref?.lawNum;
-            const provision = data.ref?.lawArticle.provision;
-            const lawArticleNum = data.ref?.lawArticle.article || '';
-            const lawParagraphNum = data.ref?.lawArticle.paragraph || '';
-            const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
+//         refTextData.forEach((data: RefData) => {
+//           if (data.match) {
+//             const lawNum = data.ref?.lawNum;
+//             const provision = data.ref?.lawArticle.provision;
+//             const lawArticleNum = data.ref?.lawArticle.article || '';
+//             const lawParagraphNum = data.ref?.lawArticle.paragraph || '';
+//             const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
 
-            text = text.replace(data.match, `<span class="refLink" ${lawLink}>${data.match}</span>`);
-          }
-        });
-        return (text);
-      }
-      return [{ type: "text", value: innerHTML(LinkifyWithWrap(LinkifyWithLawText(json, refLawTitle, lawData ?? undefined), refTextData)) }];
-    }
-    return [{ type: "text", value: json }];
-  }
-  let { tag, attr = {}, children } = json;
-  attr = normalizeAttrKeys(attr ?? {});
-  if (hiddenTags.includes(tag)) {
-    // 非表示タグはレンダリングしない
-    return [];
-  }
+//             text = text.replace(data.match, `<span class="refLink" ${lawLink}>${data.match}</span>`);
+//           }
+//         });
+//         return (text);
+//       }
+//       return [{ type: "text", value: innerHTML(LinkifyWithWrap(LinkifyWithLawText(json, refLawTitle, lawData ?? undefined), refTextData)) }];
+//     }
+//     return [{ type: "text", value: json }];
+//   }
+//   let { tag, attr = {}, children } = json;
+//   attr = normalizeAttrKeys(attr ?? {});
+//   if (hiddenTags.includes(tag)) {
+//     // 非表示タグはレンダリングしない
+//     return [];
+//   }
 
-  const mergedTag = tagMap[tag] ?? "span";
-  const provisionNode = tag === 'MainProvision' || tag === 'SupplProvision' ? json : provisionAncestor && provisionAncestor;
-  const dataProvision = provisionNode?.tag === 'MainProvision'
-    ? 'MainProvision'
-    : (provisionNode?.tag === 'SupplProvision'
-      ? (provisionNode.attr?.amendlawnum ?? 'SupplProvision')
-      : undefined);
-  const dataArticle = dataProvision ? `${dataProvision}-${tag === 'Article' ? attr['num'] : articleNo || 0}` : undefined;
-  const dataItem = dataArticle ? `${dataArticle}-${tag === 'Paragrapch' ? attr['num'] : paragraphNo || 0}` : undefined;
-  // 既存のclassNameにtagを追加。data-article、data-paragraphなどの属性はそのまま維持
-  const mergedAttr = {
-    ...attr,
-    className: [`xml-${tag}`, attr.className].filter(Boolean).join(" "),
-    "data-provision": dataProvision,
-    "data-article": dataArticle,
-    "data-item": dataItem,
-    "onContextMenu": tag === "Article" ? "handleRightClick" : undefined,
-  };
-  const renderedChildren = children
-    .flatMap(child => renderVirtualTree(child, [...ancestors, buildVirtualTree(json) as VElement], lawData, refData, refLawTitle, pane))
-    .filter(Boolean);
-  // --- unwrap対象タグなら、自身はスキップして中身だけ出す ---
-  if (unwrapTags.includes(tag)) {
-    return renderedChildren;
-  }
-  // Tableタグの直下にtbodyが含まれていないので手動で追加する
-  if (tag === "Table") {
-    return [{ type: "element", tag: "table", attr: mergedAttr, children: [{ type: "element", tag: "tbody", attr: mergedAttr, children: renderedChildren }] }];
-  }
-  // ParagraphNumタグで子要素が空の場合、第1項とみなして祖先のArticleTitleのテキストを取得して表示する
-  if (tag === "ParagraphNum" && children.length === 0) {
-    let titleText = '';
-    const articleTitle = articleAncestor?.children
-      .filter(child => child?.type === "element" && child?.tag === "ArticleTitle")[0]
-    if (articleTitle?.type === "element") {
-      articleTitle.children.forEach(child => {
-        if (child?.type === "text") {
-          titleText = `${child.value}　`;
-        }
-      });
-      return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: [{ type: "text", value: titleText }] }];
-    }
-  }
-  if (tag === "Paragraph" || tag === "Item") {
-    // ParagraphまたはItemタグの場合、引用条文が存在する場合hrenderdChildrenの前にLinkifyNoMatchコンポーネントを追加する
-    // let refTextData: RefData[] | undefined;
-    let refTextData: RefData[] | undefined = refData && refData.filter((data: RefData) => {
-      return data.match === "★引用個所不明★" &&
-        data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
-        data.referred?.lawArticle.article === (articleNo || 0).toString() &&
-        data.referred?.lawArticle.paragraph == (tag === "Paragraph"? attr?.num : paragraphNo || 0).toString() &&
-        data.referred?.lawArticle.item == (tag === "Item"? attr?.num : 0).toString()
-    });
-    if (refTextData && refTextData.length > 0) {
-      let children: VNode = { type: "text", value: "★引用条文★" };
-      refTextData.forEach((data: RefData) => {
-        const lawLink = { "data-law-num": data.ref?.lawNum, "data-provision": data.ref?.lawArticle.provision, "data-article": data.ref?.lawArticle.article, "data-paragraph": data.ref?.lawArticle.paragraph, "data-item": data.ref?.lawArticle.item };
-        children = { type: "element", tag: "span", attr: { className: "refLink", ...lawLink }, children: [children] };
-      });
-      renderedChildren.push({ type: "element", tag: "span", attr: { className: "refSentence", refTextData: refTextData }, children: [children] });
-    }
+//   const mergedTag = tagMap[tag] ?? "span";
+//   const provisionNode = tag === 'MainProvision' || tag === 'SupplProvision' ? json : provisionAncestor && provisionAncestor;
+//   const dataProvision = provisionNode?.tag === 'MainProvision'
+//     ? 'MainProvision'
+//     : (provisionNode?.tag === 'SupplProvision'
+//       ? (provisionNode.attr?.amendlawnum ?? 'SupplProvision')
+//       : undefined);
+//   const dataArticle = dataProvision ? `${dataProvision}-${tag === 'Article' ? attr['num'] : articleNo || 0}` : undefined;
+//   const dataItem = dataArticle ? `${dataArticle}-${tag === 'Paragrapch' ? attr['num'] : paragraphNo || 0}` : undefined;
+//   // 既存のclassNameにtagを追加。data-article、data-paragraphなどの属性はそのまま維持
+//   const mergedAttr = {
+//     ...attr,
+//     className: [`xml-${tag}`, attr.className].filter(Boolean).join(" "),
+//     "data-provision": dataProvision,
+//     "data-article": dataArticle,
+//     "data-item": dataItem,
+//     "onContextMenu": tag === "Article" ? "handleRightClick" : undefined,
+//   };
+//   const renderedChildren = children
+//     .flatMap(child => renderVirtualTree(child, [...ancestors, buildVirtualTree(json) as VElement], lawData, refData, refLawTitle, pane))
+//     .filter(Boolean);
+//   // --- unwrap対象タグなら、自身はスキップして中身だけ出す ---
+//   if (unwrapTags.includes(tag)) {
+//     return renderedChildren;
+//   }
+//   // Tableタグの直下にtbodyが含まれていないので手動で追加する
+//   if (tag === "Table") {
+//     return [{ type: "element", tag: "table", attr: mergedAttr, children: [{ type: "element", tag: "tbody", attr: mergedAttr, children: renderedChildren }] }];
+//   }
+//   // ParagraphNumタグで子要素が空の場合、第1項とみなして祖先のArticleTitleのテキストを取得して表示する
+//   if (tag === "ParagraphNum" && children.length === 0) {
+//     let titleText = '';
+//     const articleTitle = articleAncestor?.children
+//       .filter(child => child?.type === "element" && child?.tag === "ArticleTitle")[0]
+//     if (articleTitle?.type === "element") {
+//       articleTitle.children.forEach(child => {
+//         if (child?.type === "text") {
+//           titleText = `${child.value}　`;
+//         }
+//       });
+//       return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: [{ type: "text", value: titleText }] }];
+//     }
+//   }
+//   if (tag === "Paragraph" || tag === "Item") {
+//     // ParagraphまたはItemタグの場合、引用条文が存在する場合hrenderdChildrenの前にLinkifyNoMatchコンポーネントを追加する
+//     // let refTextData: RefData[] | undefined;
+//     let refTextData: RefData[] | undefined = refData && refData.filter((data: RefData) => {
+//       return data.match === "★引用個所不明★" &&
+//         data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
+//         data.referred?.lawArticle.article === (articleNo || 0).toString() &&
+//         data.referred?.lawArticle.paragraph == (tag === "Paragraph"? attr?.num : paragraphNo || 0).toString() &&
+//         data.referred?.lawArticle.item == (tag === "Item"? attr?.num : 0).toString()
+//     });
+//     if (refTextData && refTextData.length > 0) {
+//       let children: VNode = { type: "text", value: "★引用条文★" };
+//       refTextData.forEach((data: RefData) => {
+//         const lawLink = { "data-law-num": data.ref?.lawNum, "data-provision": data.ref?.lawArticle.provision, "data-article": data.ref?.lawArticle.article, "data-paragraph": data.ref?.lawArticle.paragraph, "data-item": data.ref?.lawArticle.item };
+//         children = { type: "element", tag: "span", attr: { className: "refLink", ...lawLink }, children: [children] };
+//       });
+//       renderedChildren.push({ type: "element", tag: "span", attr: { className: "refSentence", refTextData: refTextData }, children: [children] });
+//     }
 
-    return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
+//     return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
 
-  }
-  return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
-}
+//   }
+//   return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
+// }

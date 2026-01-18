@@ -273,17 +273,19 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       try {
         // Web Workerを使用してデータ取得  
         fetchLawArticle(pane, selectedLaws[pane], (data: any) => {
-          if (data.progress === 'basic_data_loaded') {
-            setDataLoading(prev => ({ ...prev, [pane]: 'データ取得開始...' }));
-          } else if (data.progress === 'article_data_loading') {
-            vnode.push(...data.vnodePart);
-            setVnode(prev => ({ ...prev, [pane]: vnode }));
-            setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
-          } else if (data.progress === 'complete') {
-            setVnode(prev => ({ ...prev, [pane]: data.vnode }));
-            setDataLoading(prev => ({ ...prev, [pane]: '' }));
+          if (data) {
+            if (data.progress === 'basic_data_loaded') {
+              setDataLoading(prev => ({ ...prev, [pane]: 'データ取得開始...' }));
+            } else if (data.progress === 'article_data_loading') {
+              vnode.push(...data.vnodePart);
+              setVnode(prev => ({ ...prev, [pane]: vnode }));
+              setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
+            } else if (data.progress === 'complete') {
+              setVnode(prev => ({ ...prev, [pane]: data.vnode }));
+              setDataLoading(prev => ({ ...prev, [pane]: '' }));
+            }
+            setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
           }
-          setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
         });  
       } catch (error) {
         console.error("法令データ取得失敗:", error);

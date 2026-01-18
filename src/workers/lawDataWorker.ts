@@ -1,9 +1,5 @@
-import type { LawData, LawArticle, RefData, RefLawTitleList, VNode, VElement, Pane } from "../LawDataContext";
+import type { LawData, RefData, RefLawTitleList, VNode, VElement, Pane } from "../LawDataContext";
 import kanjiToNumber from '../assets/KanjiToNumber'
-import { saveLawToCache, getLawFromCache, saveLawListToCache, getLawListFromCache } from '../indexedDB'
-import type { LawListCache, LawDataCache } from "../indexedDB";
-
-const BASE = import.meta.env.BASE_URL;
 
 export interface JsonNode {
   tag: string;
@@ -27,13 +23,6 @@ export interface WorkerResponse {
   error?: string;
 }
 
-// interface VNode {  
-//   type: "text" | "element";  
-//   value?: string;  
-//   tag?: string;  
-//   attr?: Readonly<Record<string, any>>;  
-//   children?: readonly VNode[];  
-// }  
 export function isSameDateInJapan(ts1: number, ts2: number) {
   // 日本時間で日付を比較するため、タイムゾーンを指定してフォーマット
   // ts1とts2はミリ秒単位のタイムスタンプ
@@ -63,79 +52,7 @@ function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
   return normalized;
 }
 
-function searchLawData(json: any): any[] {
-  const lawArticleList: any[] = [];
-  if (json.children) {
-    json.children.forEach((item: any) => {
-      if (typeof (item) === 'string') {
-        lawArticleList.push(item);
-      } else if (typeof (item) === 'object' && item.children) {
-        let subItem = searchLawData(item);
-        if (subItem) {
-          subItem.forEach(sub => {
-            lawArticleList.push(sub);
-          });
-        }
-      }
-    });
-    return lawArticleList;
-  } else {
-    return [];
-  }
-};
-
-async function getRefLaw(article: LawArticle) {
-  let lawArticleList: any[] = [];
-  const cached = await getLawListFromCache();
-  const lawData: LawData[] = (cached as LawListCache).data;
-  if (article.law_full_text) {
-    lawArticleList = searchLawData(article.law_full_text);
-  }
-  const refLaw = new Set<string>();
-  const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
-  const synonym: { [key: string]: string } = {};
-  lawArticleList.forEach((text: any) => {
-    let match: RegExpExecArray | null;
-    while ((match = regex.exec(text)) !== null) {
-      if (match[1]) {
-        refLaw.add(match[1]);
-        if (match[2]) {
-          synonym[match[1]] = match[2];
-        }
-      }
-    };
-  });
-  refLaw.forEach(lawNum => {
-    /*
-    法令の参照では以下の記述となっていることが多いので、正規表現で該当するところを取得した。
-    [法令名が初めて現れる場合]：(法令名)（元号○○年法律/政令/...第○号）第○条第○項
-    [法令名が初めて現れる場合で、法令を省略する場合](法令名)（元号○○年法律/政令/...第○号。以下「○○法」という。）第○条第○項
-    [法令名が2回目以降の場合](法令名もしくは略称名)第○条第○項
-    なお、「第○条」のところは「第○条の○」となるケースもあるため、それに対応している
-    法律によっては第○条の○条の○…と続くことがあるが、それは対応が難しいので非対応
-    */
-    const law = lawData?.filter(law => law.law_info?.law_num === lawNum)[0]?.current_revision_info?.law_title;
-    const synonymRegex = new RegExp(law + '（以下「(.*?)」という。）', 'g');
-    lawArticleList.forEach((text: any) => {
-      let match: RegExpExecArray | null;
-      while ((match = synonymRegex.exec(text)) !== null) {
-        if (match[1]) {
-          if (typeof (lawNum) == 'string' && !(synonym[lawNum])) { //附則で改正法令によって上書きしていることがあるため、最初に出てきたものを優先する
-            synonym[lawNum] = match[1];
-          }
-        }
-      }
-    });
-  });
-
-  // refLawはSet型なので、配列に変換して返す
-  const refLawList: string[] = Array.from(refLaw);
-
-  return { lawTitleList: refLawList, synonymList: synonym };
-};
-
-
-function buildVirtualTree(json: JsonNode | string): VNode {
+export function buildVirtualTree(json: JsonNode | string): VNode {
   if (typeof json === "string") {
     return { type: "text", value: json };
   }
@@ -371,42 +288,3 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
   }
   return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: renderedChildren }];
 }
-
-function searchArticle(json: any): any[] {
-  const articleList: any[] = [];
-  json.children.forEach((item: any) => {
-    if (item?.tag === 'Article') {
-      articleList.push(item);
-    } else if (typeof (item) === 'object' && item.children) {
-      let subItem = searchArticle(item);
-      if (subItem) {
-        subItem.forEach(sub => {
-          articleList.push(sub);
-        });
-      }
-    }
-  });
-  return articleList;
-};
-
-function refArticleData(refItm: any, refArticle: JsonNode): any {
-  if (refArticle) {
-    // 法令データが取得できていれば、該当条文を表示
-    let lawBody = refArticle.children?.filter(child => (typeof (child) === 'object') && (child?.tag === 'LawBody'))[0]
-    if (typeof (lawBody) === 'object' && lawBody?.children) {
-      const refProvision = refItm?.provision=== 'MainProvision' ? 'MainProvision' : 'SupplProvision';
-      const refAmendLawNum = (refItm?.provision=== 'MainProvision' || refItm?.provision === 'SupplProvision') ? undefined : refItm?.provision;
-      let refLawData = lawBody.children.filter(child => typeof (child) === 'object' && child?.tag === refProvision && child?.attr?.AmendLawNum === refAmendLawNum)[0]
-      if (refLawData) {
-        let refArticleNode = searchArticle(refLawData).filter(e => e.attr.Num === refItm?.article)[0];
-        if (refArticleNode) {
-          return renderVirtualTree(refArticleNode, [], [], [], { lawTitleList: [], synonymList: {} }, 'ref');
-        } else {
-          return null;
-        }
-      }
-    }
-  } else {
-    return null;
-  }
-};
