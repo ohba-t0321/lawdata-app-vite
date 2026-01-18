@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import type { ColumnDef } from '@tanstack/react-table';
 import { DividerContext } from '../DiviserContext';
@@ -9,7 +10,8 @@ import './Sidebar.css';
 
 const SearchForm: React.FC = () => {
 
-  const [keyword, setKeyword] = useState('');  
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [keyword, setKeyword] = useState(searchParams.get('keyword') ?? '');  
   const [searchType, setSearchType] = useState('includes');  
   const [outputFrame, setOutputFrame] = useState<'left'|'right'>('left');  
   const [isOpen, setIsOpen] = useState(false);  
@@ -56,6 +58,25 @@ const SearchForm: React.FC = () => {
   useEffect(() => {
     SearchLwaws();
   }, [lawData, keyword, searchType]);
+
+  useEffect(() => {
+    const paramsKeyword = searchParams.get('keyword') ?? '';
+    if (paramsKeyword !== keyword) {
+      setKeyword(paramsKeyword);
+    }
+  }, [keyword, searchParams]);
+
+  useEffect(() => {
+    setSearchParams((prevParams) => {
+      const updatedParams = new URLSearchParams(prevParams);
+      if (keyword) {
+        updatedParams.set('keyword', keyword);
+      } else {
+        updatedParams.delete('keyword');
+      }
+      return updatedParams;
+    });
+  }, [keyword, setSearchParams]);
 
   // const handleLawSelect = async (law: any) => {  
   //   await fetchLawDetails(law.law_info.law_num, outputFrame);  
