@@ -86,6 +86,38 @@ const flattenText = (node: React.ReactNode): string => {
   return "";
 };
 
+const normalizeTocId = (id: string) => id.replace(/^(left|right)-/, '');
+const isTocAnchorId = (id: string) => {
+  const baseId = normalizeTocId(id);
+  return baseId.startsWith('toc-chapter-') || baseId === 'toc-suppl-provision';
+};
+
+const applyTocPrefixToItems = (items: TocItem[] | null | undefined, pane: Pane): TocItem[] | null => {
+  if (!items) return null;
+  const tocPrefix = `${pane}-`;
+  return items.map((item) => {
+    if (!isTocAnchorId(item.id)) return item;
+    const baseId = normalizeTocId(item.id);
+    return { ...item, id: `${tocPrefix}${baseId}` };
+  });
+};
+
+const applyTocPrefixToVnodes = (nodes: VNode[] | null | undefined, pane: Pane): VNode[] | null => {
+  if (!nodes) return null;
+  const tocPrefix = `${pane}-`;
+  const updateNode = (node: VNode): VNode => {
+    if (node.type === "text") return node;
+    const attr = node.attr ? { ...node.attr } : undefined;
+    if (attr?.id && typeof attr.id === "string" && isTocAnchorId(attr.id)) {
+      const baseId = normalizeTocId(attr.id);
+      attr.id = `${tocPrefix}${baseId}`;
+    }
+    const children = node.children?.map(updateNode) ?? [];
+    return { ...node, attr, children };
+  };
+  return nodes.map(updateNode);
+};
+
 // 子要素を走査して [before部分, マッチ部分, after部分] に振り分ける
 const splitNodes = (node: React.ReactNode,
                     textPos = { pos: 0 },
@@ -287,7 +319,8 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
             if (data.progress === 'basic_data_loaded') {
               setDataLoading(prev => ({ ...prev, [pane]: 'データ取得開始...' }));
               if (data.tocItems) {
-                setTocItems(prev => ({ ...prev, [pane]: data.tocItems }));
+                const prefixedTocItems = applyTocPrefixToItems(data.tocItems, pane);
+                setTocItems(prev => ({ ...prev, [pane]: prefixedTocItems }));
               }
             } else if (data.progress === 'article_data_loading') {
               vnode.push(...data.vnodePart);
@@ -297,7 +330,8 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
               setVnode(prev => ({ ...prev, [pane]: data.vnode }));
               setDataLoading(prev => ({ ...prev, [pane]: '' }));
               if (data.tocItems) {
-                setTocItems(prev => ({ ...prev, [pane]: data.tocItems }));
+                const prefixedTocItems = applyTocPrefixToItems(data.tocItems, pane);
+                setTocItems(prev => ({ ...prev, [pane]: prefixedTocItems }));
               }
             }
             setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
@@ -365,7 +399,8 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     (['left','right'] as Pane[]).forEach((pane)=>{
-      const domNode = vnode[pane]? renderVNodes(vnode[pane]) : null;
+      const prefixedVnodes = applyTocPrefixToVnodes(vnode[pane], pane);
+      const domNode = prefixedVnodes ? renderVNodes(prefixedVnodes) : null;
       setDomNodes(prev=>({...prev, [pane]: domNode}));
     });
   }, [vnode]);
