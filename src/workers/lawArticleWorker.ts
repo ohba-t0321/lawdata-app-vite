@@ -246,7 +246,6 @@ function buildTocItems(lawArticle: LawArticle): TocItem[] {
         if (section.children?.find((c: any) => c.tag === 'ArticleRange')) {
           articleRange = flattenTocText(section.children?.find((c: any) => c.tag === 'ArticleRange').children ?? []);
         }
-        console.log(articleRange);
         const sectionLabel = sectionTitleNode ? flattenTocText(sectionTitleNode.children ?? []) : '';
         if (sectionLabel) {
           tocItems.push({
