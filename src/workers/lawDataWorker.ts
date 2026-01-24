@@ -87,6 +87,9 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
   const articleAncestor = [...ancestors]
     .reverse()
     .find(a => a.tag === "Article");
+  const chapterAncestor = [...ancestors]
+    .reverse()
+    .find(a => a.tag === "Chapter");
   const paragraphAncestor = [...ancestors]
     .reverse()
     .find(a => a.tag === "Paragraph");
@@ -231,8 +234,16 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
   const dataArticle = dataProvision ? `${dataProvision}-${tag === 'Article' ? attr['num'] : articleNo || 0}` : undefined;
   const dataItem = dataArticle ? `${dataArticle}-${tag === 'Paragrapch' ? attr['num'] : paragraphNo || 0}` : undefined;
   // 既存のclassNameにtagを追加。data-article、data-paragraphなどの属性はそのまま維持
+  const chapterId = tag === 'Chapter'
+    ? `toc-chapter-${attr?.num ?? ''}`
+    : undefined;
+  const sectionId = tag === 'Section'
+    ? `toc-chapter-${chapterAncestor?.attr?.num ?? '0'}-section-${attr?.num ?? ''}`
+    : undefined;
+  const supplProvisionId = tag === 'SupplProvision' ? 'toc-suppl-provision' : undefined;
   const mergedAttr = {
     ...attr,
+    id: chapterId ?? sectionId ?? supplProvisionId ?? attr.id,
     className: [`xml-${tag}`, attr.className].filter(Boolean).join(" "),
     "data-provision": dataProvision,
     "data-article": dataArticle,
