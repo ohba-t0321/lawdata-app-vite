@@ -21,6 +21,12 @@ export const LawPane: React.FC<LawPaneProps> = ({
   const isSelected = !!selectedLaws[pane];
   const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&domNodes[pane],[isArticleLoaded[pane],domNodes[pane],lawData]);
   const [isTocOpen, setIsTocOpen] = useState(false);
+  const handleTocClick = (event: React.MouseEvent<HTMLElement>) => {
+    const target = event.target as HTMLElement | null;
+    if (target?.tagName === 'A') {
+      setIsTocOpen(false);
+    }
+  };
 
   useEffect(() => {
     setIsTocOpen(false);
@@ -54,9 +60,6 @@ export const LawPane: React.FC<LawPaneProps> = ({
           <span className={`loading ${pane}`}>　　　{dataLoading[pane]} 読み込み中...</span>
           :null}
         </div>
-      </div>
-      {/* 共通ロジック：本文 */}
-      <div className={`law-content ${pane}`}>
         {tocItems[pane]?.length ? (
           <div className="toc-container">
             <button
@@ -67,7 +70,7 @@ export const LawPane: React.FC<LawPaneProps> = ({
               目次
             </button>
             {isTocOpen ? (
-              <nav className="toc-list">
+              <nav className="toc-list" onClick={handleTocClick}>
                 <ul>
                   {tocItems[pane]?.map((item) => (
                     <li key={item.id} className={`toc-depth-${item.depth}`}>
@@ -79,6 +82,10 @@ export const LawPane: React.FC<LawPaneProps> = ({
             ) : null}
           </div>
         ) : null}
+      </div>
+      {/* 共通ロジック：本文 */}
+      <div className={`law-content ${pane}`}>
+
         {articleContent}
       </div>
     </div>

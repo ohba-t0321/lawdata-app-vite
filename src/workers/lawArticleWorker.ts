@@ -226,11 +226,15 @@ function buildTocItems(lawArticle: LawArticle): TocItem[] {
     if (child.tag === 'TOCChapter') {
       const chapterNum = child.attr?.Num ?? '';
       const chapterTitleNode = child.children?.find((c: any) => c.tag === 'ChapterTitle');
+      let articleRange = '';
+      if (child.children?.find((c: any) => c.tag === 'ArticleRange')) {
+        articleRange = flattenTocText(child.children?.find((c: any) => c.tag === 'ArticleRange').children ?? []);
+      }
       const chapterLabel = chapterTitleNode ? flattenTocText(chapterTitleNode.children ?? []) : '';
       if (chapterLabel) {
         tocItems.push({
           id: `toc-chapter-${chapterNum || chapterLabel}`,
-          label: chapterLabel,
+          label: chapterLabel + articleRange,
           depth: 0,
         });
       }
@@ -238,11 +242,16 @@ function buildTocItems(lawArticle: LawArticle): TocItem[] {
         if (section.tag !== 'TOCSection') return;
         const sectionNum = section.attr?.Num ?? '';
         const sectionTitleNode = section.children?.find((c: any) => c.tag === 'SectionTitle');
+        articleRange = '';
+        if (section.children?.find((c: any) => c.tag === 'ArticleRange')) {
+          articleRange = flattenTocText(section.children?.find((c: any) => c.tag === 'ArticleRange').children ?? []);
+        }
+        console.log(articleRange);
         const sectionLabel = sectionTitleNode ? flattenTocText(sectionTitleNode.children ?? []) : '';
         if (sectionLabel) {
           tocItems.push({
             id: `toc-chapter-${chapterNum || '0'}-section-${sectionNum || sectionLabel}`,
-            label: sectionLabel,
+            label: sectionLabel + articleRange,
             depth: 1,
           });
         }
