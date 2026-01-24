@@ -118,6 +118,16 @@ const applyTocPrefixToVnodes = (nodes: VNode[] | null | undefined, pane: Pane): 
   return nodes.map(updateNode);
 };
 
+const parseVnodeJson = (json?: string): VNode[] | null => {
+  if (!json) return null;
+  try {
+    const parsed = JSON.parse(json);
+    return Array.isArray(parsed) ? (parsed as VNode[]) : null;
+  } catch (error) {
+    console.error('vnode JSON parse error:', error);
+    return null;
+  }
+};
 // 子要素を走査して [before部分, マッチ部分, after部分] に振り分ける
 const splitNodes = (node: React.ReactNode,
                     textPos = { pos: 0 },
@@ -323,11 +333,17 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
                 setTocItems(prev => ({ ...prev, [pane]: prefixedTocItems }));
               }
             } else if (data.progress === 'article_data_loading') {
-              vnode.push(...data.vnodePart);
-              setVnode(prev => ({ ...prev, [pane]: vnode }));
+              const jsonPart = parseVnodeJson(data.vnodePartJson);
+              const vnodePart = jsonPart ?? data.vnodePart;
+              if (vnodePart && vnodePart.length > 0) {
+                vnode.push(...vnodePart);
+                setVnode(prev => ({ ...prev, [pane]: vnode }));
+              }
               setDataLoading(prev => ({ ...prev, [pane]: data.loading }));
             } else if (data.progress === 'complete') {
-              setVnode(prev => ({ ...prev, [pane]: data.vnode }));
+              const jsonVnode = parseVnodeJson(data.vnodeJson);
+              const finalVnode = jsonVnode ?? data.vnode ?? vnode;
+              setVnode(prev => ({ ...prev, [pane]: finalVnode }));
               setDataLoading(prev => ({ ...prev, [pane]: '' }));
               if (data.tocItems) {
                 const prefixedTocItems = applyTocPrefixToItems(data.tocItems, pane);

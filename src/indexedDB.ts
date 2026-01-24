@@ -10,7 +10,8 @@ export interface LawListCache {
 export interface LawDataCache {
   lawNo:string,
   lawArticle:LawArticle,
-  vnode:VNode[],
+  vnodeJson?: string,
+  vnode?: VNode[],
   timestamp:number,
 }
 
@@ -40,7 +41,13 @@ export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:
   const tx = db.transaction("laws", "readwrite");
   const store = tx.objectStore("laws");
   lawNo = decodeURIComponent(lawNo);
-  const record = {lawNo, lawArticle, vnode, timestamp: Date.now() };
+  let vnodeJson: string | undefined;
+  try {
+    vnodeJson = JSON.stringify(vnode);
+  } catch (error) {
+    console.error("vnode JSON stringify error; caching without vnode:", error);
+  }
+  const record = {lawNo, lawArticle, vnodeJson, timestamp: Date.now() };
   try{
     store.put(record);
   } catch (error) {

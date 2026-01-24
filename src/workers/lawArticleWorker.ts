@@ -5,7 +5,72 @@ import type { WorkerRequest, WorkerResponse } from './lawDataWorker';
 import { isSameDateInJapan,buildVirtualTree,renderVirtualTree } from './lawDataWorker';
 
 const BASE = import.meta.env.BASE_URL;
+const VNODE_CHUNK_SIZE = 200;
 
+function chunkArray<T>(arr: T[], size: number): T[][] {
+	if (size <= 0) return [arr];
+	const chunks: T[][] = [];
+	for (let i = 0; i < arr.length; i += size) {
+		chunks.push(arr.slice(i, i + size));
+	}
+	return chunks;
+}
+
+function postMessageSafe(message: WorkerResponse, jsonKey?: 'vnodePart' | 'vnode') {
+	try {
+		self.postMessage(message);
+	} catch (error) {
+		if (!(error instanceof RangeError) || !jsonKey) throw error;
+		const data = message.data ?? {};
+		if (!(jsonKey in data)) throw error;
+		let json: string;
+		try {
+			json = JSON.stringify((data as any)[jsonKey]);
+		} catch {
+			throw error;
+		}
+		const nextData: Record<string, any> = { ...data, [`${jsonKey}Json`]: json };
+		delete nextData[jsonKey];
+		self.postMessage({ ...message, data: nextData } as WorkerResponse);
+	}
+}
+
+function emitVnodeParts(vnodePart: VNode[], loading: string) {
+	if (!vnodePart || vnodePart.length === 0) return;
+	const chunks = vnodePart.length > VNODE_CHUNK_SIZE ? chunkArray(vnodePart, VNODE_CHUNK_SIZE) : [vnodePart];
+	const total = chunks.length;
+	chunks.forEach((chunk, chunkIndex) => {
+		postMessageSafe({
+			type: 'FETCH_LAW_ARTICLE_PROGRESS',
+			data: {
+				vnodePart: chunk,
+				loading,
+				progress: 'article_data_loading',
+				chunkIndex: chunkIndex + 1,
+				chunkTotal: total,
+			},
+		} as WorkerResponse, 'vnodePart');
+	});
+}
+
+function emitCachedVnode(vnode: VNode[]) {
+	if (!vnode || vnode.length === 0) return;
+	const chunks = vnode.length > VNODE_CHUNK_SIZE ? chunkArray(vnode, VNODE_CHUNK_SIZE) : [vnode];
+	const total = chunks.length;
+	chunks.forEach((chunk, chunkIndex) => {
+		postMessageSafe({
+			type: 'FETCH_LAW_ARTICLE_PROGRESS',
+			data: {
+				vnodePart: chunk,
+				loading: `キャッシュ読込(${chunkIndex + 1} / ${total})`,
+				progress: 'article_data_loading',
+				fromCache: true,
+				chunkIndex: chunkIndex + 1,
+				chunkTotal: total,
+			},
+		} as WorkerResponse, 'vnodePart');
+	});
+}
 self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
   const { type, payload } = e.data;
 
@@ -23,9 +88,17 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 
 		if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {
 			lawArticle = (cachedArticle as LawDataCache).lawArticle;
-			vnode = (cachedArticle as LawDataCache).vnode;
-			if (!(vnode)) {
-				vnode = [];
+			const cachedVnodeJson = (cachedArticle as LawDataCache).vnodeJson;
+			if (cachedVnodeJson) {
+				try {
+					const parsed = JSON.parse(cachedVnodeJson);
+					vnode = Array.isArray(parsed) ? parsed : [];
+				} catch (error) {
+					console.error("cached vnode JSON parse error:", error);
+					vnode = [];
+				}
+			} else {
+				vnode = (cachedArticle as LawDataCache).vnode ?? [];
 			}
 		} else {
 			const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);
@@ -34,14 +107,15 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 		}
 		tocItems = buildTocItems(lawArticle);
 		// 部分的な結果を送信  
-		self.postMessage({
+		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_PROGRESS',
 			data: { progress: 'basic_data_loaded', tocItems },
 		} as WorkerResponse);
 
 		// ステップ1-2: vnodeが既にキャッシュにある場合は以降の処理を省略してvnodeをそのまま返却
 		if ((vnode)&&(vnode.length > 0)) {
-			self.postMessage({
+			emitCachedVnode(vnode);
+			postMessageSafe({
 				type: 'FETCH_LAW_ARTICLE_SUCCESS',
 				data: { vnode, progress: 'complete', tocItems },
 			} as WorkerResponse);
@@ -59,11 +133,10 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 			console.error("法令参照JSONファイルを取得中にエラーが発生しました:", error);
 		}
 		const refLawTitle = await getRefLaw(lawArticle);
-		self.postMessage({
+		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_PROGRESS',
 			data: { refData, refLawTitle, progress: 'reference_data_loaded' },
 		} as WorkerResponse);
-
 		// ステップ3: 仮想ツリーの構築（分割可能であれば分割）  
 		const lawBody = lawArticle.law_full_text.children.filter((child: any) => child.tag === 'LawBody')[0].children;
 		try{
@@ -81,10 +154,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 					);           
 					vnode.push(...vnodePart);
 					// 途中結果を送信  
-					self.postMessage({
-						type: 'FETCH_LAW_ARTICLE_PROGRESS',
-						data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})`, progress: 'article_data_loading' },
-					} as WorkerResponse);
+					// postMessageSafe({
+					//   type: 'FETCH_LAW_ARTICLE_PROGRESS',
+					// 	data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})`, progress: 'article_data_loading' },
+					// } as WorkerResponse, 'vnodePart');
+          emitVnodeParts(vnodePart, `本則・附則(${index + 1} / ${lawBody.length})`);
 				} else {
 					bodyPart.children.forEach((articlePart: any,articleIndex: number) => {
 						const vnodePart = renderVirtualTree(
@@ -97,10 +171,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 						);
 						vnode.push(...vnodePart);
 						// 途中結果を送信  
-						self.postMessage({
-							type: 'FETCH_LAW_ARTICLE_PROGRESS',
-							data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})　章(${articleIndex + 1} / ${bodyPart.children.length})`, progress: 'article_data_loading' },
-						} as WorkerResponse);
+						// postMessageSafe({
+						// 	type: 'FETCH_LAW_ARTICLE_PROGRESS',
+						// 	data: { vnodePart, loading: `本則・附則(${index + 1} / ${lawBody.length})　章(${articleIndex + 1} / ${bodyPart.children.length})`, progress: 'article_data_loading' },
+						// } as WorkerResponse, 'vnodePart');
+            emitVnodeParts(vnodePart, `本則・附則(${index + 1} / ${lawBody.length})　章(${articleIndex + 1} / ${bodyPart.children.length})`);
 					});
 				}
 			});
@@ -108,12 +183,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 			console.error("法令本文の仮想ツリー構築中にエラーが発生しました:", error, "vnode:", vnode);
 		}
 		saveLawToCache(lawId, lawArticle, vnode);
-
 		// 最終結果を送信  
-		self.postMessage({
+		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_SUCCESS',
 			data: { vnode, progress: 'complete', tocItems },
-		} as WorkerResponse);
+		} as WorkerResponse, 'vnode');
 		
 	} catch (error) {
 		self.postMessage({
