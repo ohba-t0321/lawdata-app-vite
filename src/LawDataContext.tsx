@@ -26,6 +26,11 @@ export interface LawArticle {
   law_full_text:Object | null;
   attached_files_info:Object | null;
 }
+export interface TocItem {
+  id: string;
+  label: string;
+  depth: number;
+}
 export interface RefData {
   match:string | null;
   ref:RefDatadetail | null;
@@ -56,6 +61,8 @@ interface LawArticleContextType {
   setIsArticleLoaded: (isArticleLoaded: {left:boolean, right:boolean}) => void;
   domNodes: {left:React.ReactNode, right:React.ReactNode};
   dataLoading: {left:string,right:string};
+  tocItems: {left:TocItem[] | null, right:TocItem[] | null};
+  setTocItems: (tocItems: {left:TocItem[] | null, right:TocItem[] | null}) => void;
 }
 
 export interface RefArticle {
@@ -196,6 +203,8 @@ export const LawArticleContext = createContext<LawArticleContextType>({
   setIsArticleLoaded: () => {},
   domNodes: {left:<></>, right:<></>},
   dataLoading: {left:'', right:''},
+  tocItems: {left: null, right: null},
+  setTocItems: () => {},
 });
 
 export const ReferenceContext = createContext<ReferenceContextType>({
@@ -266,6 +275,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   const [vnode, setVnode] = useState<{left: VNode[] | null; right: VNode[] | null}>({left: null,right: null});
   const [dataLoading, setDataLoading] = useState<{left:string,right:string}>({left: '',right: ''});
   const [domNodes, setDomNodes] = useState<{left: React.ReactNode; right: React.ReactNode}>({left: <></>,right: <></>});
+  const [tocItems, setTocItems] = useState<{left: TocItem[] | null; right: TocItem[] | null}>({left: null, right: null});
 
   async function lawArticleInit(pane:Pane) {
     let vnode: VNode[] = [];
@@ -276,6 +286,9 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
           if (data) {
             if (data.progress === 'basic_data_loaded') {
               setDataLoading(prev => ({ ...prev, [pane]: 'データ取得開始...' }));
+              if (data.tocItems) {
+                setTocItems(prev => ({ ...prev, [pane]: data.tocItems }));
+              }
             } else if (data.progress === 'article_data_loading') {
               vnode.push(...data.vnodePart);
               setVnode(prev => ({ ...prev, [pane]: vnode }));
@@ -283,6 +296,9 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
             } else if (data.progress === 'complete') {
               setVnode(prev => ({ ...prev, [pane]: data.vnode }));
               setDataLoading(prev => ({ ...prev, [pane]: '' }));
+              if (data.tocItems) {
+                setTocItems(prev => ({ ...prev, [pane]: data.tocItems }));
+              }
             }
             setIsArticleLoaded(prev => ({ ...prev, [pane]: true }));  
           }
@@ -294,6 +310,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       setVnode(prev => ({ ...prev, [pane]: null }));
       setIsArticleLoaded(prev => ({ ...prev, [pane]: false }));
       setDataLoading(prev => ({ ...prev, [pane]: '' }));
+      setTocItems(prev => ({ ...prev, [pane]: null }));
     }
   }
 
@@ -354,7 +371,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   }, [vnode]);
 
   return (
-    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded, vnode, setVnode, domNodes, dataLoading }}>
+    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded, vnode, setVnode, domNodes, dataLoading, tocItems, setTocItems }}>
       {children}
     </LawArticleContext.Provider>
   );

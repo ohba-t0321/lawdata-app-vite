@@ -1,4 +1,4 @@
-import type { LawData, LawArticle, RefData, VNode, VElement } from "../LawDataContext";
+import type { LawData, LawArticle, RefData, VNode, VElement, TocItem } from "../LawDataContext";
 import { saveLawToCache, getLawFromCache, getLawListFromCache } from '../indexedDB'
 import type { LawListCache, LawDataCache } from "../indexedDB";
 import type { WorkerRequest, WorkerResponse } from './lawDataWorker';
@@ -19,6 +19,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 		const now = Date.now();
 		let lawArticle: any;
 		let vnode: VNode[] = [];
+		let tocItems: TocItem[] = [];
 
 		if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {
 			lawArticle = (cachedArticle as LawDataCache).lawArticle;
@@ -31,17 +32,18 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 			lawArticle = await res.json();
 			saveLawToCache(lawId, lawArticle, []);
 		}
+		tocItems = buildTocItems(lawArticle);
 		// 部分的な結果を送信  
 		self.postMessage({
 			type: 'FETCH_LAW_ARTICLE_PROGRESS',
-			data: { progress: 'basic_data_loaded' },
+			data: { progress: 'basic_data_loaded', tocItems },
 		} as WorkerResponse);
 
 		// ステップ1-2: vnodeが既にキャッシュにある場合は以降の処理を省略してvnodeをそのまま返却
 		if ((vnode)&&(vnode.length > 0)) {
 			self.postMessage({
 				type: 'FETCH_LAW_ARTICLE_SUCCESS',
-				data: { vnode, progress: 'complete' },
+				data: { vnode, progress: 'complete', tocItems },
 			} as WorkerResponse);
 			return;
 		}
@@ -110,7 +112,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 		// 最終結果を送信  
 		self.postMessage({
 			type: 'FETCH_LAW_ARTICLE_SUCCESS',
-			data: { vnode, progress: 'complete' },
+			data: { vnode, progress: 'complete', tocItems },
 		} as WorkerResponse);
 		
 	} catch (error) {
@@ -191,6 +193,75 @@ async function getRefLaw(article: LawArticle) {
 
   return { lawTitleList: refLawList, synonymList: synonym };
 };
+
+function flattenTocText(children: any[]): string {
+  return children.map((child: any) => {
+    if (typeof child === 'string') return child;
+    if (child?.children) return flattenTocText(child.children);
+    return '';
+  }).join('');
+}
+
+function findTocNode(node: any): any | null {
+  if (!node) return null;
+  if (node.tag === 'TOC') return node;
+  if (node.children) {
+    for (const child of node.children) {
+      if (typeof child === 'object') {
+        const found = findTocNode(child);
+        if (found) return found;
+      }
+    }
+  }
+  return null;
+}
+
+function buildTocItems(lawArticle: LawArticle): TocItem[] {
+  const tocItems: TocItem[] = [];
+  if (!lawArticle.law_full_text) return tocItems;
+  const tocNode = findTocNode(lawArticle.law_full_text);
+  if (!tocNode?.children) return tocItems;
+
+  tocNode.children.forEach((child: any) => {
+    if (child.tag === 'TOCChapter') {
+      const chapterNum = child.attr?.Num ?? '';
+      const chapterTitleNode = child.children?.find((c: any) => c.tag === 'ChapterTitle');
+      const chapterLabel = chapterTitleNode ? flattenTocText(chapterTitleNode.children ?? []) : '';
+      if (chapterLabel) {
+        tocItems.push({
+          id: `toc-chapter-${chapterNum || chapterLabel}`,
+          label: chapterLabel,
+          depth: 0,
+        });
+      }
+      (child.children ?? []).forEach((section: any) => {
+        if (section.tag !== 'TOCSection') return;
+        const sectionNum = section.attr?.Num ?? '';
+        const sectionTitleNode = section.children?.find((c: any) => c.tag === 'SectionTitle');
+        const sectionLabel = sectionTitleNode ? flattenTocText(sectionTitleNode.children ?? []) : '';
+        if (sectionLabel) {
+          tocItems.push({
+            id: `toc-chapter-${chapterNum || '0'}-section-${sectionNum || sectionLabel}`,
+            label: sectionLabel,
+            depth: 1,
+          });
+        }
+      });
+    }
+
+    if (child.tag === 'TOCSupplProvision') {
+      const labelNode = child.children?.find((c: any) => c.tag === 'SupplProvisionLabel');
+      const label = labelNode ? flattenTocText(labelNode.children ?? []) : '附則';
+      tocItems.push({
+        id: 'toc-suppl-provision',
+        label,
+        depth: 0,
+      });
+    }
+  });
+
+  return tocItems;
+}
 
 
 // function buildVirtualTree(json: JsonNode | string): VNode {

@@ -1,4 +1,4 @@
-import React,{ useContext,useMemo } from 'react';
+import React,{ useContext,useMemo, useState, useEffect } from 'react';
 import './LawDataOutput.css';
 import { DividerContext } from '../DiviserContext';
 import { LawDataContext, LawArticleContext, ReferenceContext } from '../LawDataContext';
@@ -15,11 +15,16 @@ export const LawPane: React.FC<LawPaneProps> = ({
   width,
 }) => {
   // 1. タイトル部分の条件を明確化
-  const { selectedLaws, domNodes, isArticleLoaded, dataLoading } = useContext(LawArticleContext);
+  const { selectedLaws, domNodes, isArticleLoaded, dataLoading, tocItems } = useContext(LawArticleContext);
   const { lawData } = useContext(LawDataContext);
   const isLoaded = isArticleLoaded[pane];
   const isSelected = !!selectedLaws[pane];
   const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&domNodes[pane],[isArticleLoaded[pane],domNodes[pane],lawData]);
+  const [isTocOpen, setIsTocOpen] = useState(false);
+
+  useEffect(() => {
+    setIsTocOpen(false);
+  }, [selectedLaws[pane]]);
 
   // 2. 法令番号部分の条件を明確化
   const lawInfo = lawData?.filter((law) => law.law_info.law_num === selectedLaws[pane])[0]?.current_revision_info.law_title;
@@ -52,6 +57,28 @@ export const LawPane: React.FC<LawPaneProps> = ({
       </div>
       {/* 共通ロジック：本文 */}
       <div className={`law-content ${pane}`}>
+        {tocItems[pane]?.length ? (
+          <div className="toc-container">
+            <button
+              type="button"
+              className="toc-toggle"
+              onClick={() => setIsTocOpen((prev) => !prev)}
+            >
+              目次
+            </button>
+            {isTocOpen ? (
+              <nav className="toc-list">
+                <ul>
+                  {tocItems[pane]?.map((item) => (
+                    <li key={item.id} className={`toc-depth-${item.depth}`}>
+                      <a href={`#${item.id}`}>{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ) : null}
+          </div>
+        ) : null}
         {articleContent}
       </div>
     </div>
