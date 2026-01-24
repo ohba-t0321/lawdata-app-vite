@@ -80,6 +80,8 @@
 .toc-list{
     margin-top: 0.5em;
     padding-left: 1em;
+    max-height: 50vh;
+    overflow-y: auto;
 }
 .toc-list ul{
     list-style: none;
