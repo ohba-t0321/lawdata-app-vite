@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
+# 法令検索アプリ（lawdata-app-vite）
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+e-Gov 法令 API を利用して、法令一覧の検索・条文表示・参照先条文の確認をブラウザ上で行える React + Vite アプリです。
 
-Currently, two official plugins are available:
+## 主な機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **法令名検索**
+  - 「含む / で始まる / 完全一致」の条件で法令タイトルを検索
+  - 検索キーワードを URL クエリ（`?keyword=`）に同期
+- **2ペイン表示**
+  - 左右のフレームに法令本文を表示
+  - 右ペインの表示時は分割バーを移動して比較しやすく表示
+- **条文ジャンプ**
+  - 算用数字または「第○条の○」形式の入力で該当条文へスクロール
+- **参照条文の追跡**
+  - 条文中の参照リンクから関連条文を取得・表示
+- **表示設定**
+  - フレーム単位のクリア
+  - カッコ書き（注記）表示の切替
+- **パフォーマンス配慮**
+  - Web Worker で法令一覧・法令本文・参照データ取得を分離
+  - IndexedDB に法令一覧を日次キャッシュ
 
-## Expanding the ESLint configuration
+## 技術スタック
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Vite 7
+- React Router
+- TanStack Table
+- Web Worker
+- IndexedDB
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## セットアップ
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 開発
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+デフォルトでは Vite の開発サーバーが起動します（通常 `http://localhost:5173`）。
+
+## ビルド
+
+```bash
+npm run build
+```
+
+## プレビュー
+
+```bash
+npm run preview
+```
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## データ取得元
+
+本アプリは以下の e-Gov 法令 API を利用しています。
+
+- 法令一覧: `https://laws.e-gov.go.jp/api/2/laws`
+- 法令本文: `https://laws.e-gov.go.jp/api/2/law_data/:lawId`
+
+> API の仕様変更やネットワーク状況により、取得結果が変わる場合があります。
+
+## ディレクトリ概要
+
+```text
+src/
+  Header/            ヘッダー UI
+  Sidebar/           検索・ジャンプ・表示設定 UI
+  LawDataOutput/     法令本文・参照表示 UI
+  hooks/             Worker 呼び出しフック
+  workers/           API 取得処理（Web Worker）
+  indexedDB.ts       キャッシュ管理
+```
+
+## 注意事項
+
+- 初回読み込み時は法令一覧の取得に時間がかかる場合があります。
+- データ取得エラー時でも UI が止まらないように設計されていますが、再読み込みで復旧するケースがあります。
