@@ -1,15 +1,15 @@
 import type { LawData, LawArticle, VNode } from './LawDataContext'
-export const CACHE_EXPIRE_MS:number = 1000 * 60 * 60 * 24; // 24時間
-
 export interface LawListCache {
   id:string,
   data:LawData[],
+  revisionMarker: string | null,
   timestamp:number,
 }
 
 export interface LawDataCache {
   lawNo:string,
   lawArticle:LawArticle,
+  lawRevisionMarker: string | null,
   vnodeJson?: string,
   vnode?: VNode[],
   timestamp:number,
@@ -17,7 +17,7 @@ export interface LawDataCache {
 
 function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open("LawCacheDB", 4);
+    const request = indexedDB.open("LawCacheDB", 5);
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
       // 既存の "laws" ストアがない場合のみ作成（既にあるときはスキップ）
@@ -36,7 +36,7 @@ function openDB(): Promise<IDBDatabase> {
   });
 }
 
-export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:VNode[]) {
+export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:VNode[], lawRevisionMarker: string | null = null) {
   const db = await openDB();
   const tx = db.transaction("laws", "readwrite");
   const store = tx.objectStore("laws");
@@ -47,7 +47,7 @@ export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:
   } catch (error) {
     console.error("vnode JSON stringify error; caching without vnode:", error);
   }
-  const record = {lawNo, lawArticle, vnodeJson, timestamp: Date.now() };
+  const record: LawDataCache = {lawNo, lawArticle, vnodeJson, lawRevisionMarker, timestamp: Date.now() };
   try{
     store.put(record);
   } catch (error) {
@@ -72,11 +72,11 @@ export async function getLawFromCache(lawNo:string) {
   });
 }
 
-export async function saveLawListToCache(lawData: LawData[]) {
+export async function saveLawListToCache(lawData: LawData[], revisionMarker: string | null) {
   const db = await openDB();
   const tx = db.transaction("lawList", "readwrite");
   const store = tx.objectStore("lawList");
-  const record:LawListCache = {id: "LawList", data: lawData, timestamp: Date.now() };
+  const record:LawListCache = {id: "LawList", data: lawData, revisionMarker, timestamp: Date.now() };
   store.put(record);
   return new Promise<void>((resolve, reject) => {
     tx.oncomplete = () => resolve();

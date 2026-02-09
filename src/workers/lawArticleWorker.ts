@@ -2,7 +2,8 @@ import type { LawData, LawArticle, RefData, VNode, VElement, TocItem } from "../
 import { saveLawToCache, getLawFromCache, getLawListFromCache } from '../indexedDB'
 import type { LawListCache, LawDataCache } from "../indexedDB";
 import type { WorkerRequest, WorkerResponse } from './lawDataWorker';
-import { isSameDateInJapan,buildVirtualTree,renderVirtualTree } from './lawDataWorker';
+import { buildVirtualTree,renderVirtualTree } from './lawDataWorker';
+import { extractLawRevisionMarker } from './cacheRevision';
 
 const BASE = import.meta.env.BASE_URL;
 const VNODE_CHUNK_SIZE = 200;
@@ -81,12 +82,15 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 
 		// ステップ1: 基本情報の送信  
 		const cachedArticle = await getLawFromCache(lawId);
-		const now = Date.now();
+		const cachedLawList = await getLawListFromCache();
+		const listLaw = (cachedLawList as LawListCache)?.data?.find((law) => law?.law_info?.law_num === lawId);
+		const expectedRevisionMarker = extractLawRevisionMarker(listLaw);
+
 		let lawArticle: any;
 		let vnode: VNode[] = [];
 		let tocItems: TocItem[] = [];
 
-		if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {
+		if (cachedArticle && (!expectedRevisionMarker || (cachedArticle as LawDataCache).lawRevisionMarker === expectedRevisionMarker)) {
 			lawArticle = (cachedArticle as LawDataCache).lawArticle;
 			const cachedVnodeJson = (cachedArticle as LawDataCache).vnodeJson;
 			if (cachedVnodeJson) {
@@ -103,7 +107,8 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 		} else {
 			const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);
 			lawArticle = await res.json();
-			saveLawToCache(lawId, lawArticle, []);
+			const lawRevisionMarker = extractLawRevisionMarker(lawArticle);
+			saveLawToCache(lawId, lawArticle, [], lawRevisionMarker);
 		}
 		tocItems = buildTocItems(lawArticle);
 		// 部分的な結果を送信  
@@ -122,7 +127,6 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 			return;
 		}
 		// ステップ2: 参照データの取得  
-		const cachedLawList = await getLawListFromCache();
 		let refData: RefData[] = [];
 		try {
 			const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);
@@ -182,7 +186,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 		} catch (error) {
 			console.error("法令本文の仮想ツリー構築中にエラーが発生しました:", error, "vnode:", vnode);
 		}
-		saveLawToCache(lawId, lawArticle, vnode);
+		saveLawToCache(lawId, lawArticle, vnode, extractLawRevisionMarker(lawArticle));
 		// 最終結果を送信  
 		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_SUCCESS',
