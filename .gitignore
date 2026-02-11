@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Codexに指示するAgentやSkillsの内容
+.codex/
+Agents.md
