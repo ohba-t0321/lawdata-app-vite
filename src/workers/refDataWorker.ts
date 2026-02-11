@@ -1,8 +1,9 @@
 import type { WorkerRequest, WorkerResponse } from './lawDataWorker';
 import type { VNode } from "../LawDataContext";
-import { saveLawToCache, getLawFromCache } from '../indexedDB'
-import type { LawDataCache } from "../indexedDB";
-import { isSameDateInJapan,renderVirtualTree } from './lawDataWorker';
+import { saveLawToCache, getLawFromCache, getLawListFromCache } from '../indexedDB'
+import type { LawDataCache, LawListCache } from "../indexedDB";
+import { renderVirtualTree } from './lawDataWorker';
+import { extractLawRevisionMarker } from './cacheRevision';
 import type { JsonNode } from './lawDataWorker';
 
 self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
@@ -13,14 +14,17 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
     const lawId = refItm.lawNum;
     // ステップ1: 基本情報の送信  
     const cachedArticle = await getLawFromCache(lawId);
-    const now = Date.now();
+    const cachedLawList = await getLawListFromCache();
+    const listLaw = (cachedLawList as LawListCache)?.data?.find((law) => law?.law_info?.law_num === lawId);
+    const expectedRevisionMarker = extractLawRevisionMarker(listLaw);
+
     let lawArticle: any;
-    if (cachedArticle && isSameDateInJapan(now, (cachedArticle as LawDataCache).timestamp)) {
+    if (cachedArticle && (!expectedRevisionMarker || (cachedArticle as LawDataCache).lawRevisionMarker === expectedRevisionMarker)) {
       lawArticle = (cachedArticle as LawDataCache).lawArticle;
     } else {
       const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);
       lawArticle = await res.json();
-      saveLawToCache(lawId, lawArticle, []);
+      saveLawToCache(lawId, lawArticle, [], extractLawRevisionMarker(lawArticle));
     }
     let refArticle: VNode | null;
     if (lawArticle.law_full_text) {
