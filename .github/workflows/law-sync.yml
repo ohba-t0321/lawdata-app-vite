@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '7 18 * * *' # JST 03:07
   workflow_dispatch:
+    inputs:
+      ref_json_all:
+        description: 'Rebuild all ref_json files'
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: law-sync-daily
@@ -32,6 +38,33 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Restore ref_json manifest cache
+        uses: actions/cache/restore@v4
+        with:
+          path: public/ref_json/_meta.json
+          key: ref-json-meta-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            ref-json-meta-${{ github.ref_name }}-
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build ref_json incrementally
+        run: |
+          if [ "${{ github.event.inputs.ref_json_all }}" = "true" ]; then
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all
+          else
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json
+          fi
+
+      - name: Save ref_json manifest cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: public/ref_json/_meta.json
+          key: ref-json-meta-${{ github.ref_name }}-${{ github.run_id }}
 
       - name: Apply migration
         run: node scripts/supabase/apply-migration.mjs
