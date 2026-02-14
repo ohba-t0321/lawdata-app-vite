@@ -436,9 +436,23 @@ def load_manifest(path: Path) -> Dict[str, Any]:
 
 
 def write_json(path: Path, payload: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    text = json.dumps(payload, ensure_ascii=False, indent=2)
-    path.write_text(text + '\n', encoding='utf-8')
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        text = json.dumps(payload, ensure_ascii=False, indent=2)
+        path.write_text(text + '\n', encoding='utf-8')
+    except OSError as exc:
+        name_bytes = len(path.name.encode('utf-8', errors='ignore'))
+        raise BuildError(
+            f'Failed to write file: {path} (filename bytes: {name_bytes}) -> {exc}'
+        ) from exc
+
+
+def path_exists_safe(path: Path) -> Tuple[bool, Optional[str]]:
+    try:
+        return path.exists(), None
+    except OSError as exc:
+        name_bytes = len(path.name.encode('utf-8', errors='ignore'))
+        return False, f'Failed to inspect path: {path} (filename bytes: {name_bytes}) -> {exc}'
 
 
 def make_law_name_indexes(
@@ -514,6 +528,7 @@ def determine_targets(
     out_dir: Path,
     explicit_law_nums: Sequence[str],
     run_all: bool,
+    warnings: List[str],
 ) -> List[str]:
     if explicit_law_nums:
         targets: List[str] = []
@@ -534,12 +549,18 @@ def determine_targets(
             continue
         revision_marker = extract_revision_marker(row)
         file_path = out_dir / f'{law_num}.json'
+        exists, exists_error = path_exists_safe(file_path)
+        if exists_error:
+            warnings.append(exists_error)
+            # Continue processing this law; write phase will emit a concrete error and continue.
+            targets.append(law_num)
+            continue
         entry = manifest_laws.get(law_num) if isinstance(manifest_laws, dict) else None
         entry_marker = ''
         if isinstance(entry, dict):
             entry_marker = str(entry.get('revision_marker') or '')
 
-        if not file_path.exists():
+        if not exists:
             targets.append(law_num)
             continue
         if entry_marker and entry_marker != revision_marker:
@@ -688,6 +709,7 @@ def main(argv: Sequence[str]) -> int:
         manifest['laws'] = manifest_laws
 
     explicit_law_nums = split_csv(args.law_num)
+    warnings: List[str] = []
 
     print('loading law list from e-Gov API...')
     law_rows = fetch_law_list(timeout=args.timeout, retry=args.retry)
@@ -701,7 +723,11 @@ def main(argv: Sequence[str]) -> int:
             if law_num in manifest_laws:
                 continue
             file_path = out_dir / f'{law_num}.json'
-            if not file_path.exists():
+            exists, exists_error = path_exists_safe(file_path)
+            if exists_error:
+                warnings.append(exists_error)
+                continue
+            if not exists:
                 continue
             manifest_laws[law_num] = {
                 'revision_marker': str(info.get('revision_marker') or 'unknown'),
@@ -716,6 +742,7 @@ def main(argv: Sequence[str]) -> int:
         out_dir=out_dir,
         explicit_law_nums=explicit_law_nums,
         run_all=args.all,
+        warnings=warnings,
     )
     if args.limit and args.limit > 0:
         targets = targets[:args.limit]
@@ -768,6 +795,10 @@ def main(argv: Sequence[str]) -> int:
 
     status = 'success' if not failed else ('partial_success' if processed > 0 else 'failed')
     print(f'done: status={status}, processed={processed}, failed={len(failed)}')
+    if warnings:
+        print(f'warnings: {len(warnings)}', file=sys.stderr)
+        for line in warnings:
+            print(line, file=sys.stderr)
     if failed:
         for line in failed:
             print(line, file=sys.stderr)
