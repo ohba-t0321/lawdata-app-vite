@@ -1,0 +1,50 @@
+name: Law Sync Daily
+
+on:
+  schedule:
+    - cron: '7 18 * * *' # JST 03:07
+  workflow_dispatch:
+
+concurrency:
+  group: law-sync-daily
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: read
+
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      SUPABASE_ASSET_BUCKET: law-assets
+      LAWDATA_REF_DIR: public/ref_json
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Apply migration
+        run: node scripts/supabase/apply-migration.mjs
+
+      - name: Incremental upsert
+        run: node scripts/supabase/upsert-law-data.mjs
+
+      - name: DB keep-alive read
+        run: |
+          node --input-type=module -e "
+          import { createClient } from '@supabase/supabase-js';
+          const c = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false }});
+          const { error } = await c.from('laws').select('law_num', { head: true, count: 'exact' }).limit(1);
+          if (error) throw error;
+          console.log('keepalive_ok');
+          "
