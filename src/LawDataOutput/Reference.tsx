@@ -1,7 +1,7 @@
-import React,{useState, useContext, useEffect} from 'react';
+import React,{useState, useContext, useEffect, useMemo, useCallback} from 'react';
 import './Reference.css';
 import { LawDataContext, ReferenceContext, renderVNodes } from '../LawDataContext';
-import type { VNode } from '../LawDataContext';
+import type { VNode, RefArticle } from '../LawDataContext';
 import { useLawDataWorker } from '../hooks/useLawDataWorker';
 function convertToArticleFormat(input: string): string {
     // アンダースコアで分割して配列にする
@@ -21,19 +21,23 @@ function convertToArticleFormat(input: string): string {
 
 export const Reference:React.FC = () => {
     const [itemIndex,setItemIndex] = useState(0);
-    const [refArticle,setRefArticle] = useState<VNode|null>(null);
+    const [refArticle,setRefArticle] = useState<VNode | VNode[] | string | null>(null);
     const [isOpen,setIsOpen] = useState(false);
-    const [refItm,setRefItm] = useState<any>(null);
+    const [refItm,setRefItm] = useState<RefArticle | null>(null);
     const [refLawNum,setRefLawNum] = useState<string>('');  
-    const [refArticleData,setRefArticleData] = useState<any>(null);
+    const [refArticleData,setRefArticleData] = useState<React.ReactNode>(null);
     const { lawData } = useContext(LawDataContext);
+    const lawTitleMap = useMemo(
+        () => new Map(lawData?.map((law) => [law.law_info.law_num, law.current_revision_info.law_title]) ?? []),
+        [lawData],
+    );
     const { clickedRefs,setClickedRefs,refArticleLoaded,setRefArticleLoaded } = useContext(ReferenceContext);
     const { fetchRefData } = useLawDataWorker();
     const lenRef:number = clickedRefs.length;
 
-    const RefDataLoad = async (refItm:any)=>{
+    const RefDataLoad = useCallback(async (refItm: RefArticle)=>{
         try {
-            fetchRefData(refItm,(data:any)=>{
+            fetchRefData<VNode | VNode[] | string | null>(refItm, (data) => {
                 setRefArticle(data);
             });
         } catch (err) {
@@ -43,32 +47,36 @@ export const Reference:React.FC = () => {
                 console.log('キャッシュからの法令データ取得エラー：', err);
             }
         }
-    }
+    }, [fetchRefData])
 
     useEffect(()=>{
         setIsOpen(lenRef>0?true:false);
         setItemIndex(0);
-    },[clickedRefs])
+    },[lenRef])
 
     useEffect(()=>{
         setRefArticleLoaded(false);
         setRefArticleData(null);
-        setRefItm(clickedRefs[itemIndex]);
-    },[clickedRefs,itemIndex])
+        setRefItm(clickedRefs[itemIndex] ?? null);
+    },[clickedRefs,itemIndex, setRefArticleLoaded])
 
     useEffect(()=>{
         if (refItm?.lawNum) {
             RefDataLoad(refItm);
         }
-    },[refItm])
+    },[RefDataLoad, refItm])
 
     useEffect(()=>{
-        if (refArticle) {
+        if (typeof refArticle === 'string') {
+            setRefArticleData(refArticle);
+        } else if (refArticle) {
             setRefArticleData(renderVNodes(refArticle));
+        } else {
+            setRefArticleData(null);
         }
-        setRefLawNum(lawData? lawData.filter(law=>law.law_info.law_num===refItm?.lawNum)[0]?.current_revision_info.law_title : refItm?.lawNum)
+        setRefLawNum(lawTitleMap.get(refItm?.lawNum) ?? refItm?.lawNum)
         setRefArticleLoaded(true);
-    },[refArticle])
+    },[lawTitleMap, refArticle, refItm?.lawNum, setRefArticleLoaded])
 
     return (
         <div className={`reference${isOpen?' active':''}`}> 

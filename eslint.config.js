@@ -19,5 +19,18 @@ export default tseslint.config([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // any を段階的に減らすなら warn に落とす
+      '@typescript-eslint/no-explicit-any': 'warn',
+
+      // 不可視空白は基本は直すの推奨だが、必要なら一時的に緩和も可能
+      // 'no-irregular-whitespace': 'off',
+    },
+  },
+  {
+    files: ['src/**/*Context.tsx'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
   },
 ])

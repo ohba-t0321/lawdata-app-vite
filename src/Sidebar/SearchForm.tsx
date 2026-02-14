@@ -17,36 +17,36 @@ const SearchForm: React.FC = () => {
   const [outputFrame, setOutputFrame] = useState<'left'|'right'>('left');  
   const [isFrameFixed, setIsFrameFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);  
-  const [searchResults, setSearchResults] = useState<any[]>([]);  
-  const [isSearching, setIsSearching] = useState(false);  
+  const [searchResults, setSearchResults] = useState<LawData[]>([]);
+  const [lastExecutedSearch, setLastExecutedSearch] = useState<{
+    keyword: string;
+    searchType: string;
+  } | null>(null);
   
-  const { lawData, isDataLoaded } = useContext(LawDataContext);
-  const { selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded }  = useContext(LawArticleContext)
+  const { lawData, isDataLoaded, lawDataError, retryLawDataFetch } = useContext(LawDataContext);
+  const { setSelectedLaws, setIsArticleLoaded }  = useContext(LawArticleContext)
   const { dividerPos,setDividerPos } = useContext(DividerContext)
   
-  function SearchLwaws(searchKeyword = inputKeyword) {
-    if (lawData) {  
-      let filteredData: LawData | any[] = [];  
-        
-      switch (searchType) {  
-        case 'includes':  
-          filteredData = lawData.filter(data =>   
-            data.current_revision_info.law_title.includes(searchKeyword)  
-          );  
-          break;  
-        case 'startsWith':  
-          filteredData = lawData.filter(data =>   
-            data.current_revision_info.law_title.startsWith(searchKeyword)  
-          );  
-          break;  
-        case 'equal':  
-          filteredData = lawData.filter(data =>   
-            data.current_revision_info.law_title === searchKeyword  
-          );  
-          break;  
-      }  
-      setSearchResults(filteredData);  
-      setIsSearching(false);
+  function searchLaws(searchKeyword = inputKeyword): LawData[] {
+    if (!lawData) {
+      return [];
+    }
+
+    switch (searchType) {  
+      case 'includes':  
+        return lawData.filter(data =>   
+          data.current_revision_info.law_title.includes(searchKeyword)  
+        );  
+      case 'startsWith':  
+        return lawData.filter(data =>   
+          data.current_revision_info.law_title.startsWith(searchKeyword)  
+        );  
+      case 'equal':  
+        return lawData.filter(data =>   
+          data.current_revision_info.law_title === searchKeyword  
+        );
+      default:
+        return [];
     }
   }
 
@@ -63,22 +63,29 @@ const SearchForm: React.FC = () => {
     });
   };
 
-  const handleSearch = async (e: React.FormEvent) => {  
+  const handleSearch = (e: React.FormEvent) => {  
     e.preventDefault();  
-    setIsSearching(true);
     commitKeyword(inputKeyword);
-    SearchLwaws(inputKeyword)
-    setIsSearching(false);
+    setSearchResults(searchLaws(inputKeyword));
+    setLastExecutedSearch({
+      keyword: inputKeyword,
+      searchType,
+    });
   };  
 
   // useEffect(() => {
-  //   SearchLwaws();
+  //   setSearchResults(searchLaws());
   // }, [lawData, inputKeyword, searchType]);
 
   useEffect(() => {
     const paramsKeyword = searchParams.get('keyword') ?? '';
     setInputKeyword((prev) => (prev === paramsKeyword ? prev : paramsKeyword));
   }, [searchParams]);
+
+  const isSearchConditionDirty = !!lastExecutedSearch && (
+    lastExecutedSearch.keyword !== inputKeyword ||
+    lastExecutedSearch.searchType !== searchType
+  );
 
   const columns: ColumnDef<LawData>[] = [
     {
@@ -92,6 +99,33 @@ const SearchForm: React.FC = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
+
+  const selectLaw = (lawNum: string) => {
+    setSelectedLaws((prev) => ({
+      ...prev,
+      [outputFrame]: lawNum,
+    }));
+    setIsArticleLoaded((prev) => ({
+      ...prev,
+      [outputFrame]: lawNum === prev[outputFrame],
+    }));
+    if ((outputFrame === 'left' && dividerPos < 50) || (outputFrame === 'right' && dividerPos > 50)) {
+      setDividerPos(50);
+    }
+    if (!isFrameFixed) {
+      setOutputFrame(outputFrame === 'left' ? 'right' : 'left');
+    }
+  };
+
+  const handleRowKeyDown = (
+    e: React.KeyboardEvent<HTMLTableRowElement>,
+    lawNum: string,
+  ) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      selectLaw(lawNum);
+    }
+  };
 
   return (  
     <div>  
@@ -119,7 +153,7 @@ const SearchForm: React.FC = () => {
             <option value="startsWith">～で始まる</option>  
             <option value="equal">～と一致する</option>  
           </select>  
-          <button type="submit" className="btn btn-primary" disabled={!isDataLoaded}>  
+          <button type="submit" className="btn btn-primary" disabled={!isDataLoaded || !!lawDataError}>  
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
             </svg>
@@ -142,18 +176,26 @@ const SearchForm: React.FC = () => {
             フレームを固定
           </label>
         </div>  
-          {!(isDataLoaded) ? (
+          {!isDataLoaded ? (
             <div>法令データ取得中...</div>
+          ) : lawDataError ? (
+            <div>
+              <div>法令データ取得エラーが発生しました。</div>
+              <button type="button" className="btn btn-secondary" onClick={retryLawDataFetch}>
+                再取得
+              </button>
+            </div>
           ) : !(inputKeyword) ? (
             <div>検索ワードを入力してください</div>
-          ) : isSearching ? (  
-            <div>検索中...</div>
+          ) : !lastExecutedSearch ? null
+          : isSearchConditionDirty ? (
+            <div>検索条件が変更されました。再度「検索」を実行してください。</div>
           ) : searchResults.length === 0 && inputKeyword ? (  
             <div>該当する法令は見つかりませんでした。</div>
           ) : 
           (  
             <div>              
-              <p>法令検索結果 (ダブルクリックで法令取得): {searchResults.length} 件</p>
+              <p>法令検索結果 (クリックで表示): {searchResults.length} 件</p>
               <table id = "lawTable">
                 <thead>
                   {table.getHeaderGroups().map((headerGroup,idx_r) => (
@@ -167,32 +209,26 @@ const SearchForm: React.FC = () => {
                   ))}
                 </thead>
                 <tbody>
-                  {table.getRowModel().rows.map(row => (
-                    <tr key={row.original.law_info.law_num+":"+row.original.current_revision_info.law_title} onDoubleClick={(e) => {
-                      setSelectedLaws({
-                        ...selectedLaws,
-                        [outputFrame]:row.original.law_info.law_num,
-                      });
-                      setIsArticleLoaded({
-                        ...isArticleLoaded,
-                        [outputFrame]:row.original.law_info.law_num===selectedLaws[outputFrame],
-                      });
-                      if ((outputFrame==='left'&&dividerPos<50)||(outputFrame==='right'&&dividerPos>50)) {
-                        setDividerPos(50);
-                      }
-                      if (!isFrameFixed) {
-                        setOutputFrame(outputFrame === 'left' ? 'right' : 'left');
-                      }
-                      e.preventDefault();
-                      e.currentTarget.blur();
-                    }}>
-                      {row.getVisibleCells().map((cell,idx_d) => (
-                        <td key={idx_d}>
-                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
+                  {table.getRowModel().rows.map((row) => {
+                    const lawNum = row.original.law_info.law_num;
+                    const lawTitle = row.original.current_revision_info.law_title;
+                    return (
+                      <tr
+                        key={lawNum + ':' + lawTitle}
+                        className="law-result-row"
+                        tabIndex={0}
+                        aria-label={`${lawTitle}を表示`}
+                        onClick={() => selectLaw(lawNum)}
+                        onKeyDown={(e) => handleRowKeyDown(e, lawNum)}
+                      >
+                        {row.getVisibleCells().map((cell,idx_d) => (
+                          <td key={idx_d}>
+                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

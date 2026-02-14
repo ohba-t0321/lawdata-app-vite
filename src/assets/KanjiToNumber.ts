@@ -1,29 +1,6 @@
-interface KanjiNumberMap {
-    key: string;
-    value: number;
-}
-
 // 漢数字を算用数字に直す関数
 function KanjiToNumber(kanji : string | undefined) : number | undefined {
     if (kanji){
-        // const kanjiMap : KanjiNumberMap[] = [
-        //     {key:'〇', value: 0},
-        //     {key:'一', value: 1},
-        //     {key:'二', value: 2},
-        //     {key:'三', value: 3},
-        //     {key:'四', value: 4},
-        //     {key:'五', value: 5},
-        //     {key:'六', value: 6},
-        //     {key:'七', value: 7},
-        //     {key:'八', value: 8},
-        //     {key:'九', value: 9},
-        //     {key:'十', value: 10},
-        //     {key:'百', value: 100},
-        //     {key:'千', value: 1000},
-        //     {key:'万', value: 10000},
-        //     {key:'億', value: 100000000},
-        //     {key:'兆', value : 1000000000000},
-        // ];
         const kanjiMap:{ [key: string]: number } = {} ;
         kanjiMap['〇']=0;
         kanjiMap['一']=1;

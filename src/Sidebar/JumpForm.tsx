@@ -31,18 +31,18 @@ const JumpForm = () => {
             article = jumpArticle;
         } else {
             const regex = /第(\d+|[一二三四五六七八九十百千]+)条(の[\d一二三四五六七八九十百千]+)*/g
-            let matches : any = [...jumpArticle.matchAll(regex)];
-            if (matches[0][1]) {
+            const matches = Array.from(jumpArticle.matchAll(regex));
+            if (matches[0]?.[1]) {
                 article = KanjiToNumber(matches[0][1]);
-                if (matches[0][2]) {
+                if (matches[0]?.[2]) {
                     // 'の'ごとで区切る
-                    let subarticle = matches[0][2].split('の').map(KanjiToNumber).join('_');
+                    const subarticle = matches[0][2].split('の').map(KanjiToNumber).join('_');
                     article += subarticle;
                 }
             }
         }
         if (article) {
-            let frame = document.querySelector(`.pane.${selectedRadio}`);
+            const frame = document.querySelector(`.pane.${selectedRadio}`);
             if (!frame) {
                 console.error(`Frame not found for pane: ${selectedRadio}`);
                 return;

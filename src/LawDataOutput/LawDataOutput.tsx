@@ -17,9 +17,14 @@ export const LawPane: React.FC<LawPaneProps> = ({
   // 1. タイトル部分の条件を明確化
   const { selectedLaws, domNodes, isArticleLoaded, dataLoading, tocItems } = useContext(LawArticleContext);
   const { lawData } = useContext(LawDataContext);
+  const lawTitleMap = useMemo(
+    () => new Map(lawData?.map((law) => [law.law_info.law_num, law.current_revision_info.law_title]) ?? []),
+    [lawData],
+  );
+  const selectedLaw = selectedLaws[pane];
   const isLoaded = isArticleLoaded[pane];
-  const isSelected = !!selectedLaws[pane];
-  const articleContent = useMemo(()=>isArticleLoaded[pane]&&lawData&&domNodes[pane],[isArticleLoaded[pane],domNodes[pane],lawData]);
+  const isSelected = !!selectedLaw;
+  const articleContent = isArticleLoaded[pane] && lawData ? domNodes[pane] : null;
   const [isTocOpen, setIsTocOpen] = useState(false);
   const handleTocClick = (event: React.MouseEvent<HTMLElement>) => {
     const target = event.target as HTMLElement | null;
@@ -30,12 +35,12 @@ export const LawPane: React.FC<LawPaneProps> = ({
 
   useEffect(() => {
     setIsTocOpen(false);
-  }, [selectedLaws[pane]]);
+  }, [selectedLaw]);
 
   // 2. 法令番号部分の条件を明確化
-  const lawInfo = lawData?.filter((law) => law.law_info.law_num === selectedLaws[pane])[0]?.current_revision_info.law_title;
+  const lawInfo = lawTitleMap.get(selectedLaw);
   const title = isLoaded && lawInfo ? lawInfo : ( !isLoaded && isSelected ? "データ取得中..." : "" ); // データ取得中
-  const lawNum = isLoaded && selectedLaws[pane] ? selectedLaws[pane] : null;
+  const lawNum = isLoaded && selectedLaw ? selectedLaw : null;
   
   // 3. スタイルの設定
   const paneStyle = { width: `${width}%` };
@@ -57,7 +62,7 @@ export const LawPane: React.FC<LawPaneProps> = ({
           ) : null}
           {/* ローディング表示 */}
           {(dataLoading[pane])?
-          <span className={`loading ${pane}`}>　　　{dataLoading[pane]} 読み込み中...</span>
+          <span className={`loading ${pane}`}> {dataLoading[pane]} 読み込み中...</span>
           :null}
         </div>
         {tocItems[pane]?.length ? (

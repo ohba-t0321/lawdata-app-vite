@@ -1,9 +1,12 @@
 import type { LawData, RefData, RefLawTitleList, VNode, VElement, Pane } from "../LawDataContext";
 import kanjiToNumber from '../assets/KanjiToNumber'
 
+export type JsonAttrValue = string | number | boolean | null | undefined;
+export type JsonAttr = Record<string, JsonAttrValue>;
+
 export interface JsonNode {
   tag: string;
-  attr?: Record<string, any>;
+  attr?: JsonAttr;
   children: (JsonNode | string)[];
 }
 
@@ -14,12 +17,12 @@ for (let i = 1; i < 10; i++) {
 
 export interface WorkerRequest {
   type: 'FETCH_LAW_LIST' | 'FETCH_LAW_ARTICLE' | 'FETCH_REF_DATA';
-  payload?: any;
+  payload?: Record<string, unknown>;
 }
 
 export interface WorkerResponse {
   type: string;
-  data?: any;
+  data?: unknown;
   error?: string;
 }
 
@@ -35,8 +38,8 @@ export function isSameDateInJapan(ts1: number, ts2: number) {
   return date1 === date2;
 }
 
-function normalizeAttrKeys(attr: Record<string, any>): Record<string, any> {
-  const normalized: Record<string, any> = {};
+function normalizeAttrKeys(attr: JsonAttr): JsonAttr {
+  const normalized: JsonAttr = {};
   const specialKeyMap: { [key: string]: string } = {
     rowspan: 'rowSpan',
     colspan: 'colSpan',
@@ -106,14 +109,14 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
   if (typeof json === "string") {
     if (parentNode.tag.includes("Num") || parentNode.tag.includes("Title")) {
       // Num、Titleを含む直下のテキストノードの場合、後続に全角スペースを追加
-      return [{ type: "text", value: `${json}　` }];
+      return [{ type: "text", value: `${json}` }];
     };
     if (json.replace(/\s/g, '') === "附則" && provisionAncestor?.attr?.amendlawnum) {
       //
       return [{ type: "text", value: json + "（" + provisionAncestor.attr.amendlawnum + "）" + (provisionAncestor.attr.extract === 'true' ? "　抄" : "") }];
     }
     if (pane === 'left' || pane === 'right') {
-      let refTextData: RefData[] | undefined = refDataMatch && refDataMatch.filter((data: RefData) => {
+      const refTextData: RefData[] | undefined = refDataMatch && refDataMatch.filter((data: RefData) => {
         return data.match &&
           data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
           data.referred?.lawArticle.article === (articleNo || 0).toString() &&
@@ -124,11 +127,11 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
         "（": "）",
         "「": "」",
       };
-      let innerHTML = (json: string): string => {
+      const innerHTML = (json: string): string => {
         // カッコの一致を確認
         function checkParenthesesBalance(text: string): boolean {
           const stack = [];
-          for (let char of text) {
+          for (const char of text) {
             if (char in brackets) {
               stack.push(char);
             } else if ((stack.length > 0) && (char === brackets[stack[stack.length - 1]])) {
@@ -217,8 +220,8 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
     }
     return [{ type: "text", value: json }];
   }
-  let { tag, attr = {}, children } = json;
-  attr = normalizeAttrKeys(attr ?? {});
+  const { tag, children } = json;
+  const attr = normalizeAttrKeys(json.attr ?? {});
   if (hiddenTags.includes(tag)) {
     // 非表示タグはレンダリングしない
     return [];
@@ -269,7 +272,7 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
     if (articleTitle?.type === "element") {
       articleTitle.children.forEach(child => {
         if (child?.type === "text") {
-          titleText = `${child.value}　`;
+          titleText = `${child.value} `;
         }
       });
       return [{ type: "element", tag: mergedTag, attr: mergedAttr, children: [{ type: "text", value: titleText }] }];
@@ -278,12 +281,14 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
   if (tag === "Paragraph" || tag === "Item") {
     // ParagraphまたはItemタグの場合、引用条文が存在する場合hrenderdChildrenの前にLinkifyNoMatchコンポーネントを追加する
     // let refTextData: RefData[] | undefined;
-    let refTextData: RefData[] | undefined = refData && refData.filter((data: RefData) => {
+    const paragraphMatchValue = tag === "Paragraph" ? (attr?.num ?? paragraphNo ?? 0) : (paragraphNo ?? 0);
+    const itemMatchValue = tag === "Item" ? (attr?.num ?? 0) : 0;
+    const refTextData: RefData[] | undefined = refData && refData.filter((data: RefData) => {
       return data.match === "★引用個所不明★" &&
         data.referred?.lawArticle.provision === (provisionAncestor && !provisionAncestor?.attr?.amendlawnum && provisionAncestor?.tag) &&
         data.referred?.lawArticle.article === (articleNo || 0).toString() &&
-        data.referred?.lawArticle.paragraph == (tag === "Paragraph"? attr?.num : paragraphNo || 0).toString() &&
-        data.referred?.lawArticle.item == (tag === "Item"? attr?.num : 0).toString()
+        data.referred?.lawArticle.paragraph == String(paragraphMatchValue) &&
+        data.referred?.lawArticle.item == String(itemMatchValue)
     });
     if (refTextData && refTextData.length > 0) {
       let children: VNode = { type: "text", value: "★引用条文★" };

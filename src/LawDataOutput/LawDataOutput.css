@@ -124,6 +124,7 @@
 }
 .xml-ArticleCaption, .xml-ParagraphCaption, .xml-ArticleTitle, .xml-ParagraphNum, .xml-ItemTitle{
     font-weight: bold;
+    margin-right: 1em;
 }
 [class^="xml-Subitem"][class*="Title"]{
     font-weight: bold;
