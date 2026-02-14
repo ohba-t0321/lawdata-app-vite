@@ -63,6 +63,71 @@ npm run preview
 npm run lint
 ```
 
+## Supabase ingest (upsert)
+
+This project includes a batch script to precompute law payloads and upsert them into Supabase.
+
+1. Apply migration in Supabase:
+
+```bash
+node scripts/supabase/apply-migration.mjs
+```
+
+2. Set environment variables (PowerShell example):
+
+```powershell
+$env:SUPABASE_URL="https://YOUR_PROJECT_REF.supabase.co"
+$env:SUPABASE_SERVICE_ROLE_KEY="YOUR_SERVICE_ROLE_KEY"
+$env:SUPABASE_ASSET_BUCKET="law-assets" # optional
+$env:LAWDATA_REF_DIR="public/ref_json"   # optional
+```
+
+3. Install dependencies (if needed):
+
+```bash
+npm install
+```
+
+4. Dry run:
+
+```bash
+node scripts/supabase/upsert-law-data.mjs --dry-run --limit 5
+```
+
+5. Execute diff-only upsert:
+
+```bash
+node scripts/supabase/upsert-law-data.mjs
+```
+
+6. Force full rebuild:
+
+```bash
+node scripts/supabase/upsert-law-data.mjs --all
+```
+
+7. Execute only specific law numbers:
+
+```bash
+node scripts/supabase/upsert-law-data.mjs --law-num "令和七年政令第三号,令和七年法律第七十五号"
+```
+
+What the script does:
+
+- Upserts `public.laws` from e-Gov law list.
+- Detects changed laws by `revision_marker` (unless `--all`).
+- Fetches each changed law body (`/law_data/:lawNum`).
+- Precomputes and uploads JSON assets to Storage:
+  - `raw.json`
+  - `toc.json`
+  - `vnode.json`
+  - `article-map.json`
+  - `ref-data.json`
+  - `ref-law-title.json`
+- Upserts `public.law_versions` and `public.law_assets`.
+- Refreshes `public.law_references` for each changed law.
+- Records run status in `public.ingest_runs`.
+
 ## データ取得元
 
 本アプリは以下の e-Gov 法令 API を利用しています。

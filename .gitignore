@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
 
 .eslintcache
 .eslint-*
@@ -30,3 +33,7 @@ eslint-warnings.json
 # Codexに指示するAgentやSkillsの内容
 .codex/
 Agents.md
+
+# SupabaseのサービスロールキーやデータベースURLなどの機密情報を含むファイル
+supabase/*
+public/ref_json/_meta.json
