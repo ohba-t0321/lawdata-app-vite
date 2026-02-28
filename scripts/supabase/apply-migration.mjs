@@ -1,7 +1,13 @@
 import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Client } from 'pg';
 
-const DEFAULT_MIGRATION = 'supabase/migrations/202602140001_create_law_cache_tables.sql';
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const DEFAULT_MIGRATION = path.resolve(
+  SCRIPT_DIR,
+  'migrations/202602140001_create_law_cache_tables.sql',
+);
 
 function parseArgs(argv) {
   const options = {
@@ -14,7 +20,7 @@ function parseArgs(argv) {
       if (!value) {
         throw new Error('--migration requires a value.');
       }
-      options.migration = value;
+      options.migration = path.resolve(process.cwd(), value);
       i += 1;
       continue;
     }
@@ -122,7 +128,15 @@ async function main() {
     throw new Error('SUPABASE_URL is required.');
   }
 
-  const sql = await fs.readFile(options.migration, 'utf8');
+  let sql;
+  try {
+    sql = await fs.readFile(options.migration, 'utf8');
+  } catch (error) {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') {
+      throw new Error(`Migration file not found: ${options.migration}`);
+    }
+    throw error;
+  }
 
   try {
     await tryDirect(databaseUrl, sql);
