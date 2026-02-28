@@ -7,6 +7,7 @@ import re
 import sys
 import time
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 from urllib.error import HTTPError, URLError
@@ -46,6 +47,7 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument('--sleep', type=float, default=0.0)
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--verbose', action='store_true')
+    parser.add_argument('--updated-within-days', type=int, default=7)
     return parser.parse_args(argv)
 
 
@@ -420,6 +422,45 @@ def split_csv(values: Sequence[str]) -> List[str]:
     return out
 
 
+def parse_revision_datetime(raw: Any) -> Optional[datetime]:
+    text = str(raw).strip() if raw is not None else ''
+    if not text:
+        return None
+
+    normalized = text.replace('Z', '+00:00')
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        parsed = None
+
+    if parsed is None:
+        for fmt in ('%Y-%m-%d', '%Y/%m/%d', '%Y%m%d'):
+            try:
+                parsed = datetime.strptime(text, fmt)
+                break
+            except ValueError:
+                continue
+    if parsed is None:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def is_recently_updated(law_row: Dict[str, Any], threshold: datetime) -> bool:
+    revision_info = (
+        law_row.get('current_revision_info')
+        if isinstance(law_row.get('current_revision_info'), dict)
+        else {}
+    )
+    updated_at = parse_revision_datetime(revision_info.get('updated'))
+    if updated_at is None:
+        updated_at = parse_revision_datetime(revision_info.get('amendment_enforcement_date'))
+    if updated_at is None:
+        updated_at = parse_revision_datetime(revision_info.get('amendment_promulgate_date'))
+    return updated_at is not None and updated_at >= threshold
+
+
 def load_manifest(path: Path) -> Dict[str, Any]:
     if not path.exists():
         return {'laws': {}}
@@ -529,6 +570,7 @@ def determine_targets(
     explicit_law_nums: Sequence[str],
     run_all: bool,
     warnings: List[str],
+    updated_within_days: int,
 ) -> List[str]:
     if explicit_law_nums:
         targets: List[str] = []
@@ -540,9 +582,13 @@ def determine_targets(
     if run_all:
         return [row['law_num'] for row in law_index.values()]
 
+    threshold = datetime.now(timezone.utc) - timedelta(days=max(updated_within_days, 0))
+
     manifest_laws = manifest.get('laws') if isinstance(manifest.get('laws'), dict) else {}
     targets = []
     for row in law_rows:
+        if updated_within_days > 0 and not is_recently_updated(row, threshold):
+            continue
         law_info = row.get('law_info') if isinstance(row.get('law_info'), dict) else {}
         law_num = str(law_info.get('law_num') or '').strip()
         if not law_num:
@@ -743,6 +789,7 @@ def main(argv: Sequence[str]) -> int:
         explicit_law_nums=explicit_law_nums,
         run_all=args.all,
         warnings=warnings,
+        updated_within_days=args.updated_within_days,
     )
     if args.limit and args.limit > 0:
         targets = targets[:args.limit]
