@@ -7,6 +7,7 @@ import re
 import sys
 import time
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 from urllib.error import HTTPError, URLError
@@ -46,6 +47,7 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument('--sleep', type=float, default=0.0)
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--verbose', action='store_true')
+    parser.add_argument('--updated-within-days', type=int, default=7)
     return parser.parse_args(argv)
 
 
@@ -74,14 +76,30 @@ def build_law_list_url(limit: int) -> str:
     return f'{API_BASE}/laws?{qs}'
 
 
-def fetch_law_list(timeout: int, retry: int) -> List[Dict[str, Any]]:
+def filter_recent_law_rows(
+    law_rows: Sequence[Dict[str, Any]],
+    updated_within_days: int,
+) -> List[Dict[str, Any]]:
+    if updated_within_days <= 0:
+        return list(law_rows)
+    threshold = datetime.now(timezone.utc) - timedelta(days=updated_within_days)
+    return [row for row in law_rows if is_recently_updated(row, threshold)]
+
+
+def fetch_law_list(
+    timeout: int,
+    retry: int,
+    updated_within_days: int,
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     first = fetch_json(build_law_list_url(1), timeout=timeout, retry=retry)
     total_count = int(first.get('total_count') or 0)
     if total_count <= 0:
-        return []
+        return [], []
     payload = fetch_json(build_law_list_url(total_count), timeout=timeout, retry=retry)
     laws = payload.get('laws')
-    return laws if isinstance(laws, list) else []
+    law_rows = laws if isinstance(laws, list) else []
+    recent_rows = filter_recent_law_rows(law_rows, updated_within_days=updated_within_days)
+    return law_rows, recent_rows
 
 
 def fetch_law_article(law_num: str, timeout: int, retry: int) -> Dict[str, Any]:
@@ -420,6 +438,50 @@ def split_csv(values: Sequence[str]) -> List[str]:
     return out
 
 
+def parse_revision_datetime(raw: Any) -> Optional[datetime]:
+    text = str(raw).strip() if raw is not None else ''
+    if not text:
+        return None
+
+    normalized = text.replace('Z', '+00:00')
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        parsed = None
+
+    if parsed is None:
+        for fmt in ('%Y-%m-%d', '%Y/%m/%d', '%Y%m%d'):
+            try:
+                parsed = datetime.strptime(text, fmt)
+                break
+            except ValueError:
+                continue
+    if parsed is None:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def is_recently_updated(law_row: Dict[str, Any], threshold: datetime) -> bool:
+    current_revision_info = (
+        law_row.get('current_revision_info')
+        if isinstance(law_row.get('current_revision_info'), dict)
+        else {}
+    )
+    revision_info = law_row.get('revision_info') if isinstance(law_row.get('revision_info'), dict) else {}
+
+    for info in (current_revision_info, revision_info):
+        updated_at = parse_revision_datetime(info.get('updated'))
+        if updated_at is None:
+            updated_at = parse_revision_datetime(info.get('amendment_enforcement_date'))
+        if updated_at is None:
+            updated_at = parse_revision_datetime(info.get('amendment_promulgate_date'))
+        if updated_at is not None and updated_at >= threshold:
+            return True
+    return False
+
+
 def load_manifest(path: Path) -> Dict[str, Any]:
     if not path.exists():
         return {'laws': {}}
@@ -712,9 +774,13 @@ def main(argv: Sequence[str]) -> int:
     warnings: List[str] = []
 
     print('loading law list from e-Gov API...')
-    law_rows = fetch_law_list(timeout=args.timeout, retry=args.retry)
+    law_rows, recent_law_rows = fetch_law_list(
+        timeout=args.timeout,
+        retry=args.retry,
+        updated_within_days=args.updated_within_days,
+    )
     law_index, searchable_names = make_law_name_indexes(law_rows)
-    print(f'law list loaded: {len(law_rows)}')
+    print(f'law list loaded: total={len(law_rows)}, recent={len(recent_law_rows)}')
 
     baseline_time = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     if not args.dry_run:
@@ -736,7 +802,7 @@ def main(argv: Sequence[str]) -> int:
             }
 
     targets = determine_targets(
-        law_rows=law_rows,
+        law_rows=law_rows if args.all else recent_law_rows,
         law_index=law_index,
         manifest=manifest,
         out_dir=out_dir,
