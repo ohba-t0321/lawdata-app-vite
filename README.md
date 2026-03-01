@@ -78,7 +78,6 @@ node scripts/supabase/apply-migration.mjs
 ```powershell
 $env:SUPABASE_URL="https://YOUR_PROJECT_REF.supabase.co"
 $env:SUPABASE_SERVICE_ROLE_KEY="YOUR_SERVICE_ROLE_KEY"
-$env:SUPABASE_ASSET_BUCKET="law-assets" # optional
 $env:LAWDATA_REF_DIR="public/ref_json"   # optional
 ```
 
@@ -117,14 +116,7 @@ What the script does:
 - Upserts `public.laws` from e-Gov law list.
 - Detects changed laws by `revision_marker` (unless `--all`).
 - Fetches each changed law body (`/law_data/:lawNum`).
-- Precomputes and uploads JSON assets to Storage:
-  - `raw.json`
-  - `toc.json`
-  - `vnode.json`
-  - `article-map.json`
-  - `ref-data.json`
-  - `ref-law-title.json`
-- Upserts `public.law_versions` and `public.law_assets`.
+- Upserts `public.law_versions`.
 - Refreshes `public.law_references` for each changed law.
 - Records run status in `public.ingest_runs`.
 

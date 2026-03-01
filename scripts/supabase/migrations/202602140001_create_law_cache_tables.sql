@@ -60,9 +60,11 @@ create table if not exists public.law_references (
   target_paragraph text,
   target_item text,
   match_text text,
-  raw jsonb,
   created_at timestamptz not null default now()
 );
+
+alter table if exists public.law_references
+  drop column if exists raw;
 
 create index if not exists law_references_source_idx
   on public.law_references (source_law_num, source_revision_marker);

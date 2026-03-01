@@ -1,11 +1,9 @@
-import { createHash } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
 const LAW_TYPES = 'Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc';
 const LAW_API_BASE = 'https://laws.e-gov.go.jp/api/2';
-const DEFAULT_BUCKET = 'law-assets';
 const DEFAULT_CHUNK_SIZE = 200;
 const DEFAULT_UPDATED_WITHIN_DAYS = 7;
 
@@ -15,7 +13,6 @@ function parseArgs(argv) {
     dryRun: false,
     limit: null,
     lawNums: new Set(),
-    bucket: process.env.SUPABASE_ASSET_BUCKET || DEFAULT_BUCKET,
     refDir: process.env.LAWDATA_REF_DIR || path.join(process.cwd(), 'public', 'ref_json'),
     updatedWithinDays: DEFAULT_UPDATED_WITHIN_DAYS,
   };
@@ -49,15 +46,6 @@ function parseArgs(argv) {
         .map((v) => v.trim())
         .filter(Boolean)
         .forEach((v) => options.lawNums.add(v));
-      i += 1;
-      continue;
-    }
-    if (arg === '--bucket') {
-      const value = argv[i + 1];
-      if (!value) {
-        throw new Error('--bucket requires a value.');
-      }
-      options.bucket = value;
       i += 1;
       continue;
     }
@@ -469,84 +457,6 @@ async function fetchExistingMarkers(client) {
   return markerMap;
 }
 
-async function fetchCompletedLawNums(client) {
-  const completed = new Set();
-  const currentVersions = [];
-  const pageSize = 1000;
-  let from = 0;
-
-  while (true) {
-    const to = from + pageSize - 1;
-    const { data, error } = await client
-      .from('law_versions')
-      .select('id, law_num')
-      .eq('is_current', true)
-      .range(from, to);
-    supabaseOrThrow(error, 'load current versions');
-
-    if (!data || data.length === 0) break;
-    currentVersions.push(...data);
-    if (data.length < pageSize) break;
-    from += pageSize;
-  }
-
-  if (currentVersions.length === 0) return completed;
-
-  const versionIdToLawNum = new Map();
-  for (const row of currentVersions) {
-    versionIdToLawNum.set(row.id, row.law_num);
-  }
-
-  const versionIds = Array.from(versionIdToLawNum.keys());
-  const idChunks = chunkArray(versionIds, 200);
-  for (const ids of idChunks) {
-    const { data, error } = await client
-      .from('law_assets')
-      .select('version_id')
-      .in('version_id', ids);
-    supabaseOrThrow(error, 'load law assets');
-    for (const row of data ?? []) {
-      const lawNum = versionIdToLawNum.get(row.version_id);
-      if (lawNum) completed.add(lawNum);
-    }
-  }
-
-  return completed;
-}
-
-async function ensureBucket(client, bucket, dryRun) {
-  const { data, error } = await client.storage.listBuckets();
-  supabaseOrThrow(error, 'list buckets');
-  const exists = (data ?? []).some((b) => b.name === bucket || b.id === bucket);
-  if (exists) return;
-
-  if (dryRun) {
-    console.log(`[dry-run] bucket "${bucket}" does not exist. It would be created.`);
-    return;
-  }
-  const { error: createError } = await client.storage.createBucket(bucket, { public: true });
-  supabaseOrThrow(createError, `create bucket "${bucket}"`);
-}
-
-function sha256(text) {
-  return createHash('sha256').update(text).digest('hex');
-}
-
-async function uploadJson(client, bucket, objectPath, payload, dryRun) {
-  const body = JSON.stringify(payload);
-  const size = Buffer.byteLength(body, 'utf8');
-  const hash = sha256(body);
-
-  if (!dryRun) {
-    const blob = new Blob([body], { type: 'application/json; charset=utf-8' });
-    const { error } = await client.storage
-      .from(bucket)
-      .upload(objectPath, blob, { upsert: true, contentType: 'application/json; charset=utf-8' });
-    supabaseOrThrow(error, `upload ${objectPath}`);
-  }
-
-  return { path: objectPath, size, hash };
-}
 
 function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
   const rows = [];
@@ -569,7 +479,6 @@ function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
       target_paragraph: asNonEmptyString(item?.ref?.lawArticle?.paragraph),
       target_item: asNonEmptyString(item?.ref?.lawArticle?.item),
       match_text: asNonEmptyString(item?.match),
-      raw: item,
     });
   }
   return rows;
@@ -600,22 +509,6 @@ async function processOneLaw({ client, lawRow, lawList, options }) {
   const lawArticle = await fetchLawArticle(lawNum);
   const revisionMarker = extractLawRevisionMarker(lawArticle) ?? lawRow.revision_marker;
   const refData = await readRefData(options.refDir, lawNum);
-  const tocItems = buildTocItems(lawArticle);
-  const articleMap = buildArticleMap(lawArticle);
-  const refLawTitle = buildRefLawTitleList(lawArticle, lawList);
-  const vnode = buildVnodePayload(lawArticle);
-
-  const pathLawNum = sha256(lawNum).slice(0, 24);
-  const pathRevision = sha256(revisionMarker).slice(0, 24);
-  const basePath = `laws/${pathLawNum}/${pathRevision}`;
-
-  const rawAsset = await uploadJson(client, options.bucket, `${basePath}/raw.json`, lawArticle, options.dryRun);
-  const tocAsset = await uploadJson(client, options.bucket, `${basePath}/toc.json`, tocItems, options.dryRun);
-  const vnodeAsset = await uploadJson(client, options.bucket, `${basePath}/vnode.json`, vnode, options.dryRun);
-  const articleMapAsset = await uploadJson(client, options.bucket, `${basePath}/article-map.json`, articleMap, options.dryRun);
-  const refDataAsset = await uploadJson(client, options.bucket, `${basePath}/ref-data.json`, refData, options.dryRun);
-  const refLawTitleAsset = await uploadJson(client, options.bucket, `${basePath}/ref-law-title.json`, refLawTitle, options.dryRun);
-
   if (options.dryRun) {
     return { lawNum, referenceCount: refData.length };
   }
@@ -639,34 +532,6 @@ async function processOneLaw({ client, lawRow, lawList, options }) {
   );
   supabaseOrThrow(upsertVersionError, `upsert law_versions: ${lawNum}`);
 
-  const { data: versionRow, error: versionFetchError } = await client
-    .from('law_versions')
-    .select('id')
-    .eq('law_num', lawNum)
-    .eq('revision_marker', revisionMarker)
-    .single();
-  supabaseOrThrow(versionFetchError, `select version id: ${lawNum}`);
-
-  const payloadHash = sha256(
-    [rawAsset.hash, tocAsset.hash, vnodeAsset.hash, articleMapAsset.hash, refDataAsset.hash, refLawTitleAsset.hash].join('|'),
-  );
-  const sizeBytes = rawAsset.size + tocAsset.size + vnodeAsset.size + articleMapAsset.size + refDataAsset.size + refLawTitleAsset.size;
-
-  const { error: upsertAssetError } = await client.from('law_assets').upsert(
-    [{
-      version_id: versionRow.id,
-      raw_json_path: rawAsset.path,
-      vnode_json_path: vnodeAsset.path,
-      toc_json_path: tocAsset.path,
-      ref_data_json_path: refDataAsset.path,
-      ref_law_title_json_path: refLawTitleAsset.path,
-      article_map_json_path: articleMapAsset.path,
-      payload_hash: payloadHash,
-      size_bytes: sizeBytes,
-    }],
-    { onConflict: 'version_id' },
-  );
-  supabaseOrThrow(upsertAssetError, `upsert law_assets: ${lawNum}`);
 
   const referenceRows = buildReferenceRows(refData, lawNum, revisionMarker);
   const { error: deleteRefError } = await client
@@ -714,12 +579,8 @@ async function main() {
     console.log(`recently updated laws (last ${options.updatedWithinDays} days): ${recentlyUpdatedLawRows.length}`);
   }
 
-  await ensureBucket(client, options.bucket, options.dryRun);
-
   console.log('loading existing revision markers from Supabase...');
   const existingMap = await fetchExistingMarkers(client);
-  const completedLawNums = await fetchCompletedLawNums(client);
-
   const baseRows = options.all || options.lawNums.size > 0 ? lawRows : recentlyUpdatedLawRows;
   await upsertLawRows(client, baseRows, options.dryRun);
 
@@ -727,8 +588,7 @@ async function main() {
     if (options.lawNums.size > 0) return options.lawNums.has(row.law_num);
     if (options.all) return true;
     const isChanged = existingMap.get(row.law_num) !== row.revision_marker;
-    const isMissingAsset = !completedLawNums.has(row.law_num);
-    return isChanged || isMissingAsset;
+    return isChanged;
   });
 
   if (options.limit) {
