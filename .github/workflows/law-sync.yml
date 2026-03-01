@@ -26,7 +26,6 @@ jobs:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      SUPABASE_ASSET_BUCKET: law-assets
       LAWDATA_REF_DIR: public/ref_json
 
     steps:
