@@ -591,6 +591,7 @@ def determine_targets(
     explicit_law_nums: Sequence[str],
     run_all: bool,
     warnings: List[str],
+    updated_within_days: int,
 ) -> List[str]:
     if explicit_law_nums:
         targets: List[str] = []
@@ -602,9 +603,13 @@ def determine_targets(
     if run_all:
         return [row['law_num'] for row in law_index.values()]
 
+    threshold = datetime.now(timezone.utc) - timedelta(days=max(updated_within_days, 0))
+
     manifest_laws = manifest.get('laws') if isinstance(manifest.get('laws'), dict) else {}
     targets = []
     for row in law_rows:
+        if updated_within_days > 0 and not is_recently_updated(row, threshold):
+            continue
         law_info = row.get('law_info') if isinstance(row.get('law_info'), dict) else {}
         law_num = str(law_info.get('law_num') or '').strip()
         if not law_num:
@@ -809,6 +814,7 @@ def main(argv: Sequence[str]) -> int:
         explicit_law_nums=explicit_law_nums,
         run_all=args.all,
         warnings=warnings,
+        updated_within_days=args.updated_within_days,
     )
     if args.limit and args.limit > 0:
         targets = targets[:args.limit]
