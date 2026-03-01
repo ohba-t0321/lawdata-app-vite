@@ -7,6 +7,7 @@ const LAW_TYPES = 'Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc'
 const LAW_API_BASE = 'https://laws.e-gov.go.jp/api/2';
 const DEFAULT_BUCKET = 'law-assets';
 const DEFAULT_CHUNK_SIZE = 200;
+const DEFAULT_UPDATED_WITHIN_DAYS = 7;
 
 function parseArgs(argv) {
   const options = {
@@ -16,6 +17,7 @@ function parseArgs(argv) {
     lawNums: new Set(),
     bucket: process.env.SUPABASE_ASSET_BUCKET || DEFAULT_BUCKET,
     refDir: process.env.LAWDATA_REF_DIR || path.join(process.cwd(), 'public', 'ref_json'),
+    updatedWithinDays: DEFAULT_UPDATED_WITHIN_DAYS,
   };
 
   for (let i = 0; i < argv.length; i += 1) {
@@ -56,6 +58,15 @@ function parseArgs(argv) {
         throw new Error('--bucket requires a value.');
       }
       options.bucket = value;
+      i += 1;
+      continue;
+    }
+    if (arg === '--updated-within-days') {
+      const value = Number(argv[i + 1]);
+      if (!Number.isFinite(value) || value < 0) {
+        throw new Error('--updated-within-days must be a non-negative number.');
+      }
+      options.updatedWithinDays = value;
       i += 1;
       continue;
     }
@@ -424,6 +435,18 @@ function dedupeLawRows(lawRows) {
   return Array.from(map.values());
 }
 
+function filterByUpdatedWithinDays(lawRows, days) {
+  if (!Number.isFinite(days) || days < 0) return lawRows;
+
+  const cutoffMillis = Date.now() - (days * 24 * 60 * 60 * 1000);
+  return lawRows.filter((row) => {
+    if (!row.updated_source) return false;
+    const updatedMillis = Date.parse(row.updated_source);
+    if (Number.isNaN(updatedMillis)) return false;
+    return updatedMillis >= cutoffMillis;
+  });
+}
+
 async function fetchExistingMarkers(client) {
   const markerMap = new Map();
   const pageSize = 1000;
@@ -686,15 +709,21 @@ async function main() {
   const lawRows = dedupeLawRows(normalizedLawRows);
   console.log(`law list loaded: ${lawList.length} rows, deduped: ${lawRows.length} rows`);
 
+  const recentlyUpdatedLawRows = filterByUpdatedWithinDays(lawRows, options.updatedWithinDays);
+  if (!options.all && options.lawNums.size === 0) {
+    console.log(`recently updated laws (last ${options.updatedWithinDays} days): ${recentlyUpdatedLawRows.length}`);
+  }
+
   await ensureBucket(client, options.bucket, options.dryRun);
 
   console.log('loading existing revision markers from Supabase...');
   const existingMap = await fetchExistingMarkers(client);
   const completedLawNums = await fetchCompletedLawNums(client);
 
-  await upsertLawRows(client, lawRows, options.dryRun);
+  const baseRows = options.all || options.lawNums.size > 0 ? lawRows : recentlyUpdatedLawRows;
+  await upsertLawRows(client, baseRows, options.dryRun);
 
-  let targetRows = lawRows.filter((row) => {
+  let targetRows = baseRows.filter((row) => {
     if (options.lawNums.size > 0) return options.lawNums.has(row.law_num);
     if (options.all) return true;
     const isChanged = existingMap.get(row.law_num) !== row.revision_marker;
