@@ -24,7 +24,7 @@ const SearchForm: React.FC = () => {
   } | null>(null);
   
   const { lawData, isDataLoaded, lawDataError, retryLawDataFetch } = useContext(LawDataContext);
-  const { setSelectedLaws, setIsArticleLoaded }  = useContext(LawArticleContext)
+  const { selectedLaws, setSelectedLaws, setIsArticleLoaded }  = useContext(LawArticleContext)
   const { dividerPos,setDividerPos } = useContext(DividerContext)
   
   function searchLaws(searchKeyword = inputKeyword): LawData[] {
@@ -101,6 +101,11 @@ const SearchForm: React.FC = () => {
   });
 
   const selectLaw = (lawNum: string) => {
+    // 既に左右いずれかに表示済みの法令は再表示しない（ダブルクリック対策）
+    if (selectedLaws.left === lawNum || selectedLaws.right === lawNum) {
+      return;
+    }
+
     setSelectedLaws((prev) => ({
       ...prev,
       [outputFrame]: lawNum,
@@ -240,4 +245,3 @@ const SearchForm: React.FC = () => {
 };  
   
 export default SearchForm;
-
