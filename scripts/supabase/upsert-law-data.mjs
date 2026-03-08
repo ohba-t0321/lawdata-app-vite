@@ -316,7 +316,17 @@ function buildRefLawTitleList(lawArticle, laws) {
   const lawTexts = isJsonNode(lawArticle?.law_full_text) ? searchLawText(lawArticle.law_full_text, []) : [];
   const refLaw = new Set();
   const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
+  const titleAliasRegex = /([^（\n]{2,120}?)（以下「([^」]+?)」という。?）/g;
   const synonym = {};
+  const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pushSynonym = (lawNum, alias) => {
+    if (!synonym[lawNum]) {
+      synonym[lawNum] = [];
+    }
+    if (!synonym[lawNum].includes(alias)) {
+      synonym[lawNum].push(alias);
+    }
+  };
 
   for (const text of lawTexts) {
     let match = null;
@@ -324,8 +334,22 @@ function buildRefLawTitleList(lawArticle, laws) {
       if (match[1]) {
         refLaw.add(match[1]);
       }
-      if (match[1] && match[2] && !synonym[match[1]]) {
-        synonym[match[1]] = match[2];
+      if (match[1] && match[2]) {
+        pushSynonym(match[1], match[2]);
+      }
+    }
+    while ((match = titleAliasRegex.exec(text)) !== null) {
+      const rawName = match[1]?.trim();
+      const alias = match[2]?.trim();
+      if (!rawName || !alias) continue;
+      const matchedLaw = laws.find((law) => {
+        const title = law?.current_revision_info?.law_title;
+        return typeof title === 'string' && rawName.endsWith(title);
+      });
+      const lawNum = matchedLaw?.law_info?.law_num;
+      if (typeof lawNum === 'string') {
+        refLaw.add(lawNum);
+        pushSynonym(lawNum, alias);
       }
     }
   }
@@ -333,19 +357,35 @@ function buildRefLawTitleList(lawArticle, laws) {
   for (const lawNum of refLaw) {
     const lawTitle = laws.find((law) => law?.law_info?.law_num === lawNum)?.current_revision_info?.law_title;
     if (!lawTitle) continue;
-    const synonymRegex = new RegExp(`${lawTitle}（以下「(.*?)」という。）`, 'g');
+    const synonymRegex = new RegExp(`${escapeRegExp(lawTitle)}（以下「(.*?)」という。）`, 'g');
     for (const text of lawTexts) {
       let match = null;
       while ((match = synonymRegex.exec(text)) !== null) {
-        if (match[1] && !synonym[lawNum]) {
-          synonym[lawNum] = match[1];
+        if (match[1]) {
+          pushSynonym(lawNum, match[1]);
         }
       }
     }
   }
 
+  const refLawList = Array.from(refLaw);
+  const referencedLaws = refLawList
+    .map((lawNum) => laws.find((law) => law?.law_info?.law_num === lawNum))
+    .filter(Boolean);
+  const uniqueByType = (aliases, lawType) => {
+    const matched = referencedLaws.filter((law) => law?.law_info?.law_type === lawType);
+    if (matched.length !== 1) return;
+    const lawNum = matched[0]?.law_info?.law_num;
+    if (typeof lawNum !== 'string') return;
+    aliases.forEach((alias) => pushSynonym(lawNum, alias));
+  };
+  uniqueByType(['同法'], 'Act');
+  uniqueByType(['同令', '同政令'], 'CabinetOrder');
+  uniqueByType(['同省令'], 'MinisterialOrdinance');
+  uniqueByType(['同規則'], 'Rule');
+
   return {
-    lawTitleList: Array.from(refLaw),
+    lawTitleList: refLawList,
     synonymList: synonym,
   };
 }

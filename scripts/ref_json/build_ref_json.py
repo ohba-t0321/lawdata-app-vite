@@ -25,9 +25,60 @@ LAW_NUM_PATTERN = (
     r'[^）\n]{1,40}?'
     r'第[' + NUM_CHARS + r']+号'
 )
-KEYWORD_PATTERN = re.compile(
-    r'[^。]*?(?:政令|省令|府令|規則|命令|条例|告示|内閣府令|主務省令)[^。]*?定め[^。]*'
+CLAUSE_PATTERNS = (
+    re.compile(
+        r'[^。]*?(?:政令|省令|府令|規則|命令|条例|告示|内閣府令|主務省令)[^。]*?(?:定め|規定)[^。]*'
+    ),
+    re.compile(r'[^。]*?(?:に規定する|に掲げる|に該当する|をいう|とする|による)[^。]*'),
 )
+SOURCE_TERM_PATTERNS = (
+    re.compile(r'に規定する(?P<term>[^、。()（）「」]{2,80}?)(?:をいう|とする|である|であって|、|。|$)'),
+    re.compile(r'に掲げる(?P<term>[^、。()（）「」]{2,80}?)(?:をいう|とする|である|であって|、|。|$)'),
+    re.compile(r'に該当する(?P<term>[^、。()（）「」]{2,80}?)(?:をいう|とする|者|もの|場合|、|。|$)'),
+)
+DEFINED_TERM_PATTERNS = (
+    re.compile(r'以下「(?P<term>[^「」]{2,80})」という'),
+    re.compile(r'「(?P<term>[^「」]{2,80})」とは'),
+    re.compile(r'(?P<term>[^、。()（）「」\s]{2,80})とは'),
+    re.compile(r'(?P<term>[^、。()（）「」\s]{2,80})をいう'),
+)
+MATCH_TERM_PATTERNS = (
+    re.compile(r'[^。]*?以下「(?P<term>[^「」]{2,80})」という[^。]*'),
+    re.compile(r'[^。]*?「(?P<term>[^「」]{2,80})」とは[^。]*'),
+    re.compile(r'[^。]*?(?P<term>[^、。()（）「」\s]{2,80})をいう[^。]*'),
+)
+GENERIC_TERMS = {
+    'もの',
+    'こと',
+    'とき',
+    '場合',
+    '者',
+    '額',
+    '事項',
+    '方法',
+    '行為',
+    '事業',
+    '事務',
+    '情報',
+    '書類',
+    '命令',
+    '規則',
+    '政令',
+    '省令',
+    '府令',
+    '条例',
+    '告示',
+    '項',
+    '号',
+    '欄',
+    '表',
+    '別表',
+    '次',
+    '前項',
+    '前条',
+    '同項',
+    '同条',
+}
 
 
 class BuildError(RuntimeError):
@@ -134,6 +185,49 @@ def normalize_text_for_match(text: str) -> str:
     text = re.sub(r'\s+', '', text)
     text = re.sub(r'[「」『』（）()［］\[\]{}【】〈〉《》・,，。．\.\-ー―：:;；]', '', text)
     return text
+
+
+def clean_term_candidate(term: str) -> Optional[str]:
+    text = str(term).strip()
+    if not text:
+        return None
+    text = text.strip('「」『』（）()[]{}〈〉《》')
+    text = re.sub(r'^[\s、,，・]+|[\s、,，・]+$', '', text)
+    if not text:
+        return None
+    normalized = normalize_text_for_match(text)
+    if len(normalized) < 2 or len(normalized) > 80:
+        return None
+    if normalized in GENERIC_TERMS:
+        return None
+    if not re.search(r'[一-龥ぁ-んァ-ヶA-Za-z0-9]', text):
+        return None
+    return text
+
+
+def collect_pattern_terms(text: str, patterns: Sequence[re.Pattern[str]]) -> List[str]:
+    terms: List[str] = []
+    seen: Set[str] = set()
+    for pattern in patterns:
+        for match in pattern.finditer(text):
+            raw_term = match.groupdict().get('term') or ''
+            term = clean_term_candidate(raw_term)
+            if not term:
+                continue
+            key = normalize_text_for_match(term)
+            if key in seen:
+                continue
+            seen.add(key)
+            terms.append(term)
+    return terms
+
+
+def extract_reference_terms(text: str) -> List[str]:
+    return collect_pattern_terms(text, SOURCE_TERM_PATTERNS)
+
+
+def extract_defined_terms(text: str) -> List[str]:
+    return collect_pattern_terms(text, DEFINED_TERM_PATTERNS)
 
 
 KANJI_DIGIT = {
@@ -326,18 +420,27 @@ def collect_articles(node: Any, out: List[Dict[str, Any]]) -> None:
         collect_articles(child, out)
 
 
+@dataclass(frozen=True)
+class DefinitionEntry:
+    provision: str
+    article: str
+    text: str
+
+
 @dataclass
 class ArticleLookup:
     main: Dict[str, Tuple[str, str]]
     suppl: Dict[str, List[Tuple[str, str]]]
+    definitions: Dict[str, List[DefinitionEntry]]
 
 
 def build_article_lookup(law_article: Dict[str, Any]) -> ArticleLookup:
     main: Dict[str, Tuple[str, str]] = {}
     suppl: Dict[str, List[Tuple[str, str]]] = {}
+    definitions: Dict[str, List[DefinitionEntry]] = {}
     law_full_text = law_article.get('law_full_text')
     if not is_node(law_full_text):
-        return ArticleLookup(main=main, suppl=suppl)
+        return ArticleLookup(main=main, suppl=suppl, definitions=definitions)
 
     law_body = None
     for child in law_full_text.get('children', []):
@@ -345,7 +448,7 @@ def build_article_lookup(law_article: Dict[str, Any]) -> ArticleLookup:
             law_body = child
             break
     if not is_node(law_body):
-        return ArticleLookup(main=main, suppl=suppl)
+        return ArticleLookup(main=main, suppl=suppl, definitions=definitions)
 
     for part in law_body.get('children', []):
         if not is_node(part):
@@ -374,8 +477,18 @@ def build_article_lookup(law_article: Dict[str, Any]) -> ArticleLookup:
             else:
                 suppl.setdefault(article_num, [])
                 suppl[article_num].append((provision_key, text))
+            for term in extract_defined_terms(text):
+                key = normalize_text_for_match(term)
+                definitions.setdefault(key, [])
+                entry = DefinitionEntry(
+                    provision=provision_key,
+                    article=article_num,
+                    text=text,
+                )
+                if entry not in definitions[key]:
+                    definitions[key].append(entry)
 
-    return ArticleLookup(main=main, suppl=suppl)
+    return ArticleLookup(main=main, suppl=suppl, definitions=definitions)
 
 
 def resolve_target_article(
@@ -398,34 +511,88 @@ def resolve_target_article(
 
 def extract_clauses(text: str) -> List[str]:
     clauses: List[str] = []
-    for match in KEYWORD_PATTERN.finditer(text):
-        clause = match.group(0).strip()
-        if clause and clause not in clauses:
+    seen: Set[str] = set()
+    for pattern in CLAUSE_PATTERNS:
+        for match in pattern.finditer(text):
+            clause = match.group(0).strip()
+            normalized = normalize_text_for_match(clause)
+            if not clause or len(normalized) < 4 or normalized in seen:
+                continue
+            seen.add(normalized)
             clauses.append(clause)
     return clauses
 
 
-def find_best_match(source_text: str, target_text: str) -> str:
+def find_best_match(source_text: str, target_text: str) -> Tuple[str, str]:
+    source_terms = extract_reference_terms(source_text)
+    target_terms = extract_defined_terms(target_text)
+    normalized_target_terms = {
+        normalize_text_for_match(term): term
+        for term in target_terms
+    }
+    for term in source_terms:
+        normalized_term = normalize_text_for_match(term)
+        if not normalized_term:
+            continue
+        if term in target_text:
+            return term, 'definition_term'
+        if normalized_term in normalized_target_terms:
+            return normalized_target_terms[normalized_term], 'definition_term'
+        for pattern in MATCH_TERM_PATTERNS:
+            for match in pattern.finditer(target_text):
+                candidate = match.group(0).strip()
+                if normalized_term in normalize_text_for_match(candidate):
+                    return candidate, 'definition_clause'
+
     source_clauses = extract_clauses(source_text)
     if not source_clauses:
-        return UNKNOWN_MATCH
+        return UNKNOWN_MATCH, 'unknown'
 
-    normalized_target = normalize_text_for_match(target_text)
     target_clauses = extract_clauses(target_text)
-    normalized_target_clauses = {normalize_text_for_match(item) for item in target_clauses}
+    normalized_target = normalize_text_for_match(target_text)
+    normalized_target_clauses = {
+        normalize_text_for_match(item): item
+        for item in target_clauses
+    }
 
     for clause in source_clauses:
         normalized_clause = normalize_text_for_match(clause)
         if len(normalized_clause) < 6:
             continue
         if normalized_clause in normalized_target:
-            return clause
+            return clause, 'clause'
         if normalized_clause in normalized_target_clauses:
-            return clause
-        for target_clause in normalized_target_clauses:
-            if normalized_clause in target_clause or target_clause in normalized_clause:
-                return clause
-    return UNKNOWN_MATCH
+            return normalized_target_clauses[normalized_clause], 'clause'
+        for target_clause_key, target_clause in normalized_target_clauses.items():
+            if normalized_clause in target_clause_key or target_clause_key in normalized_clause:
+                return target_clause, 'clause'
+    return UNKNOWN_MATCH, 'unknown'
+
+
+def resolve_definition_reference(
+    lookup: ArticleLookup,
+    source_text: str,
+) -> Optional[DefinitionEntry]:
+    candidates: Dict[Tuple[str, str], DefinitionEntry] = {}
+    for term in extract_reference_terms(source_text):
+        key = normalize_text_for_match(term)
+        entries = lookup.definitions.get(key) or []
+        if len(entries) == 1:
+            entry = entries[0]
+            candidates[(entry.provision, entry.article)] = entry
+            continue
+
+        main_entries = [entry for entry in entries if entry.provision == 'MainProvision']
+        unique_main = {
+            (entry.provision, entry.article): entry
+            for entry in main_entries
+        }
+        if len(unique_main) == 1:
+            entry = next(iter(unique_main.values()))
+            candidates[(entry.provision, entry.article)] = entry
+    if len(candidates) == 1:
+        return next(iter(candidates.values()))
+    return None
 
 
 def split_csv(values: Sequence[str]) -> List[str]:
@@ -484,16 +651,22 @@ def is_recently_updated(law_row: Dict[str, Any], threshold: datetime) -> bool:
 
 def load_manifest(path: Path) -> Dict[str, Any]:
     if not path.exists():
-        return {'laws': {}}
+        return {'laws': {}, 'targets': {}, 'sources': {}}
     try:
         raw = path.read_text(encoding='utf-8')
         payload = json.loads(raw)
     except (OSError, json.JSONDecodeError):
-        return {'laws': {}}
+        return {'laws': {}, 'targets': {}, 'sources': {}}
     if not isinstance(payload, dict):
-        return {'laws': {}}
-    if not isinstance(payload.get('laws'), dict):
-        payload['laws'] = {}
+        return {'laws': {}, 'targets': {}, 'sources': {}}
+
+    laws = payload.get('laws') if isinstance(payload.get('laws'), dict) else {}
+    targets = payload.get('targets') if isinstance(payload.get('targets'), dict) else laws
+    sources = payload.get('sources') if isinstance(payload.get('sources'), dict) else {}
+
+    payload['targets'] = targets
+    payload['laws'] = targets
+    payload['sources'] = sources
     return payload
 
 
@@ -517,6 +690,31 @@ def path_exists_safe(path: Path) -> Tuple[bool, Optional[str]]:
         return False, f'Failed to inspect path: {path} (filename bytes: {name_bytes}) -> {exc}'
 
 
+def infer_context_aliases(law_title: str, law_type: str) -> Set[str]:
+    aliases: Set[str] = set()
+    title = law_title.strip()
+    law_type = law_type.strip()
+    if '法律' in title or law_type == 'Act':
+        aliases.add('同法')
+    if '政令' in title or law_type == 'CabinetOrder':
+        aliases.update({'同令', '同政令'})
+    if '内閣府令' in title:
+        aliases.update({'同内閣府令', '同府令', '同令'})
+    elif '省令' in title or law_type == 'MinisterialOrdinance':
+        aliases.add('同省令')
+    elif '府令' in title:
+        aliases.add('同府令')
+    if '規則' in title or law_type == 'Rule':
+        aliases.add('同規則')
+    if '命令' in title:
+        aliases.add('同命令')
+    if '条例' in title:
+        aliases.add('同条例')
+    if '告示' in title:
+        aliases.add('同告示')
+    return aliases
+
+
 def make_law_name_indexes(
     law_rows: Sequence[Dict[str, Any]]
 ) -> Tuple[Dict[str, Dict[str, Any]], List[Tuple[str, str]]]:
@@ -532,6 +730,7 @@ def make_law_name_indexes(
         law_num = str(law_info.get('law_num') or '').strip()
         if not law_num:
             continue
+        law_type = str(law_info.get('law_type') or '').strip()
         law_title = str(revision.get('law_title') or '').strip()
         abbrev_raw = str(revision.get('abbrev') or '').strip()
         abbrevs = [item.strip() for item in re.split(r'[、,，/／]', abbrev_raw) if item.strip()]
@@ -543,7 +742,9 @@ def make_law_name_indexes(
         by_num[law_num] = {
             'law_num': law_num,
             'law_title': law_title,
+            'law_type': law_type,
             'names': names,
+            'context_aliases': infer_context_aliases(law_title=law_title, law_type=law_type),
             'revision_marker': extract_revision_marker(row),
         }
         for name in names:
@@ -553,17 +754,102 @@ def make_law_name_indexes(
     return by_num, searchable_names
 
 
+def resolve_law_name_token(
+    token: str,
+    name_index: Dict[str, Dict[str, Any]],
+) -> Optional[str]:
+    raw = str(token).strip()
+    if not raw:
+        return None
+
+    exact_matches = [
+        law_num
+        for law_num, info in name_index.items()
+        if raw in (info.get('names') or set())
+    ]
+    if len(exact_matches) == 1:
+        return exact_matches[0]
+
+    suffix_candidates: List[Tuple[int, str]] = []
+    for law_num, info in name_index.items():
+        for name in info.get('names') or set():
+            if name and raw.endswith(name):
+                suffix_candidates.append((len(name), law_num))
+    if not suffix_candidates:
+        return None
+
+    max_len = max(length for length, _ in suffix_candidates)
+    resolved = {
+        law_num
+        for length, law_num in suffix_candidates
+        if length == max_len
+    }
+    if len(resolved) == 1:
+        return next(iter(resolved))
+    return None
+
+
 def extract_alias_map(full_text: str, name_index: Dict[str, Dict[str, Any]]) -> Dict[str, str]:
     alias_by_num: Dict[str, str] = {}
-    explicit = re.compile(
+    explicit_law_num = re.compile(
         rf'（(?P<law_num>{LAW_NUM_PATTERN})。?以下「(?P<alias>[^「」]+?)」という。?）'
     )
-    for match in explicit.finditer(full_text):
+    explicit_title = re.compile(
+        r'(?P<law_name>[^（\n]{2,120}?)（以下「(?P<alias>[^「」]+?)」という。?）'
+    )
+    for match in explicit_law_num.finditer(full_text):
         law_num = (match.group('law_num') or '').strip()
         alias = (match.group('alias') or '').strip()
         if law_num in name_index and alias and law_num not in alias_by_num:
             alias_by_num[law_num] = alias
+    for match in explicit_title.finditer(full_text):
+        law_name = (match.group('law_name') or '').strip()
+        alias = (match.group('alias') or '').strip()
+        law_num = resolve_law_name_token(law_name, name_index)
+        if law_num in name_index and alias and law_num not in alias_by_num:
+            alias_by_num[law_num] = alias
     return alias_by_num
+
+
+def find_segment_explicit_mentions(
+    text: str,
+    candidate_law_nums: Iterable[str],
+    law_index: Dict[str, Dict[str, Any]],
+    alias_map: Dict[str, str],
+) -> List[str]:
+    mentions: List[Tuple[int, str]] = []
+    for law_num in candidate_law_nums:
+        target = law_index.get(law_num)
+        if not target:
+            continue
+        names = set(target.get('names') or set())
+        alias = alias_map.get(law_num)
+        if alias:
+            names.add(alias)
+        position = max((text.rfind(name) for name in names if name), default=-1)
+        if position >= 0:
+            mentions.append((position, law_num))
+    mentions.sort()
+    return [law_num for _, law_num in mentions]
+
+
+def build_segment_context_aliases(
+    explicit_mentions: Sequence[str],
+    recent_aliases: Dict[str, str],
+    law_index: Dict[str, Dict[str, Any]],
+) -> Dict[str, str]:
+    segment_aliases = dict(recent_aliases)
+    alias_candidates: Dict[str, Set[str]] = {}
+    for law_num in explicit_mentions:
+        target = law_index.get(law_num)
+        if not target:
+            continue
+        for alias in target.get('context_aliases') or set():
+            alias_candidates.setdefault(alias, set()).add(law_num)
+    for alias, law_nums in alias_candidates.items():
+        if len(law_nums) == 1:
+            segment_aliases[alias] = next(iter(law_nums))
+    return segment_aliases
 
 
 def build_ref_regex(names: Iterable[str], law_num: str) -> Optional[re.Pattern[str]]:
@@ -583,15 +869,131 @@ def build_ref_regex(names: Iterable[str], law_num: str) -> Optional[re.Pattern[s
     return re.compile(pattern)
 
 
-def determine_targets(
+def load_ref_rows(path: Path, warnings: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    if not path.exists():
+        return []
+    try:
+        payload = json.loads(path.read_text(encoding='utf-8'))
+    except (OSError, json.JSONDecodeError) as exc:
+        if warnings is not None:
+            warnings.append(f'Failed to load ref rows: {path} -> {exc}')
+        return []
+    if isinstance(payload, list):
+        return [row for row in payload if isinstance(row, dict)]
+    return []
+
+
+def row_side(row: Dict[str, Any], key: str) -> Dict[str, Any]:
+    value = row.get(key)
+    return value if isinstance(value, dict) else {}
+
+
+def row_law_num(row: Dict[str, Any], key: str) -> str:
+    return str(row_side(row, key).get('lawNum') or '').strip()
+
+
+def row_article_fields(row: Dict[str, Any], key: str) -> Dict[str, str]:
+    side = row_side(row, key)
+    law_article = side.get('lawArticle')
+    if not isinstance(law_article, dict):
+        return {'provision': '', 'article': '', 'paragraph': '', 'item': ''}
+    return {
+        'provision': str(law_article.get('provision') or '').strip(),
+        'article': str(law_article.get('article') or '').strip(),
+        'paragraph': str(law_article.get('paragraph') or '').strip(),
+        'item': str(law_article.get('item') or '').strip(),
+    }
+
+
+def ref_row_key(row: Dict[str, Any]) -> Tuple[str, ...]:
+    ref_article = row_article_fields(row, 'ref')
+    referred_article = row_article_fields(row, 'referred')
+    return (
+        row_law_num(row, 'referred'),
+        referred_article['provision'],
+        referred_article['article'],
+        referred_article['paragraph'],
+        referred_article['item'],
+        row_law_num(row, 'ref'),
+        ref_article['provision'],
+        ref_article['article'],
+        ref_article['paragraph'],
+        ref_article['item'],
+        str(row.get('match') or ''),
+        str(row.get('matchType') or ''),
+    )
+
+
+def group_rows_by_target(rows: Sequence[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
+    grouped: Dict[str, List[Dict[str, Any]]] = {}
+    for row in rows:
+        target_law_num = row_law_num(row, 'referred')
+        if not target_law_num:
+            continue
+        grouped.setdefault(target_law_num, []).append(row)
+    return grouped
+
+
+def merge_target_rows(
+    existing_rows: Sequence[Dict[str, Any]],
+    source_law_num: str,
+    replacement_rows: Sequence[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    deduped: Dict[Tuple[str, ...], Dict[str, Any]] = {}
+    for row in existing_rows:
+        if row_law_num(row, 'ref') == source_law_num:
+            continue
+        deduped[ref_row_key(row)] = row
+    for row in replacement_rows:
+        deduped[ref_row_key(row)] = row
+    return [deduped[key] for key in sorted(deduped)]
+
+
+def read_target_laws_from_source_entry(entry: Any) -> List[str]:
+    if not isinstance(entry, dict):
+        return []
+    raw = entry.get('target_laws')
+    if not isinstance(raw, list):
+        return []
+    return sorted({str(item).strip() for item in raw if str(item).strip()})
+
+
+def scan_existing_target_laws(
+    out_dir: Path,
+    source_law_num: str,
+    warnings: List[str],
+) -> List[str]:
+    targets: List[str] = []
+    for path in sorted(out_dir.glob('*.json')):
+        if path.name == MANIFEST_FILE:
+            continue
+        rows = load_ref_rows(path, warnings=warnings)
+        if any(row_law_num(row, 'ref') == source_law_num for row in rows):
+            targets.append(path.stem)
+    return targets
+
+
+def resolve_existing_target_laws(
+    out_dir: Path,
+    source_law_num: str,
+    manifest_sources: Dict[str, Any],
+    warnings: List[str],
+) -> List[str]:
+    entry = manifest_sources.get(source_law_num)
+    target_laws = read_target_laws_from_source_entry(entry)
+    if target_laws:
+        return target_laws
+    return scan_existing_target_laws(out_dir, source_law_num, warnings)
+
+
+def determine_source_targets(
     law_rows: Sequence[Dict[str, Any]],
     law_index: Dict[str, Dict[str, Any]],
-    manifest: Dict[str, Any],
+    manifest_sources: Dict[str, Any],
     out_dir: Path,
     explicit_law_nums: Sequence[str],
     run_all: bool,
     warnings: List[str],
-    updated_within_days: int,
 ) -> List[str]:
     if explicit_law_nums:
         targets: List[str] = []
@@ -603,36 +1005,35 @@ def determine_targets(
     if run_all:
         return [row['law_num'] for row in law_index.values()]
 
-    threshold = datetime.now(timezone.utc) - timedelta(days=max(updated_within_days, 0))
-
-    manifest_laws = manifest.get('laws') if isinstance(manifest.get('laws'), dict) else {}
     targets = []
     for row in law_rows:
-        if updated_within_days > 0 and not is_recently_updated(row, threshold):
-            continue
         law_info = row.get('law_info') if isinstance(row.get('law_info'), dict) else {}
         law_num = str(law_info.get('law_num') or '').strip()
         if not law_num:
             continue
         revision_marker = extract_revision_marker(row)
-        file_path = out_dir / f'{law_num}.json'
-        exists, exists_error = path_exists_safe(file_path)
-        if exists_error:
-            warnings.append(exists_error)
-            # Continue processing this law; write phase will emit a concrete error and continue.
-            targets.append(law_num)
-            continue
-        entry = manifest_laws.get(law_num) if isinstance(manifest_laws, dict) else None
+        entry = manifest_sources.get(law_num)
         entry_marker = ''
         if isinstance(entry, dict):
             entry_marker = str(entry.get('revision_marker') or '')
 
-        if not exists:
+        if not entry_marker:
             targets.append(law_num)
             continue
         if entry_marker and entry_marker != revision_marker:
             targets.append(law_num)
             continue
+
+        for target_law_num in read_target_laws_from_source_entry(entry):
+            file_path = out_dir / f'{target_law_num}.json'
+            exists, exists_error = path_exists_safe(file_path)
+            if exists_error:
+                warnings.append(exists_error)
+                targets.append(law_num)
+                break
+            if not exists:
+                targets.append(law_num)
+                break
     return targets
 
 
@@ -671,14 +1072,26 @@ def build_ref_data_for_law(
         if name in full_text:
             candidate_law_nums.add(law_num)
 
-    regex_cache: Dict[Tuple[str, str], re.Pattern[str]] = {}
+    regex_cache: Dict[Tuple[str, Tuple[str, ...]], re.Pattern[str]] = {}
     rows: List[Dict[str, Any]] = []
-    seen: Set[Tuple[str, str, str, str, str, str, str, str, str]] = set()
+    seen: Set[Tuple[str, str, str, str, str, str, str, str, str, str, str]] = set()
+    recent_aliases: Dict[str, str] = {}
 
     for seg in segments:
         text = seg.text
         if not text:
             continue
+        explicit_mentions = find_segment_explicit_mentions(
+            text=text,
+            candidate_law_nums=candidate_law_nums,
+            law_index=law_index,
+            alias_map=alias_map,
+        )
+        segment_aliases = build_segment_context_aliases(
+            explicit_mentions=explicit_mentions,
+            recent_aliases=recent_aliases,
+            law_index=law_index,
+        )
         for target_law_num in candidate_law_nums:
             if target_law_num == source_law_num:
                 continue
@@ -690,17 +1103,21 @@ def build_ref_data_for_law(
             alias = alias_map.get(target_law_num)
             if alias:
                 names.add(alias)
+            for context_alias, resolved_law_num in segment_aliases.items():
+                if resolved_law_num == target_law_num:
+                    names.add(context_alias)
 
             if not any(name in text for name in names if name):
                 continue
 
-            cache_key = (target_law_num, alias or '')
+            cache_key = (target_law_num, tuple(sorted(names)))
             if cache_key not in regex_cache:
                 regex = build_ref_regex(names, target_law_num)
                 if regex is None:
                     continue
                 regex_cache[cache_key] = regex
             regex = regex_cache[cache_key]
+            matched_locator = False
 
             for match in regex.finditer(text):
                 suppl = match.group(1)
@@ -719,7 +1136,8 @@ def build_ref_data_for_law(
                 if target_resolved is None:
                     continue
                 target_provision, target_text = target_resolved
-                match_text = find_best_match(text, target_text)
+                match_text, match_type = find_best_match(text, target_text)
+                matched_locator = True
 
                 dedupe_key = (
                     source_law_num,
@@ -730,6 +1148,8 @@ def build_ref_data_for_law(
                     target_law_num,
                     target_provision,
                     article_key,
+                    paragraph_num,
+                    item_num,
                     match_text,
                 )
                 if dedupe_key in seen:
@@ -739,16 +1159,6 @@ def build_ref_data_for_law(
                 rows.append(
                     {
                         'ref': {
-                            'lawNum': target_law_num,
-                            'lawArticle': {
-                                'provision': target_provision,
-                                'article': article_key,
-                                'paragraph': paragraph_num,
-                                'item': item_num,
-                            },
-                            'text': target_text,
-                        },
-                        'referred': {
                             'lawNum': source_law_num,
                             'lawArticle': {
                                 'provision': seg.provision_base,
@@ -756,11 +1166,80 @@ def build_ref_data_for_law(
                                 'paragraph': seg.paragraph,
                                 'item': seg.item,
                             },
-                            'text': text,
+                        },
+                        'referred': {
+                            'lawNum': target_law_num,
+                            'lawArticle': {
+                                'provision': target_provision,
+                                'article': article_key,
+                                'paragraph': paragraph_num,
+                                'item': item_num,
+                            },
                         },
                         'match': match_text,
+                        'matchType': match_type if match_type != 'unknown' else 'locator_exact',
                     }
                 )
+
+            if matched_locator:
+                continue
+            if target_law_num not in target_lookup_cache:
+                target_article = fetch_law_article(target_law_num, timeout=timeout, retry=retry)
+                target_lookup_cache[target_law_num] = build_article_lookup(target_article)
+            lookup = target_lookup_cache[target_law_num]
+            definition_entry = resolve_definition_reference(lookup, text)
+            if definition_entry is None:
+                continue
+
+            target_text = definition_entry.text
+            match_text, match_type = find_best_match(text, target_text)
+            dedupe_key = (
+                source_law_num,
+                seg.provision_base,
+                seg.article,
+                seg.paragraph,
+                seg.item,
+                target_law_num,
+                definition_entry.provision,
+                definition_entry.article,
+                '0',
+                '0',
+                match_text,
+            )
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+            rows.append(
+                {
+                    'ref': {
+                        'lawNum': source_law_num,
+                        'lawArticle': {
+                            'provision': seg.provision_base,
+                            'article': seg.article,
+                            'paragraph': seg.paragraph,
+                            'item': seg.item,
+                        },
+                    },
+                    'referred': {
+                        'lawNum': target_law_num,
+                        'lawArticle': {
+                            'provision': definition_entry.provision,
+                            'article': definition_entry.article,
+                            'paragraph': '0',
+                            'item': '0',
+                        },
+                    },
+                    'match': match_text,
+                    'matchType': match_type if match_type != 'unknown' else 'definition_lookup',
+                }
+            )
+
+        for law_num in explicit_mentions:
+            target = law_index.get(law_num)
+            if not target:
+                continue
+            for context_alias in target.get('context_aliases') or set():
+                recent_aliases[context_alias] = law_num
     return rows
 
 
@@ -770,10 +1249,15 @@ def main(argv: Sequence[str]) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest_path = out_dir / MANIFEST_FILE
     manifest = load_manifest(manifest_path)
-    manifest_laws = manifest.get('laws')
-    if not isinstance(manifest_laws, dict):
-        manifest_laws = {}
-        manifest['laws'] = manifest_laws
+    manifest_targets = manifest.get('targets')
+    if not isinstance(manifest_targets, dict):
+        manifest_targets = {}
+    manifest['targets'] = manifest_targets
+    manifest['laws'] = manifest_targets
+    manifest_sources = manifest.get('sources')
+    if not isinstance(manifest_sources, dict):
+        manifest_sources = {}
+        manifest['sources'] = manifest_sources
 
     explicit_law_nums = split_csv(args.law_num)
     warnings: List[str] = []
@@ -787,50 +1271,32 @@ def main(argv: Sequence[str]) -> int:
     law_index, searchable_names = make_law_name_indexes(law_rows)
     print(f'law list loaded: total={len(law_rows)}, recent={len(recent_law_rows)}')
 
-    baseline_time = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
-    if not args.dry_run:
-        # Bootstrap marker state for already-existing files so incremental runs can compare revisions.
-        for law_num, info in law_index.items():
-            if law_num in manifest_laws:
-                continue
-            file_path = out_dir / f'{law_num}.json'
-            exists, exists_error = path_exists_safe(file_path)
-            if exists_error:
-                warnings.append(exists_error)
-                continue
-            if not exists:
-                continue
-            manifest_laws[law_num] = {
-                'revision_marker': str(info.get('revision_marker') or 'unknown'),
-                'generated_at': baseline_time,
-                'references': None,
-            }
-
-    targets = determine_targets(
+    source_targets = determine_source_targets(
         law_rows=law_rows if args.all else recent_law_rows,
         law_index=law_index,
-        manifest=manifest,
+        manifest_sources=manifest_sources,
         out_dir=out_dir,
         explicit_law_nums=explicit_law_nums,
         run_all=args.all,
         warnings=warnings,
-        updated_within_days=args.updated_within_days,
     )
     if args.limit and args.limit > 0:
-        targets = targets[:args.limit]
+        source_targets = source_targets[:args.limit]
 
-    if not targets:
-        print('target laws: 0')
+    if not source_targets:
+        print('source laws to rebuild: 0')
     else:
-        print(f'target laws: {len(targets)}')
+        print(f'source laws to rebuild: {len(source_targets)}')
 
     target_lookup_cache: Dict[str, ArticleLookup] = {}
+    target_row_cache: Dict[str, List[Dict[str, Any]]] = {}
     failed: List[str] = []
     processed = 0
+    touched_target_laws: Set[str] = set()
 
-    for idx, law_num in enumerate(targets, start=1):
+    for idx, law_num in enumerate(source_targets, start=1):
         try:
-            print(f'[{idx}/{len(targets)}] building: {law_num}')
+            print(f'[{idx}/{len(source_targets)}] rebuilding source: {law_num}')
             source_article = fetch_law_article(law_num, timeout=args.timeout, retry=args.retry)
             rows = build_ref_data_for_law(
                 source_law_num=law_num,
@@ -841,17 +1307,41 @@ def main(argv: Sequence[str]) -> int:
                 timeout=args.timeout,
                 retry=args.retry,
             )
+            grouped_rows = group_rows_by_target(rows)
+            current_target_laws = sorted(grouped_rows)
+            previous_target_laws = resolve_existing_target_laws(
+                out_dir=out_dir,
+                source_law_num=law_num,
+                manifest_sources=manifest_sources,
+                warnings=warnings,
+            )
+            affected_target_laws = sorted(set(previous_target_laws) | set(current_target_laws))
+
             if args.dry_run:
-                print(f'  dry-run: refs={len(rows)}')
+                print(f'  dry-run: refs={len(rows)}, target_files={len(affected_target_laws)}')
             else:
-                write_json(out_dir / f'{law_num}.json', rows)
-                print(f'  wrote: refs={len(rows)}')
+                staged_target_rows: Dict[str, List[Dict[str, Any]]] = {}
+                for target_law_num in affected_target_laws:
+                    file_path = out_dir / f'{target_law_num}.json'
+                    if target_law_num not in target_row_cache:
+                        target_row_cache[target_law_num] = load_ref_rows(file_path, warnings=warnings)
+                    merged_rows = merge_target_rows(
+                        existing_rows=target_row_cache[target_law_num],
+                        source_law_num=law_num,
+                        replacement_rows=grouped_rows.get(target_law_num, []),
+                    )
+                    staged_target_rows[target_law_num] = merged_rows
+                for target_law_num, merged_rows in staged_target_rows.items():
+                    target_row_cache[target_law_num] = merged_rows
+                    touched_target_laws.add(target_law_num)
+                print(f'  buffered: refs={len(rows)}, target_files={len(affected_target_laws)}')
             processed += 1
             revision_marker = str((law_index.get(law_num) or {}).get('revision_marker') or 'unknown')
-            manifest_laws[law_num] = {
+            manifest_sources[law_num] = {
                 'revision_marker': revision_marker,
                 'generated_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
                 'references': len(rows),
+                'target_laws': current_target_laws,
             }
             if args.sleep > 0:
                 time.sleep(args.sleep)
@@ -860,13 +1350,33 @@ def main(argv: Sequence[str]) -> int:
             print(f'  failed: {law_num} -> {exc}', file=sys.stderr)
 
     if not args.dry_run:
+        for target_law_num in sorted(touched_target_laws):
+            try:
+                file_path = out_dir / f'{target_law_num}.json'
+                merged_rows = target_row_cache.get(target_law_num, [])
+                write_json(file_path, merged_rows)
+                manifest_targets[target_law_num] = {
+                    'generated_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                    'references': len(merged_rows),
+                }
+            except Exception as exc:  # noqa: BLE001
+                failed.append(f'{target_law_num}: {exc}')
+                print(f'  failed write: {target_law_num} -> {exc}', file=sys.stderr)
         manifest['generated_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
         manifest['source'] = 'scripts/ref_json/build_ref_json.py'
         manifest['law_count'] = len(law_index)
+        manifest['format_version'] = 3
+        manifest['layout'] = 'target_law_num'
         write_json(manifest_path, manifest)
 
     status = 'success' if not failed else ('partial_success' if processed > 0 else 'failed')
-    print(f'done: status={status}, processed={processed}, failed={len(failed)}')
+    if args.dry_run:
+        print(f'done: status={status}, processed_sources={processed}, failed={len(failed)}')
+    else:
+        print(
+            f'done: status={status}, processed_sources={processed}, '
+            f'updated_target_files={len(touched_target_laws)}, failed={len(failed)}'
+        )
     if warnings:
         print(f'warnings: {len(warnings)}', file=sys.stderr)
         for line in warnings:

@@ -1,25 +1,296 @@
 [
-    {
-        "ref": {
-            "lawNum": "昭和三十二年大蔵省令第十五号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "31_10",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "法第八十四条の六第二項に規定する債権又は質権の目的とされた債権の個数の算定方法は、動産・債権譲渡登記規則（平成十年法務省令第三十九号）第十二条第一項第二号に掲げる個数により算定する。"
-        },
-        "referred": {
-            "lawNum": "平成十年法務省令第三十九号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "12",
-                "paragraph": "1",
-                "item": "2"
-            },
-            "text": "譲渡に係る債権又は質権の目的とされた債権の個数"
-        },
-        "match": "★引用個所不明★"
-    }
+  {
+    "ref": {
+      "lawNum": "昭和三十二年大蔵省令第十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31_10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "令和二年法務省令第三十三号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年法務省令第四十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年法務省令第二十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年法務省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年法務省令第十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十九年法務省令第四十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年法務省令第二十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法務省令第三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法務省令第五十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法務省令第四十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年法務省令第二十三号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年法務省令第四十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十四年法務省令第二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年法務省令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]

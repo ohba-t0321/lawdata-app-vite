@@ -233,17 +233,41 @@ async function getRefLaw(article: LawArticle) {
   }
   const refLaw = new Set<string>();
   const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
-  const synonym: { [key: string]: string } = {};
+  const titleAliasRegex = /([^（\n]{2,120}?)（以下「([^」]+?)」という。?）/g;
+  const synonym: { [key: string]: string[] } = {};
+  const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pushSynonym = (lawNum: string, alias: string) => {
+    if (!synonym[lawNum]) {
+      synonym[lawNum] = [];
+    }
+    if (!synonym[lawNum].includes(alias)) {
+      synonym[lawNum].push(alias);
+    }
+  };
   lawArticleList.forEach((text) => {
     let match: RegExpExecArray | null;
     while ((match = regex.exec(text)) !== null) {
       if (match[1]) {
         refLaw.add(match[1]);
         if (match[2]) {
-          synonym[match[1]] = match[2];
+          pushSynonym(match[1], match[2]);
         }
       }
     };
+    while ((match = titleAliasRegex.exec(text)) !== null) {
+      const rawName = match[1]?.trim();
+      const alias = match[2]?.trim();
+      if (!rawName || !alias) continue;
+      const matchedLaw = lawData.find((law) => {
+        const title = law?.current_revision_info?.law_title;
+        return typeof title === 'string' && rawName.endsWith(title);
+      });
+      const lawNum = matchedLaw?.law_info?.law_num;
+      if (typeof lawNum === 'string') {
+        refLaw.add(lawNum);
+        pushSynonym(lawNum, alias);
+      }
+    }
   });
   refLaw.forEach(lawNum => {
     /*
@@ -255,13 +279,14 @@ async function getRefLaw(article: LawArticle) {
     法律によっては第○条の○条の○…と続くことがあるが、それは対応が難しいので非対応
     */
     const law = lawData?.filter(law => law.law_info?.law_num === lawNum)[0]?.current_revision_info?.law_title;
-    const synonymRegex = new RegExp(law + '（以下「(.*?)」という。）', 'g');
+    if (!law) return;
+    const synonymRegex = new RegExp(escapeRegExp(law) + '（以下「(.*?)」という。）', 'g');
     lawArticleList.forEach((text) => {
       let match: RegExpExecArray | null;
       while ((match = synonymRegex.exec(text)) !== null) {
         if (match[1]) {
-          if (typeof (lawNum) == 'string' && !(synonym[lawNum])) { //附則で改正法令によって上書きしていることがあるため、最初に出てきたものを優先する
-            synonym[lawNum] = match[1];
+          if (typeof (lawNum) == 'string') {
+            pushSynonym(lawNum, match[1]);
           }
         }
       }
@@ -270,6 +295,20 @@ async function getRefLaw(article: LawArticle) {
 
   // refLawはSet型なので、配列に変換して返す
   const refLawList: string[] = Array.from(refLaw);
+  const referencedLaws = refLawList
+    .map((lawNum) => lawData?.find((law) => law?.law_info?.law_num === lawNum))
+    .filter(Boolean);
+  const uniqueByType = (aliases: string[], lawType: string) => {
+    const matched = referencedLaws.filter((law) => law?.law_info?.law_type === lawType);
+    if (matched.length !== 1) return;
+    const lawNum = matched[0]?.law_info?.law_num;
+    if (typeof lawNum !== 'string') return;
+    aliases.forEach((alias) => pushSynonym(lawNum, alias));
+  };
+  uniqueByType(['同法'], 'Act');
+  uniqueByType(['同令', '同政令'], 'CabinetOrder');
+  uniqueByType(['同省令'], 'MinisterialOrdinance');
+  uniqueByType(['同規則'], 'Rule');
 
   return { lawTitleList: refLawList, synonymList: synonym };
 };

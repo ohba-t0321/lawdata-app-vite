@@ -1,71 +1,65 @@
 [
-    {
-        "ref": {
-            "lawNum": "昭和二十五年電波監理委員会規則第十四号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "28",
-                "paragraph": "8",
-                "item": "0"
-            },
-            "text": "小型漁船安全規則（昭和四十九年農林省・運輸省令第一号）第二条第一項に規定する第二種小型漁船の義務船舶局等の無線設備に備えなければならない機器は、船舶設備規程第三百十一条の二十二第二号の表の国際航海旅客船等以外の船舶の項の下欄イに掲げる無線電信等（船舶安全法第四条第一項に規定する無線電信等をいう。）をもつて第一項から前項までの規定により備えなければならない機器（遭難自動通報設備の機器及び船舶の航行の安全に関する情報を受信するための機器を除く。）に代えることができる。"
-        },
-        "referred": {
-            "lawNum": "昭和四十九年農林省・運輸省令第一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "2",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "この省令において「第一種小型漁船」とは漁船特殊規則（昭和九年逓信・農林省令）第六条に規定する小型第一種の従業制限を有する小型漁船をいい、「第二種小型漁船」とは同令第七条に規定する小型第二種の従業制限を有する小型漁船をいう。"
-        },
-        "match": "★引用個所不明★"
+  {
+    "ref": {
+      "lawNum": "昭和二十五年電波監理委員会規則第十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "8",
+        "item": "0"
+      }
     },
-    {
-        "ref": {
-            "lawNum": "昭和二十六年運輸省令第九十一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "137",
-                "paragraph": "2",
-                "item": "3"
-            },
-            "text": "作業用救命衣（船舶設備規程第三百十一条の二十、小型船舶安全規則第九十九条の二又は小型漁船安全規則（昭和四十九年農林省・運輸省令第一号）第四十三条の二に規定する作業用救命衣をいう。）"
-        },
-        "referred": {
-            "lawNum": "昭和四十九年農林省・運輸省令第一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "43_2",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "作業用救命衣は、船舶設備規程第七編第四章の規定に適合するものでなければならない。"
-        },
-        "match": "★引用個所不明★"
+    "referred": {
+      "lawNum": "昭和四十九年農林省・運輸省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
     },
-    {
-        "ref": {
-            "lawNum": "昭和四十九年運輸省令第三十六号",
-            "lawArticle": {
-                "provision": "平成一八年八月三一日国土交通省令第八五号",
-                "article": "3",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "施行日前に建造され、又は建造に着手された小型船舶（小型船舶安全規則第二条第一項の小型船舶をいう。）に施行日に現に備え付けている石綿を含む材料については、第二条の規定による改正後の小型船舶安全規則第百十六条（小型漁船安全規則（昭和四十九年農林省・運輸省令第一号）第四十六条において準用する場合を含む。）の規定にかかわらず、これを引き続き当該船舶に備え付ける場合に限り、なお従前の例によることができる。"
-        },
-        "referred": {
-            "lawNum": "昭和四十九年農林省・運輸省令第一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "46",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "小型船舶安全規則第百十六条の規定は、小型漁船について準用する。"
-        },
-        "match": "★引用個所不明★"
-    }
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年運輸省令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "137",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十九年農林省・運輸省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "43_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十九年運輸省令第三十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十九年農林省・運輸省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "46",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]

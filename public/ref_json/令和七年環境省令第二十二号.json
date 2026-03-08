@@ -1,25 +1,23 @@
 [
-    {
-        "ref": {
-            "lawNum": "昭和四十六年厚生省令第三十五号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "1_7_2",
-                "paragraph": "1",
-                "item": "2"
-            },
-            "text": "資源循環の促進のための再資源化事業等の高度化に関する法律（令和六年法律第四十一号）第十七条第三項に規定する認定高度分離・回収事業計画に記載された廃棄物の処分の用に供する施設の設備である場合にあつては、資源循環の促進のための再資源化事業等の高度化に関する法律施行規則（令和七年環境省令第二十二号）第五十一条第二号の環境大臣が定める方法において用いられる設備が有する構造とする。"
-        },
-        "referred": {
-            "lawNum": "令和七年環境省令第二十二号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "51",
-                "paragraph": "1",
-                "item": "2"
-            },
-            "text": "その他第三十二条の規定により環境大臣が定める廃棄物ごとに先進的な産業廃棄物の処理に関する技術を勘案して、焼却又は熱分解を行う場合には、生活環境の保全のために環境大臣が定める方法"
-        },
-        "match": "★引用個所不明★"
-    }
+  {
+    "ref": {
+      "lawNum": "昭和四十六年厚生省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1_0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "令和七年環境省令第二十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "51",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]

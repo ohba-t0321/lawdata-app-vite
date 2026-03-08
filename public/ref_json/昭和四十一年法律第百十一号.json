@@ -1,25 +1,611 @@
 [
-    {
-        "ref": {
-            "lawNum": "昭和四十一年政令第三百九十四号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "1",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "裁判所法（昭和二十二年法律第五十九号）第六十二条第四項の規定によつて執行官の受ける補助金に関し、執行官法第二十一条の政令で定める額（以下「補助基準額」という。）は、一般職の職員の給与に関する法律（昭和二十五年法律第九十五号）別表第一イ行政職俸給表（一）の五級一号俸の俸給月額に十二を乗じて得た額とする。"
-        },
-        "referred": {
-            "lawNum": "昭和四十一年法律第百十一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "21",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "執行官は、一年間に収入した手数料が政令で定める額に達しないときは、国庫からその不足額の支給を受ける。"
-        },
-        "match": "政令で定める額"
-    }
+  {
+    "ref": {
+      "lawNum": "平成二十六年厚生労働省令第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二年政令第二百五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "7",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成元年政令第二百十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "7",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成六年政令第三百四十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年政令第四十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26_0",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十五年厚生省令第十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "96",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十六年政令第四百五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_4",
+        "paragraph": "1",
+        "item": "14"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十六年法律第二百三十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十四年政令第百八十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "9"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十四年政令第百八十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_8",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十四年政令第百八十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_5",
+        "paragraph": "1",
+        "item": "9"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十九年厚生省令第三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30_5",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十九年政令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十二年大蔵省令第九十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "3",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十五年法律第百四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年政令第二百七十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "13"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十年政令第二百七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十一年政令第二百四十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "7",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十一年政令第五十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "10"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十三年政令第百八十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "7",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十二年政令第百九十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "7",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十二年政令第三百二十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十二年法律第八十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十年政令第九十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "7"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十年大蔵省令第十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "38"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第九十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十一年政令第三百九十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十一年政令第三百九十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十一年政令第三百九十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十一年法律第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]

@@ -10,6 +10,10 @@ export interface JsonNode {
   children: (JsonNode | string)[];
 }
 
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 const subitemNode: string[] = []
 for (let i = 1; i < 10; i++) {
   subitemNode.push(`Subitem${i}`)
@@ -168,9 +172,14 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
 
         refLawTitle?.lawTitleList.forEach(lawNum => {
           const law = lawData?.filter(law => law.law_info?.law_num === lawNum)[0]?.current_revision_info?.law_title;
+          const aliases = (synonym?.[lawNum] ?? []).filter(Boolean);
+          const alternatives = [law, ...aliases]
+            .filter((value): value is string => typeof value === 'string' && value.length > 0)
+            .map(escapeRegExp);
+          if (alternatives.length === 0) return;
           // 法令名を長い順にソートする
           regex = new RegExp(
-            '(?:' + law + ((synonym && synonym[lawNum]) ? '|' + synonym[lawNum] : '') + ')'
+            '(?:' + alternatives.join('|') + ')'
             + '(?:（(?:' + lawNum + ')?。?(?:以下「[^「]*?」という。)?）)?(附則)?第([一二三四五六七八九十百千万]+)条(?:の([一二三四五六七八九十百千万]+))?(?:第([一二三四五六七八九十百千万]+)項)?',
             'g'
           );

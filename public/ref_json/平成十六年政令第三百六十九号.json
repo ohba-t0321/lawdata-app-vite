@@ -1,48 +1,65 @@
 [
-    {
-        "ref": {
-            "lawNum": "平成三十一年政令第百五十五号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "7",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "船員職業安定法施行令（平成十六年政令第三百六十九号）第三条第八号"
-        },
-        "referred": {
-            "lawNum": "平成十六年政令第三百六十九号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "3",
-                "paragraph": "1",
-                "item": "8"
-            },
-            "text": "労働者派遣法第五十八条から第六十一条までの規定及びこれらの規定に係る労働者派遣法第六十二条の規定"
-        },
-        "match": "★引用個所不明★"
+  {
+    "ref": {
+      "lawNum": "平成三十一年政令第百五十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
     },
-    {
-        "ref": {
-            "lawNum": "平成二十七年政令第三百四十号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "5",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "船員職業安定法施行令（平成十六年政令第三百六十九号）第三条第八号"
-        },
-        "referred": {
-            "lawNum": "平成十六年政令第三百六十九号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "3",
-                "paragraph": "1",
-                "item": "8"
-            },
-            "text": "労働者派遣法第五十八条から第六十一条までの規定及びこれらの規定に係る労働者派遣法第六十二条の規定"
-        },
-        "match": "★引用個所不明★"
-    }
+    "referred": {
+      "lawNum": "平成十六年政令第三百六十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "8"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十七年政令第三百四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十六年政令第三百六十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "8"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十八年政令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十六年政令第三百六十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]

@@ -1,71 +1,65 @@
 [
-    {
-        "ref": {
-            "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "36",
-                "paragraph": "1",
-                "item": "4"
-            },
-            "text": "住宅確保要配慮者に対する賃貸住宅の供給の促進に関する法律施行規則（平成二十九年国土交通省令第六十三号）第二十条第二号の登録を受けていること。"
-        },
-        "referred": {
-            "lawNum": "平成二十九年国土交通省令第六十三号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "20",
-                "paragraph": "1",
-                "item": "2"
-            },
-            "text": "前号に掲げる者のほか、家賃債務（法第二十条第二項に規定する家賃債務をいう。以下同じ。）の保証を適正かつ確実に実施することができる者として国土交通大臣の登録を受けているもの"
-        },
-        "match": "★引用個所不明★"
+  {
+    "ref": {
+      "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "1",
+        "item": "4"
+      }
     },
-    {
-        "ref": {
-            "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "43",
-                "paragraph": "3",
-                "item": "3"
-            },
-            "text": "前号に掲げるもののほか、住宅確保要配慮者に対する賃貸住宅の供給の促進に関する法律施行規則第二十九条に規定する知識及び能力並びに財産的な基礎を有するものであること。"
-        },
-        "referred": {
-            "lawNum": "平成二十九年国土交通省令第六十三号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "29",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "法第五十九条第一項第三号の知識及び能力並びに財産的な基礎であって国土交通省令で定めるものは、次に掲げるものとする。"
-        },
-        "match": "★引用個所不明★"
+    "referred": {
+      "lawNum": "平成二十九年国土交通省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "0",
+        "item": "2"
+      }
     },
-    {
-        "ref": {
-            "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
-            "lawArticle": {
-                "provision": "令和七年六月二四日厚生労働省・国土交通省令第四号",
-                "article": "2",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "住宅確保要配慮者に対する賃貸住宅の供給の促進に関する法律等の一部を改正する法律（以下「改正法」という。）附則第三条第一項及び第二項の規定による認可の申請、その認可及び公示並びにこれらに関し必要な手続その他の行為は、この省令の施行前においても、第一条の規定による改正後の国土交通省・厚生労働省関係住宅確保要配慮者に対する賃貸住宅の供給の促進に関する法律施行規則（以下「新規則」という。）第四十三条の規定の例により行うことができる。"
-        },
-        "referred": {
-            "lawNum": "平成二十九年国土交通省令第六十三号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "43",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "認定保証業者は、その事務所又は営業所ごとに、公衆の見やすい場所に、別記様式第十号による標識を掲げなければならない。"
-        },
-        "match": "★引用個所不明★"
-    }
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "43",
+        "paragraph": "3",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十九年国土交通省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十九年厚生労働省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十九年国土交通省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "43",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]

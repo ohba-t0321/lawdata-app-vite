@@ -30,7 +30,7 @@ interface LawDataContextType {
 }
 export interface RefLawTitleList {
   lawTitleList: string[];
-  synonymList: { [key: string]: string };
+  synonymList: { [key: string]: string[] };
 }
 export interface LawArticle {
   law_info: Record<string, unknown> | null;
@@ -45,6 +45,7 @@ export interface TocItem {
 }
 export interface RefData {
   match:string | null;
+  matchType?: string | null;
   ref:RefDatadetail | null;
   referred:RefDatadetail | null;
 }
@@ -56,7 +57,6 @@ interface RefDatadetail {
     paragraph: string;
     item: string;
   };
-  text: string;
 }
 export interface LawNode {
   tag: string;

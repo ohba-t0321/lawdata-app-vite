@@ -1,25 +1,23 @@
 [
-    {
-        "ref": {
-            "lawNum": "平成二十六年内閣府・総務省令第五号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "17_3",
-                "paragraph": "1",
-                "item": "6"
-            },
-            "text": "海事代理士法施行規則（昭和二十六年運輸省令第四十二号）第五条の二の届出の受理、その届出に係る事実についての審査又はその届出に対する応答に関する事務"
-        },
-        "referred": {
-            "lawNum": "昭和二十六年運輸省令第四十二号",
-            "lawArticle": {
-                "provision": "MainProvision",
-                "article": "5_2",
-                "paragraph": "1",
-                "item": "0"
-            },
-            "text": "海事代理士又はその法定代理人若しくは同居の親族は、当該海事代理士が精神の機能の障害を有することにより認知、判断及び意思疎通を適切に行うことができない状態となつたときは、所轄地方運輸局長に届け出なければならない。この場合においては、病名、障害の程度、病因、病後の経過、治癒の見込みその他参考となる所見を記載した医師の診断書を添付しなければならない。"
-        },
-        "match": "★引用個所不明★"
-    }
+  {
+    "ref": {
+      "lawNum": "平成二十六年内閣府・総務省令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17_3",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十六年運輸省令第四十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★"
+  }
 ]
