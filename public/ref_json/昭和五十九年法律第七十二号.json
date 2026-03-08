@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +62,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +106,30 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "match": "加熱式たばこの重量",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -102,7 +150,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +172,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +194,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "金額の合計額",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -165,7 +216,184 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "消費税等相当額を除く",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "10",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "金額の合計額",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "7",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "消費税等相当額を除く",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +414,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "たばこ税の税率",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -207,7 +436,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "たばこ税の税率",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -228,7 +458,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "たばこ税の税率",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,7 +546,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,7 +568,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -291,7 +590,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -312,7 +612,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -333,7 +634,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -354,7 +656,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -375,7 +678,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特定販売業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -396,7 +700,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特定販売業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -417,7 +722,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -438,7 +744,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "特定販売業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -459,7 +788,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -480,7 +810,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -501,7 +832,140 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "4",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -522,7 +986,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -543,7 +1008,118 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -564,7 +1140,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -585,7 +1162,294 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "6",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "7",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -606,7 +1470,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -627,7 +1492,118 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -648,7 +1624,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "130",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "155",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "0",
+        "item": "10"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -669,7 +1734,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -690,7 +1756,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "131",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "特定販売業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "156",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "特定販売業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -711,7 +1822,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -732,7 +1844,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -753,7 +1866,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -774,7 +1888,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -795,7 +1910,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -816,7 +1976,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -837,7 +1998,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -858,7 +2086,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -879,7 +2108,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -900,7 +2196,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -921,7 +2218,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "131",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "156",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -942,7 +2306,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -963,7 +2328,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -984,7 +2350,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1005,7 +2372,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1026,7 +2394,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1047,7 +2438,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1068,7 +2460,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "移出により納付された",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1089,7 +2548,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1110,7 +2570,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1131,7 +2592,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "105",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1152,7 +2658,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1173,7 +2680,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1194,7 +2724,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1215,7 +2746,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1236,7 +2812,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1257,7 +2856,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1278,7 +2878,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1299,7 +2900,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1320,7 +2922,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1341,7 +2944,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1362,7 +2966,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1383,7 +3032,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "税関長に提出しなければならない",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1404,7 +3054,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1425,7 +3098,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1446,7 +3120,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1467,7 +3142,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1488,7 +3164,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1509,7 +3186,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1530,7 +3208,52 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "保税地域",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "9"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1551,7 +3274,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1572,7 +3296,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1593,7 +3318,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1614,7 +3340,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1635,7 +3362,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1656,7 +3384,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1677,7 +3406,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1698,7 +3428,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1719,7 +3450,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこの区分",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年大蔵省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十二年法律第二十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "88_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1740,7 +3560,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1761,7 +3582,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1782,7 +3626,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1803,7 +3670,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1824,7 +3714,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1845,7 +3780,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1866,7 +3868,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1887,7 +3890,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1908,7 +3912,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1929,7 +3934,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1950,7 +3978,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1971,7 +4000,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1992,7 +4022,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2013,7 +4044,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2034,7 +4066,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2055,7 +4088,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "者は",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2076,7 +4110,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "者は",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2097,7 +4132,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十七年法律第六十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "74_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2118,7 +4176,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2139,7 +4198,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2160,7 +4220,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2181,7 +4264,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2202,7 +4286,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2223,7 +4308,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "喫煙用等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2244,7 +4352,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2265,7 +4374,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2286,7 +4396,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2307,7 +4418,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2328,7 +4440,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2349,7 +4462,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ製造者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年法律第百三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "喫煙用等",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2370,7 +4572,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "）によるものとする",
+    "matchType": "clause"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "）によるものとする",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -2391,7 +4616,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年大蔵省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "）によるものとする",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -2412,7 +4660,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2433,6 +4682,689 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "製造たばこ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "7",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "7",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "7",
+        "paragraph": "4",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "47",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "27",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "47",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "47",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "保税地域",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "6",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "48",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "48",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "50",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "5",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "6",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "8",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "12",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "11",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "14",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "保税地域",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "保税地域",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "10",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "7",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十年政令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "11",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十九年法律第七十二号",
+      "lawArticle": {
+        "provision": "昭和六三年一二月三〇日法律第一〇九号",
+        "article": "51",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

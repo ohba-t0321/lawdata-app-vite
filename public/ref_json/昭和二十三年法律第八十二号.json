@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +150,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +172,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +194,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +216,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +238,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +260,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,7 +282,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,7 +348,140 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "0",
+        "item": "4"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "10",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "13",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "0",
+        "item": "4"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十一年農林水産省・環境省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "農薬",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -291,7 +502,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -312,7 +524,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -333,7 +546,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -354,7 +568,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -375,7 +590,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -396,7 +612,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -417,7 +634,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農薬",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -438,7 +656,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -459,7 +678,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農薬",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -480,7 +700,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -501,7 +722,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農薬",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -522,7 +744,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農薬",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -543,7 +766,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -564,7 +810,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -585,7 +832,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農薬",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "令和五年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年農林水産省令第七十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -606,7 +898,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -627,7 +920,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -648,7 +942,184 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年農林省令第三十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -669,7 +1140,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農林水産省令・環境省令で定める場合は",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -690,7 +1162,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -711,7 +1184,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -732,7 +1206,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農薬",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和三年農林水産省・環境省令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -753,7 +1294,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -774,7 +1316,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -795,7 +1338,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -816,7 +1360,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年環境省令第二十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -837,7 +1470,140 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年環境省令第二十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年総理府・農林省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和五年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -858,7 +1624,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -879,7 +1646,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -900,7 +1668,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -921,7 +1690,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -942,7 +1734,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -963,7 +1756,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "農林水産省令・環境省令で定める場合は",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -984,7 +1822,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1005,7 +1888,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1026,7 +1910,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年農林水産省令第七十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年農林水産省令第七十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1047,7 +1976,228 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "資料",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和五年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1068,7 +2218,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1089,7 +2284,998 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "事項を",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十五年政令第十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年農林水産省令第七十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年農林水産省令第七十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年法律第四十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年農林水産省・環境省令第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十五年政令第十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年法律第百八十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年総理府・農林省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1110,7 +3296,8 @@
         "item": "11"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1131,7 +3318,8 @@
         "item": "11"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1152,7 +3340,8 @@
         "item": "11"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1173,7 +3362,30 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十四年政令第三百七十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "match": "と認められる",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1194,7 +3406,52 @@
         "item": "6"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年法律第四十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十五年法律第四十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1215,7 +3472,294 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1236,7 +3780,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1257,7 +3802,162 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十五年政令第十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1278,7 +3978,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1299,7 +4044,140 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十六年農林省令第二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1320,7 +4198,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1341,7 +4220,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1362,6 +4242,29 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十六年政令第五十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年法律第八十二号",
+      "lawArticle": {
+        "provision": "昭和四六年五月三一日法律第八八号",
+        "article": "1",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

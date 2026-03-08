@@ -18,7 +18,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十三年政令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十三年法律第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十七年大蔵省令第百四十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十三年法律第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "決算調整資金",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "決算調整資金",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +150,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十三年政令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十三年法律第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十三年政令第三十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十三年法律第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +216,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +238,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十三年政令第三十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十三年法律第四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,6 +282,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

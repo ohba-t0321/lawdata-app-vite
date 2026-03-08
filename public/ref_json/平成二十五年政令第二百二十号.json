@@ -18,6 +18,29 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十七年政令第四百二十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十五年政令第二百二十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

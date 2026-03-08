@@ -18,7 +18,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十三年政令第二百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第二百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +62,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +150,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +172,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +194,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年法律第百号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第二百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +238,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +260,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +282,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,7 +304,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,7 +326,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -291,7 +348,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -312,7 +370,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -333,7 +392,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -354,7 +414,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十三年政令第二百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第二百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -375,6 +458,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

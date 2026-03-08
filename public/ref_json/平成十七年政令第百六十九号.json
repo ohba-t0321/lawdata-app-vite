@@ -18,6 +18,95 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第百六十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "24"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第百六十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第百六十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省・環境省令第二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第百六十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

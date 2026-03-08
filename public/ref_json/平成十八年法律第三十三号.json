@@ -4,6 +4,28 @@
       "lawNum": "平成十八年政令第二百十二号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "中小企業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年政令第二百十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "0",
         "paragraph": "0",
         "item": "0"
@@ -18,7 +40,8 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +62,52 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年政令第二百十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年経済産業省令第七十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,6 +150,95 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年経済産業省令第七十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年経済産業省令第七十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年経済産業省令第七十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年政令第二百十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年法律第三十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

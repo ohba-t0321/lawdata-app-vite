@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造販売後臨床試験実施計画書",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +62,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "期間",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "期間",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -144,6 +150,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

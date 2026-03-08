@@ -1,6 +1,204 @@
 [
   {
     "ref": {
+      "lawNum": "昭和五十五年政令第二百五十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "13",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
       "lawNum": "昭和二十九年政令第百二十九号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +216,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +238,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +304,536 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "特別国際金融取引勘定承認金融機関",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "3_2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "3_3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "証券",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "外国公社債等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "特別国際金融取引勘定承認金融機関",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "5",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "1"
+      }
+    },
+    "match": "取引又は行為",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "6",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "1"
+      }
+    },
+    "match": "取引又は行為",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "11"
+      }
+    },
+    "match": "特別国際金融取引勘定承認金融機関",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "11"
+      }
+    },
+    "match": "特別国際金融取引勘定承認金融機関",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "7"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "5",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "7"
+      }
+    },
+    "match": "取引又は行為",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "6",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "7"
+      }
+    },
+    "match": "取引又は行為",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "5",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "9"
+      }
+    },
+    "match": "取引又は行為",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "6",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "5",
+        "item": "9"
+      }
+    },
+    "match": "取引又は行為",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "6",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "6",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +854,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "特別国際金融取引勘定",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "基準及び方法",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "8",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "8",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +964,1306 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "非居住者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "特別国際金融取引勘定承認金融機関",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_3",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "顧客等をいい",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_6",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "ものを除く",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "行為であつて",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "本人確認記録",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_7",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "9"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_7",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "match": "行為のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_7",
+        "paragraph": "1",
+        "item": "9"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_3",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "公社債",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_6",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "現金",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "match": "両替",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "顧客等をいい",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "他の銀行等その他の金融機関等を含む",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_5",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "行為であつて",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_6",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "4",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "4",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "4",
+        "item": "3"
+      }
+    },
+    "match": "関係",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +2284,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +2306,96 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "3_2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +2416,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "外国相互間の貨物の移動を伴う貨物の売買",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -186,7 +2438,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +2460,382 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "取引",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_10",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +2856,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,7 +2878,140 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_4",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_4",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "資本取引の区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_5",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_5",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,7 +3032,426 @@
         "item": "7"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "者又は関係人に対し",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "者又は関係人に対し",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -291,7 +3472,140 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年政令第二百五十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_9",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "者に対し",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -312,7 +3626,668 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "証券又は証書",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "取引又はこれに類する取引",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "0",
+        "item": "10"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "38",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "0",
+        "item": "7"
+      }
+    },
+    "match": "事務のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "12"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "12"
+      }
+    },
+    "match": "対外支払手段等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "13"
+      }
+    },
+    "match": "対外支払手段等の売買取引等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "14"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "店頭デリバティブ取引",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "match": "市場デリバティブ取引等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "12",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "12",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "財務省令で定める者は",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "財務省令で定める者は",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "5",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -333,7 +4308,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -354,7 +4330,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -375,7 +4352,118 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "支払等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -396,7 +4484,800 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "支払等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "銀行等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "4"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "6"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年通商産業省令第八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "支払等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_2",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "ものを除く",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_4",
+        "paragraph": "1",
+        "item": "21"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_3",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "ものを除く",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7_3",
+        "paragraph": "0",
+        "item": "9"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -417,7 +5298,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "支払手段等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -438,7 +5408,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -459,7 +5430,118 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "支払手段",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "方法により計算した額",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "支払手段等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -480,6 +5562,95 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十年大蔵省令第二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "5"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年大蔵省令第四十四号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十五年政令第二百六十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

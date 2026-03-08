@@ -18,7 +18,8 @@
         "item": "13"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,6 +40,7 @@
         "item": "20"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "急速充電設備",
+    "matchType": "definition_term"
   }
 ]

@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "成育医療等基本方針",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +40,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和元年政令第百七十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "平成三十年法律第百四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,6 +84,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "計画",
+    "matchType": "definition_term"
   }
 ]

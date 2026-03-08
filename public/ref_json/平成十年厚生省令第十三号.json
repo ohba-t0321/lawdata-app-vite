@@ -18,6 +18,51 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十二年厚生省令第五十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年厚生省令第十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和六十二年厚生省令第五十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年厚生省令第十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

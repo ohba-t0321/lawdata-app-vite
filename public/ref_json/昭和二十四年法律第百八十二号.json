@@ -1,6 +1,28 @@
 [
   {
     "ref": {
+      "lawNum": "昭和二十五年法律第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "8"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第百八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
       "lawNum": "昭和四十七年政令第百五十八号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +40,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "52",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第百八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +150,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十五年政令第二百二十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第百八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,6 +194,29 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十八年政令第四百六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十四年法律第百八十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

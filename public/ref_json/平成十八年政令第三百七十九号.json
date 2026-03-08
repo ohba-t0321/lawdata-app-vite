@@ -4,6 +4,28 @@
       "lawNum": "平成十八年内閣府・総務省・国土交通省令第一号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "旅客施設を利用する高齢",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年内閣府・総務省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "0",
         "paragraph": "0",
         "item": "0"
@@ -18,7 +40,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +62,52 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "旅客施設を利用する高齢",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年内閣府・総務省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "旅客施設を利用する障害",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年内閣府・総務省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +128,52 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +194,140 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "13"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "14"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "15"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "16"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +348,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +370,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +392,272 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "施設",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_3",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_5",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14_5",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +678,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +700,96 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +810,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,6 +832,95 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_5",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "0",
+        "item": "11"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年内閣府・総務省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年内閣府・総務省・国土交通省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第三百七十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

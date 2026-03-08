@@ -4,6 +4,28 @@
       "lawNum": "平成八年大蔵省令第三十四号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成八年政令第百八十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "債権処理会社",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "7",
         "paragraph": "1",
         "item": "0"
@@ -18,6 +40,73 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成八年政令第百八十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "7"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成八年政令第百八十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成八年政令第百八十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

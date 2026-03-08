@@ -18,7 +18,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "101",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "101",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +84,1790 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "102",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "養殖業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "104",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "とおり",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "中小漁業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "中小漁業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "43",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "44",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "45",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "46",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "47",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "48_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "49",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "51",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "4",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9_2",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "組合員又は組合員の直接の構成員たる中小漁業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "組合員又は組合員の直接の構成員たる中小漁業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "45_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "45_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "48",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "48_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "51",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "51",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "51",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "団体",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "46",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "47",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "105_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "48_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "49",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "109",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "110",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "110",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "110",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "110",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "組合員",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "51",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "52",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_3",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "87",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "85",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +1888,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +1910,3968 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "111",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "112",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "53",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "場合に支払うものとし",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "場合に支払うものとし",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "85",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_3",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "49",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "113_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "114",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "114",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "114",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "114",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "養殖業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "114",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "114",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "115",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "115",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "116",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "116",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "単位漁場区域",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "養殖業にあつては",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "単位漁場区域",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "55",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "養殖業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "58",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "118_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "119",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "120",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "120",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "81",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "120",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "61",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "120",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "61",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "120",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "62",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "121",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "数量",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "121",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "63",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "121",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "122",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "81",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "122",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "123",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "123",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "123",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "64",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "123",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "65",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "123",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "養殖業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "62",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "損害数量",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "66",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "68",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "事故によつて受けた損害に係る",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "割合",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "養殖業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "養殖業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "3",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "70",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "58",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "124_2",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_11",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "場合に支払うものとし",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_11",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_11",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_11",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "場合に支払うものとし",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "86",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_11",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_12",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_12",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_5",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_6",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "2",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_3",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "86",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "125_9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "126",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "126",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "漁業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "126",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "126",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "72",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "126",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "79",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "126",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "127",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "74",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "130",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "76",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "130",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "75",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "81",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "132",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "132",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "75",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "132",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "133",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "133",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "92",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "133",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "134",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "2",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "135",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "76",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "135",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "135",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80_2",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "135",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80_2",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "135",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "78",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80_2",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80_2",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "養殖施設又は漁具",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "136_3",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "140",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "140",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "140",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "140",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "142",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_3",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "144",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "83",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "145",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "145",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_10",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +5892,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第四十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +5980,184 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_8",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_7",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "147_9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +6178,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "電磁的方法",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "48",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +6266,382 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "金額",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "92",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "195_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +6662,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +6684,96 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "196_17",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "90",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "196_17",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "196_19",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "196_20",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +6794,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,7 +6816,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,7 +6838,30 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十二年法律第二十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "196_3",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -291,7 +6882,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -312,7 +6904,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -333,7 +6926,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "漁業共済保険事業",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -354,7 +6948,228 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "漁業共済保険事業",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "5",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "14",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "電磁的記録",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -375,7 +7190,206 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "43_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "45",
+        "paragraph": "9",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "46",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "46",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "47",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "47",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "2",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "52",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -396,7 +7410,338 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67_4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67_4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "17",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "67_8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "68",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "68",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "68",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -417,7 +7762,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -438,7 +7784,140 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "69",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "71",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "72",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "72",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -459,7 +7938,1064 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "73",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "78",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "養殖水産動植物",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "19",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "58",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "58",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "80",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "22",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "81",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "21",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "23",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "25",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "39",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "39",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "24",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "82",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "84",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "28",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "86",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "87",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "41",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "87",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "88",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "29",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "89",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "死亡",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "89",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "89",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "90",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "90",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "91",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "中小漁業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "91",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "42",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "91",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "92",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "31",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "93",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "62",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "93",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "93",
+        "paragraph": "1",
+        "item": "9"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "35",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "94",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "38",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "97",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "90",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "97",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "39",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "98",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "99",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年政令第二百九十三号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和三十九年農林省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和三十九年法律第百五十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -480,6 +9016,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

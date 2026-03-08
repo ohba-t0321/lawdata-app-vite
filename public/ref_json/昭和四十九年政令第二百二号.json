@@ -18,7 +18,8 @@
         "item": "35"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "化学物質",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "35"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "化学物質",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +62,8 @@
         "item": "35"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "化学物質",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +84,8 @@
         "item": "35"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +106,8 @@
         "item": "35"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "化学物質",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -123,7 +128,8 @@
         "item": "39"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "化学物質",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -144,7 +150,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "もののほか",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -165,7 +172,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +194,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +216,30 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十九年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十九年政令第二百二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +260,30 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十九年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十九年政令第二百二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,7 +304,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,6 +326,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

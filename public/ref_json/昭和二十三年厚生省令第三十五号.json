@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +62,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十六年農林水産省・環境省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "10"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年厚生省令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1_2",
+        "paragraph": "0",
+        "item": "10"
+      }
+    },
+    "match": "掘削時災害防止規程",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,6 +128,7 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "温泉井戸",
+    "matchType": "definition_term"
   }
 ]

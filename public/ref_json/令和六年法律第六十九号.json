@@ -4,6 +4,50 @@
       "lawNum": "令和七年政令第四百四十号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和六年法律第六十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和七年政令第四百四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和六年法律第六十九号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和七年政令第四百四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "0",
         "paragraph": "0",
         "item": "0"
@@ -18,7 +62,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,6 +84,95 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和七年政令第四百四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和六年法律第六十九号",
+      "lawArticle": {
+        "provision": "令和七年四月二五日法律第二九号",
+        "article": "2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和七年政令第四百四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和六年法律第六十九号",
+      "lawArticle": {
+        "provision": "令和七年四月二五日法律第二九号",
+        "article": "2",
+        "paragraph": "7",
+        "item": "6"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和七年政令第四百四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和六年法律第六十九号",
+      "lawArticle": {
+        "provision": "令和七年四月二五日法律第二九号",
+        "article": "2",
+        "paragraph": "7",
+        "item": "6"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "令和七年政令第四百四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "0",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和六年法律第六十九号",
+      "lawArticle": {
+        "provision": "令和七年四月二五日法律第二九号",
+        "article": "2",
+        "paragraph": "7",
+        "item": "6"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

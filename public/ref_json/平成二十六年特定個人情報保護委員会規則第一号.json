@@ -1,6 +1,28 @@
 [
   {
     "ref": {
+      "lawNum": "平成二十八年個人情報保護委員会規則第四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十六年特定個人情報保護委員会規則第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
       "lawNum": "平成二十八年個人情報保護委員会規則第二号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +40,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特定個人情報ファイル",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +62,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特定個人情報ファイル",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,6 +84,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

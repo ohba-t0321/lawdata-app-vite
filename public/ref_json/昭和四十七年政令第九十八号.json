@@ -18,7 +18,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "公務員等共済組合",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "市町村議会議員共済会",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +62,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "市町村関係団体職員共済組合",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +84,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "公立学校職員共済組合",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -102,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,6 +150,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

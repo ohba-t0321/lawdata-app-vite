@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特定高度管理医療機器",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +62,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特定高度管理医療機器",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +84,96 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +194,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "変更",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -123,7 +216,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "変更",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -144,7 +238,646 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "変更",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "体外診断用医薬品のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_3",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "32_3",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "10",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "2",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "5",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "5",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "5",
+        "item": "1"
+      }
+    },
+    "match": "医療機器又は体外診断用医薬品の区分に応じ",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "5",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "6",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "33",
+        "paragraph": "7",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34_2",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "10",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "34_2",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "36",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "12",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "38",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "13",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "38",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省令第四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省令第四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +898,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省令第四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +942,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,6 +964,73 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "医薬品のうち",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9_2",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十二年厚生省令第六十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2_2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "9_2",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十七年政令第九十一号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

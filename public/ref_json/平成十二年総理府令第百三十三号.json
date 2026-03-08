@@ -18,7 +18,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "建設仮勘定",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "為替予約取引",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,6 +62,7 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

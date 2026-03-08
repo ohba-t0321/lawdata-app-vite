@@ -18,7 +18,52 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "）第二条第一号に規定するものをいう",
+    "matchType": "clause"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十六年自治省令第十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十六年自治省令第十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "10"
+      }
+    },
+    "match": "火災信号（感知器等規格省令第二条第二十七号に規定するものをいう",
+    "matchType": "clause"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和五十六年自治省令第十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十六年自治省令第十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "11"
+      }
+    },
+    "match": "火災信号（感知器等規格省令第二条第二十七号に規定するものをいう",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -39,7 +84,8 @@
         "item": "12"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "）第二条第七号に規定するものをいう",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -60,7 +106,8 @@
         "item": "12"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +128,30 @@
         "item": "12"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年総務省令第四十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "14"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和五十六年自治省令第十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "13"
+      }
+    },
+    "match": "）第二条第七号に規定するものをいう",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -102,7 +172,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,7 +194,8 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +216,8 @@
         "item": "6"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "）第二条第一号に規定するものをいう",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -165,7 +238,8 @@
         "item": "6"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +260,8 @@
         "item": "6"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +282,8 @@
         "item": "6"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,6 +304,7 @@
         "item": "9"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "火災信号（感知器等規格省令第二条第二十七号に規定するものをいう",
+    "matchType": "clause"
   }
 ]

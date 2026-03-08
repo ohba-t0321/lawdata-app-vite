@@ -4,6 +4,50 @@
       "lawNum": "平成二十年農林水産省令第十号",
       "lawArticle": {
         "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年農林水産省令第四十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "66",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十七年農林水産省令第二十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年農林水産省令第四十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "66",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年農林水産省令第十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
         "article": "1",
         "paragraph": "1",
         "item": "2"
@@ -18,7 +62,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +106,8 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "補償契約",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,6 +128,7 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "補償契約",
+    "matchType": "definition_term"
   }
 ]

@@ -18,7 +18,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年内閣府令第四十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "15",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第百七十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "使用人",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,6 +62,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "特例旧特定目的会社",
+    "matchType": "definition_term"
   }
 ]

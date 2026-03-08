@@ -1,6 +1,50 @@
 [
   {
     "ref": {
+      "lawNum": "平成二十三年総務省・経済産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十年政令第三百三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年総務省令第百二十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十年政令第三百三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
       "lawNum": "昭和三十五年文部省令第十一号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +62,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "基幹統計",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "基幹統計",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "基幹統計",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,6 +128,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "基幹統計",
+    "matchType": "definition_term"
   }
 ]

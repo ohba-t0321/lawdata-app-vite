@@ -4,6 +4,28 @@
       "lawNum": "昭和四十七年政令第百五十一号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "62",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "59",
         "paragraph": "1",
         "item": "0"
@@ -18,7 +40,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "整備組合",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "62",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和四十七年政令第百五十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "59",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和四十七年政令第百五十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "75",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +106,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "沖縄漁船保険組合",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,6 +128,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

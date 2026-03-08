@@ -18,6 +18,29 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "生産条件不利補正対象農産物",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年農林水産省令第五十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年政令第二百二十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "収入減少影響緩和対象農産物",
+    "matchType": "definition_term"
   }
 ]

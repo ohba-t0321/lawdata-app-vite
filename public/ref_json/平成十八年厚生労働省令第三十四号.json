@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "介護老人福祉施設",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "108",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型特定施設入居者生活介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +150,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型特定施設",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -102,7 +172,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型特定施設入居者生活介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -123,7 +194,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "サテライト型特定施設",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -144,7 +216,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -165,7 +238,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -186,7 +260,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +282,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +304,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型介護老人福祉施設",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -249,7 +326,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -270,7 +414,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "サテライト型居住施設",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -291,7 +436,184 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "143_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "143_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "143_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "143_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "151",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "151",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "151",
+        "paragraph": "2",
+        "item": "3"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "152",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -312,7 +634,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -333,7 +656,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "152",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "131_8",
+        "paragraph": "1",
+        "item": "14"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "152",
+        "paragraph": "6",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -354,7 +722,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "155",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "155",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "155",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -375,7 +810,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -396,7 +832,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "ユニット型指定地域密着型介護老人福祉施設",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "160",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "160",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "160",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -417,7 +920,162 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -438,7 +1096,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -459,7 +1118,118 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "10",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "11",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "169",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -480,7 +1250,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定看護小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -501,7 +1272,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定看護小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -522,7 +1294,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定看護小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -543,7 +1316,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定看護小規模多機能型居宅介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -564,7 +1338,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -585,7 +1360,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -606,7 +1382,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -627,7 +1404,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定看護小規模多機能型居宅介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -648,7 +1426,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "看護小規模多機能型居宅介護従業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -669,7 +1448,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定看護小規模多機能型居宅介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -690,7 +1470,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -711,7 +1492,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定複合型サービス事業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "5",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "171",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "match": "指定複合型サービス事業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十四年厚生労働省令第十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "171",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第百七十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "93_4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "171",
+        "paragraph": "8",
+        "item": "0"
+      }
+    },
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -732,7 +1580,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -753,7 +1602,206 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "老人デイサービスセンター",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "18",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -774,7 +1822,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -795,7 +1844,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -816,7 +1866,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -837,7 +1888,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -858,7 +1910,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -879,7 +1932,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -900,7 +1954,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -921,7 +1976,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -942,7 +1998,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -963,7 +2020,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -984,7 +2042,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1005,7 +2064,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1026,7 +2086,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1047,7 +2108,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1068,7 +2130,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1089,7 +2152,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1110,7 +2174,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1131,7 +2196,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1152,7 +2218,250 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "30",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年厚生労働省令第百七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "5",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37_3",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1173,7 +2482,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1194,7 +2504,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定定期巡回・随時対応型訪問介護看護",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十八号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3_31",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十七号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3_31",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3_31",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1215,7 +2592,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1236,7 +2614,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1257,7 +2636,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1278,7 +2658,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1299,7 +2680,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1320,7 +2702,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1341,7 +2724,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1362,7 +2746,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1383,7 +2768,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1404,7 +2790,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定定期巡回・随時対応型訪問介護看護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1425,7 +2812,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定定期巡回・随時対応型訪問介護看護事業者",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第三十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "60",
+        "paragraph": "4",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3_4",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "match": "指定定期巡回・随時対応型訪問介護看護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1446,7 +2856,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1467,7 +2878,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1488,7 +2900,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1509,7 +2922,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1530,7 +2944,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "単独型・併設型指定認知症対応型通所介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1551,7 +2966,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "人員に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1572,7 +2988,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "設備に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1593,7 +3010,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定認知症対応型共同生活介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1614,7 +3032,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "人員に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1635,7 +3054,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定認知症対応型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1656,7 +3076,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定定期巡回・随時対応型訪問介護看護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1677,7 +3098,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1698,7 +3120,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1719,7 +3142,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1740,7 +3164,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1761,7 +3186,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "56",
+        "paragraph": "14",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "63",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1782,7 +3230,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1803,7 +3252,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1824,7 +3274,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1845,7 +3296,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1866,7 +3318,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1887,7 +3340,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1908,7 +3362,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -1929,7 +3384,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "登録者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1950,7 +3406,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1971,7 +3428,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -1992,7 +3450,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2013,7 +3472,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定地域密着型通所介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2034,7 +3494,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2055,7 +3516,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2076,7 +3538,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2097,7 +3560,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2118,7 +3582,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "人員に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2139,7 +3604,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2160,7 +3626,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2181,7 +3648,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2202,7 +3670,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定小規模多機能型居宅介護",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2223,7 +3692,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "宿泊サービス",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2244,7 +3714,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "宿泊サービス",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十四年厚生労働省令第十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "54_4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "63",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第百七十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "93_4",
+        "paragraph": "1",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "63",
+        "paragraph": "7",
+        "item": "0"
+      }
+    },
+    "match": "指定小規模多機能型居宅介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2265,7 +3780,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "設備に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2286,7 +3802,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "居間及び食堂",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2307,7 +3824,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "居間及び食堂",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2328,7 +3846,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "居間及び食堂",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2349,7 +3868,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "個室",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2370,7 +3890,30 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "個室",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "3",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "73",
+        "paragraph": "0",
+        "item": "7"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2391,7 +3934,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2412,7 +3956,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2433,7 +3978,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2454,7 +4000,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十八年厚生労働省令第九十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "16",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "83",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "介護老人福祉施設",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十八年厚生労働省令第九十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37",
+        "paragraph": "1",
+        "item": "5"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "83",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "介護老人福祉施設",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2475,7 +4066,74 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "介護老人福祉施設",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成三十年厚生労働省令第五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "86_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十一年厚生省令第四十号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "86_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "86_2",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -2496,7 +4154,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定認知症対応型共同生活介護",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年厚生労働省令第三十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "8",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年厚生労働省令第三十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "90",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "指定認知症対応型共同生活介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2517,7 +4198,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定認知症対応型共同生活介護事業者",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2538,7 +4220,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "人員に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2559,7 +4242,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "指定認知症対応型共同生活介護事業所",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -2580,6 +4264,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "設備に関する基準を満たすことをもって",
+    "matchType": "definition_term"
   }
 ]

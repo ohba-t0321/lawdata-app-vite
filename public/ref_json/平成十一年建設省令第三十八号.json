@@ -1,6 +1,28 @@
 [
   {
     "ref": {
+      "lawNum": "平成十七年国土交通省令第六十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "1"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十一年建設省令第三十八号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "ＥＴＣシステム",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
       "lawNum": "昭和三十一年建設省令第十八号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "ＥＴＣシステム",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +62,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,6 +84,7 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

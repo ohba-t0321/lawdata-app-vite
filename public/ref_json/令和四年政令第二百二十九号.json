@@ -18,6 +18,29 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "申請に係る出願品種が認定基盤確立事業の成果に係るもの",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "令和四年農林水産省令第四十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "20",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "令和四年政令第二百二十九号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "申請に係る登録品種が認定基盤確立事業の成果に係るもの",
+    "matchType": "definition_term"
   }
 ]

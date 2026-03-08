@@ -1,6 +1,28 @@
 [
   {
     "ref": {
+      "lawNum": "平成二十四年経済産業省令第四十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3_6",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十二年経済産業省令第四十三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
       "lawNum": "平成七年通商産業省令第七十七号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +40,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "非化石証書",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +62,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "非化石証書",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +84,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "非化石証書",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,6 +106,7 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

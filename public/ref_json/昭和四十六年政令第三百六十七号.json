@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,6 +40,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "事業に要する経費に対する通常の国の交付金の額に",
+    "matchType": "definition_term"
   }
 ]

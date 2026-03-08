@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,6 +62,7 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "）の法第五条第十項の規定による公表の日（以下「当初計画公表日」という",
+    "matchType": "clause"
   }
 ]

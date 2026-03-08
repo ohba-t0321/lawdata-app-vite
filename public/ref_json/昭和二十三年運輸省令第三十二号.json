@@ -13,11 +13,34 @@
       "lawNum": "昭和二十三年運輸省令第三十二号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "27",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十年国土交通省令第六十七号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "昭和二十三年運輸省令第三十二号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "28",
         "paragraph": "1",
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

@@ -14,10 +14,55 @@
       "lawArticle": {
         "provision": "SupplProvision",
         "article": "9",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "match": "用途",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第四十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成八年政令第二百十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "9",
+        "paragraph": "1",
+        "item": "2"
+      }
+    },
+    "match": "漁獲物の塩蔵の用",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第四十五号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "7",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成八年政令第二百十六号",
+      "lawArticle": {
+        "provision": "SupplProvision",
+        "article": "9",
         "paragraph": "2",
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "化学製品",
+    "matchType": "definition_term"
   }
 ]

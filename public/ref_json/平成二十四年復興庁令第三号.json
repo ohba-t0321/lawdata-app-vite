@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "積立期間",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +62,8 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "積立金の総額",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +84,8 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "積立期間",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -102,7 +106,8 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "積立金の総額",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -123,7 +128,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +150,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "適切に実施していると認定したことを証する書面",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -165,7 +172,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "適切に実施していると認定したことを証する書面",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十三年財務省令第二十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "3_0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十四年復興庁令第三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "適切に実施していると認定したことを証する書面",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成二十三年財務省令第二十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "6_0",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成二十四年復興庁令第三号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "37",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "適切に実施していると認定したことを証する書面",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -186,7 +238,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -207,7 +260,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -228,7 +282,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -249,6 +304,7 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

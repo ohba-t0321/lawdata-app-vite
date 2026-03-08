@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "期間最後の事業年度の事業年度末の貸借対照表",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,6 +40,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]

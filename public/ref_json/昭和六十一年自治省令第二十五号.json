@@ -18,7 +18,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "）第二条第一号に規定するものをいう",
+    "matchType": "clause"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "2"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,6 +62,7 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "呼び径",
+    "matchType": "definition_term"
   }
 ]

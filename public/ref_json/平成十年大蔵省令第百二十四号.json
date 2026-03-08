@@ -1,6 +1,28 @@
 [
   {
     "ref": {
+      "lawNum": "令和三年内閣府令第三十五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "56",
+        "paragraph": "1",
+        "item": "7"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年大蔵省令第百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1_6",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "match": "元受生命保険契約等",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
       "lawNum": "平成八年大蔵省令第五号",
       "lawArticle": {
         "provision": "MainProvision",
@@ -18,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "元受生命保険契約等",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +62,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "元受生命保険契約等",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +84,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,7 +106,52 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "227_2",
+        "paragraph": "3",
+        "item": "12"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年大蔵省令第百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "234_0",
+        "paragraph": "1",
+        "item": "10"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年大蔵省令第百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50_5",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +172,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "227_2",
+        "paragraph": "3",
+        "item": "12"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年大蔵省令第百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50_5",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "元受生命保険契約等",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -123,6 +216,29 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年大蔵省令第五号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "234_0",
+        "paragraph": "1",
+        "item": "10"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十年大蔵省令第百二十四号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "50_5",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "元受生命保険契約等",
+    "matchType": "definition_term"
   }
 ]

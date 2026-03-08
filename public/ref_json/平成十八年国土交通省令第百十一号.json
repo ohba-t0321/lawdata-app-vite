@@ -4,6 +4,50 @@
       "lawNum": "平成十八年国土交通省令第百十号",
       "lawArticle": {
         "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年国土交通省令第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "11"
+      }
+    },
+    "match": "鉄道車両",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年国土交通省令第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "13"
+      }
+    },
+    "match": "乗合バス車両",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
         "article": "26",
         "paragraph": "1",
         "item": "0"
@@ -18,7 +62,52 @@
         "item": "14"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "福祉タクシー車両",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "4"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年国土交通省令第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "15"
+      }
+    },
+    "match": "船舶",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "26",
+        "paragraph": "1",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年国土交通省令第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "2",
+        "paragraph": "1",
+        "item": "16"
+      }
+    },
+    "match": "航空機",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +128,8 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "車椅子スペース",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +150,30 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "移動等円滑化された経路",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成十八年国土交通省令第百十号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "1",
+        "item": "3"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十八年国土交通省令第百十一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "3",
+        "item": "0"
+      }
+    },
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -81,6 +194,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "基準適合客席",
+    "matchType": "definition_term"
   }
 ]

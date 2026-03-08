@@ -18,6 +18,29 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "産業標準",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "昭和二十四年総理府・文部省・厚生省・農林省・通商産業省・運輸省・郵政省・電気通信省・労働省・建設省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "2",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成十二年政令第二百九十六号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "1",
+        "paragraph": "0",
+        "item": "4"
+      }
+    },
+    "match": "ものを除く",
+    "matchType": "definition_term"
   }
 ]

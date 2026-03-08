@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,6 +62,7 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "製造管理及び品質管理に係る業務の責任者",
+    "matchType": "definition_term"
   }
 ]

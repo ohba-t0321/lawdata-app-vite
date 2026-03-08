@@ -18,7 +18,8 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -60,7 +62,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "呼び径",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +84,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "呼び径",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -102,7 +106,8 @@
         "item": "3"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "保形ホース",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -123,7 +128,8 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -144,7 +150,8 @@
         "item": "6"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "使用圧",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -165,6 +172,7 @@
         "item": "8"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "ジャケット",
+    "matchType": "definition_term"
   }
 ]

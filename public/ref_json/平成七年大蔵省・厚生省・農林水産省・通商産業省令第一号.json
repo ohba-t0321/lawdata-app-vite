@@ -18,7 +18,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "0"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "容器包装の区分",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,7 +62,74 @@
         "item": "1"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "分別基準適合物",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成七年大蔵省・厚生省・農林水産省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "2"
+      }
+    },
+    "match": "分別基準適合物",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成七年大蔵省・厚生省・農林水産省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "3"
+      }
+    },
+    "match": "分別基準適合物",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成七年大蔵省・厚生省・農林水産省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "4"
+      }
+    },
+    "match": "分別基準適合物",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -81,7 +150,8 @@
         "item": "4"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -102,7 +172,8 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   },
   {
     "ref": {
@@ -123,6 +194,51 @@
         "item": "5"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成七年大蔵省・厚生省・農林水産省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "5"
+      }
+    },
+    "match": "分別基準適合物",
+    "matchType": "definition_term"
+  },
+  {
+    "ref": {
+      "lawNum": "平成八年厚生省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "0",
+        "paragraph": "0",
+        "item": "0"
+      }
+    },
+    "referred": {
+      "lawNum": "平成七年大蔵省・厚生省・農林水産省・通商産業省令第一号",
+      "lawArticle": {
+        "provision": "MainProvision",
+        "article": "4",
+        "paragraph": "0",
+        "item": "6"
+      }
+    },
+    "match": "分別基準適合物",
+    "matchType": "definition_term"
   }
 ]

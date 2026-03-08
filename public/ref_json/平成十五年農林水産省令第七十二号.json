@@ -18,7 +18,8 @@
         "item": "11"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "種別",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -39,7 +40,8 @@
         "item": "11"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "種別",
+    "matchType": "definition_term"
   },
   {
     "ref": {
@@ -60,6 +62,7 @@
         "item": "8"
       }
     },
-    "match": "★引用個所不明★"
+    "match": "★引用個所不明★",
+    "matchType": "locator_exact"
   }
 ]
