@@ -1,72 +1,139 @@
-import React,{useState, useContext, useEffect, useMemo, useCallback} from 'react';
+import React, { useState, useContext, useEffect, useMemo, useCallback } from 'react';
 import './Reference.css';
 import { LawDataContext, ReferenceContext, renderVNodes } from '../LawDataContext';
 import type { VNode, RefArticle } from '../LawDataContext';
 import { useLawDataWorker } from '../hooks/useLawDataWorker';
+import { rankByLawTitleSimilarity } from '../utils/referenceSimilarity';
+
 function convertToArticleFormat(input: string): string {
-    // アンダースコアで分割して配列にする
-    if (input){
+    if (input) {
         const parts = input.split('_');
-        // 最初の部分を「第◯条」に変換
         let result = `第${parts[0]}条`;
-        // 残りの部分があれば「の◯」を追加
         for (let i = 1; i < parts.length; i++) {
             result += `の${parts[i]}`;
         }
         return result;
-    } else {
-        return '';
     }
+    return '';
 }
 
-export const Reference:React.FC = () => {
-    const [itemIndex,setItemIndex] = useState(0);
-    const [refArticle,setRefArticle] = useState<VNode | VNode[] | string | null>(null);
-    const [isOpen,setIsOpen] = useState(false);
-    const [refItm,setRefItm] = useState<RefArticle | null>(null);
-    const [refLawNum,setRefLawNum] = useState<string>('');  
-    const [refArticleData,setRefArticleData] = useState<React.ReactNode>(null);
+function formatRefLocation(item: RefArticle | null): string {
+    if (!item) {
+        return '';
+    }
+
+    const provision = item.provision === 'SupplProvision'
+        ? '附則'
+        : (item.provision === 'MainProvision' ? '' : `（${item.provision}）`);
+    const article = item.article !== null && item.article !== undefined
+        ? convertToArticleFormat(String(item.article))
+        : '';
+    const paragraph = item.paragraph && item.paragraph !== '0' ? `第${item.paragraph}項` : '';
+    const subItem = item.item && item.item !== '0' ? `第${item.item}号` : '';
+
+    return `${provision}${article}${paragraph}${subItem}`;
+}
+
+export const Reference: React.FC = () => {
+    const [itemIndex, setItemIndex] = useState<number | null>(null);
+    const [refArticle, setRefArticle] = useState<VNode | VNode[] | string | null>(null);
+    const [isOpen, setIsOpen] = useState(false);
+    const [refLawNum, setRefLawNum] = useState<string>('');
+    const [refArticleData, setRefArticleData] = useState<React.ReactNode>(null);
+
     const { lawData } = useContext(LawDataContext);
     const lawTitleMap = useMemo(
         () => new Map(lawData?.map((law) => [law.law_info.law_num, law.current_revision_info.law_title]) ?? []),
         [lawData],
     );
-    const { clickedRefs,setClickedRefs,refArticleLoaded,setRefArticleLoaded } = useContext(ReferenceContext);
+    const { clickedRefs, clickedRefSource, setClickedRefs, refArticleLoaded, setRefArticleLoaded } = useContext(ReferenceContext);
     const { fetchRefData } = useLawDataWorker();
-    const lenRef:number = clickedRefs.length;
+    const sourceLawTitle = useMemo(
+        () => (clickedRefSource?.lawNum ? (lawTitleMap.get(clickedRefSource.lawNum) ?? clickedRefSource.lawNum) : ''),
+        [clickedRefSource, lawTitleMap],
+    );
 
-    const RefDataLoad = useCallback(async (refItm: RefArticle)=>{
-        try {
-            fetchRefData<VNode | VNode[] | string | null>(refItm, (data) => {
-                setRefArticle(data);
-            });
-        } catch (err) {
-            if (err instanceof Error) {
-                console.log(`キャッシュからの法令データ取得エラー：${err.message}`);
-            } else {
-                console.log('キャッシュからの法令データ取得エラー：', err);
+    const refLabel = useCallback((item: RefArticle) => {
+        const title = lawTitleMap.get(item.lawNum) ?? item.lawNum;
+        return `${title} ${formatRefLocation(item)}`.trim();
+    }, [lawTitleMap]);
+
+    const rankedRefs = useMemo(() => {
+        const uniqueRefs = clickedRefs.reduce<Array<{ item: RefArticle; originalIndex: number }>>((items, item, index) => {
+            const key = `${item.lawNum}-${item.provision}-${item.article ?? ''}-${item.paragraph ?? ''}-${item.item ?? ''}`;
+            if (items.some((entry) => (
+                `${entry.item.lawNum}-${entry.item.provision}-${entry.item.article ?? ''}-${entry.item.paragraph ?? ''}-${entry.item.item ?? ''}`
+                === key
+            ))) {
+                return items;
             }
-        }
-    }, [fetchRefData])
+            items.push({ item, originalIndex: index });
+            return items;
+        }, []);
 
-    useEffect(()=>{
-        setIsOpen(lenRef>0?true:false);
-        setItemIndex(0);
-    },[lenRef])
+        const ranked = rankByLawTitleSimilarity(
+            sourceLawTitle,
+            uniqueRefs,
+            ({ item }) => lawTitleMap.get(item.lawNum) ?? item.lawNum,
+        );
 
-    useEffect(()=>{
-        setRefArticleLoaded(false);
+        return ranked
+            .sort((a, b) => {
+                if (b.score !== a.score) {
+                    return b.score - a.score;
+                }
+                return a.item.originalIndex - b.item.originalIndex;
+            })
+            .map(({ item }) => item.item);
+    }, [clickedRefs, lawTitleMap, sourceLawTitle]);
+
+    const lenRef = rankedRefs.length;
+    const refItm = itemIndex === null ? null : (rankedRefs[itemIndex] ?? null);
+    const showListView = lenRef > 1 && itemIndex === null;
+    const showDetailView = itemIndex !== null;
+
+    const loadRefData = useCallback((target: RefArticle) => {
+        fetchRefData<VNode | VNode[] | string | null>(
+            target,
+            (data) => {
+                setRefArticle(data);
+            },
+            (error) => {
+                setRefArticle(error || '参照条文の取得に失敗しました。');
+            },
+        );
+    }, [fetchRefData]);
+
+    useEffect(() => {
+        setIsOpen(rankedRefs.length > 0);
+        setItemIndex(rankedRefs.length === 1 ? 0 : null);
+        setRefArticle(null);
         setRefArticleData(null);
-        setRefItm(clickedRefs[itemIndex] ?? null);
-    },[clickedRefs,itemIndex, setRefArticleLoaded])
+        setRefLawNum('');
+        setRefArticleLoaded(false);
+    }, [clickedRefs, rankedRefs.length, setRefArticleLoaded]);
 
-    useEffect(()=>{
-        if (refItm?.lawNum) {
-            RefDataLoad(refItm);
+    useEffect(() => {
+        setRefArticleLoaded(false);
+        setRefArticle(null);
+        setRefArticleData(null);
+        if (!refItm?.lawNum) {
+            setRefLawNum('');
+            return;
         }
-    },[RefDataLoad, refItm])
+        loadRefData(refItm);
+    }, [loadRefData, refItm, setRefArticleLoaded]);
 
-    useEffect(()=>{
+    useEffect(() => {
+        if (!refItm?.lawNum) {
+            setRefLawNum('');
+            setRefArticleData(null);
+            setRefArticleLoaded(false);
+            return;
+        }
+        if (refArticle === null) {
+            return;
+        }
         if (typeof refArticle === 'string') {
             setRefArticleData(refArticle);
         } else if (refArticle) {
@@ -74,35 +141,82 @@ export const Reference:React.FC = () => {
         } else {
             setRefArticleData(null);
         }
-        setRefLawNum(lawTitleMap.get(refItm?.lawNum) ?? refItm?.lawNum)
+        setRefLawNum(lawTitleMap.get(refItm.lawNum) ?? refItm.lawNum);
         setRefArticleLoaded(true);
-    },[lawTitleMap, refArticle, refItm?.lawNum, setRefArticleLoaded])
+    }, [lawTitleMap, refArticle, refItm, setRefArticleLoaded]);
 
     return (
-        <div className={`reference${isOpen?' active':''}`}> 
-            <button type="submit" 
-                    className="btn-secondary btn-sm" 
-                    id="closeButton" 
-                    onClick={()=>{
+        <div className={`reference${isOpen ? ' active' : ''}`}>
+            <div className="reference-header">
+                <div className="reference-title">
+                    {showListView ? '参照先一覧' : '参照条文'}
+                </div>
+                <button
+                    type="button"
+                    className="btn-secondary btn-sm"
+                    id="closeButton"
+                    onClick={() => {
                         setIsOpen(false);
                         setClickedRefs([]);
-                        setItemIndex(0);
+                        setItemIndex(null);
                         setRefArticleLoaded(false);
                     }}
-            >
-                閉じる
-            </button>
-            <span className="ref-buttons" style={{ display: (lenRef <= 1) ? 'none' : 'block' }}>
-                <span className="ref-item-index">{`${itemIndex+1} / ${lenRef}`}</span>
-                <button id="ref-previous" onClick={()=>{setRefArticleLoaded(false);setItemIndex(itemIndex<=0? lenRef-1 : itemIndex-1);}}>◀</button>
-                <button id="ref-next" onClick={()=>{setRefArticleLoaded(false);setItemIndex((itemIndex>=lenRef-1)? 0 : itemIndex+1);}}>▶</button>
-            </span>
-            <div className="article-num" id="ref-article-num">
-                {!refArticleLoaded&&'読み込み中...'}
-                {refArticleLoaded&&(refLawNum + ' ' + (refItm?.provision==='SupplProvision'?'附則':(refItm?.provision==='MainProvision'?'':'（'+refItm?.provision+'）')) + (typeof(refItm?.article)==='string'?convertToArticleFormat(refItm?.article as string):''))}
+                >
+                    閉じる
+                </button>
             </div>
-            <div className="law-content" id="ref-law-content">{refArticleLoaded&&refArticleData}</div> 
+            {showListView && (
+                <div className="ref-list-wrap">
+                    <div className="ref-list-title">参照先一覧（類似度順）</div>
+                    {sourceLawTitle && (
+                        <div className="ref-list-description">
+                            {sourceLawTitle} に近い法令から表示しています。
+                        </div>
+                    )}
+                    <ul className="ref-list">
+                        {rankedRefs.map((item, index) => (
+                            <li key={`${item.lawNum}-${item.provision}-${item.article}-${item.paragraph}-${item.item}-${index}`}>
+                                <button
+                                    type="button"
+                                    className="ref-list-button"
+                                    onClick={() => {
+                                        setRefArticleLoaded(false);
+                                        setItemIndex(index);
+                                    }}
+                                >
+                                    {refLabel(item)}
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+            {showDetailView && lenRef > 1 && (
+                <div className="ref-detail-toolbar">
+                    <button
+                        type="button"
+                        className="ref-back-button"
+                        onClick={() => {
+                            setItemIndex(null);
+                            setRefArticleLoaded(false);
+                        }}
+                    >
+                        一覧に戻る
+                    </button>
+                    <span className="ref-item-index">
+                        {itemIndex + 1} / {lenRef}
+                    </span>
+                </div>
+            )}
+            <div className="article-num" id="ref-article-num">
+                {showListView && '参照先一覧から表示する条文を選択してください。'}
+                {showDetailView && !refArticleLoaded && '読み込み中...'}
+                {showDetailView && refArticleLoaded
+                    && `${refLawNum} ${formatRefLocation(refItm)}`.trim()}
+            </div>
+            <div className="law-content" id="ref-law-content">
+                {showDetailView && refArticleLoaded && refArticleData}
+            </div>
         </div>
-    )
-}
-
+    );
+};

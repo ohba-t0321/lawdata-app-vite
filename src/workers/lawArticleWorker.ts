@@ -6,9 +6,39 @@ import { buildVirtualTree,renderVirtualTree } from './lawDataWorker';
 import { extractLawRevisionMarker } from './cacheRevision';
 
 const BASE = import.meta.env.BASE_URL;
+const LOCAL_REFDATA_BASE_URL = `${BASE}ref_json`.replace(/\/+$/, '');
+const EXTERNAL_REFDATA_BASE_URL = import.meta.env.VITE_REFDATA_BASE_URL?.trim()?.replace(/\/+$/, '') ?? '';
 const VNODE_CHUNK_SIZE = 200;
 
-function isJsonNode(node: JsonNode | string | undefined | null): node is JsonNode {
+function buildRefDataUrls(lawId: string) {
+	const encodedLawId = encodeURIComponent(lawId);
+	const urls = [`${LOCAL_REFDATA_BASE_URL}/${encodedLawId}.json`];
+	if (EXTERNAL_REFDATA_BASE_URL && EXTERNAL_REFDATA_BASE_URL !== LOCAL_REFDATA_BASE_URL) {
+		urls.push(`${EXTERNAL_REFDATA_BASE_URL}/${encodedLawId}.json`);
+	}
+	return urls;
+}
+
+async function fetchRefDataJson(lawId: string): Promise<RefData[]> {
+	let lastError: unknown = null;
+	for (const url of buildRefDataUrls(lawId)) {
+		try {
+			const res = await fetch(url);
+			if (res.ok) {
+				return await res.json() as RefData[];
+			}
+			lastError = new Error(`HTTP ${res.status}: ${url}`);
+		} catch (error) {
+			lastError = error;
+		}
+	}
+	if (lastError) {
+		console.error("法令参照JSONファイルを取得中にエラーが発生しました:", lastError);
+	}
+	return [];
+}
+
+function isJsonNode(node: unknown): node is JsonNode {
 	return typeof node === 'object' && node !== null && 'tag' in node && 'children' in node;
 }
 
@@ -131,15 +161,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 			return;
 		}
 		// ステップ2: 参照データの取得  
-		let refData: RefData[] = [];
-		try {
-			const refRes = await fetch(`${BASE}ref_json/${lawId}.json`);
-			if (refRes.ok) {
-				refData = await refRes.json();
-			}
-		} catch (error) {
-			console.error("法令参照JSONファイルを取得中にエラーが発生しました:", error);
-		}
+		const refData = await fetchRefDataJson(lawId);
 		const refLawTitle = await getRefLaw(lawArticle);
 		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_PROGRESS',
@@ -228,8 +250,8 @@ async function getRefLaw(article: LawArticle) {
   let lawArticleList: string[] = [];
   const cached = await getLawListFromCache();
   const lawData: LawData[] = (cached as LawListCache).data;
-  if (article.law_full_text) {
-    lawArticleList = searchLawData(article.law_full_text as JsonNode);
+  if (isJsonNode(article.law_full_text)) {
+    lawArticleList = searchLawData(article.law_full_text);
   }
   const refLaw = new Set<string>();
   const regex = /(?<=（)((?:令和|平成|昭和|大正|明治)[元一二三四五六七八九十]+年(?:法律|政令|(?:[^）]?省令)|内閣府令)第[一二三四五六七八九十百千万]+号)(?:。以下「([^）]*?)」という。)?(?=）)/g;
@@ -337,8 +359,8 @@ function findTocNode(node: JsonNode | null | undefined): JsonNode | null {
 
 function buildTocItems(lawArticle: LawArticle): TocItem[] {
   const tocItems: TocItem[] = [];
-  if (!lawArticle.law_full_text) return tocItems;
-  const tocNode = findTocNode(lawArticle.law_full_text as JsonNode);
+  if (!isJsonNode(lawArticle.law_full_text)) return tocItems;
+  const tocNode = findTocNode(lawArticle.law_full_text);
   if (!tocNode?.children) return tocItems;
 
   tocNode.children.forEach((child) => {

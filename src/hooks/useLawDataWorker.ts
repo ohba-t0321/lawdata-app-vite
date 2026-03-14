@@ -61,8 +61,9 @@ export function useLawDataWorker() {
   
   const fetchRefData = useCallback(  
     <T = unknown>(refItm: RefArticle, callback: (data: T) => void, onError?: WorkerErrorHandler) => {  
-      if (!refWorkerRef.current) refWorkerRef.current = new RefDataWorker();
-      const worker = refWorkerRef.current;
+      refWorkerRef.current?.terminate();
+      const worker = new RefDataWorker();
+      refWorkerRef.current = worker;
       worker.onmessage = handleWorkerMessage((data) => callback(data as T), onError);
       postMessage(worker, { type: 'FETCH_REF_DATA', payload: { refItm } });  
     },  

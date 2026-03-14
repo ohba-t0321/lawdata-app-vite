@@ -6,7 +6,7 @@ import { renderVirtualTree } from './lawDataWorker';
 import { extractLawRevisionMarker } from './cacheRevision';
 import type { JsonNode } from './lawDataWorker';
 
-function isJsonNode(node: JsonNode | string | undefined | null): node is JsonNode {
+function isJsonNode(node: unknown): node is JsonNode {
   return typeof node === 'object' && node !== null && 'tag' in node && 'children' in node;
 }
 
@@ -31,8 +31,8 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
       saveLawToCache(lawId, lawArticle, [], extractLawRevisionMarker(lawArticle));
     }
     let refArticle: VNode[] | null;
-    if (lawArticle.law_full_text) {
-      refArticle = refArticleData(refItm, lawArticle.law_full_text as JsonNode);
+    if (isJsonNode(lawArticle.law_full_text)) {
+      refArticle = refArticleData(refItm, lawArticle.law_full_text);
     } else {
       refArticle = null;
     }
@@ -82,7 +82,6 @@ function refArticleData(refItm: RefArticle, refArticle: JsonNode): VNode[] | nul
         }
       }
     }
-  } else {
-    return null;
   }
+  return null;
 }

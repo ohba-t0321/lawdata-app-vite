@@ -38,7 +38,7 @@ export const LawPane: React.FC<LawPaneProps> = ({
   }, [selectedLaw]);
 
   // 2. 法令番号部分の条件を明確化
-  const lawInfo = lawTitleMap.get(selectedLaw);
+  const lawInfo = selectedLaw ? lawTitleMap.get(selectedLaw) : undefined;
   const title = isLoaded && lawInfo ? lawInfo : ( !isLoaded && isSelected ? "データ取得中..." : "" ); // データ取得中
   const lawNum = isLoaded && selectedLaw ? selectedLaw : null;
   
@@ -46,7 +46,7 @@ export const LawPane: React.FC<LawPaneProps> = ({
   const paneStyle = { width: `${width}%` };
 
   return (
-    <div className={`pane ${pane}`} style={paneStyle}>
+    <div className={`pane ${pane}`} style={paneStyle} data-pane={pane}>
       <div className={`law-header ${pane}`}>
         {/* 共通ロジック：h3 */}
         <h3 className={`law-title ${pane}`}>

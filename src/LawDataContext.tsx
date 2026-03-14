@@ -80,11 +80,19 @@ interface LawArticleContextType {
 export interface RefArticle {
   lawNum : string;
   provision: string;
-  article: string|number|null
+  article: string|number|null;
+  paragraph?: string | null;
+  item?: string | null;
+}
+
+interface ClickedRefSource {
+  pane: Pane;
+  lawNum: string;
 }
 
 interface ReferenceContextType {
   clickedRefs: RefArticle[];
+  clickedRefSource: ClickedRefSource | null;
   setClickedRefs: (refLaws:RefArticle[]) => void;
   refArticleLoaded: boolean;
   setRefArticleLoaded: (loaded:boolean) => void;
@@ -213,6 +221,7 @@ export const LawArticleContext = createContext<LawArticleContextType>({
 
 export const ReferenceContext = createContext<ReferenceContextType>({
   clickedRefs: [],
+  clickedRefSource: null,
   setClickedRefs: () => {},
   refArticleLoaded: false,
   setRefArticleLoaded: () => {},
@@ -432,16 +441,38 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
+  const { selectedLaws } = useContext(LawArticleContext);
   const [clickedRefs, setClickedRefs] = useState<RefArticle[]>([]);
+  const [clickedRefSource, setClickedRefSource] = useState<ClickedRefSource | null>(null);
   const [refArticleLoaded,setRefArticleLoaded] = useState(false);
 
   const refLinkClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    let el: HTMLElement | null = e.target as HTMLElement;
+    const rawTarget = e.target;
+    const targetElement = rawTarget instanceof Element
+      ? rawTarget
+      : (rawTarget instanceof Node ? rawTarget.parentElement : null);
+
+    if (!targetElement) return;
+
+    const paneElement = targetElement.closest('.pane');
+    const pane = paneElement?.classList.contains('right')
+      ? 'right'
+      : (paneElement?.classList.contains('left') ? 'left' : null);
+
+    let el: HTMLElement | null = targetElement instanceof HTMLElement
+      ? targetElement
+      : targetElement.parentElement;
     const refItems: RefArticle[] = [];
     // クリックされた要素から親方向にさかのぼってすべて拾う
     while (el) {
       if (el.tagName === "SPAN" && el.classList.contains("refLink")) {
-        const refItem = {lawNum: el.dataset.lawNum || '', provision: el.dataset.provision || '', article: el.dataset.article || null};
+        const refItem = {
+          lawNum: el.dataset.lawNum || '',
+          provision: el.dataset.provision || '',
+          article: el.dataset.article || null,
+          paragraph: el.dataset.paragraph || null,
+          item: el.dataset.item || null,
+        };
         if (refItem) {
           refItems.push(refItem);
         }
@@ -450,11 +481,16 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
     }
     if (refItems.length > 0) {
       setRefArticleLoaded(false);
+      setClickedRefSource(
+        pane && selectedLaws[pane]
+          ? { pane, lawNum: selectedLaws[pane] }
+          : null,
+      );
       setClickedRefs(refItems); // 状態に保存して下部に表示
     }
   }
   return (
-    <ReferenceContext.Provider value={{ clickedRefs, setClickedRefs, refArticleLoaded, setRefArticleLoaded, refLinkClick } }>
+    <ReferenceContext.Provider value={{ clickedRefs, clickedRefSource, setClickedRefs, refArticleLoaded, setRefArticleLoaded, refLinkClick } }>
       {children}
     </ReferenceContext.Provider>
   )

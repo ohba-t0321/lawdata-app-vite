@@ -35,15 +35,15 @@ const SearchForm: React.FC = () => {
     switch (searchType) {  
       case 'includes':  
         return lawData.filter(data =>   
-          data.current_revision_info.law_title.includes(searchKeyword)  
+          (data.current_revision_info.law_title ?? '').includes(searchKeyword)  
         );  
       case 'startsWith':  
         return lawData.filter(data =>   
-          data.current_revision_info.law_title.startsWith(searchKeyword)  
+          (data.current_revision_info.law_title ?? '').startsWith(searchKeyword)  
         );  
       case 'equal':  
         return lawData.filter(data =>   
-          data.current_revision_info.law_title === searchKeyword  
+          (data.current_revision_info.law_title ?? '') === searchKeyword  
         );
       default:
         return [];
@@ -112,7 +112,7 @@ const SearchForm: React.FC = () => {
     }));
     setIsArticleLoaded((prev) => ({
       ...prev,
-      [outputFrame]: lawNum === prev[outputFrame],
+      [outputFrame]: false,
     }));
     if ((outputFrame === 'left' && dividerPos < 50) || (outputFrame === 'right' && dividerPos > 50)) {
       setDividerPos(50);
@@ -216,7 +216,7 @@ const SearchForm: React.FC = () => {
                 <tbody>
                   {table.getRowModel().rows.map((row) => {
                     const lawNum = row.original.law_info.law_num;
-                    const lawTitle = row.original.current_revision_info.law_title;
+                    const lawTitle = row.original.current_revision_info.law_title ?? lawNum;
                     return (
                       <tr
                         key={lawNum + ':' + lawTitle}

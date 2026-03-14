@@ -25,7 +25,7 @@ const JumpForm = () => {
         return;
     }
     else {
-        let article : string | number | undefined = '';
+        let article : string | undefined = '';
         // 数字が入力された場合にはそのまま使う
         if (Number(jumpArticle)) {
             article = jumpArticle;
@@ -33,10 +33,19 @@ const JumpForm = () => {
             const regex = /第(\d+|[一二三四五六七八九十百千]+)条(の[\d一二三四五六七八九十百千]+)*/g
             const matches = Array.from(jumpArticle.matchAll(regex));
             if (matches[0]?.[1]) {
-                article = KanjiToNumber(matches[0][1]);
-                if (matches[0]?.[2]) {
+                const mainArticle = KanjiToNumber(matches[0][1]);
+                if (mainArticle !== undefined) {
+                    article = String(mainArticle);
+                }
+                if (article && matches[0]?.[2]) {
                     // 'の'ごとで区切る
-                    const subarticle = matches[0][2].split('の').map(KanjiToNumber).join('_');
+                    const subarticle = matches[0][2]
+                      .split('の')
+                      .map((part) => {
+                        const converted = KanjiToNumber(part);
+                        return converted === undefined ? '' : String(converted);
+                      })
+                      .join('_');
                     article += subarticle;
                 }
             }

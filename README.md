@@ -63,62 +63,18 @@ npm run preview
 npm run lint
 ```
 
-## Supabase ingest (upsert)
+## 外部 Storage の利用
 
-This project includes a batch script to precompute law payloads and upsert them into Supabase.
-
-1. Apply migration in Supabase:
-
-```bash
-node scripts/supabase/apply-migration.mjs
-```
-
-2. Set environment variables (PowerShell example):
-
-```powershell
-$env:SUPABASE_URL="https://YOUR_PROJECT_REF.supabase.co"
-$env:SUPABASE_SERVICE_ROLE_KEY="YOUR_SERVICE_ROLE_KEY"
-$env:LAWDATA_REF_DIR="public/ref_json"   # optional
-```
-
-3. Install dependencies (if needed):
+`ref_json` はローカルの `public/ref_json` を正本として参照し、必要に応じて外部 Storage / CDN をフォールバック先として使えます。
+`VITE_REFDATA_BASE_URL` を設定していても、アプリはまずローカルの `public/ref_json` を見に行き、見つからない場合のみ外部 URL を参照します。
 
 ```bash
-npm install
+VITE_REFDATA_BASE_URL=https://YOUR_PROJECT_REF.supabase.co/storage/v1/object/public/law-assets/ref_json
 ```
 
-4. Dry run:
-
-```bash
-node scripts/supabase/upsert-law-data.mjs --dry-run --limit 5
-```
-
-5. Execute diff-only upsert:
-
-```bash
-node scripts/supabase/upsert-law-data.mjs
-```
-
-6. Force full rebuild:
-
-```bash
-node scripts/supabase/upsert-law-data.mjs --all
-```
-
-7. Execute only specific law numbers:
-
-```bash
-node scripts/supabase/upsert-law-data.mjs --law-num "令和七年政令第三号,令和七年法律第七十五号"
-```
-
-What the script does:
-
-- Upserts `public.laws` from e-Gov law list.
-- Detects changed laws by `revision_marker` (unless `--all`).
-- Fetches each changed law body (`/law_data/:lawNum`).
-- Upserts `public.law_versions`.
-- Refreshes `public.law_references` for each changed law.
-- Records run status in `public.ingest_runs`.
+Storage-only の移行方針と、Supabase Database 系コードの整理方針は
+[docs/ref-json-storage-only-plan.md](/home/ohbat/Documents/VSCode/app/lawdata-app-vite/docs/ref-json-storage-only-plan.md)
+にまとめています。
 
 ## データ取得元
 
