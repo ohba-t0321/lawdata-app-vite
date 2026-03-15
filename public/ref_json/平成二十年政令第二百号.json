@@ -19,7 +19,8 @@
       }
     },
     "match": "承継資産",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.44182
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.381514
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.367265
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.33689
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.346136
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "自動車",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.314968
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.242666
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.093036
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.222153
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.194599
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.376035
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.204012
   },
   {
     "ref": {
@@ -173,6 +180,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.45967
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "特定輸入承認",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.430561
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.165086
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.594364
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.219142
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.219872
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.220515
   }
 ]

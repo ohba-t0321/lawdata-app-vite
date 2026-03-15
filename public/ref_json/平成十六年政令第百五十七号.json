@@ -19,7 +19,8 @@
       }
     },
     "match": "一般教職員",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.465111
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.552562
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "指定都市の設置する小学校等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.630117
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.529144
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.615474
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.559828
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.277529
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "都道府県及び市町村の設置する小学校等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.637441
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.354122
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.296293
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.510206
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.631804
   },
   {
     "ref": {
@@ -283,6 +295,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.247902
   }
 ]

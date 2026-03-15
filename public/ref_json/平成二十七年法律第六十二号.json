@@ -19,7 +19,8 @@
       }
     },
     "match": "矯正医官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.404464
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.223472
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.298946
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.306443
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.482774
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.21581
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.267311
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.306911
   }
 ]

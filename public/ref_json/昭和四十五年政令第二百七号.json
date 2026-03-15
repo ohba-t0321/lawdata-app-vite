@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.201435
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "無担保保険",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.455696
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.517331
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.084953
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.157442
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.459522
   }
 ]

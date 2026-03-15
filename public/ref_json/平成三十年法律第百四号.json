@@ -19,7 +19,8 @@
       }
     },
     "match": "成育医療等基本方針",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.415289
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.419936
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.104341
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.391983
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "設計評価事故",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.61621
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "設計評価事故",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.443493
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "安全機能",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.432871
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "安全上重要な施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.431183
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "多様性",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.42167
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.129854
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.486791
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.554165
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.609691
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.622916
   },
   {
     "ref": {
@@ -239,6 +249,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.634601
   }
 ]

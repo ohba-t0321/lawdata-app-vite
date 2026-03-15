@@ -19,7 +19,8 @@
       }
     },
     "match": "取得貸付債権",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.36979
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "発行金融機関",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.392326
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.550406
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.465267
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.480834
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.566337
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.277775
   }
 ]

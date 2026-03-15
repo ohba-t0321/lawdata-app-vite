@@ -19,7 +19,8 @@
       }
     },
     "match": "業務用生鮮食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.503839
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "消費期限",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.33358
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "消費期限",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.33358
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "機能性表示食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.504593
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "機能性表示食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.45837
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.369855
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "届出者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.411856
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.389951
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "栄養機能食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.464678
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "対象農産物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.517712
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.57618
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "業務用加工食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.462072
   },
   {
     "ref": {
@@ -283,7 +295,8 @@
       }
     },
     "match": "業務用加工食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.525485
   },
   {
     "ref": {
@@ -305,7 +318,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.508615
   },
   {
     "ref": {
@@ -327,7 +341,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.517936
   },
   {
     "ref": {
@@ -349,7 +364,8 @@
       }
     },
     "match": "賞味期限",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.372831
   },
   {
     "ref": {
@@ -371,7 +387,8 @@
       }
     },
     "match": "一般用加工食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.518623
   },
   {
     "ref": {
@@ -393,7 +410,8 @@
       }
     },
     "match": "一般用加工食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.55592
   },
   {
     "ref": {
@@ -415,7 +433,8 @@
       }
     },
     "match": "アレルゲン",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.569825
   },
   {
     "ref": {
@@ -437,7 +456,8 @@
       }
     },
     "match": "乳児用規格適用食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.508277
   },
   {
     "ref": {
@@ -459,7 +479,8 @@
       }
     },
     "match": "乳児用規格適用食品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.514287
   },
   {
     "ref": {
@@ -481,7 +502,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.318172
   },
   {
     "ref": {
@@ -503,7 +525,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.337217
   },
   {
     "ref": {
@@ -525,6 +548,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.311477
   }
 ]

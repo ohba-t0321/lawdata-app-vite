@@ -19,7 +19,8 @@
       }
     },
     "match": "大規模自然災害等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.352261
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.361624
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.454307
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "国土強",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.427275
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.187867
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.254622
   }
 ]

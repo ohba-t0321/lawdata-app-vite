@@ -19,7 +19,8 @@
       }
     },
     "match": "収容施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.419541
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "被収容者番号",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.267458
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "被収容者番号",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.274431
   }
 ]

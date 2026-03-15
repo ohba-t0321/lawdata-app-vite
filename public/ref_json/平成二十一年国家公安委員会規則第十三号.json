@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.176598
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "特異行方不明者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.186014
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "特異行方不明者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.17406
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "特異行方不明者等ＤＮＡ型記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.819352
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "特異行方不明者等ＤＮＡ型記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.538308
   }
 ]

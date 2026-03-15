@@ -19,7 +19,8 @@
       }
     },
     "match": "和解の仲介",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.678813
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.295364
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.334102
   }
 ]

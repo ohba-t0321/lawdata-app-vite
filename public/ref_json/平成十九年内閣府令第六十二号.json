@@ -19,7 +19,8 @@
       }
     },
     "match": "財務報告",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.509216
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "外国会社内部統制報告書",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.372701
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "外国会社内部統制報告書",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.342387
   }
 ]

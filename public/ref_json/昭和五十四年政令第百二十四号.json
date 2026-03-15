@@ -19,7 +19,8 @@
       }
     },
     "match": "資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.293295
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.31278
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.10742
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.311639
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.280095
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.127086
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.177796
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.427311
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.38473
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.383301
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.164442
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "都道府県貸付金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.527284
   },
   {
     "ref": {
@@ -283,7 +295,8 @@
       }
     },
     "match": "都道府県貸付金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.510339
   },
   {
     "ref": {
@@ -305,7 +318,8 @@
       }
     },
     "match": "都道府県貸付金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.508593
   },
   {
     "ref": {
@@ -327,6 +341,7 @@
       }
     },
     "match": "都道府県貸付金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.541417
   }
 ]

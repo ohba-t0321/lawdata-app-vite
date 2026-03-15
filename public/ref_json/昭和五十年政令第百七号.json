@@ -19,7 +19,8 @@
       }
     },
     "match": "動物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.32096
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "動物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.37603
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "動物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.324618
   }
 ]

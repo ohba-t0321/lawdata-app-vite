@@ -19,7 +19,8 @@
       }
     },
     "match": "ものに限る",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.326768
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "設備の区分等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.287689
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "再生可能エネルギー発電設備",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.300818
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "設備の区分等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.313493
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "設備の区分等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.311216
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "設備",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.331731
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.535091
   }
 ]

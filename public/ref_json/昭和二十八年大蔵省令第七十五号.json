@@ -19,7 +19,8 @@
       }
     },
     "match": "信用取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.545837
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.500443
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.489547
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.432846
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.373914
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.501146
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.450264
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "発行日取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.526341
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "受入保証金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.647751
   },
   {
     "ref": {
@@ -217,6 +226,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.651846
   }
 ]

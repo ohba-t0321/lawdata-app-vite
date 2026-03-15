@@ -3,9 +3,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 import time
+import unicodedata
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -19,6 +21,8 @@ LAW_TYPES = 'Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc'
 MANIFEST_FILE = '_meta.json'
 UNKNOWN_MATCH = '★引用個所不明★'
 NUM_CHARS = '〇零一二三四五六七八九十百千万元0-9'
+ARTICLE_SIMILARITY_WEIGHT = 0.75
+CONTEXT_SIMILARITY_WEIGHT = 0.25
 LAW_NUM_PATTERN = (
     r'(?:令和|平成|昭和|大正|明治)'
     r'[' + NUM_CHARS + r']+年'
@@ -185,6 +189,53 @@ def normalize_text_for_match(text: str) -> str:
     text = re.sub(r'\s+', '', text)
     text = re.sub(r'[「」『』（）()［］\[\]{}【】〈〉《》・,，。．\.\-ー―：:;；]', '', text)
     return text
+
+
+def normalize_text_for_similarity(text: str) -> str:
+    normalized = unicodedata.normalize('NFKC', str(text or '')).lower()
+    normalized = re.sub(r'\s+', '', normalized)
+    normalized = re.sub(r'[「」『』（）()［］\[\]{}【】〈〉《》・,，。．\.\-ー―：:;；/／]', '', normalized)
+    return normalized
+
+
+def tokenize_char_bigrams(text: str) -> List[str]:
+    normalized = normalize_text_for_similarity(text)
+    if not normalized:
+        return []
+    if len(normalized) == 1:
+        return [normalized]
+    return [
+        normalized[index:index + 2]
+        for index in range(len(normalized) - 1)
+    ]
+
+
+def build_term_frequency(tokens: Sequence[str]) -> Dict[str, int]:
+    term_frequency: Dict[str, int] = {}
+    for token in tokens:
+        term_frequency[token] = term_frequency.get(token, 0) + 1
+    return term_frequency
+
+
+def cosine_similarity(source_text: str, target_text: str) -> float:
+    source_tokens = tokenize_char_bigrams(source_text)
+    target_tokens = tokenize_char_bigrams(target_text)
+    if not source_tokens or not target_tokens:
+        return 0.0
+
+    source_tf = build_term_frequency(source_tokens)
+    target_tf = build_term_frequency(target_tokens)
+    dot = 0.0
+    for token, count in source_tf.items():
+        dot += count * target_tf.get(token, 0)
+
+    source_norm = math.sqrt(sum(count * count for count in source_tf.values()))
+    target_norm = math.sqrt(sum(count * count for count in target_tf.values()))
+    if source_norm == 0.0 or target_norm == 0.0:
+        return 0.0
+
+    score = dot / (source_norm * target_norm)
+    return max(0.0, min(1.0, score))
 
 
 def clean_term_candidate(term: str) -> Optional[str]:
@@ -507,6 +558,53 @@ def resolve_target_article(
         if article_num in lookup.main:
             return lookup.main[article_num]
     return None
+
+
+def resolve_article_text(
+    lookup: ArticleLookup,
+    provision_key: str,
+    article_num: str,
+) -> str:
+    if article_num == '0':
+        return ''
+    if provision_key == 'MainProvision':
+        entry = lookup.main.get(article_num)
+        if entry is not None:
+            return entry[1]
+    else:
+        suppl_entries = lookup.suppl.get(article_num) or []
+        for candidate_provision, text in suppl_entries:
+            if candidate_provision == provision_key:
+                return text
+        if provision_key == 'SupplProvision' and suppl_entries:
+            return suppl_entries[0][1]
+
+    entry = lookup.main.get(article_num)
+    if entry is not None:
+        return entry[1]
+    suppl_entries = lookup.suppl.get(article_num) or []
+    if suppl_entries:
+        return suppl_entries[0][1]
+    return ''
+
+
+def compute_similarity_score(
+    source_article_text: str,
+    source_context_text: str,
+    target_article_text: str,
+) -> float:
+    article_base = source_article_text or source_context_text
+    context_base = source_context_text or source_article_text
+    if not article_base or not target_article_text:
+        return 0.0
+
+    article_similarity = cosine_similarity(article_base, target_article_text)
+    context_similarity = cosine_similarity(context_base, target_article_text)
+    score = (
+        ARTICLE_SIMILARITY_WEIGHT * article_similarity
+        + CONTEXT_SIMILARITY_WEIGHT * context_similarity
+    )
+    return round(max(0.0, min(1.0, score)), 6)
 
 
 def extract_clauses(text: str) -> List[str]:
@@ -1049,6 +1147,7 @@ def build_ref_data_for_law(
     law_full_text = source_article.get('law_full_text')
     if not is_node(law_full_text):
         return []
+    source_lookup = build_article_lookup(source_article)
 
     segments: List[Segment] = []
     collect_text_segments(law_full_text, TraverseContext(), segments)
@@ -1076,11 +1175,20 @@ def build_ref_data_for_law(
     rows: List[Dict[str, Any]] = []
     seen: Set[Tuple[str, str, str, str, str, str, str, str, str, str, str]] = set()
     recent_aliases: Dict[str, str] = {}
+    source_article_text_cache: Dict[Tuple[str, str], str] = {}
 
     for seg in segments:
         text = seg.text
         if not text:
             continue
+        source_cache_key = (seg.provision_key, seg.article)
+        if source_cache_key not in source_article_text_cache:
+            source_article_text_cache[source_cache_key] = resolve_article_text(
+                source_lookup,
+                provision_key=seg.provision_key,
+                article_num=seg.article,
+            )
+        source_article_text = source_article_text_cache[source_cache_key]
         explicit_mentions = find_segment_explicit_mentions(
             text=text,
             candidate_law_nums=candidate_law_nums,
@@ -1137,6 +1245,11 @@ def build_ref_data_for_law(
                     continue
                 target_provision, target_text = target_resolved
                 match_text, match_type = find_best_match(text, target_text)
+                similarity_score = compute_similarity_score(
+                    source_article_text=source_article_text,
+                    source_context_text=text,
+                    target_article_text=target_text,
+                )
                 matched_locator = True
 
                 dedupe_key = (
@@ -1178,6 +1291,7 @@ def build_ref_data_for_law(
                         },
                         'match': match_text,
                         'matchType': match_type if match_type != 'unknown' else 'locator_exact',
+                        'similarityScore': similarity_score,
                     }
                 )
 
@@ -1193,6 +1307,11 @@ def build_ref_data_for_law(
 
             target_text = definition_entry.text
             match_text, match_type = find_best_match(text, target_text)
+            similarity_score = compute_similarity_score(
+                source_article_text=source_article_text,
+                source_context_text=text,
+                target_article_text=target_text,
+            )
             dedupe_key = (
                 source_law_num,
                 seg.provision_base,
@@ -1231,6 +1350,7 @@ def build_ref_data_for_law(
                     },
                     'match': match_text,
                     'matchType': match_type if match_type != 'unknown' else 'definition_lookup',
+                    'similarityScore': similarity_score,
                 }
             )
 
@@ -1365,7 +1485,7 @@ def main(argv: Sequence[str]) -> int:
         manifest['generated_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
         manifest['source'] = 'scripts/ref_json/build_ref_json.py'
         manifest['law_count'] = len(law_index)
-        manifest['format_version'] = 3
+        manifest['format_version'] = 4
         manifest['layout'] = 'target_law_num'
         write_json(manifest_path, manifest)
 

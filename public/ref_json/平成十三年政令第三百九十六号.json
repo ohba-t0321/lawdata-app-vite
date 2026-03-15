@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.274854
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "エアコンディショナー",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.473602
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.404261
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.580925
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.325353
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.315562
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.791254
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.72558
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "運転時の異常な過渡変化",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.39411
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "多様性",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.35963
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "設計基準事故",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.370274
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "安全機能",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.377997
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "安全機能を有する施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.401408
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "安全上重要な施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.370229
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "重大事故等対処施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.380563
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "重大事故等対処設備",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.374077
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "多重性",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.358326
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "独立性",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.358326
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "共通要因",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.500108
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "単一故障",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.428058
   },
   {
     "ref": {
@@ -283,7 +295,8 @@
       }
     },
     "match": "保安電源設備",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.785845
   },
   {
     "ref": {
@@ -305,7 +318,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.290572
   },
   {
     "ref": {
@@ -327,7 +341,8 @@
       }
     },
     "match": "消火設備",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.554872
   },
   {
     "ref": {
@@ -349,7 +364,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.713803
   },
   {
     "ref": {
@@ -371,7 +387,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.57169
   },
   {
     "ref": {
@@ -393,7 +410,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.713803
   },
   {
     "ref": {
@@ -415,7 +433,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.57169
   },
   {
     "ref": {
@@ -437,7 +456,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.721938
   },
   {
     "ref": {
@@ -459,7 +479,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.592314
   },
   {
     "ref": {
@@ -481,7 +502,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.233837
   },
   {
     "ref": {
@@ -503,7 +525,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.404965
   },
   {
     "ref": {
@@ -525,7 +548,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.655165
   },
   {
     "ref": {
@@ -547,7 +571,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.233854
   },
   {
     "ref": {
@@ -569,7 +594,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.416568
   },
   {
     "ref": {
@@ -591,7 +617,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.655165
   },
   {
     "ref": {
@@ -613,7 +640,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.229126
   },
   {
     "ref": {
@@ -635,7 +663,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.408716
   },
   {
     "ref": {
@@ -657,7 +686,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.627
   },
   {
     "ref": {
@@ -679,7 +709,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.444979
   },
   {
     "ref": {
@@ -701,7 +732,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.647202
   },
   {
     "ref": {
@@ -723,7 +755,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.665633
   },
   {
     "ref": {
@@ -745,7 +778,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.454823
   },
   {
     "ref": {
@@ -767,7 +801,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.647202
   },
   {
     "ref": {
@@ -789,7 +824,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.665633
   },
   {
     "ref": {
@@ -811,7 +847,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.437789
   },
   {
     "ref": {
@@ -833,7 +870,8 @@
       }
     },
     "match": "耐震重要施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.630953
   },
   {
     "ref": {
@@ -855,7 +893,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.625237
   },
   {
     "ref": {
@@ -877,7 +916,8 @@
       }
     },
     "match": "基準津波",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.634781
   },
   {
     "ref": {
@@ -899,7 +939,8 @@
       }
     },
     "match": "基準津波",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.670195
   },
   {
     "ref": {
@@ -921,6 +962,7 @@
       }
     },
     "match": "基準津波",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.609357
   }
 ]

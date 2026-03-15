@@ -19,7 +19,8 @@
       }
     },
     "match": "経済産業省令で定める事項は",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.349031
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.395378
   }
 ]

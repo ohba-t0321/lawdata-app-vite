@@ -19,7 +19,8 @@
       }
     },
     "match": "複合建築物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.62874
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.58403
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.392578
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.513784
   }
 ]

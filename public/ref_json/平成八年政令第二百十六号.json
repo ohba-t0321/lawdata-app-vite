@@ -19,7 +19,8 @@
       }
     },
     "match": "用途",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.548028
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "漁獲物の塩蔵の用",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.564282
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "化学製品",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.556717
   }
 ]

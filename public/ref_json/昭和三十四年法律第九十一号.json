@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.254928
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.267577
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "営農改善資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.397241
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.301966
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.414496
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "営農改善資金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.579303
   }
 ]

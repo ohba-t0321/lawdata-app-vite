@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.347136
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.329362
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "もの及び国立大学法人等の負担に係るものを除く",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.90457
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "公社",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.692348
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.479274
   }
 ]

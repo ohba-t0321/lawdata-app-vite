@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.206831
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "許可製造業者等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.378213
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "指定検定機関",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.372426
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.313186
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.156111
   }
 ]

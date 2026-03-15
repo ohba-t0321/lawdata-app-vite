@@ -19,7 +19,8 @@
       }
     },
     "match": "食育推進基本計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.412669
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "食育推進基本計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.533067
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "食育推進基本計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.421358
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "都道府県食育推進計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.476379
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.20261
   }
 ]

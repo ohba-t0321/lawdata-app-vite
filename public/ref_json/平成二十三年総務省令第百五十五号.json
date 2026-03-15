@@ -19,7 +19,8 @@
       }
     },
     "match": "特定被災地方公共団体",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.785128
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.732413
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.499475
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.585477
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "特定被災地方公共団体",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.790268
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.53768
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.771258
   }
 ]

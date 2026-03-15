@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.485635
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "市町村は",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.601134
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.309327
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.36386
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "交付終了年度",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.608769
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "年度交付限度額",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.666698
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.285168
   },
   {
     "ref": {
@@ -173,6 +180,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.481517
   }
 ]

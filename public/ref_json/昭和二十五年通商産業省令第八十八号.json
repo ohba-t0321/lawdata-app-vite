@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.260331
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.262836
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "危険工室",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.168559
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "保安距離",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.143771
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.332238
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "火薬類の数量",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.209571
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "危険工室等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.172861
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.19535
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.346508
   },
   {
     "ref": {
@@ -217,6 +226,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.450178
   }
 ]

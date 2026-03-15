@@ -19,7 +19,8 @@
       }
     },
     "match": "特定排出水",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.272643
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "業種等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.26496
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.146647
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.09572
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.332878
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.303555
   }
 ]

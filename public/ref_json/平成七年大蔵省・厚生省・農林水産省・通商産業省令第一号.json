@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.283957
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "容器包装の区分",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.32298
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "分別基準適合物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.272539
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "分別基準適合物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.24808
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "分別基準適合物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.244586
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "分別基準適合物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.235972
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.18153
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.411558
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.4642
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "分別基準適合物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.244586
   },
   {
     "ref": {
@@ -239,6 +249,7 @@
       }
     },
     "match": "分別基準適合物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.244586
   }
 ]

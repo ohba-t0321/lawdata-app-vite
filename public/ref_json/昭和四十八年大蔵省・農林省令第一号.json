@@ -19,7 +19,8 @@
       }
     },
     "match": "者からの資金の借入れの認可を受けよう",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.652354
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.336154
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.441465
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "危機対応勘定",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.593062
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "危機対応勘定",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.537353
   }
 ]

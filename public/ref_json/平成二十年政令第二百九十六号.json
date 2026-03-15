@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.198651
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.342647
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.331325
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "申請に係る出願品種が認定研究開発事業計画に従って行われる研究開発事業の成果に係るもの",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.613179
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.33371
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "申請に係る登録品種が認定研究開発事業計画に従って行われる研究開発事業の成果に係るもの",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.564454
   }
 ]

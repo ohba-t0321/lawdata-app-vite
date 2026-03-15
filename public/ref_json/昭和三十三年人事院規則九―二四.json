@@ -19,7 +19,8 @@
       }
     },
     "match": "支給単位期間等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.503666
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "普通交通機関等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.437929
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "普通交通機関等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.437929
   }
 ]

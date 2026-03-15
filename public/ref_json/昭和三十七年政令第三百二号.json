@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.205568
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "特定連続立体交差化工事",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.45392
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.383782
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "踏切道",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.388699
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.250291
   }
 ]

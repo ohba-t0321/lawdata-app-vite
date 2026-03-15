@@ -19,7 +19,8 @@
       }
     },
     "match": "都道府県こども計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.5679
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.409027
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "こども",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.45323
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "こども施策",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.347452
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.125684
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.525159
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.485527
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.420379
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "こども大綱",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.53036
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.526919
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.531881
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.576276
   },
   {
     "ref": {
@@ -283,6 +295,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.483445
   }
 ]

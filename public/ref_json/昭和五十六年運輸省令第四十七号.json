@@ -19,7 +19,8 @@
       }
     },
     "match": "基線",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.278157
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "排水量",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.278812
   }
 ]

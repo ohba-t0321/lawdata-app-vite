@@ -19,7 +19,8 @@
       }
     },
     "match": "建設仮勘定",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.235774
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "為替予約取引",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.340217
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.461861
   }
 ]

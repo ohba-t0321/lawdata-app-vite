@@ -19,7 +19,8 @@
       }
     },
     "match": "気象庁",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.343746
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "関係行政機関",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.34082
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "関係行政機関",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.414373
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.204647
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.427957
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.328206
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.237994
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "交付金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.496354
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.575344
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.138606
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.465032
   },
   {
     "ref": {
@@ -261,6 +272,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.562412
   }
 ]

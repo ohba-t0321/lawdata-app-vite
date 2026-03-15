@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.404204
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "環境の保全",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.326464
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "環境の保全",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.299335
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.476671
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.470823
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.227467
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "政令で定める文教研修施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.43237
   }
 ]

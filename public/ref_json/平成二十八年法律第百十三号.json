@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.218874
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.236113
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "自転車活用推進計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.348052
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "自転車活用推進計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.443356
   }
 ]

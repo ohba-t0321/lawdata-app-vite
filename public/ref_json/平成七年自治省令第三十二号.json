@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.564382
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.325762
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "）の法第五条第十項の規定による公表の日（以下「当初計画公表日」という",
-    "matchType": "clause"
+    "matchType": "clause",
+    "similarityScore": 0.493523
   }
 ]

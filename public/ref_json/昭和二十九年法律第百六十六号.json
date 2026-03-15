@@ -19,7 +19,8 @@
       }
     },
     "match": "特別防衛秘密",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.303434
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "特別防衛秘密",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.352981
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "特別防衛秘密",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.258796
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.251718
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.219358
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.177915
   }
 ]

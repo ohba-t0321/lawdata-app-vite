@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.236285
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "単体自己資本比率",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.543886
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "単体自己資本比率",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.53978
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "単体自己資本比率",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.489607
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "単体自己資本比率",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.489704
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "単体自己資本比率",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.539773
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.549317
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.542336
   },
   {
     "ref": {
@@ -195,6 +203,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.543289
   }
 ]

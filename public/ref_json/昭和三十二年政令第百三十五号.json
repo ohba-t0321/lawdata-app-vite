@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.302389
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "定期性預金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.509279
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "譲渡性預金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.366217
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "譲渡性預金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.356799
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.338129
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "譲渡性預金",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.438508
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.290312
   },
   {
     "ref": {
@@ -173,6 +180,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.23699
   }
 ]

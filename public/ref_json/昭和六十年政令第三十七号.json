@@ -19,7 +19,8 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.253446
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.296462
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.314588
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.165666
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.232896
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.194385
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "施設",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.218218
   }
 ]

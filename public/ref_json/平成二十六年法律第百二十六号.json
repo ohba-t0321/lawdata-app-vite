@@ -19,7 +19,8 @@
       }
     },
     "match": "私事性的画像記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.336119
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "撮影対象者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.367826
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "人の姿態",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.391352
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.345786
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "私事性的画像記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.314541
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "私事性的画像記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.336119
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "私事性的画像記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.314541
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.348724
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "私事性的画像記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.451575
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "私事性的画像記録",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.432314
   },
   {
     "ref": {
@@ -239,6 +249,7 @@
       }
     },
     "match": "特定電気通信による情報の流通によって発生する権利侵害等への対処に関する法律第三条第二項及び第四条（第一号に係る部分に限る",
-    "matchType": "clause"
+    "matchType": "clause",
+    "similarityScore": 0.768763
   }
 ]

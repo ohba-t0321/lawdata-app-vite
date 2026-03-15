@@ -19,7 +19,8 @@
       }
     },
     "match": "移行対象職種・作業",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.589105
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "監理団体",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.53459
   }
 ]

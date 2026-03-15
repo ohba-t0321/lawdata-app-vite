@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.15359
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.130512
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "基幹統計",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.191275
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "基幹統計",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.192141
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "基幹統計",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.182485
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "基幹統計",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.192141
   }
 ]

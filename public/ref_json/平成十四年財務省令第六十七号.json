@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.378704
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "政府短期証券",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.464143
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "割引短期国庫債券",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.313876
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.418677
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "割引短期国庫債券",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.423496
   }
 ]

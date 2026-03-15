@@ -19,7 +19,8 @@
       }
     },
     "match": "灯火は",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.355576
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.235106
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "表面効果翼船",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.194111
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.253879
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.231993
   }
 ]

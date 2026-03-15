@@ -19,7 +19,8 @@
       }
     },
     "match": "指定特定相談支援事業者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.679862
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "指定特定相談支援事業者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.679862
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "指定特定相談支援事業者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.679862
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.565143
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.218507
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.166635
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.178623
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "相談支援専門員",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.663536
   },
   {
     "ref": {
@@ -195,6 +203,7 @@
       }
     },
     "match": "相談支援専門員",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.566236
   }
 ]

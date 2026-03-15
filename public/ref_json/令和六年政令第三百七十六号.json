@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.385134
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "違反行為",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.383496
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.660641
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.482977
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.451935
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.254201
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.361795
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.366034
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "違反行為",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.412191
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "違反行為",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.39058
   },
   {
     "ref": {
@@ -239,6 +249,7 @@
       }
     },
     "match": "違反行為",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.400976
   }
 ]

@@ -19,7 +19,8 @@
       }
     },
     "match": "）第二条第一号に規定するものをいう",
-    "matchType": "clause"
+    "matchType": "clause",
+    "similarityScore": 0.5461
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "）第二条第一号に規定するものをいう",
-    "matchType": "clause"
+    "matchType": "clause",
+    "similarityScore": 0.594651
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.451985
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.576846
   }
 ]

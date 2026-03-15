@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.668855
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.718279
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "製造管理及び品質管理に係る業務の責任者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.570525
   }
 ]

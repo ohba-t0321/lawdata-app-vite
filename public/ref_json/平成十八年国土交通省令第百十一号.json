@@ -19,7 +19,8 @@
       }
     },
     "match": "鉄道車両",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.323705
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "乗合バス車両",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.319411
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "福祉タクシー車両",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.254039
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "船舶",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.309863
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "航空機",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.265284
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "車椅子スペース",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.308425
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "移動等円滑化された経路",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.34743
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.316951
   },
   {
     "ref": {
@@ -195,6 +203,7 @@
       }
     },
     "match": "基準適合客席",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.345381
   }
 ]

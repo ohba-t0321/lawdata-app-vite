@@ -19,7 +19,8 @@
       }
     },
     "match": "電子情報処理組織",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.465207
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.564716
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "主務省令で定める電子情報処理組織は",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.709022
   }
 ]

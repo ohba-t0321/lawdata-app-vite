@@ -19,7 +19,8 @@
       }
     },
     "match": "ものを除く",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.474533
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "製造販売後調査等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.452869
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.409773
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.37004
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "製造販売後臨床試験",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.452627
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "製造販売後臨床試験",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.323276
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.37004
   },
   {
     "ref": {
@@ -173,6 +180,7 @@
       }
     },
     "match": "製造販売後調査等管理責任者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.651001
   }
 ]

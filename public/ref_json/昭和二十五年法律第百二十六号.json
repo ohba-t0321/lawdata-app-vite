@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.383959
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "北海道総合開発計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.450484
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "北海道総合開発計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.379033
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.194789
   }
 ]

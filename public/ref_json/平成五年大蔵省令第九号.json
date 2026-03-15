@@ -19,7 +19,8 @@
       }
     },
     "match": "経営相談等事業",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.741755
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "ものに限る",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.685765
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.631713
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.552827
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.51767
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.53382
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.526833
   }
 ]

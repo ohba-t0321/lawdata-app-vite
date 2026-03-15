@@ -19,7 +19,8 @@
       }
     },
     "match": "振替機関",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.504062
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "振替機関",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.231709
   }
 ]

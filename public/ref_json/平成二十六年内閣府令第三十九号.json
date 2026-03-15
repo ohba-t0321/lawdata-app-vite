@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.674235
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.271091
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "代替保育連携協力者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.615514
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "特定子ども・子育て支援提供証明書",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.638329
   }
 ]

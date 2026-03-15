@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.557573
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.577542
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "個人識別事項",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.532972
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "個人識別事項",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.541829
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "個人識別事項",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.452388
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.597489
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.404118
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.43338
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.62769
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "もののほか",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.476914
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "もののほか",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.391972
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "もののほか",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.460602
   },
   {
     "ref": {
@@ -283,6 +295,7 @@
       }
     },
     "match": "もののほか",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.445587
   }
 ]

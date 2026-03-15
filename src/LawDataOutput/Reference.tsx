@@ -5,6 +5,23 @@ import type { VNode, RefArticle } from '../LawDataContext';
 import { useLawDataWorker } from '../hooks/useLawDataWorker';
 import { rankByLawTitleSimilarity } from '../utils/referenceSimilarity';
 
+function refKey(item: Pick<RefArticle, 'lawNum' | 'provision' | 'article' | 'paragraph' | 'item'>): string {
+    return `${item.lawNum}-${item.provision}-${item.article ?? ''}-${item.paragraph ?? ''}-${item.item ?? ''}`;
+}
+
+function comparableSimilarityScore(item: Pick<RefArticle, 'similarityScore'>): number {
+    return typeof item.similarityScore === 'number' && Number.isFinite(item.similarityScore)
+        ? item.similarityScore
+        : -1;
+}
+
+function formatSimilarityScore(item: Pick<RefArticle, 'similarityScore'>): string | null {
+    if (comparableSimilarityScore(item) < 0) {
+        return null;
+    }
+    return `${Math.round(Math.max(0, Math.min(1, item.similarityScore ?? 0)) * 100)}%`;
+}
+
 function convertToArticleFormat(input: string): string {
     if (input) {
         const parts = input.split('_');
@@ -58,34 +75,56 @@ export const Reference: React.FC = () => {
         return `${title} ${formatRefLocation(item)}`.trim();
     }, [lawTitleMap]);
 
-    const rankedRefs = useMemo(() => {
-        const uniqueRefs = clickedRefs.reduce<Array<{ item: RefArticle; originalIndex: number }>>((items, item, index) => {
-            const key = `${item.lawNum}-${item.provision}-${item.article ?? ''}-${item.paragraph ?? ''}-${item.item ?? ''}`;
-            if (items.some((entry) => (
-                `${entry.item.lawNum}-${entry.item.provision}-${entry.item.article ?? ''}-${entry.item.paragraph ?? ''}-${entry.item.item ?? ''}`
-                === key
-            ))) {
+    const rankedRefEntries = useMemo(() => {
+        const uniqueRefMap = clickedRefs.reduce<Map<string, { item: RefArticle; originalIndex: number }>>((items, item, index) => {
+            const key = refKey(item);
+            const existing = items.get(key);
+            if (!existing) {
+                items.set(key, { item, originalIndex: index });
                 return items;
             }
-            items.push({ item, originalIndex: index });
-            return items;
-        }, []);
 
-        const ranked = rankByLawTitleSimilarity(
+            const existingScore = comparableSimilarityScore(existing.item);
+            const nextScore = comparableSimilarityScore(item);
+            if (nextScore > existingScore) {
+                items.set(key, { item, originalIndex: existing.originalIndex });
+            }
+            return items;
+        }, new Map());
+        const uniqueRefs = Array.from(uniqueRefMap.values());
+
+        const titleRanked = rankByLawTitleSimilarity(
             sourceLawTitle,
             uniqueRefs,
             ({ item }) => lawTitleMap.get(item.lawNum) ?? item.lawNum,
         );
+        const titleScoreByKey = new Map(
+            titleRanked.map(({ item, score }) => [refKey(item.item), score]),
+        );
 
-        return ranked
-            .sort((a, b) => {
-                if (b.score !== a.score) {
-                    return b.score - a.score;
-                }
-                return a.item.originalIndex - b.item.originalIndex;
-            })
-            .map(({ item }) => item.item);
+        return uniqueRefs.sort((a, b) => {
+            const similarityDiff = comparableSimilarityScore(b.item) - comparableSimilarityScore(a.item);
+            if (similarityDiff !== 0) {
+                return similarityDiff;
+            }
+
+            const titleScoreDiff = (titleScoreByKey.get(refKey(b.item)) ?? 0) - (titleScoreByKey.get(refKey(a.item)) ?? 0);
+            if (titleScoreDiff !== 0) {
+                return titleScoreDiff;
+            }
+
+            return a.originalIndex - b.originalIndex;
+        });
     }, [clickedRefs, lawTitleMap, sourceLawTitle]);
+
+    const rankedRefs = useMemo(
+        () => rankedRefEntries.map((entry) => entry.item),
+        [rankedRefEntries],
+    );
+    const hasSimilarityScores = useMemo(
+        () => rankedRefs.some((item) => comparableSimilarityScore(item) >= 0),
+        [rankedRefs],
+    );
 
     const lenRef = rankedRefs.length;
     const refItm = itemIndex === null ? null : (rankedRefs[itemIndex] ?? null);
@@ -167,10 +206,14 @@ export const Reference: React.FC = () => {
             </div>
             {showListView && (
                 <div className="ref-list-wrap">
-                    <div className="ref-list-title">参照先一覧（類似度順）</div>
-                    {sourceLawTitle && (
+                    <div className="ref-list-title">
+                        {hasSimilarityScores ? '参照先一覧（条文類似度順）' : '参照先一覧（法令名類似度順）'}
+                    </div>
+                    {(hasSimilarityScores || sourceLawTitle) && (
                         <div className="ref-list-description">
-                            {sourceLawTitle} に近い法令から表示しています。
+                            {hasSimilarityScores
+                                ? '参照元条文に近い候補から表示しています。'
+                                : `${sourceLawTitle} に近い法令から表示しています。`}
                         </div>
                     )}
                     <ul className="ref-list">
@@ -184,7 +227,10 @@ export const Reference: React.FC = () => {
                                         setItemIndex(index);
                                     }}
                                 >
-                                    {refLabel(item)}
+                                    <span className="ref-list-label">{refLabel(item)}</span>
+                                    {formatSimilarityScore(item) && (
+                                        <span className="ref-list-score">{formatSimilarityScore(item)}</span>
+                                    )}
                                 </button>
                             </li>
                         ))}

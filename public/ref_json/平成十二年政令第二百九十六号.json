@@ -19,7 +19,8 @@
       }
     },
     "match": "産業標準",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.635557
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "ものを除く",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.725951
   }
 ]

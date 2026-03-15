@@ -46,6 +46,7 @@ export interface TocItem {
 export interface RefData {
   match:string | null;
   matchType?: string | null;
+  similarityScore?: number | null;
   ref:RefDatadetail | null;
   referred:RefDatadetail | null;
 }
@@ -83,6 +84,7 @@ export interface RefArticle {
   article: string|number|null;
   paragraph?: string | null;
   item?: string | null;
+  similarityScore?: number | null;
 }
 
 interface ClickedRefSource {
@@ -466,12 +468,15 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
     // クリックされた要素から親方向にさかのぼってすべて拾う
     while (el) {
       if (el.tagName === "SPAN" && el.classList.contains("refLink")) {
+        const similarityValue = el.dataset.similarityScore;
+        const parsedSimilarity = similarityValue ? Number(similarityValue) : Number.NaN;
         const refItem = {
           lawNum: el.dataset.lawNum || '',
           provision: el.dataset.provision || '',
           article: el.dataset.article || null,
           paragraph: el.dataset.paragraph || null,
           item: el.dataset.item || null,
+          similarityScore: Number.isFinite(parsedSimilarity) ? parsedSimilarity : null,
         };
         if (refItem) {
           refItems.push(refItem);

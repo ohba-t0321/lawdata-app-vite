@@ -59,6 +59,53 @@ function normalizeAttrKeys(attr: JsonAttr): JsonAttr {
   return normalized;
 }
 
+function formatSimilarityScore(score: number | null | undefined): string | null {
+  if (typeof score !== 'number' || !Number.isFinite(score)) {
+    return null;
+  }
+  const normalized = Math.max(0, Math.min(1, score));
+  return normalized.toFixed(6);
+}
+
+function escapeHtmlAttr(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;');
+}
+
+function buildRefLinkDataset(data: RefData | null | undefined): Record<string, string> {
+  const dataset: Record<string, string> = {};
+  const ref = data?.ref;
+  const lawArticle = ref?.lawArticle;
+
+  if (ref?.lawNum) dataset['data-law-num'] = ref.lawNum;
+  if (lawArticle?.provision) dataset['data-provision'] = lawArticle.provision;
+  if (lawArticle?.article) dataset['data-article'] = lawArticle.article;
+  if (lawArticle?.paragraph) dataset['data-paragraph'] = lawArticle.paragraph;
+  if (lawArticle?.item) dataset['data-item'] = lawArticle.item;
+
+  const similarityScore = formatSimilarityScore(data?.similarityScore);
+  if (similarityScore) {
+    dataset['data-similarity-score'] = similarityScore;
+  }
+
+  return dataset;
+}
+
+function buildRefLinkAttrString(data: RefData | null | undefined): string {
+  return Object.entries(buildRefLinkDataset(data))
+    .map(([key, value]) => `${key}="${escapeHtmlAttr(value)}"`)
+    .join(' ');
+}
+
+function buildRefLinkAttr(data: RefData | null | undefined): JsonAttr {
+  const attr: JsonAttr = {};
+  Object.entries(buildRefLinkDataset(data)).forEach(([key, value]) => {
+    attr[key] = value;
+  });
+  return attr;
+}
+
 export function buildVirtualTree(json: JsonNode | string): VNode {
   if (typeof json === "string") {
     return { type: "text", value: json };
@@ -214,11 +261,7 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
 
         refTextData.forEach((data: RefData) => {
           if (data.match) {
-            const lawNum = data.ref?.lawNum;
-            const provision = data.ref?.lawArticle.provision;
-            const lawArticleNum = data.ref?.lawArticle.article || '';
-            const lawParagraphNum = data.ref?.lawArticle.paragraph || '';
-            const lawLink = `data-law-num=${lawNum}${provision ? ' data-provision="MainProvision"' : ' data-provision="SupplProvision"'}${lawArticleNum ? ' data-article=' + lawArticleNum : ''}${lawParagraphNum ? ' data-paragraph=' + lawParagraphNum : ''}`
+            const lawLink = buildRefLinkAttrString(data);
 
             text = text.replace(data.match, `<span class="refLink" ${lawLink}>${data.match}</span>`);
           }
@@ -302,7 +345,7 @@ export function renderVirtualTree(json: JsonNode | string, ancestors: VElement[]
     if (refTextData && refTextData.length > 0) {
       let children: VNode = { type: "text", value: "★引用条文★" };
       refTextData.forEach((data: RefData) => {
-        const lawLink = { "data-law-num": data.ref?.lawNum, "data-provision": data.ref?.lawArticle.provision, "data-article": data.ref?.lawArticle.article, "data-paragraph": data.ref?.lawArticle.paragraph, "data-item": data.ref?.lawArticle.item };
+        const lawLink = buildRefLinkAttr(data);
         children = { type: "element", tag: "span", attr: { className: "refLink", ...lawLink }, children: [children] };
       });
       renderedChildren.push({ type: "element", tag: "span", attr: { className: "refSentence", refTextData: refTextData }, children: [children] });

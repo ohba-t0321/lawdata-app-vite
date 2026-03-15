@@ -85,6 +85,11 @@ function asNonEmptyString(value) {
   return typeof value === 'string' && value.trim() ? value.trim() : null;
 }
 
+function asFiniteNumber(value) {
+  const parsed = typeof value === 'number' ? value : Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
 function pickRevisionInfo(source) {
   if (!source || typeof source !== 'object') return null;
   return source.current_revision_info ?? source.revision_info ?? null;
@@ -519,6 +524,7 @@ function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
       target_paragraph: asNonEmptyString(item?.ref?.lawArticle?.paragraph),
       target_item: asNonEmptyString(item?.ref?.lawArticle?.item),
       match_text: asNonEmptyString(item?.match),
+      similarity_score: asFiniteNumber(item?.similarityScore),
     });
   }
   return rows;

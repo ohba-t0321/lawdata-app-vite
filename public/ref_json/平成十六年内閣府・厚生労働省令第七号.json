@@ -19,7 +19,8 @@
       }
     },
     "match": "ことを証する書面",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.734142
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "員外監事",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.587655
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "ことを証する書面",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.747209
   }
 ]

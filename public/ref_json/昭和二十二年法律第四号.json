@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.280166
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.51088
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.240739
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.166268
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "皇位とともに伝わるべき由緒ある物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.154882
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "皇位とともに伝わるべき由緒ある物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.280547
   }
 ]

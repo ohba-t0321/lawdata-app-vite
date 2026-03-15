@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.10554
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.391855
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "特定有害物質",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.340881
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.288298
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.261157
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.244978
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.347726
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.36895
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.345843
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "認定調査",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.357062
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "第二種特定有害物質",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.424177
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.466898
   },
   {
     "ref": {
@@ -283,7 +295,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.434213
   },
   {
     "ref": {
@@ -305,7 +318,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.46695
   },
   {
     "ref": {
@@ -327,7 +341,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.46695
   },
   {
     "ref": {
@@ -349,7 +364,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.319537
   },
   {
     "ref": {
@@ -371,7 +387,8 @@
       }
     },
     "match": "地下水基準",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.30779
   },
   {
     "ref": {
@@ -393,6 +410,7 @@
       }
     },
     "match": "第二溶出量基準",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.380929
   }
 ]

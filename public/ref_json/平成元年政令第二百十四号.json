@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.917591
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "金額又は従前の年金額をもって改定年金額とした年金については",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.72163
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "旧法",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.569802
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.718194
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "旧法",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.569802
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "場合において",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.753171
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.93062
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.635715
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "旧法",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.577422
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.93062
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "旧法",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.577422
   },
   {
     "ref": {
@@ -261,6 +272,7 @@
       }
     },
     "match": "旧法",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.512661
   }
 ]

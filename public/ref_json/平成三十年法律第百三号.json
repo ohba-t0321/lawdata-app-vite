@@ -19,7 +19,8 @@
       }
     },
     "match": "興行入場券",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.356312
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "興行入場券",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.420753
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "興行入場券",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.415001
   }
 ]

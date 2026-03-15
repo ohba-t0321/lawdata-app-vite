@@ -19,7 +19,8 @@
       }
     },
     "match": "ものを除く",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.459692
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.367243
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "製造販売後臨床試験",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.440891
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "製造販売後臨床試験",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.326462
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.367243
   }
 ]

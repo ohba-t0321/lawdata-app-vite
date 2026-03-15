@@ -19,7 +19,8 @@
       }
     },
     "match": "室長",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.191552
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "室長",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.186973
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.197701
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.126837
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.127765
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "公文書監理官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.173576
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.192298
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.181775
   },
   {
     "ref": {
@@ -195,6 +203,7 @@
       }
     },
     "match": "内閣法制局長官秘書官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.42483
   }
 ]

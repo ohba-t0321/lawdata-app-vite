@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.285658
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.346275
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "メディア芸術",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.269648
   }
 ]

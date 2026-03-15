@@ -19,7 +19,8 @@
       }
     },
     "match": "特定自動運行保安員",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.680981
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "特定自動運行貨物運送",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.551915
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.530576
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.35796
   }
 ]

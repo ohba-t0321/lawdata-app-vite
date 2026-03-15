@@ -19,7 +19,8 @@
       }
     },
     "match": "重要影響事態",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.577456
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "宿営地",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.549511
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.364532
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.363864
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.381001
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "機関がある場合にあっては",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.549788
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.559613
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.741974
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "合衆国軍隊等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.733013
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "合衆国軍隊",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.587495
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.546738
   },
   {
     "ref": {
@@ -261,7 +272,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.512245
   },
   {
     "ref": {
@@ -283,7 +295,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.468126
   },
   {
     "ref": {
@@ -305,7 +318,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.269513
   },
   {
     "ref": {
@@ -327,7 +341,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.333586
   },
   {
     "ref": {
@@ -349,7 +364,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.695286
   },
   {
     "ref": {
@@ -371,7 +387,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.631105
   },
   {
     "ref": {
@@ -393,7 +410,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.063948
   },
   {
     "ref": {
@@ -415,7 +433,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.626499
   },
   {
     "ref": {
@@ -437,6 +456,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.604441
   }
 ]

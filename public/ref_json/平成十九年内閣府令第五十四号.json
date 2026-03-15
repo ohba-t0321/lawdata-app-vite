@@ -19,7 +19,8 @@
       }
     },
     "match": "会員等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.547063
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "子会社",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.280735
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.468948
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "額とする",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.69613
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "額とする",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.69613
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "額とする",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.69613
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.669839
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.695169
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.655827
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.677281
   },
   {
     "ref": {
@@ -239,6 +249,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.701715
   }
 ]

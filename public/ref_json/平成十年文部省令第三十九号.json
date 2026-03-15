@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.433575
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "スポーツ振興投票の区分に応じ",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.395897
   }
 ]

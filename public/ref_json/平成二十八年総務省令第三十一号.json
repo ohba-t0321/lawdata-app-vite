@@ -19,7 +19,8 @@
       }
     },
     "match": "予測接続料",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.318504
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "予測接続料",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.318504
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.295129
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.328181
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "基礎事業年度",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.442693
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "予測接続料",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.312915
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "予測接続料",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.312915
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "ＳＩＭカード",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.542232
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.390997
   },
   {
     "ref": {
@@ -217,6 +226,7 @@
       }
     },
     "match": "ＳＩＭカード",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.592802
   }
 ]

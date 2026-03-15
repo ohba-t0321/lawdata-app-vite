@@ -19,7 +19,8 @@
       }
     },
     "match": "許可証",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.318368
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "排出水基準",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.414025
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "浄化等済土壌",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.511972
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "場合にあっては",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.720901
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.380491
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.364827
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "場合にあっては",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.697807
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.380491
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.364827
   },
   {
     "ref": {
@@ -217,6 +226,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.189173
   }
 ]

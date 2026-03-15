@@ -19,7 +19,8 @@
       }
     },
     "match": "農水産業協同組合",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.538544
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.395772
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "貯金等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.514281
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "監督庁",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.560955
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.46382
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.51241
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.433729
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.608402
   },
   {
     "ref": {
@@ -195,6 +203,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.361442
   }
 ]

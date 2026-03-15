@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.411674
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.467655
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.475139
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.401236
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "法人",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.422567
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "土地",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.527384
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "土地",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.457667
   },
   {
     "ref": {
@@ -173,6 +180,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.277822
   }
 ]

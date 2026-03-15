@@ -19,7 +19,8 @@
       }
     },
     "match": "沖縄弁護士",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.326875
   },
   {
     "ref": {
@@ -62,7 +63,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.357813
   },
   {
     "ref": {
@@ -84,6 +86,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.455519
   }
 ]

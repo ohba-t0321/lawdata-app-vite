@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.430597
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "特定個人情報ファイル",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.680846
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "特定個人情報ファイル",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.689979
   },
   {
     "ref": {
@@ -85,6 +88,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.565855
   }
 ]

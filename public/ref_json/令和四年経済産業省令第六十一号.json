@@ -19,7 +19,8 @@
       }
     },
     "match": "事業報酬",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.286511
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.436532
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.219442
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "第一区分費用項目",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.574256
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "第二区分費用項目",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.443871
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "第三区分費用項目",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.597287
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "制御不能費用項目",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.530896
   },
   {
     "ref": {
@@ -173,7 +180,8 @@
       }
     },
     "match": "事後検証費用項目",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.455599
   },
   {
     "ref": {
@@ -195,7 +203,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.32465
   },
   {
     "ref": {
@@ -217,7 +226,8 @@
       }
     },
     "match": "事業報酬",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.391902
   },
   {
     "ref": {
@@ -239,7 +249,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.518942
   },
   {
     "ref": {
@@ -261,6 +272,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.670517
   }
 ]

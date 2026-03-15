@@ -19,7 +19,8 @@
       }
     },
     "match": "特定輸入指定米穀等の原産地",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.551288
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "ものに限る",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.600999
   }
 ]

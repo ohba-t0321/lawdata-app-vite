@@ -19,7 +19,8 @@
       }
     },
     "match": "周波数帯",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.350997
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "使用周波数の移行計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.555346
   }
 ]

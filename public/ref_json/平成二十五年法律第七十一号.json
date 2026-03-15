@@ -19,7 +19,8 @@
       }
     },
     "match": "いじめの防止等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.310163
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "いじめ",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.324489
   }
 ]

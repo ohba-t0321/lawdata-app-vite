@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.253305
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.249976
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.535172
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "物品にあつては",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.540928
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.532556
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "物品にあつては",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.53945
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.18173
   }
 ]

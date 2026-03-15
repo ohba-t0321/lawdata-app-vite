@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.464528
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.329625
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.44641
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.511234
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "金額",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.554125
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.542882
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "物納財産収納済証書",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.248905
   }
 ]

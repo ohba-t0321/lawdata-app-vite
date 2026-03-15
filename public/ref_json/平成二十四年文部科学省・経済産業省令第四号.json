@@ -19,7 +19,8 @@
       }
     },
     "match": "安全上重要な構築物",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.500043
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.397561
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.346651
   }
 ]

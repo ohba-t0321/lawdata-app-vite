@@ -19,7 +19,8 @@
       }
     },
     "match": "公務員等共済組合",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.557639
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "市町村議会議員共済会",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.525236
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "市町村関係団体職員共済組合",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.559009
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "公立学校職員共済組合",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.563497
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.386788
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.427263
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.264571
   }
 ]

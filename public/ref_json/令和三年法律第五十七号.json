@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.355652
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "児童生徒性暴力等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.50365
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "児童生徒性暴力等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.384198
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "児童生徒性暴力等の防止等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.459614
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "特定免許状失効者等",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.330951
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "者を除く",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.482505
   },
   {
     "ref": {
@@ -151,7 +157,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.508321
   },
   {
     "ref": {
@@ -173,6 +180,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.213749
   }
 ]

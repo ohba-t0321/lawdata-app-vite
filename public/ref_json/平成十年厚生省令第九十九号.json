@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.279668
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.226881
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.300892
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.233359
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "提供の申出",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.770175
   },
   {
     "ref": {
@@ -129,7 +134,8 @@
       }
     },
     "match": "業務",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.790473
   },
   {
     "ref": {
@@ -151,6 +157,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.281061
   }
 ]

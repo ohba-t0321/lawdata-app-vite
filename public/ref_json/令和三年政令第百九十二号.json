@@ -19,7 +19,8 @@
       }
     },
     "match": "統括官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.204102
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "審議官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.208207
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.269387
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "参事官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.192173
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "公文書監理官",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.237875
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.262754
   }
 ]

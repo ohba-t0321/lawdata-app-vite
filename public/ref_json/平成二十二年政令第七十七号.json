@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.600387
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "児童手当等受給資格者に該当する者を除く",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.704121
   },
   {
     "ref": {
@@ -63,6 +65,7 @@
       }
     },
     "match": "各市町村に対して交付すべき子ども手当事務費交付金の額は",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.647795
   }
 ]

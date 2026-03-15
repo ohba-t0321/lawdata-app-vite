@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.134509
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.603561
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "開業登録申請書に",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.599393
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "開業登録申請書に",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.599393
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.439377
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.298934
   }
 ]

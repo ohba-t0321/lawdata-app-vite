@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.664526
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "報告の受理に関する事務",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.708672
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.693957
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "届出の受理に関する事務",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.707287
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.739034
   }
 ]

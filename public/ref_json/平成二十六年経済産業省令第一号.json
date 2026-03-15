@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.229702
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.235779
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "新事業開拓事業者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.38608
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "新事業開拓事業者",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.358198
   },
   {
     "ref": {
@@ -107,6 +111,7 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.428037
   }
 ]

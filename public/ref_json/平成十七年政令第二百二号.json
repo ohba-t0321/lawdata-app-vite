@@ -19,7 +19,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.200698
   },
   {
     "ref": {
@@ -41,6 +42,7 @@
       }
     },
     "match": "収入",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.364209
   }
 ]

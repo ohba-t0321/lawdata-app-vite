@@ -19,7 +19,8 @@
       }
     },
     "match": "都道府県ギャンブル等依存症対策推進計画",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.774061
   },
   {
     "ref": {
@@ -41,7 +42,8 @@
       }
     },
     "match": "ギャンブル等依存症",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.288006
   },
   {
     "ref": {
@@ -63,7 +65,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.193138
   },
   {
     "ref": {
@@ -85,7 +88,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.198263
   },
   {
     "ref": {
@@ -107,7 +111,8 @@
       }
     },
     "match": "★引用個所不明★",
-    "matchType": "locator_exact"
+    "matchType": "locator_exact",
+    "similarityScore": 0.244302
   },
   {
     "ref": {
@@ -129,6 +134,7 @@
       }
     },
     "match": "ギャンブル等依存症問題",
-    "matchType": "definition_term"
+    "matchType": "definition_term",
+    "similarityScore": 0.365666
   }
 ]
