@@ -38,38 +38,36 @@ jobs:
 
       - run: npm ci
 
-      - name: Restore ref_json manifest cache
+      - name: Restore ref_json cache
+        id: ref_json_cache
         uses: actions/cache/restore@v4
         with:
-          path: public/ref_json/_meta.json
-          key: ref-json-meta-${{ github.ref_name }}-${{ github.run_id }}
+          path: public/ref_json
+          key: ref-json-${{ github.ref_name }}-${{ github.run_id }}
           restore-keys: |
-            ref-json-meta-${{ github.ref_name }}-
+            ref-json-${{ github.ref_name }}-
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Build ref_json incrementally
+      - name: Build ref_json and sync Supabase
         run: |
-          if [ "${{ github.event.inputs.ref_json_all }}" = "true" ]; then
-            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all
+          if [ "${{ steps.ref_json_cache.outputs.cache-hit }}" != "true" ]; then
+            echo "ref_json cache miss; running full rebuild for safety."
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all --sync-supabase
+          elif [ "${{ github.event.inputs.ref_json_all }}" = "true" ]; then
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all --sync-supabase
           else
-            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --sync-supabase
           fi
 
-      - name: Save ref_json manifest cache
+      - name: Save ref_json cache
         if: always()
         uses: actions/cache/save@v4
         with:
-          path: public/ref_json/_meta.json
-          key: ref-json-meta-${{ github.ref_name }}-${{ github.run_id }}
-
-      - name: Apply migration
-        run: node scripts/supabase/apply-migration.mjs
-
-      - name: Incremental upsert
-        run: node scripts/supabase/upsert-law-data.mjs
+          path: public/ref_json
+          key: ref-json-${{ github.ref_name }}-${{ github.run_id }}
 
       - name: DB keep-alive read
         run: |

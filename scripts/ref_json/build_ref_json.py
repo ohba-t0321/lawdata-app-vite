@@ -4,7 +4,9 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import re
+import subprocess
 import sys
 import time
 import unicodedata
@@ -103,6 +105,7 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--verbose', action='store_true')
     parser.add_argument('--updated-within-days', type=int, default=7)
+    parser.add_argument('--sync-supabase', action='store_true')
     return parser.parse_args(argv)
 
 
@@ -778,6 +781,21 @@ def write_json(path: Path, payload: Any) -> None:
         raise BuildError(
             f'Failed to write file: {path} (filename bytes: {name_bytes}) -> {exc}'
         ) from exc
+
+
+def run_supabase_sync(out_dir: Path) -> None:
+    commands = [
+        ['node', 'scripts/supabase/apply-migration.mjs'],
+        ['node', 'scripts/supabase/replace-law-references-from-ref-json.mjs', '--ref-dir', str(out_dir)],
+    ]
+    env = dict(os.environ)
+    for command in commands:
+        try:
+            subprocess.run(command, check=True, env=env)
+        except FileNotFoundError as exc:
+            raise BuildError(f'Command not found while syncing Supabase: {command[0]}') from exc
+        except subprocess.CalledProcessError as exc:
+            raise BuildError(f'Supabase sync command failed: {" ".join(command)} (exit code {exc.returncode})') from exc
 
 
 def path_exists_safe(path: Path) -> Tuple[bool, Optional[str]]:
@@ -1488,6 +1506,11 @@ def main(argv: Sequence[str]) -> int:
         manifest['format_version'] = 4
         manifest['layout'] = 'target_law_num'
         write_json(manifest_path, manifest)
+        if args.sync_supabase and not failed:
+            print('syncing law_references to Supabase...')
+            run_supabase_sync(out_dir)
+        elif args.sync_supabase and failed:
+            print('skipped Supabase sync because ref_json build had failures.', file=sys.stderr)
 
     status = 'success' if not failed else ('partial_success' if processed > 0 else 'failed')
     if args.dry_run:

@@ -6,9 +6,9 @@ import { Client } from 'pg';
 import { createClient } from '@supabase/supabase-js';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
-const DEFAULT_MIGRATION = path.resolve(
+const DEFAULT_MIGRATION_DIR = path.resolve(
   SCRIPT_DIR,
-  'migrations/202602140001_create_law_cache_tables.sql',
+  'migrations',
 );
 const REQUIRED_TABLES = [
   { name: 'laws', probeColumn: 'law_num' },
@@ -24,7 +24,7 @@ dns.setDefaultResultOrder('ipv4first');
 
 function parseArgs(argv) {
   const options = {
-    migration: DEFAULT_MIGRATION,
+    migration: null,
   };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
@@ -40,6 +40,18 @@ function parseArgs(argv) {
     throw new Error(`Unknown argument: ${arg}`);
   }
   return options;
+}
+
+async function resolveMigrationFiles(options) {
+  if (options.migration) {
+    return [options.migration];
+  }
+
+  const entries = await fs.readdir(DEFAULT_MIGRATION_DIR, { withFileTypes: true });
+  return entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith('.sql'))
+    .map((entry) => path.join(DEFAULT_MIGRATION_DIR, entry.name))
+    .sort();
 }
 
 function parseProjectRef(supabaseUrl) {
@@ -139,19 +151,28 @@ async function main() {
     throw new Error('SUPABASE_URL is required.');
   }
 
-  let sql;
-  try {
-    sql = await fs.readFile(options.migration, 'utf8');
-  } catch (error) {
-    if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') {
-      throw new Error(`Migration file not found: ${options.migration}`);
-    }
-    throw error;
+  const migrationFiles = await resolveMigrationFiles(options);
+  if (migrationFiles.length === 0) {
+    throw new Error(`No migration files found in: ${DEFAULT_MIGRATION_DIR}`);
   }
+
+  const sqlParts = [];
+  for (const migrationFile of migrationFiles) {
+    try {
+      const sql = await fs.readFile(migrationFile, 'utf8');
+      sqlParts.push(`-- ${path.basename(migrationFile)}\n${sql}`);
+    } catch (error) {
+      if (error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT') {
+        throw new Error(`Migration file not found: ${migrationFile}`);
+      }
+      throw error;
+    }
+  }
+  const sql = `begin;\n${sqlParts.join('\n\n')}\ncommit;\n`;
 
   try {
     await tryDirect(databaseUrl, sql);
-    console.log('migration_applied_via=direct');
+    console.log(`migration_applied_via=direct files=${migrationFiles.map((file) => path.basename(file)).join(',')}`);
     return;
   } catch (error) {
     const msg = error instanceof Error ? error.message : String(error);
@@ -168,7 +189,9 @@ async function main() {
   }
 
   const poolerHost = await tryPooler(databaseUrl, supabaseUrl, sql);
-  console.log(`migration_applied_via=pooler:${poolerHost}`);
+  console.log(
+    `migration_applied_via=pooler:${poolerHost} files=${migrationFiles.map((file) => path.basename(file)).join(',')}`,
+  );
 }
 
 main().catch((error) => {

@@ -526,6 +526,7 @@ function buildReferenceRows(refData, sourceLawNum) {
       target_paragraph: asNonEmptyString(item?.ref?.lawArticle?.paragraph),
       target_item: asNonEmptyString(item?.ref?.lawArticle?.item),
       match_text: asNonEmptyString(item?.match),
+      match_type: asNonEmptyString(item?.matchType),
       similarity_score: asFiniteNumber(item?.similarityScore),
       match_type: asNonEmptyString(item?.matchType),
     });

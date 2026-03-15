@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "supabase:migrate": "node scripts/supabase/apply-migration.mjs",
+    "supabase:sync-ref-json": "node scripts/supabase/replace-law-references-from-ref-json.mjs",
     "supabase:upsert": "node scripts/supabase/upsert-law-data.mjs"
   },
   "dependencies": {
