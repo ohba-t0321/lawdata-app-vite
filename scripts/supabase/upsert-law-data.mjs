@@ -506,7 +506,7 @@ async function fetchExistingMarkers(client) {
 }
 
 
-function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
+function buildReferenceRows(refData, sourceLawNum) {
   const rows = [];
   for (const item of refData) {
     const targetLawNum = asNonEmptyString(item?.ref?.lawNum);
@@ -516,7 +516,6 @@ function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
 
     rows.push({
       source_law_num: sourceLawNum,
-      source_revision_marker: sourceRevisionMarker,
       source_provision: asNonEmptyString(item?.referred?.lawArticle?.provision),
       source_article: asNonEmptyString(item?.referred?.lawArticle?.article),
       source_paragraph: asNonEmptyString(item?.referred?.lawArticle?.paragraph),
@@ -528,6 +527,7 @@ function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
       target_item: asNonEmptyString(item?.ref?.lawArticle?.item),
       match_text: asNonEmptyString(item?.match),
       similarity_score: asFiniteNumber(item?.similarityScore),
+      match_type: asNonEmptyString(item?.matchType),
     });
   }
   return rows;
@@ -582,12 +582,11 @@ async function processOneLaw({ client, lawRow, lawList, options }) {
   supabaseOrThrow(upsertVersionError, `upsert law_versions: ${lawNum}`);
 
 
-  const referenceRows = buildReferenceRows(refData, lawNum, revisionMarker);
+  const referenceRows = buildReferenceRows(refData, lawNum);
   const { error: deleteRefError } = await client
     .from('law_references')
     .delete()
-    .eq('source_law_num', lawNum)
-    .eq('source_revision_marker', revisionMarker);
+    .eq('source_law_num', lawNum);
   supabaseOrThrow(deleteRefError, `delete references: ${lawNum}`);
   await insertReferences(client, referenceRows);
 
