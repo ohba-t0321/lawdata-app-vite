@@ -1,4 +1,5 @@
 import { promises as fs } from 'node:fs';
+import dns from 'node:dns';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Client } from 'pg';
@@ -8,6 +9,8 @@ const DEFAULT_MIGRATION = path.resolve(
   SCRIPT_DIR,
   'migrations/202602140001_create_law_cache_tables.sql',
 );
+
+dns.setDefaultResultOrder('ipv4first');
 
 function parseArgs(argv) {
   const options = {
