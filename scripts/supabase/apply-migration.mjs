@@ -3,12 +3,22 @@ import dns from 'node:dns';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Client } from 'pg';
+import { createClient } from '@supabase/supabase-js';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_MIGRATION = path.resolve(
   SCRIPT_DIR,
   'migrations/202602140001_create_law_cache_tables.sql',
 );
+const REQUIRED_TABLES = [
+  { name: 'laws', probeColumn: 'law_num' },
+  { name: 'law_versions', probeColumn: 'id' },
+  { name: 'law_assets', probeColumn: 'version_id' },
+  { name: 'law_references', probeColumn: 'id' },
+  { name: 'ingest_runs', probeColumn: 'id' },
+];
+
+dns.setDefaultResultOrder('ipv4first');
 
 dns.setDefaultResultOrder('ipv4first');
 
@@ -94,10 +104,33 @@ async function tryPooler(databaseUrl, supabaseUrl, sql) {
   return `${clientConfig.host}:${clientConfig.port}`;
 }
 
+async function confirmSchemaViaSupabase(supabaseUrl, serviceRoleKey) {
+  if (!serviceRoleKey) {
+    throw new Error('SUPABASE_SERVICE_ROLE_KEY is required to verify the schema via Supabase REST.');
+  }
+
+  const client = createClient(supabaseUrl, serviceRoleKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+
+  const missingTables = [];
+  for (const { name, probeColumn } of REQUIRED_TABLES) {
+    const { error } = await client.from(name).select(probeColumn, { head: true, count: 'exact' }).limit(1);
+    if (error) {
+      missingTables.push(`${name}: ${error.message}`);
+    }
+  }
+
+  if (missingTables.length > 0) {
+    throw new Error(`Supabase REST schema check failed: ${missingTables.join('; ')}`);
+  }
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2));
   const databaseUrl = process.env.DATABASE_URL;
   const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!databaseUrl) {
     throw new Error('DATABASE_URL is required.');
@@ -123,6 +156,15 @@ async function main() {
   } catch (error) {
     const msg = error instanceof Error ? error.message : String(error);
     console.log(`direct_connect_failed=${msg}`);
+  }
+
+  try {
+    await confirmSchemaViaSupabase(supabaseUrl, serviceRoleKey);
+    console.log('migration_skipped_via=supabase_rest_schema_check');
+    return;
+  } catch (error) {
+    const msg = error instanceof Error ? error.message : String(error);
+    console.log(`rest_schema_check_failed=${msg}`);
   }
 
   const poolerHost = await tryPooler(databaseUrl, supabaseUrl, sql);
