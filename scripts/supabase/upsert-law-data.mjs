@@ -92,7 +92,11 @@ function asFiniteNumber(value) {
 
 function pickRevisionInfo(source) {
   if (!source || typeof source !== 'object') return null;
-  return source.current_revision_info ?? source.revision_info ?? null;
+  return source.current_revision_info
+    ?? source.revision_info
+    ?? source.source_current_revision_info
+    ?? source.source_revision_info
+    ?? null;
 }
 
 function extractLawRevisionMarker(source) {
@@ -436,13 +440,11 @@ function normalizeLawRow(law) {
     return null;
   }
 
-  const revisionMarker = extractLawRevisionMarker(law) ?? 'unknown';
   return {
     law_num: lawNum,
     law_id: asNonEmptyString(law?.law_info?.law_id),
     law_type: asNonEmptyString(law?.law_info?.law_type),
     law_title: lawTitle,
-    revision_marker: revisionMarker,
     current_revision_id: asNonEmptyString(law?.current_revision_info?.law_revision_id),
     updated_source: toTimestamp(law?.current_revision_info?.updated ?? law?.revision_info?.updated),
     source_law_info: law?.law_info ?? null,
@@ -487,8 +489,9 @@ async function fetchExistingMarkers(client) {
   while (true) {
     const to = from + pageSize - 1;
     const { data, error } = await client
-      .from('laws')
+      .from('law_versions')
       .select('law_num, revision_marker')
+      .eq('is_current', true)
       .range(from, to);
     supabaseOrThrow(error, 'load existing markers');
 
@@ -553,7 +556,7 @@ async function processOneLaw({ client, lawRow, lawList, options }) {
   console.log(`  processing: ${lawNum}`);
 
   const lawArticle = await fetchLawArticle(lawNum);
-  const revisionMarker = extractLawRevisionMarker(lawArticle) ?? lawRow.revision_marker;
+  const revisionMarker = extractLawRevisionMarker(lawArticle) ?? 'unknown';
   const refData = await readRefData(options.refDir, lawNum);
   if (options.dryRun) {
     return { lawNum, referenceCount: refData.length };
@@ -591,7 +594,6 @@ async function processOneLaw({ client, lawRow, lawList, options }) {
   const { error: syncLawsError } = await client
     .from('laws')
     .update({
-      revision_marker: revisionMarker,
       source_revision_info: lawArticle?.revision_info ?? lawRow.source_revision_info,
       updated_source: toTimestamp(lawArticle?.revision_info?.updated ?? lawArticle?.current_revision_info?.updated),
     })
@@ -633,7 +635,8 @@ async function main() {
   let targetRows = baseRows.filter((row) => {
     if (options.lawNums.size > 0) return options.lawNums.has(row.law_num);
     if (options.all) return true;
-    const isChanged = existingMap.get(row.law_num) !== row.revision_marker;
+    const nextRevisionMarker = extractLawRevisionMarker(row) ?? 'unknown';
+    const isChanged = existingMap.get(row.law_num) !== nextRevisionMarker;
     return isChanged;
   });
 
