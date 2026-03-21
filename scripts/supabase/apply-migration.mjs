@@ -34,6 +34,32 @@ function parseProjectRef(supabaseUrl) {
   return match ? match[1] : null;
 }
 
+function buildTransactionPoolerConfig(databaseUrl, supabaseUrl) {
+  const dbUrl = new URL(databaseUrl);
+  const ref = parseProjectRef(supabaseUrl);
+  if (!ref) {
+    throw new Error('Failed to parse project ref from SUPABASE_URL.');
+  }
+
+  const host = dbUrl.hostname.startsWith('db.')
+    ? dbUrl.hostname
+    : `db.${ref}.supabase.co`;
+
+  const user = dbUrl.username === 'postgres'
+    ? dbUrl.username
+    : decodeURIComponent(dbUrl.username || 'postgres');
+
+  return {
+    host,
+    port: 6543,
+    user,
+    password: decodeURIComponent(dbUrl.password),
+    database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
+    ssl: { rejectUnauthorized: false },
+    connectionTimeoutMillis: 3500,
+  };
+}
+
 async function connectAndRun(clientConfig, sql) {
   const client = new Client(clientConfig);
   await client.connect();
@@ -60,60 +86,9 @@ async function tryDirect(databaseUrl, sql) {
 }
 
 async function tryPooler(databaseUrl, supabaseUrl, sql) {
-  const dbUrl = new URL(databaseUrl);
-  const ref = parseProjectRef(supabaseUrl);
-  if (!ref) {
-    throw new Error('Failed to parse project ref from SUPABASE_URL.');
-  }
-
-  const regions = [
-    'ap-northeast-1',
-    'ap-northeast-2',
-    'ap-south-1',
-    'ap-southeast-1',
-    'ap-southeast-2',
-    'ca-central-1',
-    'eu-central-1',
-    'eu-north-1',
-    'eu-west-1',
-    'eu-west-2',
-    'eu-west-3',
-    'sa-east-1',
-    'us-east-1',
-    'us-east-2',
-    'us-west-1',
-    'us-west-2',
-  ];
-
-  const candidates = [];
-  for (const shard of [0, 1, 2]) {
-    for (const region of regions) {
-      candidates.push(`aws-${shard}-${region}.pooler.supabase.com`);
-    }
-  }
-
-  let lastError = null;
-  for (const host of candidates) {
-    try {
-      await connectAndRun(
-        {
-          host,
-          port: 6543,
-          user: `postgres.${ref}`,
-          password: decodeURIComponent(dbUrl.password),
-          database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
-          ssl: { rejectUnauthorized: false },
-          connectionTimeoutMillis: 3500,
-        },
-        sql,
-      );
-      return host;
-    } catch (error) {
-      lastError = error;
-    }
-  }
-
-  throw lastError ?? new Error('Pooler connection failed.');
+  const clientConfig = buildTransactionPoolerConfig(databaseUrl, supabaseUrl);
+  await connectAndRun(clientConfig, sql);
+  return `${clientConfig.host}:${clientConfig.port}`;
 }
 
 async function main() {
