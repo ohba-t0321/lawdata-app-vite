@@ -20,6 +20,8 @@ const REQUIRED_TABLES = [
 
 dns.setDefaultResultOrder('ipv4first');
 
+dns.setDefaultResultOrder('ipv4first');
+
 function parseArgs(argv) {
   const options = {
     migration: DEFAULT_MIGRATION,
