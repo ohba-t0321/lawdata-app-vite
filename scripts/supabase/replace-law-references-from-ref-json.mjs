@@ -53,28 +53,6 @@ function asFiniteNumber(value) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-function pickRevisionInfo(source) {
-  if (!source || typeof source !== 'object') return null;
-  return source.current_revision_info ?? source.revision_info ?? null;
-}
-
-function extractLawRevisionMarker(source) {
-  const revisionInfo = pickRevisionInfo(source);
-  const lawRevisionId = asNonEmptyString(revisionInfo?.law_revision_id);
-  if (lawRevisionId) return `law_revision_id:${lawRevisionId}`;
-
-  const updated = asNonEmptyString(revisionInfo?.updated);
-  if (updated) return `updated:${updated}`;
-
-  const amendmentEnforcementDate = asNonEmptyString(revisionInfo?.amendment_enforcement_date);
-  if (amendmentEnforcementDate) return `amendment_enforcement_date:${amendmentEnforcementDate}`;
-
-  const amendmentPromulgateDate = asNonEmptyString(revisionInfo?.amendment_promulgate_date);
-  if (amendmentPromulgateDate) return `amendment_promulgate_date:${amendmentPromulgateDate}`;
-
-  return null;
-}
-
 function toTimestamp(value) {
   const text = asNonEmptyString(value);
   if (!text) return null;
@@ -202,13 +180,11 @@ function normalizeLawRow(law) {
     return null;
   }
 
-  const revisionMarker = extractLawRevisionMarker(law) ?? 'unknown';
   return {
     law_num: lawNum,
     law_id: asNonEmptyString(law?.law_info?.law_id),
     law_type: asNonEmptyString(law?.law_info?.law_type),
     law_title: lawTitle,
-    revision_marker: revisionMarker,
     current_revision_id: asNonEmptyString(law?.current_revision_info?.law_revision_id),
     updated_source: toTimestamp(law?.current_revision_info?.updated ?? law?.revision_info?.updated),
     source_law_info: law?.law_info ?? null,
@@ -252,7 +228,7 @@ async function listRefJsonTargets(refDir) {
     .sort((a, b) => a.localeCompare(b, 'ja'));
 }
 
-function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
+function buildReferenceRows(refData, sourceLawNum) {
   const rows = [];
   let skippedCount = 0;
 
@@ -274,7 +250,6 @@ function buildReferenceRows(refData, sourceLawNum, sourceRevisionMarker) {
 
     rows.push({
       source_law_num: sourceLawNum,
-      source_revision_marker: sourceRevisionMarker,
       source_provision: asNonEmptyString(item?.referred?.lawArticle?.provision),
       source_article: asNonEmptyString(item?.referred?.lawArticle?.article),
       source_paragraph: asNonEmptyString(item?.referred?.lawArticle?.paragraph),
@@ -310,7 +285,6 @@ async function upsertLawRows(client, lawRows, chunkSize) {
     'law_id',
     'law_type',
     'law_title',
-    'revision_marker',
     'current_revision_id',
     'updated_source',
     'source_law_info',
@@ -325,7 +299,6 @@ async function upsertLawRows(client, lawRows, chunkSize) {
       row.law_id,
       row.law_type,
       row.law_title,
-      row.revision_marker,
       row.current_revision_id,
       row.updated_source,
       row.source_law_info,
@@ -340,7 +313,6 @@ async function upsertLawRows(client, lawRows, chunkSize) {
         law_id = excluded.law_id,
         law_type = excluded.law_type,
         law_title = excluded.law_title,
-        revision_marker = excluded.revision_marker,
         current_revision_id = excluded.current_revision_id,
         updated_source = excluded.updated_source,
         source_law_info = excluded.source_law_info,
@@ -355,7 +327,6 @@ async function upsertLawRows(client, lawRows, chunkSize) {
 async function insertReferenceRows(client, rows) {
   const columns = [
     'source_law_num',
-    'source_revision_marker',
     'source_provision',
     'source_article',
     'source_paragraph',
@@ -371,7 +342,6 @@ async function insertReferenceRows(client, rows) {
   ];
   const { placeholders, values } = buildValuesClause(rows, (row) => [
     row.source_law_num,
-    row.source_revision_marker,
     row.source_provision,
     row.source_article,
     row.source_paragraph,
@@ -392,21 +362,13 @@ async function insertReferenceRows(client, rows) {
   await client.query(sql, values);
 }
 
-async function countReferenceRows(refDir, targetLawNums, markerMap) {
+async function countReferenceRows(refDir, targetLawNums) {
   let rowCount = 0;
   let skippedCount = 0;
 
   for (const lawNum of targetLawNums) {
-    const sourceRevisionMarker = markerMap.get(lawNum);
-    if (!sourceRevisionMarker) {
-      throw new Error(`No revision marker found in e-Gov law list for ${lawNum}`);
-    }
     const refData = await readRefData(refDir, lawNum);
-    const { rows, skippedCount: nextSkippedCount } = buildReferenceRows(
-      refData,
-      lawNum,
-      sourceRevisionMarker,
-    );
+    const { rows, skippedCount: nextSkippedCount } = buildReferenceRows(refData, lawNum);
     rowCount += rows.length;
     skippedCount += nextSkippedCount;
   }
@@ -414,23 +376,14 @@ async function countReferenceRows(refDir, targetLawNums, markerMap) {
   return { rowCount, skippedCount };
 }
 
-async function replaceReferenceRows(client, refDir, targetLawNums, markerMap, chunkSize) {
+async function replaceReferenceRows(client, refDir, targetLawNums, chunkSize) {
   let insertedRowCount = 0;
   let skippedCount = 0;
   let pendingRows = [];
 
   for (const [index, lawNum] of targetLawNums.entries()) {
-    const sourceRevisionMarker = markerMap.get(lawNum);
-    if (!sourceRevisionMarker) {
-      throw new Error(`No revision marker found in e-Gov law list for ${lawNum}`);
-    }
-
     const refData = await readRefData(refDir, lawNum);
-    const { rows, skippedCount: nextSkippedCount } = buildReferenceRows(
-      refData,
-      lawNum,
-      sourceRevisionMarker,
-    );
+    const { rows, skippedCount: nextSkippedCount } = buildReferenceRows(refData, lawNum);
     skippedCount += nextSkippedCount;
     pendingRows.push(...rows);
     insertedRowCount += rows.length;
@@ -458,13 +411,13 @@ async function main() {
   console.log('loading law list from e-Gov API...');
   const lawList = await fetchLawList();
   const lawRows = dedupeLawRows(lawList.map((law) => normalizeLawRow(law)).filter(Boolean));
-  const markerMap = new Map(lawRows.map((row) => [row.law_num, row.revision_marker]));
   console.log(`law list loaded: ${lawList.length} rows, deduped: ${lawRows.length} rows`);
 
   const targetLawNums = await listRefJsonTargets(options.refDir);
   console.log(`ref_json targets: ${targetLawNums.length}`);
 
-  const missingLawNums = targetLawNums.filter((lawNum) => !markerMap.has(lawNum));
+  const lawNumSet = new Set(lawRows.map((row) => row.law_num));
+  const missingLawNums = targetLawNums.filter((lawNum) => !lawNumSet.has(lawNum));
   if (missingLawNums.length > 0) {
     const preview = missingLawNums.slice(0, 20).join(', ');
     throw new Error(
@@ -473,7 +426,7 @@ async function main() {
   }
 
   if (options.dryRun) {
-    const { rowCount, skippedCount } = await countReferenceRows(options.refDir, targetLawNums, markerMap);
+    const { rowCount, skippedCount } = await countReferenceRows(options.refDir, targetLawNums);
     console.log(
       `dry-run complete: target_files=${targetLawNums.length}, inserted_rows=${rowCount}, skipped_rows=${skippedCount}`,
     );
@@ -497,7 +450,6 @@ async function main() {
       client,
       options.refDir,
       targetLawNums,
-      markerMap,
       options.chunkSize,
     );
     await client.query('commit');
