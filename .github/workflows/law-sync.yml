@@ -55,11 +55,11 @@ jobs:
         run: |
           if [ "${{ steps.ref_json_cache.outputs.cache-hit }}" != "true" ]; then
             echo "ref_json cache miss; running full rebuild for safety."
-            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all --sync-supabase
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all --sync-supabase --continue-on-fetch-failure
           elif [ "${{ github.event.inputs.ref_json_all }}" = "true" ]; then
-            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all --sync-supabase
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --all --sync-supabase --continue-on-fetch-failure
           else
-            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --sync-supabase
+            python scripts/ref_json/build_ref_json.py --out-dir public/ref_json --sync-supabase --continue-on-fetch-failure
           fi
 
       - name: Save ref_json cache

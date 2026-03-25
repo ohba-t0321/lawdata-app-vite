@@ -91,6 +91,10 @@ class BuildError(RuntimeError):
     pass
 
 
+class ApiFetchError(BuildError):
+    pass
+
+
 def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description='Build ref_json files from e-Gov API payloads.',
@@ -106,6 +110,11 @@ def parse_args(argv: Sequence[str]) -> argparse.Namespace:
     parser.add_argument('--verbose', action='store_true')
     parser.add_argument('--updated-within-days', type=int, default=7)
     parser.add_argument('--sync-supabase', action='store_true')
+    parser.add_argument(
+        '--continue-on-fetch-failure',
+        action='store_true',
+        help='Continue when individual law_data fetches fail, as long as at least one source law was processed.',
+    )
     return parser.parse_args(argv)
 
 
@@ -126,7 +135,7 @@ def fetch_json(url: str, timeout: int, retry: int) -> Any:
             last_error = exc
             if attempt < retry:
                 time.sleep(0.5 * attempt)
-    raise BuildError(f'Failed to fetch URL: {url} ({last_error})')
+    raise ApiFetchError(f'Failed to fetch URL: {url} ({last_error})')
 
 
 def build_law_list_url(limit: int) -> str:
@@ -165,7 +174,7 @@ def fetch_law_article(law_num: str, timeout: int, retry: int) -> Dict[str, Any]:
     url = f'{API_BASE}/law_data/{encoded}'
     payload = fetch_json(url, timeout=timeout, retry=retry)
     if not isinstance(payload, dict):
-        raise BuildError(f'law_data payload is not an object: {law_num}')
+        raise ApiFetchError(f'law_data payload is not an object: {law_num}')
     return payload
 
 
@@ -1428,7 +1437,8 @@ def main(argv: Sequence[str]) -> int:
 
     target_lookup_cache: Dict[str, ArticleLookup] = {}
     target_row_cache: Dict[str, List[Dict[str, Any]]] = {}
-    failed: List[str] = []
+    fetch_failed: List[str] = []
+    fatal_failed: List[str] = []
     processed = 0
     touched_target_laws: Set[str] = set()
 
@@ -1483,8 +1493,16 @@ def main(argv: Sequence[str]) -> int:
             }
             if args.sleep > 0:
                 time.sleep(args.sleep)
+        except ApiFetchError as exc:
+            line = f'{law_num}: {exc}'
+            if args.continue_on_fetch_failure:
+                fetch_failed.append(line)
+                print(f'  skipped fetch failure: {law_num} -> {exc}', file=sys.stderr)
+            else:
+                fatal_failed.append(line)
+                print(f'  failed: {law_num} -> {exc}', file=sys.stderr)
         except Exception as exc:  # noqa: BLE001
-            failed.append(f'{law_num}: {exc}')
+            fatal_failed.append(f'{law_num}: {exc}')
             print(f'  failed: {law_num} -> {exc}', file=sys.stderr)
 
     if not args.dry_run:
@@ -1498,7 +1516,7 @@ def main(argv: Sequence[str]) -> int:
                     'references': len(merged_rows),
                 }
             except Exception as exc:  # noqa: BLE001
-                failed.append(f'{target_law_num}: {exc}')
+                fatal_failed.append(f'{target_law_num}: {exc}')
                 print(f'  failed write: {target_law_num} -> {exc}', file=sys.stderr)
         manifest['generated_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
         manifest['source'] = 'scripts/ref_json/build_ref_json.py'
@@ -1506,27 +1524,42 @@ def main(argv: Sequence[str]) -> int:
         manifest['format_version'] = 4
         manifest['layout'] = 'target_law_num'
         write_json(manifest_path, manifest)
-        if args.sync_supabase and not failed:
+        fetch_failures_block_sync = bool(fetch_failed) and (
+            not args.continue_on_fetch_failure or processed == 0
+        )
+        if args.sync_supabase and not fatal_failed and not fetch_failures_block_sync:
+            if fetch_failed:
+                print(
+                    f'continuing after {len(fetch_failed)} fetch failures and syncing Supabase...',
+                    file=sys.stderr,
+                )
             print('syncing law_references to Supabase...')
             run_supabase_sync(out_dir)
-        elif args.sync_supabase and failed:
+        elif args.sync_supabase and (fatal_failed or fetch_failures_block_sync):
             print('skipped Supabase sync because ref_json build had failures.', file=sys.stderr)
 
-    status = 'success' if not failed else ('partial_success' if processed > 0 else 'failed')
+    total_failed = len(fetch_failed) + len(fatal_failed)
+    status = 'success' if total_failed == 0 else ('partial_success' if processed > 0 else 'failed')
     if args.dry_run:
-        print(f'done: status={status}, processed_sources={processed}, failed={len(failed)}')
+        print(f'done: status={status}, processed_sources={processed}, failed={total_failed}')
     else:
         print(
             f'done: status={status}, processed_sources={processed}, '
-            f'updated_target_files={len(touched_target_laws)}, failed={len(failed)}'
+            f'updated_target_files={len(touched_target_laws)}, failed={total_failed}'
         )
     if warnings:
         print(f'warnings: {len(warnings)}', file=sys.stderr)
         for line in warnings:
             print(line, file=sys.stderr)
-    if failed:
-        for line in failed:
+    if fetch_failed:
+        for line in fetch_failed:
             print(line, file=sys.stderr)
+    if fatal_failed:
+        for line in fatal_failed:
+            print(line, file=sys.stderr)
+    if fatal_failed:
+        return 1
+    if fetch_failed and (not args.continue_on_fetch_failure or processed == 0):
         return 1
     return 0
 
