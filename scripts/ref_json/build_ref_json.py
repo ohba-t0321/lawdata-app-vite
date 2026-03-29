@@ -794,7 +794,7 @@ def write_json(path: Path, payload: Any) -> None:
 
 def run_supabase_sync(out_dir: Path) -> None:
     commands = [
-        ['node', 'scripts/supabase/apply-migration.mjs'],
+        # ['node', 'scripts/supabase/apply-migration.mjs'], # マイグレーションは手動で行うためコメントアウト
         ['node', 'scripts/supabase/replace-law-references-from-ref-json.mjs', '--ref-dir', str(out_dir)],
     ]
     env = dict(os.environ)
