@@ -1,4 +1,5 @@
 import { promises as fs } from 'node:fs';
+import dns from 'node:dns';
 import path from 'node:path';
 import { Client } from 'pg';
 
@@ -6,6 +7,8 @@ const LAW_TYPES = 'Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc'
 const LAW_API_BASE = 'https://laws.e-gov.go.jp/api/2';
 const DEFAULT_CHUNK_SIZE = 1000;
 const MANIFEST_FILE = '_meta.json';
+
+dns.setDefaultResultOrder('ipv4first');
 
 function parseArgs(argv) {
   const options = {
@@ -67,13 +70,16 @@ function parseProjectRef(supabaseUrl) {
 }
 
 function buildDirectClientConfig(databaseUrl) {
-  const connectionString = databaseUrl.includes('sslmode=')
-    ? databaseUrl
-    : `${databaseUrl}${databaseUrl.includes('?') ? '&' : '?'}sslmode=require`;
+  const parsed = new URL(databaseUrl);
+  parsed.searchParams.set('sslmode', 'require');
+  parsed.searchParams.delete('sslrootcert');
+  parsed.searchParams.delete('sslcert');
+  parsed.searchParams.delete('sslkey');
   return {
     application_name: 'lawdata-ref-json-full-sync',
-    connectionString,
+    connectionString: parsed.toString(),
     connectionTimeoutMillis: 4000,
+    family: 4,
     ssl: { rejectUnauthorized: false },
   };
 }
@@ -85,26 +91,23 @@ function buildPoolerClientConfigs(databaseUrl, supabaseUrl) {
     return [];
   }
 
-  const regions = [
-    'ap-northeast-1',
-  ];
+  const host = dbUrl.hostname.startsWith('db.')
+    ? dbUrl.hostname
+    : `db.${ref}.supabase.co`;
 
-  const configs = [];
-  for (const shard of [0, 1, 2]) {
-    for (const region of regions) {
-      configs.push({
-        application_name: 'lawdata-ref-json-full-sync',
-        connectionTimeoutMillis: 3500,
-        database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
-        host: `aws-${shard}-${region}.pooler.supabase.com`,
-        password: decodeURIComponent(dbUrl.password),
-        port: 6543,
-        ssl: { rejectUnauthorized: false },
-        user: `postgres.${ref}`,
-      });
-    }
-  }
-  return configs;
+  const user = decodeURIComponent(dbUrl.username || 'postgres');
+
+  return [{
+    application_name: 'lawdata-ref-json-full-sync',
+    connectionTimeoutMillis: 3500,
+    database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
+    family: 4,
+    host,
+    password: decodeURIComponent(dbUrl.password),
+    port: 6543,
+    ssl: { rejectUnauthorized: false },
+    user,
+  }];
 }
 
 async function connectDatabase(databaseUrl, supabaseUrl) {
@@ -125,6 +128,8 @@ async function connectDatabase(databaseUrl, supabaseUrl) {
       return client;
     } catch (error) {
       lastError = error;
+      const message = error instanceof Error ? error.message : String(error);
+      console.log(`db_connect_failed_via=${attempt.label} reason=${message}`);
       try {
         await client.end();
       } catch {
