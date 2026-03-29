@@ -20,8 +20,6 @@ const REQUIRED_TABLES = [
 
 dns.setDefaultResultOrder('ipv4first');
 
-dns.setDefaultResultOrder('ipv4first');
-
 function parseArgs(argv) {
   const options = {
     migration: null,
@@ -75,11 +73,13 @@ function buildTransactionPoolerConfig(databaseUrl, supabaseUrl) {
     : decodeURIComponent(dbUrl.username || 'postgres');
 
   return {
+    application_name: 'lawdata-apply-migration',
     host,
     port: 6543,
     user,
     password: decodeURIComponent(dbUrl.password),
     database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
+    family: 4,
     ssl: { rejectUnauthorized: false },
     connectionTimeoutMillis: 3500,
   };
@@ -96,13 +96,17 @@ async function connectAndRun(clientConfig, sql) {
 }
 
 async function tryDirect(databaseUrl, sql) {
-  const connectionString = databaseUrl.includes('sslmode=')
-    ? databaseUrl
-    : `${databaseUrl}${databaseUrl.includes('?') ? '&' : '?'}sslmode=require`;
+  const parsed = new URL(databaseUrl);
+  parsed.searchParams.set('sslmode', 'require');
+  parsed.searchParams.delete('sslrootcert');
+  parsed.searchParams.delete('sslcert');
+  parsed.searchParams.delete('sslkey');
 
   await connectAndRun(
     {
-      connectionString,
+      application_name: 'lawdata-apply-migration',
+      connectionString: parsed.toString(),
+      family: 4,
       ssl: { rejectUnauthorized: false },
       connectionTimeoutMillis: 4000,
     },
@@ -129,7 +133,8 @@ async function confirmSchemaViaSupabase(supabaseUrl, serviceRoleKey) {
   for (const { name, probeColumn } of REQUIRED_TABLES) {
     const { error } = await client.from(name).select(probeColumn, { head: true, count: 'exact' }).limit(1);
     if (error) {
-      missingTables.push(`${name}: ${error.message}`);
+      const message = error.message || error.details || error.hint || error.code || JSON.stringify(error);
+      missingTables.push(`${name}: ${message}`);
     }
   }
 
