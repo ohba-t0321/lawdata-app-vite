@@ -25,7 +25,7 @@ jobs:
     env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_POOLER_URL: ${{ secrets.DATABASE_POOLER_URL }}
       LAWDATA_REF_DIR: public/ref_json
 
     steps:
@@ -65,13 +65,3 @@ jobs:
         with:
           path: public/ref_json
           key: ref-json-${{ github.ref_name }}-${{ github.run_id }}
-
-      - name: DB keep-alive read
-        run: |
-          node --input-type=module -e "
-          import { createClient } from '@supabase/supabase-js';
-          const c = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false }});
-          const { error } = await c.from('laws').select('law_num', { head: true, count: 'exact' }).limit(1);
-          if (error) throw error;
-          console.log('keepalive_ok');
-          "
