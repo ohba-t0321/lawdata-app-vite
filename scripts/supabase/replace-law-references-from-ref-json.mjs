@@ -70,13 +70,16 @@ function parseProjectRef(supabaseUrl) {
 }
 
 function buildDirectClientConfig(databaseUrl) {
-  const connectionString = databaseUrl.includes('sslmode=')
-    ? databaseUrl
-    : `${databaseUrl}${databaseUrl.includes('?') ? '&' : '?'}sslmode=require`;
+  const parsed = new URL(databaseUrl);
+  parsed.searchParams.set('sslmode', 'require');
+  parsed.searchParams.delete('sslrootcert');
+  parsed.searchParams.delete('sslcert');
+  parsed.searchParams.delete('sslkey');
   return {
     application_name: 'lawdata-ref-json-full-sync',
-    connectionString,
+    connectionString: parsed.toString(),
     connectionTimeoutMillis: 4000,
+    family: 4,
     ssl: { rejectUnauthorized: false },
   };
 }
@@ -98,6 +101,7 @@ function buildPoolerClientConfigs(databaseUrl, supabaseUrl) {
     application_name: 'lawdata-ref-json-full-sync',
     connectionTimeoutMillis: 3500,
     database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
+    family: 4,
     host,
     password: decodeURIComponent(dbUrl.password),
     port: 6543,
