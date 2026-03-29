@@ -1,4 +1,4 @@
-import type { LawData, LawArticle, RefData, VNode, VElement, TocItem } from "../LawDataContext";
+import type { ArticleIndexEntry, LawData, LawArticle, RefArticle, RefData, VNode, VElement, TocItem } from "../LawDataContext";
 import { saveLawToCache, getLawFromCache, getLawListFromCache } from '../indexedDB'
 import type { LawListCache, LawDataCache } from "../indexedDB";
 import type { WorkerRequest, WorkerResponse, JsonNode } from './lawDataWorker';
@@ -36,6 +36,137 @@ async function fetchRefDataJson(lawId: string): Promise<RefData[]> {
 		console.error("法令参照JSONファイルを取得中にエラーが発生しました:", lastError);
 	}
 	return [];
+}
+
+function flattenNodeText(node: JsonNode | string): string {
+	if (typeof node === 'string') {
+		return node;
+	}
+	return (node.children ?? []).map((child) => (
+		typeof child === 'string' ? child : flattenNodeText(child)
+	)).join('');
+}
+
+function normalizePlainText(text: string): string {
+	return text
+		.replace(/\s+/g, ' ')
+		.replace(/\u3000+/g, ' ')
+		.trim();
+}
+
+function articleReferenceKey(provision: string, article: string): string {
+	return `${provision}:${article}`;
+}
+
+function articleSourceId(lawNum: string, provision: string, article: string): string {
+	return `${lawNum}:${provision}:${article}`;
+}
+
+function refArticleKey(item: Pick<RefArticle, 'lawNum' | 'provision' | 'article' | 'paragraph' | 'item'>): string {
+	return `${item.lawNum}:${item.provision}:${item.article ?? ''}:${item.paragraph ?? ''}:${item.item ?? ''}`;
+}
+
+function collectArticles(node: JsonNode, out: JsonNode[]): void {
+	if (node.tag === 'Article') {
+		out.push(node);
+	}
+	(node.children ?? []).forEach((child) => {
+		if (isJsonNode(child)) {
+			collectArticles(child, out);
+		}
+	});
+}
+
+function buildArticleReferenceMap(refData: RefData[]): Map<string, RefArticle[]> {
+	const refsByArticle = new Map<string, RefArticle[]>();
+	refData.forEach((item) => {
+		const referred = item.referred?.lawArticle;
+		const ref = item.ref;
+		if (!referred?.provision || !referred.article || !ref?.lawNum || !ref.lawArticle?.provision || !ref.lawArticle.article) {
+			return;
+		}
+		const key = articleReferenceKey(referred.provision, referred.article);
+		const nextRef: RefArticle = {
+			lawNum: ref.lawNum,
+			provision: ref.lawArticle.provision,
+			article: ref.lawArticle.article,
+			paragraph: ref.lawArticle.paragraph || null,
+			item: ref.lawArticle.item || null,
+			similarityScore: item.similarityScore ?? null,
+		};
+		const current = refsByArticle.get(key) ?? [];
+		if (!current.some((existing) => refArticleKey(existing) === refArticleKey(nextRef))) {
+			current.push(nextRef);
+			refsByArticle.set(key, current);
+		}
+	});
+	return refsByArticle;
+}
+
+function collectArticleIndex(
+	lawId: string,
+	lawTitle: string,
+	lawArticle: LawArticle,
+	refData: RefData[],
+): ArticleIndexEntry[] {
+	const lawFullText = lawArticle.law_full_text;
+	if (!isJsonNode(lawFullText)) return [];
+	const lawBody = lawFullText.children?.find((child): child is JsonNode => isJsonNode(child) && child.tag === 'LawBody');
+	if (!lawBody?.children) return [];
+
+	const refsByArticle = buildArticleReferenceMap(refData);
+	const entries: ArticleIndexEntry[] = [];
+
+	lawBody.children.forEach((part) => {
+		if (!isJsonNode(part) || (part.tag !== 'MainProvision' && part.tag !== 'SupplProvision')) {
+			return;
+		}
+		const provision = part.tag === 'MainProvision'
+			? 'MainProvision'
+			: (typeof part.attr?.AmendLawNum === 'string' && part.attr.AmendLawNum.trim()
+				? part.attr.AmendLawNum.trim()
+				: 'SupplProvision');
+		const articles: JsonNode[] = [];
+		collectArticles(part, articles);
+		articles.forEach((articleNode) => {
+			const articleValue = articleNode.attr?.Num;
+			const article = typeof articleValue === 'string' || typeof articleValue === 'number'
+				? String(articleValue)
+				: '';
+			if (!article) {
+				return;
+			}
+			const text = normalizePlainText(flattenNodeText(articleNode));
+			if (!text) {
+				return;
+			}
+			entries.push({
+				sourceId: articleSourceId(lawId, provision, article),
+				lawNum: lawId,
+				lawTitle,
+				provision,
+				article,
+				text,
+				references: refsByArticle.get(articleReferenceKey(provision, article)) ?? [],
+			});
+		});
+	});
+
+	return entries;
+}
+
+function resolveLawTitle(listLaw: LawData | undefined, lawArticle: LawArticle, lawId: string): string {
+	const listTitle = listLaw?.current_revision_info?.law_title;
+	if (typeof listTitle === 'string' && listTitle.trim()) {
+		return listTitle.trim();
+	}
+	const revisionInfoTitle = lawArticle.revision_info && typeof lawArticle.revision_info === 'object'
+		? lawArticle.revision_info['law_title']
+		: null;
+	if (typeof revisionInfoTitle === 'string' && revisionInfoTitle.trim()) {
+		return revisionInfoTitle.trim();
+	}
+	return lawId;
 }
 
 function isJsonNode(node: unknown): node is JsonNode {
@@ -122,6 +253,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 
 		let lawArticle: LawArticle;
 		let vnode: VNode[] = [];
+		let articleIndex: ArticleIndexEntry[] = [];
 		let tocItems: TocItem[] = [];
 
 		if (cachedArticle && (!expectedRevisionMarker || (cachedArticle as LawDataCache).lawRevisionMarker === expectedRevisionMarker)) {
@@ -138,30 +270,57 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 			} else {
 				vnode = (cachedArticle as LawDataCache).vnode ?? [];
 			}
+			const cachedArticleIndexJson = (cachedArticle as LawDataCache).articleIndexJson;
+			if (cachedArticleIndexJson) {
+				try {
+					const parsed = JSON.parse(cachedArticleIndexJson);
+					articleIndex = Array.isArray(parsed) ? (parsed as ArticleIndexEntry[]) : [];
+				} catch (error) {
+					console.error("cached article index JSON parse error:", error);
+					articleIndex = [];
+				}
+			} else {
+				articleIndex = (cachedArticle as LawDataCache).articleIndex ?? [];
+			}
 		} else {
 			const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);
 			lawArticle = await res.json() as LawArticle;
 			const lawRevisionMarker = extractLawRevisionMarker(lawArticle);
-			saveLawToCache(lawId, lawArticle, [], lawRevisionMarker);
+			saveLawToCache(lawId, lawArticle, [], lawRevisionMarker, []);
 		}
 		tocItems = buildTocItems(lawArticle);
+		const lawTitle = resolveLawTitle(listLaw, lawArticle, lawId);
 		// 部分的な結果を送信  
 		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_PROGRESS',
 			data: { progress: 'basic_data_loaded', tocItems },
 		} as WorkerResponse);
 
-		// ステップ1-2: vnodeが既にキャッシュにある場合は以降の処理を省略してvnodeをそのまま返却
 		if ((vnode)&&(vnode.length > 0)) {
 			emitCachedVnode(vnode);
+		}
+
+		// ステップ2: 参照データの取得  
+		const needsArticleIndex = articleIndex.length === 0;
+		if (vnode.length > 0 && !needsArticleIndex) {
 			postMessageSafe({
 				type: 'FETCH_LAW_ARTICLE_SUCCESS',
-				data: { vnode, progress: 'complete', tocItems },
+				data: { vnode, articleIndex, progress: 'complete', tocItems },
 			} as WorkerResponse);
 			return;
 		}
-		// ステップ2: 参照データの取得  
 		const refData = await fetchRefDataJson(lawId);
+		if (needsArticleIndex) {
+			articleIndex = collectArticleIndex(lawId, lawTitle, lawArticle, refData);
+		}
+		if (vnode.length > 0) {
+			saveLawToCache(lawId, lawArticle, vnode, extractLawRevisionMarker(lawArticle), articleIndex);
+			postMessageSafe({
+				type: 'FETCH_LAW_ARTICLE_SUCCESS',
+				data: { vnode, articleIndex, progress: 'complete', tocItems },
+			} as WorkerResponse);
+			return;
+		}
 		const refLawTitle = await getRefLaw(lawArticle);
 		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_PROGRESS',
@@ -210,11 +369,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
 		} catch (error) {
 			console.error("法令本文の仮想ツリー構築中にエラーが発生しました:", error, "vnode:", vnode);
 		}
-		saveLawToCache(lawId, lawArticle, vnode, extractLawRevisionMarker(lawArticle));
+		saveLawToCache(lawId, lawArticle, vnode, extractLawRevisionMarker(lawArticle), articleIndex);
 		// 最終結果を送信  
 		postMessageSafe({
 			type: 'FETCH_LAW_ARTICLE_SUCCESS',
-			data: { vnode, progress: 'complete', tocItems },
+			data: { vnode, articleIndex, progress: 'complete', tocItems },
 		} as WorkerResponse, 'vnode');
 		
 	} catch (error) {

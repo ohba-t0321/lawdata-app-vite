@@ -1,4 +1,5 @@
 import './App.css'
+import { AuthProvider } from './AuthContext'
 import { DividerProvider } from './DiviserContext'
 import { LawDataProvider, LawArticleProvider, ReferenceProvider } from './LawDataContext'
 import { ThemeProvider } from './ThemeContext'
@@ -8,8 +9,9 @@ import { LawDataOutput } from './LawDataOutput/LawDataOutput'
 
 function App() {
   return (
-      <div className="app">
-        <ThemeProvider>
+    <div className="app">
+      <ThemeProvider>
+        <AuthProvider>
           <DividerProvider>
             <LawDataProvider>
               <LawArticleProvider>
@@ -24,7 +26,8 @@ function App() {
               </LawArticleProvider>
             </LawDataProvider>
           </DividerProvider>
-        </ThemeProvider>
+        </AuthProvider>
+      </ThemeProvider>
       </div>
   )
 }

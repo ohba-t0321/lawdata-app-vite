@@ -76,6 +76,51 @@ Storage-only の移行方針と、Supabase Database 系コードの整理方針�
 [docs/ref-json-storage-only-plan.md](/home/ohbat/Documents/VSCode/app/lawdata-app-vite/docs/ref-json-storage-only-plan.md)
 にまとめています。
 
+## 会員向けAIチャットの設定
+
+AIチャットは既存の法令閲覧とは独立しており、Supabase Auth にログインしたユーザーだけが使えます。
+
+必要なフロント環境変数:
+
+```bash
+VITE_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
+VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+VITE_REFDATA_BASE_URL=https://YOUR_PROJECT_REF.supabase.co/storage/v1/object/public/law-assets/ref_json
+```
+
+Supabase 側では以下を別途設定してください。
+
+- `scripts/supabase/migrations/202603260001_add_ai_chat_auth_tables.sql` を適用
+- `supabase/functions/law-chat-answer` をデプロイ
+- Edge Function secrets に `OPENAI_API_KEY` と `OPENAI_MODEL` を設定
+- Auth の redirect URL に配信先サブパス `/lawdata-app-vite/` を含む URL を登録
+
+### SMTP 未設定時の暫定ログイン運用
+
+SMTP をまだ用意していない間は、管理者が Supabase の `service_role` で認証リンクを生成し、Slack や Teams など別経路で本人に共有できます。
+
+必要な環境変数:
+
+```bash
+SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
+```
+
+実行例:
+
+```bash
+set -a
+source .env
+set +a
+
+npm run supabase:generate-auth-link -- --email member@example.com --redirect-to http://localhost:5173/lawdata-app-vite/
+```
+
+- 既存ユーザー向けログインリンクは `--type magiclink` を使います
+- 新規招待リンクを手動配布したい場合は `--type invite` を使います
+- 返ってきた URL を本人へ手動共有してください
+- `SUPABASE_SERVICE_ROLE_KEY` はブラウザやクライアントコードへ出さないでください
+
 ## データ取得元
 
 本アプリは以下の e-Gov 法令 API を利用しています。

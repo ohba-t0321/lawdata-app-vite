@@ -76,6 +76,8 @@ interface LawArticleContextType {
   dataLoading: {left:string,right:string};
   tocItems: {left:TocItem[] | null, right:TocItem[] | null};
   setTocItems: React.Dispatch<React.SetStateAction<{left:TocItem[] | null, right:TocItem[] | null}>>;
+  articleIndexByPane: {left: ArticleIndexEntry[]; right: ArticleIndexEntry[]};
+  setArticleIndexByPane: React.Dispatch<React.SetStateAction<{left: ArticleIndexEntry[]; right: ArticleIndexEntry[]}>>;
 }
 
 export interface RefArticle {
@@ -85,6 +87,23 @@ export interface RefArticle {
   paragraph?: string | null;
   item?: string | null;
   similarityScore?: number | null;
+}
+
+export interface ArticleIndexEntry {
+  sourceId: string;
+  lawNum: string;
+  lawTitle: string;
+  provision: string;
+  article: string;
+  text: string;
+  references: RefArticle[];
+}
+
+export interface ReferenceArticleDetail {
+  target: RefArticle;
+  lawTitle: string;
+  text: string;
+  vnode: VNode[] | null;
 }
 
 interface ClickedRefSource {
@@ -98,6 +117,8 @@ interface ReferenceContextType {
   setClickedRefs: (refLaws:RefArticle[]) => void;
   refArticleLoaded: boolean;
   setRefArticleLoaded: (loaded:boolean) => void;
+  selectedReferenceDetail: ReferenceArticleDetail | null;
+  setSelectedReferenceDetail: React.Dispatch<React.SetStateAction<ReferenceArticleDetail | null>>;
   refLinkClick: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -144,9 +165,22 @@ const parseVnodeJson = (json?: string): VNode[] | null => {
   }
 };
 
+const parseArticleIndexJson = (json?: string): ArticleIndexEntry[] => {
+  if (!json) return [];
+  try {
+    const parsed = JSON.parse(json);
+    return Array.isArray(parsed) ? (parsed as ArticleIndexEntry[]) : [];
+  } catch (error) {
+    console.error('article index JSON parse error:', error);
+    return [];
+  }
+};
+
 interface LawArticleWorkerMessage {
   progress?: 'basic_data_loaded' | 'article_data_loading' | 'complete';
   tocItems?: TocItem[];
+  articleIndex?: ArticleIndexEntry[];
+  articleIndexJson?: string;
   vnodePartJson?: string;
   vnodePart?: VNode[];
   vnodeJson?: string;
@@ -219,6 +253,8 @@ export const LawArticleContext = createContext<LawArticleContextType>({
   dataLoading: {left:'', right:''},
   tocItems: {left: null, right: null},
   setTocItems: () => {},
+  articleIndexByPane: {left: [], right: []},
+  setArticleIndexByPane: () => {},
 });
 
 export const ReferenceContext = createContext<ReferenceContextType>({
@@ -227,6 +263,8 @@ export const ReferenceContext = createContext<ReferenceContextType>({
   setClickedRefs: () => {},
   refArticleLoaded: false,
   setRefArticleLoaded: () => {},
+  selectedReferenceDetail: null,
+  setSelectedReferenceDetail: () => {},
   refLinkClick: () => {},
 })
 
@@ -309,6 +347,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   const [dataLoading, setDataLoading] = useState<{left:string,right:string}>({left: '',right: ''});
   const [domNodes, setDomNodes] = useState<{left: React.ReactNode; right: React.ReactNode}>({left: <></>,right: <></>});
   const [tocItems, setTocItems] = useState<{left: TocItem[] | null; right: TocItem[] | null}>({left: null, right: null});
+  const [articleIndexByPane, setArticleIndexByPane] = useState<{left: ArticleIndexEntry[]; right: ArticleIndexEntry[]}>({left: [], right: []});
 
   const resolveLawId = useCallback((value: string | null): string | null => {
     if (!value) return null;
@@ -346,7 +385,11 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
             } else if (data.progress === 'complete') {
               const jsonVnode = parseVnodeJson(data.vnodeJson);
               const finalVnode = jsonVnode ?? data.vnode ?? vnode;
+              const articleIndex = data.articleIndexJson
+                ? parseArticleIndexJson(data.articleIndexJson)
+                : (data.articleIndex ?? []);
               setVnode(prev => ({ ...prev, [pane]: finalVnode }));
+              setArticleIndexByPane(prev => ({ ...prev, [pane]: articleIndex }));
               setDataLoading(prev => ({ ...prev, [pane]: '' }));
               if (data.tocItems) {
                 const prefixedTocItems = applyTocPrefixToItems(data.tocItems, pane);
@@ -364,6 +407,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       setIsArticleLoaded(prev => ({ ...prev, [pane]: false }));
       setDataLoading(prev => ({ ...prev, [pane]: '' }));
       setTocItems(prev => ({ ...prev, [pane]: null }));
+      setArticleIndexByPane(prev => ({ ...prev, [pane]: [] }));
     }
   }, [fetchLawArticle]);
 
@@ -381,6 +425,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
       // 表示を「データ取得中」にする処理
       setIsArticleLoaded((prev) => ({ ...prev, [key]: false }));
       setVnode(prev=>({...prev, [key]: null}));
+      setArticleIndexByPane(prev => ({ ...prev, [key]: [] }));
 
       // lawArticleInit関数の呼び出し
       lawArticleInit(key, resolvedLawId);
@@ -436,7 +481,7 @@ export const LawArticleProvider = ({ children }: { children: ReactNode }) => {
   }, [vnode]);
 
   return (
-    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded, vnode, setVnode, domNodes, dataLoading, tocItems, setTocItems }}>
+    <LawArticleContext.Provider value={{ selectedLaws, setSelectedLaws, isArticleLoaded, setIsArticleLoaded, vnode, setVnode, domNodes, dataLoading, tocItems, setTocItems, articleIndexByPane, setArticleIndexByPane }}>
       {children}
     </LawArticleContext.Provider>
   );
@@ -447,6 +492,7 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
   const [clickedRefs, setClickedRefs] = useState<RefArticle[]>([]);
   const [clickedRefSource, setClickedRefSource] = useState<ClickedRefSource | null>(null);
   const [refArticleLoaded,setRefArticleLoaded] = useState(false);
+  const [selectedReferenceDetail, setSelectedReferenceDetail] = useState<ReferenceArticleDetail | null>(null);
 
   const refLinkClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const rawTarget = e.target;
@@ -486,6 +532,7 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
     }
     if (refItems.length > 0) {
       setRefArticleLoaded(false);
+      setSelectedReferenceDetail(null);
       setClickedRefSource(
         pane && selectedLaws[pane]
           ? { pane, lawNum: selectedLaws[pane] }
@@ -495,7 +542,7 @@ export const ReferenceProvider = ({ children }: { children: ReactNode }) => {
     }
   }
   return (
-    <ReferenceContext.Provider value={{ clickedRefs, clickedRefSource, setClickedRefs, refArticleLoaded, setRefArticleLoaded, refLinkClick } }>
+    <ReferenceContext.Provider value={{ clickedRefs, clickedRefSource, setClickedRefs, refArticleLoaded, setRefArticleLoaded, selectedReferenceDetail, setSelectedReferenceDetail, refLinkClick } }>
       {children}
     </ReferenceContext.Provider>
   )

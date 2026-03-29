@@ -3,23 +3,105 @@
     10% { opacity: 0.2; }
     100% { opacity: 1; }
 }
-/* 必要に応じてスタイルを追加 */
-body { 
-    height:100dvh;
-}
 
-header {
+.app-header {
     border-radius: 3px;
     background: linear-gradient(135deg, #6f42c1, #007bff);
     color: #fff;
-    text-align: center;
-    padding: 5px;
+    padding: 8px 14px;
     width: 100%;
-    height: 60px;
+    min-height: 60px;
+    box-sizing: border-box;
 }
 
-header h1 {
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.header-title-wrap {
+    min-width: 0;
+}
+
+.app-header h1 {
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     animation: fadeIn 2s ease-in-out;
+}
+
+.header-subtitle {
+    margin: 2px 0 0;
+    font-size: 0.85rem;
+}
+
+.header-auth {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 240px;
+}
+
+.auth-login,
+.auth-session {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.auth-input {
+    min-width: 220px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 0.7rem;
+}
+
+.auth-button {
+    border-radius: 6px;
+    border: none;
+    background: #ffffff;
+    color: #1f3f8d;
+    padding: 0.45rem 0.8rem;
+}
+
+.auth-user,
+.auth-status {
+    font-size: 0.9rem;
+}
+
+.auth-status.disabled {
+    opacity: 0.8;
+}
+
+.header-notice {
+    margin-top: 6px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .header-main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-auth {
+        min-width: 0;
+        justify-content: flex-start;
+    }
+
+    .auth-form {
+        flex-wrap: wrap;
+    }
+
+    .auth-input {
+        min-width: 0;
+        width: 100%;
+    }
 }

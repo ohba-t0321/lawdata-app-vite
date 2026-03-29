@@ -2,7 +2,9 @@ import React,{ useContext,useMemo, useState, useEffect } from 'react';
 import './LawDataOutput.css';
 import { DividerContext } from '../DiviserContext';
 import { LawDataContext, LawArticleContext, ReferenceContext } from '../LawDataContext';
-import  { Reference } from './Reference'
+import { Reference } from './Reference';
+import { AIChatDrawer } from '../AIChat/AIChatDrawer';
+import { AuthContext } from '../AuthContext';
 
 // Propの型定義
 interface LawPaneProps {
@@ -99,9 +101,18 @@ export const LawPane: React.FC<LawPaneProps> = ({
 
 
 export const LawDataOutput = () => {
-    
     const { dividerPos, setDividerPos} = useContext(DividerContext);
-    const { refLinkClick } = useContext(ReferenceContext);
+    const { refLinkClick, clickedRefs } = useContext(ReferenceContext);
+    const { isConfigured } = useContext(AuthContext);
+    const [isChatOpen, setIsChatOpen] = useState(false);
+    const hasReference = clickedRefs.length > 0;
+
+    useEffect(() => {
+      if (!isConfigured) {
+        setIsChatOpen(false);
+      }
+    }, [isConfigured]);
+
     function handleMouseDown(e: React.MouseEvent<HTMLDivElement>) {
       e.preventDefault();
       const onMouseMove = (moveEvent: MouseEvent) => {
@@ -123,29 +134,37 @@ export const LawDataOutput = () => {
 
   return (
     <div className="main-content">
-      {/* Main content goes here */}
-      <div className="headline">
-        <p>このアプリは<a href="https://elaws.e-gov.go.jp/docs/law-data-basic/8529371-law-api-v1/">法令API</a>を利用して法令を検索しています。
-        法令を検索した後に該当する条文を右クリックすると、その条のテキストをクリップボードにコピーできます。</p>
-      </div>
-      <div className="law-data-output" id="main-container" onClick={refLinkClick}>
+      <div className={`law-stage${isConfigured && isChatOpen ? ' with-chat-drawer' : ''}${hasReference ? ' with-reference' : ''}`}>
+        <div className="headline">
+          <p>このアプリは<a href="https://elaws.e-gov.go.jp/docs/law-data-basic/8529371-law-api-v1/">法令API</a>を利用して法令を検索しています。
+          法令を検索した後に該当する条文を右クリックすると、その条のテキストをクリップボードにコピーできます。</p>
+        </div>
+        <div className="law-data-output" id="main-container" onClick={refLinkClick}>
 
-      {/* 左ペイン */}
-      <LawPane
-        pane="left"
-        width={dividerPos}
-      />
-      
-      {/* 仕切り（Divider） */}
-      <div className="divider" onMouseDown={handleMouseDown} />
-      
-      {/* 右ペイン */}
-      <LawPane
-        pane="right"
-        width={100 - dividerPos}
-      />
+        {/* 左ペイン */}
+        <LawPane
+          pane="left"
+          width={dividerPos}
+        />
+        
+        {/* 仕切り（Divider） */}
+        <div className="divider" onMouseDown={handleMouseDown} />
+        
+        {/* 右ペイン */}
+        <LawPane
+          pane="right"
+          width={100 - dividerPos}
+        />
+        </div>
+        <Reference />
       </div>
-      <Reference />
+      {isConfigured ? (
+        <AIChatDrawer
+          isOpen={isChatOpen}
+          onToggle={() => setIsChatOpen((prev) => !prev)}
+          onClose={() => setIsChatOpen(false)}
+        />
+      ) : null}
     </div>
   );
 }

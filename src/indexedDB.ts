@@ -1,4 +1,4 @@
-import type { LawData, LawArticle, VNode } from './LawDataContext'
+import type { ArticleIndexEntry, LawData, LawArticle, VNode } from './LawDataContext'
 export interface LawListCache {
   id:string,
   data:LawData[],
@@ -11,13 +11,15 @@ export interface LawDataCache {
   lawArticle:LawArticle,
   lawRevisionMarker: string | null,
   vnodeJson?: string,
+  articleIndexJson?: string,
   vnode?: VNode[],
+  articleIndex?: ArticleIndexEntry[],
   timestamp:number,
 }
 
 function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open("LawCacheDB", 5);
+    const request = indexedDB.open("LawCacheDB", 6);
     request.onupgradeneeded = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
       // 既存の "laws" ストアがない場合のみ作成（既にあるときはスキップ）
@@ -36,18 +38,30 @@ function openDB(): Promise<IDBDatabase> {
   });
 }
 
-export async function saveLawToCache(lawNo:string, lawArticle:LawArticle, vnode:VNode[], lawRevisionMarker: string | null = null) {
+export async function saveLawToCache(
+  lawNo:string,
+  lawArticle:LawArticle,
+  vnode:VNode[],
+  lawRevisionMarker: string | null = null,
+  articleIndex: ArticleIndexEntry[] = [],
+) {
   const db = await openDB();
   const tx = db.transaction("laws", "readwrite");
   const store = tx.objectStore("laws");
   lawNo = decodeURIComponent(lawNo);
   let vnodeJson: string | undefined;
+  let articleIndexJson: string | undefined;
   try {
     vnodeJson = JSON.stringify(vnode);
   } catch (error) {
     console.error("vnode JSON stringify error; caching without vnode:", error);
   }
-  const record: LawDataCache = {lawNo, lawArticle, vnodeJson, lawRevisionMarker, timestamp: Date.now() };
+  try {
+    articleIndexJson = JSON.stringify(articleIndex);
+  } catch (error) {
+    console.error("article index JSON stringify error; caching without articleIndex:", error);
+  }
+  const record: LawDataCache = {lawNo, lawArticle, vnodeJson, articleIndexJson, lawRevisionMarker, timestamp: Date.now() };
   try{
     store.put(record);
   } catch (error) {

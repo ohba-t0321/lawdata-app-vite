@@ -1,30 +1,18 @@
 import { promises as fs } from 'node:fs';
-import dns from 'node:dns';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Client } from 'pg';
-import { createClient } from '@supabase/supabase-js';
+import { connectSupabaseSessionPooler } from './pooler-db.mjs';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_MIGRATION_DIR = path.resolve(
   SCRIPT_DIR,
   'migrations',
 );
-const REQUIRED_TABLES = [
-  { name: 'laws', probeColumn: 'law_num' },
-  { name: 'law_versions', probeColumn: 'id' },
-  { name: 'law_assets', probeColumn: 'version_id' },
-  { name: 'law_references', probeColumn: 'id' },
-  { name: 'ingest_runs', probeColumn: 'id' },
-];
-
-dns.setDefaultResultOrder('ipv4first');
-
-dns.setDefaultResultOrder('ipv4first');
 
 function parseArgs(argv) {
   const options = {
     migration: null,
+    force: false,
   };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
@@ -35,6 +23,10 @@ function parseArgs(argv) {
       }
       options.migration = path.resolve(process.cwd(), value);
       i += 1;
+      continue;
+    }
+    if (arg === '--force') {
+      options.force = true;
       continue;
     }
     throw new Error(`Unknown argument: ${arg}`);
@@ -54,101 +46,11 @@ async function resolveMigrationFiles(options) {
     .sort();
 }
 
-function parseProjectRef(supabaseUrl) {
-  const match = supabaseUrl?.match(/https:\/\/([^.]+)\.supabase\.co/);
-  return match ? match[1] : null;
-}
-
-function buildTransactionPoolerConfig(databaseUrl, supabaseUrl) {
-  const dbUrl = new URL(databaseUrl);
-  const ref = parseProjectRef(supabaseUrl);
-  if (!ref) {
-    throw new Error('Failed to parse project ref from SUPABASE_URL.');
-  }
-
-  const host = dbUrl.hostname.startsWith('db.')
-    ? dbUrl.hostname
-    : `db.${ref}.supabase.co`;
-
-  const user = dbUrl.username === 'postgres'
-    ? dbUrl.username
-    : decodeURIComponent(dbUrl.username || 'postgres');
-
-  return {
-    host,
-    port: 6543,
-    user,
-    password: decodeURIComponent(dbUrl.password),
-    database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
-    ssl: { rejectUnauthorized: false },
-    connectionTimeoutMillis: 3500,
-  };
-}
-
-async function connectAndRun(clientConfig, sql) {
-  const client = new Client(clientConfig);
-  await client.connect();
-  try {
-    await client.query(sql);
-  } finally {
-    await client.end();
-  }
-}
-
-async function tryDirect(databaseUrl, sql) {
-  const connectionString = databaseUrl.includes('sslmode=')
-    ? databaseUrl
-    : `${databaseUrl}${databaseUrl.includes('?') ? '&' : '?'}sslmode=require`;
-
-  await connectAndRun(
-    {
-      connectionString,
-      ssl: { rejectUnauthorized: false },
-      connectionTimeoutMillis: 4000,
-    },
-    sql,
-  );
-}
-
-async function tryPooler(databaseUrl, supabaseUrl, sql) {
-  const clientConfig = buildTransactionPoolerConfig(databaseUrl, supabaseUrl);
-  await connectAndRun(clientConfig, sql);
-  return `${clientConfig.host}:${clientConfig.port}`;
-}
-
-async function confirmSchemaViaSupabase(supabaseUrl, serviceRoleKey) {
-  if (!serviceRoleKey) {
-    throw new Error('SUPABASE_SERVICE_ROLE_KEY is required to verify the schema via Supabase REST.');
-  }
-
-  const client = createClient(supabaseUrl, serviceRoleKey, {
-    auth: { persistSession: false, autoRefreshToken: false },
-  });
-
-  const missingTables = [];
-  for (const { name, probeColumn } of REQUIRED_TABLES) {
-    const { error } = await client.from(name).select(probeColumn, { head: true, count: 'exact' }).limit(1);
-    if (error) {
-      missingTables.push(`${name}: ${error.message}`);
-    }
-  }
-
-  if (missingTables.length > 0) {
-    throw new Error(`Supabase REST schema check failed: ${missingTables.join('; ')}`);
-  }
-}
-
 async function main() {
   const options = parseArgs(process.argv.slice(2));
-  const databaseUrl = process.env.DATABASE_URL;
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!databaseUrl) {
-    throw new Error('DATABASE_URL is required.');
-  }
-  if (!supabaseUrl) {
-    throw new Error('SUPABASE_URL is required.');
+  const poolerUrl = process.env.DATABASE_POOLER_URL;
+  if (options.force) {
+    console.warn('flag_ignored=--force migrations always run');
   }
 
   const migrationFiles = await resolveMigrationFiles(options);
@@ -169,29 +71,16 @@ async function main() {
     }
   }
   const sql = `begin;\n${sqlParts.join('\n\n')}\ncommit;\n`;
-
+  const client = await connectSupabaseSessionPooler({
+    poolerUrl,
+    applicationName: 'lawdata-apply-migration',
+  });
   try {
-    await tryDirect(databaseUrl, sql);
-    console.log(`migration_applied_via=direct files=${migrationFiles.map((file) => path.basename(file)).join(',')}`);
-    return;
-  } catch (error) {
-    const msg = error instanceof Error ? error.message : String(error);
-    console.log(`direct_connect_failed=${msg}`);
+    await client.query(sql);
+  } finally {
+    await client.end();
   }
-
-  try {
-    await confirmSchemaViaSupabase(supabaseUrl, serviceRoleKey);
-    console.log('migration_skipped_via=supabase_rest_schema_check');
-    return;
-  } catch (error) {
-    const msg = error instanceof Error ? error.message : String(error);
-    console.log(`rest_schema_check_failed=${msg}`);
-  }
-
-  const poolerHost = await tryPooler(databaseUrl, supabaseUrl, sql);
-  console.log(
-    `migration_applied_via=pooler:${poolerHost} files=${migrationFiles.map((file) => path.basename(file)).join(',')}`,
-  );
+  console.log(`migration_applied_via=pooler:session files=${migrationFiles.map((file) => path.basename(file)).join(',')}`);
 }
 
 main().catch((error) => {

@@ -10,6 +10,15 @@ function isJsonNode(node: unknown): node is JsonNode {
   return typeof node === 'object' && node !== null && 'tag' in node && 'children' in node;
 }
 
+function flattenNodeText(node: JsonNode | string): string {
+  if (typeof node === 'string') {
+    return node;
+  }
+  return (node.children ?? []).map((child) => (
+    typeof child === 'string' ? child : flattenNodeText(child)
+  )).join('');
+}
+
 self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
   const { type, payload } = e.data;
   if (type !== 'FETCH_REF_DATA') return;
@@ -28,17 +37,20 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
     } else {
       const res = await fetch(`https://laws.e-gov.go.jp/api/2/law_data/${lawId}`);
       lawArticle = await res.json() as LawArticle;
-      saveLawToCache(lawId, lawArticle, [], extractLawRevisionMarker(lawArticle));
+      saveLawToCache(lawId, lawArticle, [], extractLawRevisionMarker(lawArticle), []);
     }
     let refArticle: VNode[] | null;
+    let refText = '';
     if (isJsonNode(lawArticle.law_full_text)) {
-      refArticle = refArticleData(refItm, lawArticle.law_full_text);
+      const resolved = refArticleData(refItm, lawArticle.law_full_text);
+      refArticle = resolved?.vnode ?? null;
+      refText = resolved?.text ?? '';
     } else {
       refArticle = null;
     }
     self.postMessage({
       type: 'FETCH_REF_DATA_SUCCESS',
-      data: refArticle || '該当条文が見つかりませんでした',
+      data: { vnode: refArticle, text: refText },
     } as WorkerResponse);
   } catch (error) {
     self.postMessage({
@@ -65,7 +77,7 @@ function searchArticle(json: JsonNode): JsonNode[] {
   return articleList;
 }
 
-function refArticleData(refItm: RefArticle, refArticle: JsonNode): VNode[] | null {
+function refArticleData(refItm: RefArticle, refArticle: JsonNode): { vnode: VNode[] | null; text: string } | null {
   if (refArticle) {
     // 法令データが取得できていれば、該当条文を表示
     const lawBody = refArticle.children?.find((child): child is JsonNode => isJsonNode(child) && child.tag === 'LawBody');
@@ -76,7 +88,10 @@ function refArticleData(refItm: RefArticle, refArticle: JsonNode): VNode[] | nul
       if (refLawData) {
         const refArticleNode = searchArticle(refLawData).find(e => e.attr?.Num === refItm?.article);
         if (refArticleNode) {
-          return renderVirtualTree(refArticleNode, [], [], [], { lawTitleList: [], synonymList: {} }, 'ref');
+          return {
+            vnode: renderVirtualTree(refArticleNode, [], [], [], { lawTitleList: [], synonymList: {} }, 'ref'),
+            text: flattenNodeText(refArticleNode).replace(/\s+/g, ' ').trim(),
+          };
         } else {
           return null;
         }

@@ -1,11 +1,13 @@
 .app {
-    display: flex;
-    flex-direction: column;
-    height:100dvh;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .content {
-  display: flex;
-  flex: 1;
-  height: calc(100dvh - 60px);
+    display: flex;
+    height: calc(100dvh - var(--app-header-height, 60px));
+    min-height: 0;
+    overflow: hidden;
 }

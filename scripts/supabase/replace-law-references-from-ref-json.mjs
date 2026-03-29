@@ -1,6 +1,6 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { Client } from 'pg';
+import { connectSupabaseSessionPooler } from './pooler-db.mjs';
 
 const LAW_TYPES = 'Constitution,Act,CabinetOrder,MinisterialOrdinance,Rule,Misc';
 const LAW_API_BASE = 'https://laws.e-gov.go.jp/api/2';
@@ -59,81 +59,6 @@ function toTimestamp(value) {
   const parsed = new Date(text);
   if (Number.isNaN(parsed.getTime())) return null;
   return parsed.toISOString();
-}
-
-function parseProjectRef(supabaseUrl) {
-  const match = supabaseUrl?.match(/https:\/\/([^.]+)\.supabase\.co/);
-  return match ? match[1] : null;
-}
-
-function buildDirectClientConfig(databaseUrl) {
-  const connectionString = databaseUrl.includes('sslmode=')
-    ? databaseUrl
-    : `${databaseUrl}${databaseUrl.includes('?') ? '&' : '?'}sslmode=require`;
-  return {
-    application_name: 'lawdata-ref-json-full-sync',
-    connectionString,
-    connectionTimeoutMillis: 4000,
-    ssl: { rejectUnauthorized: false },
-  };
-}
-
-function buildPoolerClientConfigs(databaseUrl, supabaseUrl) {
-  const dbUrl = new URL(databaseUrl);
-  const ref = parseProjectRef(supabaseUrl);
-  if (!ref) {
-    return [];
-  }
-
-  const regions = [
-    'ap-northeast-1',
-  ];
-
-  const configs = [];
-  for (const shard of [0, 1, 2]) {
-    for (const region of regions) {
-      configs.push({
-        application_name: 'lawdata-ref-json-full-sync',
-        connectionTimeoutMillis: 3500,
-        database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
-        host: `aws-${shard}-${region}.pooler.supabase.com`,
-        password: decodeURIComponent(dbUrl.password),
-        port: 6543,
-        ssl: { rejectUnauthorized: false },
-        user: `postgres.${ref}`,
-      });
-    }
-  }
-  return configs;
-}
-
-async function connectDatabase(databaseUrl, supabaseUrl) {
-  const attempts = [
-    { label: 'direct', config: buildDirectClientConfig(databaseUrl) },
-    ...buildPoolerClientConfigs(databaseUrl, supabaseUrl).map((config) => ({
-      label: `pooler:${config.host}`,
-      config,
-    })),
-  ];
-
-  let lastError = null;
-  for (const attempt of attempts) {
-    const client = new Client(attempt.config);
-    try {
-      await client.connect();
-      console.log(`db_connected_via=${attempt.label}`);
-      return client;
-    } catch (error) {
-      lastError = error;
-      try {
-        await client.end();
-      } catch {
-        // ignore close failures after unsuccessful connect attempts
-      }
-    }
-  }
-
-  throw lastError ?? new Error('Failed to connect to Supabase Postgres.');
 }
 
 async function fetchJson(url, retry = 3) {
@@ -433,12 +358,12 @@ async function main() {
     return;
   }
 
-  const databaseUrl = process.env.DATABASE_URL;
-  const supabaseUrl = process.env.SUPABASE_URL;
-  if (!databaseUrl) {
-    throw new Error('DATABASE_URL is required.');
-  }
-  const client = await connectDatabase(databaseUrl, supabaseUrl);
+  const poolerUrl = process.env.DATABASE_POOLER_URL;
+  const client = await connectSupabaseSessionPooler({
+    poolerUrl,
+    applicationName: 'lawdata-ref-json-full-sync',
+  });
+  console.log('db_connected_via=pooler:session');
   try {
     await client.query('begin');
     console.log('upserting laws...');

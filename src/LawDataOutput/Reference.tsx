@@ -5,6 +5,11 @@ import type { VNode, RefArticle } from '../LawDataContext';
 import { useLawDataWorker } from '../hooks/useLawDataWorker';
 import { rankByLawTitleSimilarity } from '../utils/referenceSimilarity';
 
+interface RefArticleWorkerResult {
+    vnode: VNode[] | null;
+    text: string;
+}
+
 function refKey(item: Pick<RefArticle, 'lawNum' | 'provision' | 'article' | 'paragraph' | 'item'>): string {
     return `${item.lawNum}-${item.provision}-${item.article ?? ''}-${item.paragraph ?? ''}-${item.item ?? ''}`;
 }
@@ -53,7 +58,8 @@ function formatRefLocation(item: RefArticle | null): string {
 
 export const Reference: React.FC = () => {
     const [itemIndex, setItemIndex] = useState<number | null>(null);
-    const [refArticle, setRefArticle] = useState<VNode | VNode[] | string | null>(null);
+    const [refArticle, setRefArticle] = useState<RefArticleWorkerResult | null>(null);
+    const [refArticleError, setRefArticleError] = useState<string | null>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [refLawNum, setRefLawNum] = useState<string>('');
     const [refArticleData, setRefArticleData] = useState<React.ReactNode>(null);
@@ -63,7 +69,7 @@ export const Reference: React.FC = () => {
         () => new Map(lawData?.map((law) => [law.law_info.law_num, law.current_revision_info.law_title]) ?? []),
         [lawData],
     );
-    const { clickedRefs, clickedRefSource, setClickedRefs, refArticleLoaded, setRefArticleLoaded } = useContext(ReferenceContext);
+    const { clickedRefs, clickedRefSource, setClickedRefs, refArticleLoaded, setRefArticleLoaded, setSelectedReferenceDetail } = useContext(ReferenceContext);
     const { fetchRefData } = useLawDataWorker();
     const sourceLawTitle = useMemo(
         () => (clickedRefSource?.lawNum ? (lawTitleMap.get(clickedRefSource.lawNum) ?? clickedRefSource.lawNum) : ''),
@@ -132,13 +138,15 @@ export const Reference: React.FC = () => {
     const showDetailView = itemIndex !== null;
 
     const loadRefData = useCallback((target: RefArticle) => {
-        fetchRefData<VNode | VNode[] | string | null>(
+        fetchRefData<RefArticleWorkerResult>(
             target,
             (data) => {
+                setRefArticleError(null);
                 setRefArticle(data);
             },
             (error) => {
-                setRefArticle(error || '参照条文の取得に失敗しました。');
+                setRefArticle(null);
+                setRefArticleError(error || '参照条文の取得に失敗しました。');
             },
         );
     }, [fetchRefData]);
@@ -147,42 +155,55 @@ export const Reference: React.FC = () => {
         setIsOpen(rankedRefs.length > 0);
         setItemIndex(rankedRefs.length === 1 ? 0 : null);
         setRefArticle(null);
+        setRefArticleError(null);
         setRefArticleData(null);
         setRefLawNum('');
         setRefArticleLoaded(false);
-    }, [clickedRefs, rankedRefs.length, setRefArticleLoaded]);
+        setSelectedReferenceDetail(null);
+    }, [clickedRefs, rankedRefs.length, setRefArticleLoaded, setSelectedReferenceDetail]);
 
     useEffect(() => {
         setRefArticleLoaded(false);
         setRefArticle(null);
+        setRefArticleError(null);
         setRefArticleData(null);
+        setSelectedReferenceDetail(null);
         if (!refItm?.lawNum) {
             setRefLawNum('');
             return;
         }
         loadRefData(refItm);
-    }, [loadRefData, refItm, setRefArticleLoaded]);
+    }, [loadRefData, refItm, setRefArticleLoaded, setSelectedReferenceDetail]);
 
     useEffect(() => {
         if (!refItm?.lawNum) {
             setRefLawNum('');
             setRefArticleData(null);
             setRefArticleLoaded(false);
+            setSelectedReferenceDetail(null);
             return;
         }
-        if (refArticle === null) {
+        if (refArticle === null && refArticleError === null) {
             return;
         }
-        if (typeof refArticle === 'string') {
-            setRefArticleData(refArticle);
-        } else if (refArticle) {
-            setRefArticleData(renderVNodes(refArticle));
+        if (refArticleError) {
+            setRefArticleData(refArticleError);
+            setSelectedReferenceDetail(null);
+        } else if (refArticle?.vnode) {
+            setRefArticleData(renderVNodes(refArticle.vnode));
+            setSelectedReferenceDetail({
+                target: refItm,
+                lawTitle: lawTitleMap.get(refItm.lawNum) ?? refItm.lawNum,
+                text: refArticle.text,
+                vnode: refArticle.vnode,
+            });
         } else {
-            setRefArticleData(null);
+            setRefArticleData('該当条文が見つかりませんでした');
+            setSelectedReferenceDetail(null);
         }
         setRefLawNum(lawTitleMap.get(refItm.lawNum) ?? refItm.lawNum);
         setRefArticleLoaded(true);
-    }, [lawTitleMap, refArticle, refItm, setRefArticleLoaded]);
+    }, [lawTitleMap, refArticle, refArticleError, refItm, setRefArticleLoaded, setSelectedReferenceDetail]);
 
     return (
         <div className={`reference${isOpen ? ' active' : ''}`}>
@@ -199,6 +220,7 @@ export const Reference: React.FC = () => {
                         setClickedRefs([]);
                         setItemIndex(null);
                         setRefArticleLoaded(false);
+                        setSelectedReferenceDetail(null);
                     }}
                 >
                     閉じる
