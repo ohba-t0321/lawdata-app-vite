@@ -59,6 +59,22 @@ function parseProjectRef(supabaseUrl) {
   return match ? match[1] : null;
 }
 
+function isTransientError(error) {
+  if (!error) return false;
+  const message = error instanceof Error ? error.message : String(error);
+  const transientPatterns = [
+    'ENETUNREACH',
+    'ECONNREFUSED',
+    'ETIMEDOUT',
+    'EHOSTUNREACH',
+    'EAI_AGAIN',
+    'certificate',
+    'timeout',
+    'connect',
+  ];
+  return transientPatterns.some((pattern) => message.toLowerCase().includes(pattern.toLowerCase()));
+}
+
 function buildTransactionPoolerConfig(databaseUrl, supabaseUrl) {
   const dbUrl = new URL(databaseUrl);
   const ref = parseProjectRef(supabaseUrl);
@@ -81,7 +97,9 @@ function buildTransactionPoolerConfig(databaseUrl, supabaseUrl) {
     password: decodeURIComponent(dbUrl.password),
     database: (dbUrl.pathname || '/postgres').slice(1) || 'postgres',
     ssl: { rejectUnauthorized: false },
-    connectionTimeoutMillis: 3500,
+    connectionTimeoutMillis: 8000,
+    idleTimeoutMillis: 8000,
+    max: 1,
   };
 }
 
@@ -126,11 +144,31 @@ async function confirmSchemaViaSupabase(supabaseUrl, serviceRoleKey) {
   });
 
   const missingTables = [];
+  const transientErrors = [];
+
   for (const { name, probeColumn } of REQUIRED_TABLES) {
-    const { error } = await client.from(name).select(probeColumn, { head: true, count: 'exact' }).limit(1);
-    if (error) {
-      missingTables.push(`${name}: ${error.message}`);
+    try {
+      const { error } = await client.from(name).select(probeColumn, { head: true, count: 'exact' }).limit(1);
+      if (error) {
+        if (isTransientError(error)) {
+          transientErrors.push(`${name}: ${error.message}`);
+        } else {
+          missingTables.push(`${name}: ${error.message}`);
+        }
+      }
+    } catch (error) {
+      if (isTransientError(error)) {
+        transientErrors.push(`${name}: ${error instanceof Error ? error.message : String(error)}`);
+      } else {
+        missingTables.push(`${name}: ${error instanceof Error ? error.message : String(error)}`);
+      }
     }
+  }
+
+  // If only transient errors occurred, let pooler connection attempt
+  if (transientErrors.length > 0 && missingTables.length === 0) {
+    console.log(`rest_schema_check_transient_error=${transientErrors.join('; ')}`);
+    throw new Error('Transient network error during schema check - attempting pooler connection');
   }
 
   if (missingTables.length > 0) {
