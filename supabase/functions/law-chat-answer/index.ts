@@ -1,5 +1,4 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { parseKeywordResponse } from './keyword-response.mjs';
 
 type Source = {
   sourceId: string;
@@ -35,6 +34,64 @@ function json(body: unknown, status = 200): Response {
     status,
     headers: { ...corsHeaders, 'Content-Type': 'application/json; charset=utf-8' },
   });
+}
+
+function compactText(value: unknown): string {
+  if (typeof value === 'string') return value.replace(/\s+/g, ' ').trim();
+  if (Array.isArray(value)) return value.map(compactText).filter(Boolean).join(' ');
+  if (value && typeof value === 'object') {
+    const record = value as Record<string, unknown>;
+    if (typeof record.text === 'string') return compactText(record.text);
+    if (Array.isArray(record.children)) return compactText(record.children);
+  }
+  return '';
+}
+
+function stringAt(record: Record<string, unknown>, keys: string[]): string {
+  for (const key of keys) {
+    const value = record[key];
+    if (typeof value === 'string' && value.trim()) return value.trim();
+    if (typeof value === 'number') return String(value);
+  }
+  return '';
+}
+
+function collectKeywordSources(value: unknown, keyword: string, output: Source[]): void {
+  if (output.length >= MAX_SEARCH_SOURCES || !value || typeof value !== 'object') return;
+  if (Array.isArray(value)) {
+    for (const item of value) collectKeywordSources(item, keyword, output);
+    return;
+  }
+
+  const record = value as Record<string, unknown>;
+  const lawInfo = record.law_info && typeof record.law_info === 'object'
+    ? record.law_info as Record<string, unknown>
+    : record;
+  const revisionInfo = lawInfo.current_revision_info && typeof lawInfo.current_revision_info === 'object'
+    ? lawInfo.current_revision_info as Record<string, unknown>
+    : lawInfo;
+  const sentence = record.sentence && typeof record.sentence === 'object'
+    ? record.sentence as Record<string, unknown>
+    : record;
+  const text = compactText(sentence.text ?? sentence.sentence ?? record.text);
+  const lawNum = stringAt(lawInfo, ['law_num', 'law_id']) || stringAt(record, ['law_num', 'law_id']);
+
+  if (lawNum && text) {
+    const position = sentence.position && typeof sentence.position === 'object'
+      ? sentence.position as Record<string, unknown>
+      : sentence;
+    const provision = stringAt(position, ['provision']) || 'MainProvision';
+    const article = stringAt(position, ['article', 'article_num', 'num']);
+    const lawTitle = stringAt(revisionInfo, ['law_title']) || stringAt(record, ['law_title']) || lawNum;
+    const sourceId = `keyword:${lawNum}:${provision}:${article}:${output.length}`;
+    if (!output.some((source) => source.lawNum === lawNum && source.text === text)) {
+      output.push({ sourceId, lawNum, lawTitle, provision, article, text: text.slice(0, MAX_SOURCE_CHARS), origin: 'keyword' });
+    }
+  }
+
+  for (const child of Object.values(record)) {
+    if (child && typeof child === 'object') collectKeywordSources(child, keyword, output);
+  }
 }
 
 async function callOpenAI(apiKey: string, model: string, messages: unknown[], schemaName: string, schema: unknown) {
@@ -76,13 +133,11 @@ async function searchLaws(keywords: string[]): Promise<Source[]> {
     url.searchParams.set('limit', String(MAX_SEARCH_SOURCES));
     const response = await fetch(url, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(8_000) });
     if (!response.ok) throw new Error(`e-Gov keyword API error (${response.status})`);
-    return await response.json();
+    return { keyword, payload: await response.json() };
   }));
   const sources: Source[] = [];
   for (const result of settled) {
-    if (result.status === 'fulfilled') {
-      sources.push(...parseKeywordResponse(result.value, MAX_SEARCH_SOURCES - sources.length, MAX_SOURCE_CHARS));
-    }
+    if (result.status === 'fulfilled') collectKeywordSources(result.value.payload, result.value.keyword, sources);
   }
   return sources.slice(0, MAX_SEARCH_SOURCES);
 }
