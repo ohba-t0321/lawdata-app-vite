@@ -17,7 +17,7 @@ export interface ChatSource {
   provision: string;
   article: string;
   text: string;
-  origin: 'visible' | 'reference' | 'expanded';
+  origin: 'visible' | 'reference' | 'expanded' | 'keyword';
   references?: RefArticle[];
 }
 
@@ -65,6 +65,8 @@ export interface GroundedChatResponse {
   insufficientContext: boolean;
   model: string;
   usage: Record<string, number | null> | null;
+  searchKeywords: string[];
+  searchedSources: ChatSource[];
 }
 
 export interface ChatThread {
