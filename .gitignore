@@ -36,4 +36,8 @@ Agents.md
 
 # SupabaseのサービスロールキーやデータベースURLなどの機密情報を含むファイル
 supabase/*
+!supabase/functions/
+supabase/functions/*
+!supabase/functions/law-chat-answer/
+!supabase/functions/law-chat-answer/index.ts
 public/ref_json/_meta.json

@@ -74,6 +74,7 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
   const [isLoadingMessages, setIsLoadingMessages] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [lastSearchKeywords, setLastSearchKeywords] = useState<string[]>([]);
 
   const lawTitleMap = useMemo(
     () => new Map(lawData?.map((law) => [law.law_info.law_num, law.current_revision_info.law_title ?? law.law_info.law_num]) ?? []),
@@ -239,6 +240,7 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
 
     setIsSending(true);
     setError(null);
+    setLastSearchKeywords([]);
     setDraft('');
 
     const request = await buildRequest(question);
@@ -273,6 +275,7 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
     await loadThreads(data.threadId);
     await loadMessages(data.threadId);
     setActiveThreadId(data.threadId);
+    setLastSearchKeywords(data.searchKeywords ?? []);
     setIsSending(false);
   };
 
@@ -316,8 +319,12 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
 
       <section className="chat-main">
         <div className="chat-context-summary">
-          <span>表示中の法令を根拠候補として使用します。</span>
+          <span>質問からキーワードを抽出し、e-Gov 法令APIの検索結果と表示中の法令を根拠候補として使用します。</span>
           {selectedReferenceDetail ? <span>開いている参照条文も優先して参照します。</span> : null}
+          {isSending ? <span>関連法令を検索して回答を作成しています...</span> : null}
+          {lastSearchKeywords.length > 0 ? (
+            <span>検索キーワード: {lastSearchKeywords.join(' / ')}</span>
+          ) : null}
         </div>
 
         <div className="chat-messages">
@@ -353,7 +360,7 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
           <textarea
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
-            placeholder="表示中の法令と参照条文をもとに質問してください"
+            placeholder="質問を入力してください（関連法令も自動で検索します）"
             className="chat-textarea"
             rows={4}
           />

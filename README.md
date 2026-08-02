@@ -95,6 +95,10 @@ Supabase 側では以下を別途設定してください。
 - Edge Function secrets に `OPENAI_API_KEY` と `OPENAI_MODEL` を設定
 - Auth の redirect URL に配信先サブパス `/lawdata-app-vite/` を含む URL を登録
 
+回答生成時は Edge Function が質問から最大3件の主題キーワードを抽出し、e-Gov 法令API v2 の
+`/keyword` を検索します。検索で得た条文と、画面に表示中の条文・参照条文をまとめてモデルへ渡すため、
+画面外の関連法令も根拠に含められます。検索件数と本文長には上限を設け、プロンプトサイズと応答時間を抑えています。
+
 ### SMTP 未設定時の暫定ログイン運用
 
 SMTP をまだ用意していない間は、管理者が Supabase の `service_role` で認証リンクを生成し、Slack や Teams など別経路で本人に共有できます。

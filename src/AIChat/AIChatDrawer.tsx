@@ -43,7 +43,7 @@ export const AIChatDrawer = ({ isOpen, onToggle, onClose }: AIChatDrawerProps) =
         <div className="ai-chat-drawer-header">
           <div className="ai-chat-drawer-heading">
             <span className="ai-chat-drawer-title">AIチャット</span>
-            <span className="ai-chat-drawer-description">表示中の法令と開いている参照条文をもとに質問できます。</span>
+            <span className="ai-chat-drawer-description">表示中の法令に加え、質問に関連する法令を自動検索して回答します。</span>
           </div>
           <button
             type="button"
