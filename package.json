@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "node --test scripts/**/*.test.mjs",
     "preview": "vite preview",
     "supabase:migrate": "node scripts/supabase/apply-migration.mjs",
     "supabase:generate-auth-link": "node scripts/supabase/generate-auth-link.mjs",
