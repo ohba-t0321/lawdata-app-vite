@@ -1,0 +1,5 @@
+[functions.law-chat-answer]
+verify_jwt = false
+
+[functions.law-agent-answer]
+verify_jwt = false

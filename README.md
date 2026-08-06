@@ -86,18 +86,34 @@ AIチャットは既存の法令閲覧とは独立しており、Supabase Auth �
 VITE_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
 VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 VITE_REFDATA_BASE_URL=https://YOUR_PROJECT_REF.supabase.co/storage/v1/object/public/law-assets/ref_json
+VITE_LAW_AGENT_ENABLED=true
 ```
 
 Supabase 側では以下を別途設定してください。
 
 - `scripts/supabase/migrations/202603260001_add_ai_chat_auth_tables.sql` を適用
-- `supabase/functions/law-chat-answer` をデプロイ
+- `supabase/functions/law-chat-answer` と `supabase/functions/law-agent-answer` をデプロイ
 - Edge Function secrets に `OPENAI_API_KEY` と `OPENAI_MODEL` を設定
 - Auth の redirect URL に配信先サブパス `/lawdata-app-vite/` を含む URL を登録
 
 回答生成時は Edge Function が質問から最大3件の主題キーワードを抽出し、e-Gov 法令API v2 の
 `/keyword` を検索します。検索で得た条文と、画面に表示中の条文・参照条文をまとめてモデルへ渡すため、
 画面外の関連法令も根拠に含められます。検索件数と本文長には上限を設け、プロンプトサイズと応答時間を抑えています。
+
+### 法令巡回エージェント
+
+`VITE_LAW_AGENT_ENABLED=true` の場合は、表示中の条文またはe-Govキーワード検索を起点に、
+Supabaseの `law_references` を参照先・被参照元の両方向へ最大2段巡回します。
+最終回答で引用する条文はe-Gov法令APIから現行本文を再取得し、調査進捗、採用した経路、
+取得失敗や調査上限を `agent_runs` / `agent_run_steps` に保存します。
+
+導入手順:
+
+1. `npm run supabase:migrate -- --migration scripts/supabase/migrations/202608060001_add_law_agent_tables.sql` でDB変更を適用
+2. `npm run supabase:sync-ref-json` で参照グラフを同期
+3. `law-agent-answer` をデプロイし、`OPENAI_API_KEY`、`OPENAI_MODEL`、必要なら `LAW_AGENT_MAX_RUNS_PER_10_MIN` を設定
+
+機能を一時的に無効化すると、既存の一括回答方式へ戻ります。
 
 ### SMTP 未設定時の暫定ログイン運用
 

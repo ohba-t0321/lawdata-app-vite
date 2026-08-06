@@ -177,6 +177,32 @@
     background: #fcfdff;
 }
 
+.chat-agent-progress {
+    margin: 8px 10px 0;
+    padding: 9px 10px;
+    border: 1px solid #b9cbee;
+    border-radius: 10px;
+    background: #f3f7ff;
+    color: #29466f;
+    font-size: 0.82rem;
+}
+
+.chat-agent-progress ol {
+    margin: 6px 0 0;
+    padding-left: 1.25rem;
+    max-height: 96px;
+    overflow-y: auto;
+}
+
+.chat-agent-progress li {
+    margin: 2px 0;
+}
+
+.chat-agent-progress li.warning,
+.chat-agent-summary .warning {
+    color: #9a4b00;
+}
+
 .chat-messages {
     flex: 1;
     min-height: 0;
@@ -231,6 +257,24 @@
     font-size: 0.8rem;
 }
 
+.chat-agent-summary {
+    margin-top: 9px;
+    padding-top: 7px;
+    border-top: 1px solid #d5deec;
+    color: #4b5e7a;
+    font-size: 0.78rem;
+}
+
+.chat-agent-summary summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.chat-agent-summary div {
+    margin-top: 5px;
+    line-height: 1.45;
+}
+
 .chat-composer {
     border-top: 1px solid #dde4ef;
     padding: 8px 10px 10px;
@@ -252,6 +296,7 @@
 .chat-actions {
     display: flex;
     justify-content: flex-end;
+    gap: 8px;
     margin-top: 8px;
 }
 

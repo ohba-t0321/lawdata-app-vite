@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "node --test scripts/**/*.test.mjs",
     "preview": "vite preview",
-    "supabase:migrate": "node scripts/supabase/apply-migration.mjs",
+    "supabase:migrate": "node --env-file-if-exists=.env scripts/supabase/apply-migration.mjs",
     "supabase:generate-auth-link": "node scripts/supabase/generate-auth-link.mjs",
     "supabase:sync-ref-json": "node scripts/supabase/replace-law-references-from-ref-json.mjs",
     "supabase:upsert": "node scripts/supabase/upsert-law-data.mjs"
