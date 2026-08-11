@@ -1,4 +1,5 @@
 import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import './AIChatDrawer.css';
 import { AuthContext } from '../AuthContext';
 import { buildPinnedReferenceSource, buildSuggestedLawCandidates, buildVisibleSources, dedupeSources } from '../ai/context';
 import { readAgentEventStream } from '../ai/sse';
@@ -20,6 +21,7 @@ import { supabase } from '../supabaseClient';
 
 interface AIChatPanelProps {
   onOpenCitation: (citation: ChatCitation) => void;
+  variant?: 'drawer' | 'full';
 }
 
 interface RefWorkerResult {
@@ -104,7 +106,13 @@ function pathLabel(summary: AgentRunSummary): string[] {
   )).join(' → '));
 }
 
-export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
+const starterQuestions = [
+  '個人情報を第三者に提供できるのは、どのような場合ですか？',
+  '行政機関が情報公開請求を不開示にできる要件を教えてください。',
+  '会社が従業員に時間外労働をさせるために必要な手続は何ですか？',
+];
+
+export const AIChatPanel = ({ onOpenCitation, variant = 'drawer' }: AIChatPanelProps) => {
   const { isConfigured, session } = useContext(AuthContext);
   const { lawData } = useContext(LawDataContext);
   const { selectedLaws, articleIndexByPane } = useContext(LawArticleContext);
@@ -124,6 +132,8 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
   const [progressItems, setProgressItems] = useState<ProgressItem[]>([]);
   const [activeRunId, setActiveRunId] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const lawTitleMap = useMemo(
     () => new Map(lawData?.map((law) => [law.law_info.law_num, law.current_revision_info.law_title ?? law.law_info.law_num]) ?? []),
@@ -160,9 +170,11 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
       return;
     }
     setActiveThreadId((current) => (
-      current && nextThreads.some((thread) => thread.id === current) ? current : (nextThreads[0]?.id ?? null)
+      current && nextThreads.some((thread) => thread.id === current)
+        ? current
+        : (variant === 'full' ? null : (nextThreads[0]?.id ?? null))
     ));
-  }, [session]);
+  }, [session, variant]);
 
   const loadMessages = useCallback(async (threadId: string | null) => {
     if (!threadId || !supabase) {
@@ -214,6 +226,10 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
     if (!session) return;
     void loadMessages(activeThreadId);
   }, [activeThreadId, loadMessages, session]);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: isSending ? 'smooth' : 'auto', block: 'end' });
+  }, [isSending, messages, progressItems]);
 
   const fetchExpandedSource = useCallback((source: ChatSource) => new Promise<ChatSource | null>((resolve) => {
     fetchRefData<RefWorkerResult>(
@@ -392,7 +408,7 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
   if (!session) return <div className="chat-empty">招待済みアカウントでログインすると、会話履歴付きAIチャットを利用できます。</div>;
 
   return (
-    <div className="chat-panel">
+    <div className={`chat-panel chat-panel-${variant}`}>
       <aside className="chat-thread-list">
         <div className="chat-thread-header">
           <strong>会話履歴</strong>
@@ -443,7 +459,24 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
 
         <div className="chat-messages">
           {isLoadingMessages ? <div className="chat-empty">メッセージを読み込み中...</div> : null}
-          {!isLoadingMessages && messages.length === 0 ? <div className="chat-empty">質問すると、このスレッドに回答と調査経路が保存されます。</div> : null}
+          {!isLoadingMessages && messages.length === 0 && variant === 'full' ? (
+            <div className="chat-welcome">
+              <div className="chat-welcome-icon" aria-hidden="true">§</div>
+              <h3>知りたいことを、そのまま質問してください</h3>
+              <p>法令名が分からなくても、関連する法令と条文を検索して回答します。</p>
+              <div className="chat-starter-list">
+                {starterQuestions.map((question) => (
+                  <button type="button" className="chat-starter" key={question} onClick={() => {
+                    setDraft(question);
+                    textareaRef.current?.focus();
+                  }}>
+                    {question}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {!isLoadingMessages && messages.length === 0 && variant !== 'full' ? <div className="chat-empty">質問すると、このスレッドに回答と調査経路が保存されます。</div> : null}
           {messages.map((message) => {
             const run = message.agent_run_id ? runsById.get(message.agent_run_id) : null;
             const summary = run?.summary_json;
@@ -460,7 +493,7 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
                         className="chat-citation"
                         onClick={() => onOpenCitation(citation)}
                       >
-                        {citationLabel(citation)}
+                        [{citationLabel(citation)}]
                       </button>
                     ))}
                   </div>
@@ -478,14 +511,22 @@ export const AIChatPanel = ({ onOpenCitation }: AIChatPanelProps) => {
               </div>
             );
           })}
+          <div ref={messagesEndRef} aria-hidden="true" />
         </div>
 
         {error ? <div className="chat-error">{error}</div> : null}
 
         <div className="chat-composer">
           <textarea
+            ref={textareaRef}
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
+                event.preventDefault();
+                if (!isSending && draft.trim()) void handleSend();
+              }
+            }}
             placeholder={agentEnabled ? '法令について質問してください（法令未表示でも調査できます）' : '質問を入力してください（関連法令も自動で検索します）'}
             className="chat-textarea"
             rows={4}

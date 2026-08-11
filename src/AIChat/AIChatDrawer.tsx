@@ -35,35 +35,37 @@ export const AIChatDrawer = ({ isOpen, onToggle, onClose }: AIChatDrawerProps) =
         AIチャット
       </button>
 
-      <aside
-        className={`ai-chat-drawer${isOpen ? ' open' : ''}`}
-        id="ai-chat-drawer"
-        aria-hidden={!isOpen}
-      >
-        <div className="ai-chat-drawer-header">
-          <div className="ai-chat-drawer-heading">
-            <span className="ai-chat-drawer-title">AIチャット</span>
-            <span className="ai-chat-drawer-description">法令の参照先・被参照元を巡回し、確認した条文を根拠に回答します。</span>
+      {isOpen ? (
+        <aside
+          className="ai-chat-drawer open"
+          id="ai-chat-drawer"
+          aria-hidden="false"
+        >
+          <div className="ai-chat-drawer-header">
+            <div className="ai-chat-drawer-heading">
+              <span className="ai-chat-drawer-title">AIチャット</span>
+              <span className="ai-chat-drawer-description">法令の参照先・被参照元を巡回し、確認した条文を根拠に回答します。</span>
+            </div>
+            <button
+              type="button"
+              className="ai-chat-drawer-close"
+              onClick={onClose}
+              aria-label="AIチャットを閉じる"
+            >
+              閉じる
+            </button>
           </div>
-          <button
-            type="button"
-            className="ai-chat-drawer-close"
-            onClick={onClose}
-            aria-label="AIチャットを閉じる"
-          >
-            閉じる
-          </button>
-        </div>
 
-        <div className="ai-chat-drawer-body">
-          <AIChatPanel
-            onOpenCitation={(citation) => {
-              setClickedRefs([citationToRefArticle(citation)]);
-              setRefArticleLoaded(false);
-            }}
-          />
-        </div>
-      </aside>
+          <div className="ai-chat-drawer-body">
+            <AIChatPanel
+              onOpenCitation={(citation) => {
+                setClickedRefs([citationToRefArticle(citation)]);
+                setRefArticleLoaded(false);
+              }}
+            />
+          </div>
+        </aside>
+      ) : null}
     </>
   );
 };

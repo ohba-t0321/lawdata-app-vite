@@ -1,4 +1,5 @@
 import { useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
 import { AuthContext } from '../AuthContext';
 
@@ -50,8 +51,17 @@ const Header = () => {
     <header className="app-header" ref={headerRef}>
       <div className="header-main">
         <div className="header-title-wrap">
-          <h1>法令検索アプリ</h1>
-          <p className="header-subtitle">会員向けAIチャットはログイン後に利用できます。</p>
+          <NavLink to="/" className="header-brand" aria-label="法令検索ホーム">
+            <h1>法令検索アプリ</h1>
+          </NavLink>
+          <nav className="header-nav" aria-label="メインナビゲーション">
+            <NavLink to="/" end className={({ isActive }) => `header-nav-link${isActive ? ' active' : ''}`}>
+              法令を読む
+            </NavLink>
+            <NavLink to="/chat" className={({ isActive }) => `header-nav-link chat-link${isActive ? ' active' : ''}`}>
+              法令AIに質問
+            </NavLink>
+          </nav>
         </div>
         <div className="header-auth">
           {!isConfigured ? (
